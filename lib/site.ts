@@ -59,7 +59,7 @@ export const SITE = {
   /** Fits one line at 375px next to the eyebrow rule. */
   taglineShort: "Sales systems for solar companies",
   description:
-    "Volt builds and runs the complete sales system for solar companies: website, missed-call text-back, automated follow-up, one inbox, review funnel and on-site SEO, for one monthly fee.",
+    "Volt builds and runs the complete sales system for solar companies: website, missed-call text-back, automated follow-up, one inbox, review funnel and on-site SEO, on one monthly subscription.",
   /**
    * Canonical origin. Every canonical tag, sitemap entry, social card URL and
    * schema @id on the site resolves from this one value, so it has to match
@@ -107,9 +107,34 @@ export const SITE = {
     { label: "Cookies", href: "/privacy#cookies-and-tracking" },
     { label: "DPA", href: "/dpa" },
   ],
+  /**
+   * Social profiles. These are still the bare platform homepages, which is why
+   * `realSocial()` filters them out: a footer link to instagram.com helps
+   * nobody, and listing it as `sameAs` in the Organization schema actively
+   * tells a search engine that instagram.com is Volt's profile, which is wrong
+   * entity data rather than merely missing data.
+   *
+   * Replace each href with the real profile URL and both the footer links and
+   * the schema start working.
+   */
   social: [
     { label: "Instagram", href: "https://instagram.com/" },
     { label: "LinkedIn", href: "https://linkedin.com/" },
     { label: "YouTube", href: "https://youtube.com/" },
   ],
 } as const;
+
+/**
+ * Only the social links that point at an actual profile. A bare platform
+ * origin with no path is a placeholder, and publishing one is worse than
+ * publishing none.
+ */
+export function realSocial(): readonly { label: string; href: string }[] {
+  return SITE.social.filter((s) => {
+    try {
+      return new URL(s.href).pathname.replace(/\/+$/, "") !== "";
+    } catch {
+      return false;
+    }
+  });
+}

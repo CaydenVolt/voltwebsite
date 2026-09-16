@@ -24,8 +24,8 @@ export const WHY = [
     body: "One inbox, one calendar, one report. If you can text, you can run it.",
   },
   {
-    title: "Flat monthly fee",
-    body: "One number every month. No setup fee, no per-lead charge, no surprise invoice.",
+    title: "One monthly price",
+    body: "The same price every month for the whole system. No setup fee and no per-lead charge. Phone numbers and messaging are billed at what they cost.",
   },
   {
     title: "No contracts",

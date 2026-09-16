@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { SITE } from "@/lib/site";
+import { SITE, realSocial } from "@/lib/site";
 import { Wordmark } from "@/components/site/Wordmark";
 import { getPublicProducts, productHref } from "@/lib/content/products";
 import { ConsentLinks } from "@/components/consent/ConsentLinks";
@@ -69,7 +69,7 @@ export function Footer({ mark, masked }: { mark: string | null; masked?: boolean
           © {year} {SITE.name}. All rights reserved.
         </p>
         <ul className="flex flex-wrap gap-6">
-          {SITE.social.map((s) => (
+          {realSocial().map((s) => (
             <li key={s.label}>
               <a
                 href={s.href}

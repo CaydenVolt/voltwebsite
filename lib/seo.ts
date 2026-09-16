@@ -1,4 +1,4 @@
-import { SITE } from "@/lib/site";
+import { SITE, realSocial } from "@/lib/site";
 import { getPublicProducts, type ProductPage } from "@/lib/content/products";
 import { PLAN, formatPrice } from "@/lib/content/pricing";
 import { AUTHOR, authorHref, getCategory, postHref, type Post } from "@/lib/content/blog";
@@ -26,7 +26,9 @@ export function organizationSchema() {
     url: SITE.url,
     description: SITE.description,
     slogan: SITE.tagline,
-    sameAs: SITE.social.map((s) => s.href),
+    // Omitted rather than wrong while the profiles are placeholders. A sameAs
+    // pointing at a platform homepage is a false claim about the entity.
+    ...(realSocial().length > 0 ? { sameAs: realSocial().map((s) => s.href) } : {}),
     areaServed: SITE.region,
     knowsAbout: getPublicProducts().map((p) => p.name),
   };
@@ -77,7 +79,7 @@ export function planOfferSchema() {
     "@type": "Offer",
     "@id": `${absolute("/pricing")}#offer`,
     name: `${SITE.name}: ${formatPrice()} a month`,
-    description: `Every product in the system for one monthly fee${
+    description: `Every product in the system on one monthly subscription${
       PLAN.setupFee === null ? ", with no setup fee" : ""
     }.`,
     price: String(PLAN.price),

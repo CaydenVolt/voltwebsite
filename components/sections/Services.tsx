@@ -16,7 +16,7 @@ export function Services() {
             Six products. Built once. Working every day.
           </Reveal>
           <Reveal as="p" index={1} className="mt-6 max-w-measure text-lead lg:col-span-4 lg:col-start-9 lg:mt-0">
-            Every client gets all six, for one monthly fee. Nothing here is a bolt-on, and nothing
+            Every client gets all six, on one subscription. Nothing here is a bolt-on, and nothing
             needs you to run it.
           </Reveal>
         </div>
