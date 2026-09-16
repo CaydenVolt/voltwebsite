@@ -36,11 +36,15 @@ export default function TermsPage() {
       />
       <div aria-hidden className="h-nav-condensed" />
 
-      {/* One column on the reading measure. No contents rail, no sidebar and
-          nothing decorative: a legal page is read under suspicion, and design
-          on one reads as an attempt to steer the eye past something. */}
+      {/* One centred column. No contents rail, no sidebar and nothing
+          decorative: a legal page is read under suspicion, and design on one
+          reads as an attempt to steer the eye past something.
+
+          Centred rather than left-set, and on a wider measure than the rest of
+          the site, because a narrow column hard against the left edge of a
+          desktop window reads as a layout that broke rather than a document. */}
       <Section rhythm="sm">
-        <div className="max-w-measure">
+        <div className="mx-auto max-w-measure-legal">
           <h1 className="text-display-md">Terms of Service</h1>
 
           <dl className="mt-8 text-body-sm text-muted">

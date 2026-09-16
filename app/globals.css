@@ -99,6 +99,7 @@
   --spacing-nav-lg: 4.5rem;
   --spacing-nav-condensed: 3.5rem;                              /* sticky bar once past the hero */
   --spacing-measure: 34rem;                                     /* max text measure for lead/body blocks */
+  --spacing-measure-legal: 42rem;                               /* long-form legal documents, centred */
   --spacing-slant: 5rem;                                        /* media plate slant offset */
   --spacing-tilt: 4rem;                                         /* diagonal between two sections */
 
