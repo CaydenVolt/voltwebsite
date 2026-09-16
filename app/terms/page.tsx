@@ -1,123 +1,103 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Reveal } from "@/components/ui/Reveal";
 import { LegalDoc } from "@/components/legal/LegalDoc";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TERMS } from "@/lib/content/terms";
-import { LEGAL, formatLegalDate, missingLegalFacts } from "@/lib/content/legal";
+import { LEGAL, formatLegalDate, missingLegalFacts, nextReviewDue } from "@/lib/content/legal";
 import { SITE } from "@/lib/site";
-import { pad } from "@/lib/format";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Terms and conditions",
-  description: `The terms you agree to when you subscribe to ${SITE.name}: what the fee covers, how billing and cancellation work, who is responsible for message compliance, and how disputes are resolved.`,
+  title: "Terms of Service",
+  description: `The terms you agree to when you subscribe to ${SITE.name}: what the subscription covers, how billing and cancellation work, who is responsible for message compliance, and how disputes are resolved.`,
   path: "/terms",
 });
 
+/** The document's four dates, in the order a reader expects them. */
+const DATES = [
+  { label: "Effective Date", iso: LEGAL.effective },
+  { label: "Last Updated", iso: LEGAL.lastUpdated },
+  { label: "Last Reviewed", iso: LEGAL.lastReviewed },
+  { label: "Next Review Due", iso: nextReviewDue() },
+];
+
 export default function TermsPage() {
   const missing = missingLegalFacts();
+  /** The section number the arbitration notice points at, found rather than typed. */
+  const arbitration = TERMS.findIndex((s) => s.id === "dispute-resolution") + 1;
 
   return (
     <main className="flex-1">
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Terms", path: "/terms" },
+          { name: "Terms of Service", path: "/terms" },
         ])}
       />
       <div aria-hidden className="h-nav-condensed" />
 
-      <Section as="header" rhythm="sm" aria-labelledby="terms-h">
-        <SectionLabel rule>Legal</SectionLabel>
-        <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <Reveal as="h1" id="terms-h" className="text-display-xl lg:col-span-7">
-            Terms and conditions.
-          </Reveal>
-          <Reveal as="div" index={1} className="mt-6 lg:col-span-4 lg:col-start-9 lg:mt-0 lg:self-end">
-            <p className="max-w-measure text-lead">
-              What you are agreeing to when you subscribe. Written to be read, not to be got past.
-            </p>
-            <p className="label mt-6 border-t border-line pt-4 text-muted">
-              Effective <time dateTime={LEGAL.effective}>{formatLegalDate(LEGAL.effective)}</time>
-              {" · "}
-              {pad(TERMS.length)} sections
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Dev-only. Never shipped to a reader, and impossible to miss while it
-            is true: a terms page naming a company that does not exist binds
-            nobody. Removed automatically once lib/content/legal.ts is filled. */}
-        {process.env.NODE_ENV !== "production" && missing.length > 0 && (
-          <div className="mt-10 border-l-2 border-accent bg-surface-deep px-5 py-4">
-            <p className="label text-accent">Not ready to publish</p>
-            <p className="mt-3 max-w-measure text-body">
-              {missing.length} legal {missing.length === 1 ? "fact is" : "facts are"} still unset in{" "}
-              <code className="font-display">lib/content/legal.ts</code>: {missing.join(", ")}. Fill
-              them and have an attorney in the governing state read this page before it goes live.
-            </p>
-          </div>
-        )}
-      </Section>
-
+      {/* One column on the reading measure. No contents rail, no sidebar and
+          nothing decorative: a legal page is read under suspicion, and design
+          on one reads as an attempt to steer the eye past something. */}
       <Section rhythm="sm">
-        <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-6">
-          {/* Thirty sections is too many to scroll blind, so the contents
-              travel with the reader and every section is linkable. */}
-          <aside className="lg:sticky lg:top-nav-condensed lg:col-span-4 lg:col-start-9 lg:row-start-1">
-            <nav aria-labelledby="terms-contents-h" className="border-t border-line pt-6">
-              <h2 id="terms-contents-h" className="label text-muted">
-                Contents
-              </h2>
-              <ol className="mt-4">
-                {TERMS.map((section, i) => (
-                  <li key={section.id} className="py-1.5">
-                    <a
-                      href={`#${section.id}`}
-                      data-cursor="grow"
-                      className="group grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3"
-                    >
-                      <span className="label text-muted">{pad(i + 1)}</span>
-                      <span className="text-body-sm text-fg group-hover:text-accent">
-                        {section.title}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          </aside>
+        <div className="max-w-measure">
+          <h1 className="text-display-md">Terms of Service</h1>
 
-          <div className="lg:col-span-7 lg:col-start-1 lg:row-start-1">
-            <p className="max-w-measure text-body text-muted">
-              These terms are between you and {LEGAL.entity}, trading as {LEGAL.tradingAs}. They
-              apply from the moment you subscribe. Section 22 requires most disputes to go to
-              arbitration rather than a court, and you can opt out of that within 30 days.
-            </p>
+          <dl className="mt-8 text-body-sm text-muted">
+            {DATES.map((d) => (
+              <div key={d.label} className="flex flex-wrap gap-x-2">
+                <dt>{d.label}:</dt>
+                <dd>
+                  <time dateTime={d.iso}>{formatLegalDate(d.iso)}</time>
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-8 text-body">
+            These Terms of Service constitute an agreement between you and {LEGAL.entity}, doing
+            business as {LEGAL.tradingAs}. These Terms of Service (&ldquo;Terms&rdquo;) bind{" "}
+            {LEGAL.tradingAs} (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) and you,
+            the individual or entity using our Services (&ldquo;you,&rdquo; &ldquo;Client,&rdquo; or
+            &ldquo;your&rdquo;). By purchasing, accessing, or using any of our Services, or by
+            checking the agreement box at checkout, you confirm that you have read, understood, and
+            agree to be bound by these Terms and our Privacy Policy.
+          </p>
+
+          <p className="mt-4 text-body font-semibold text-fg">
+            IMPORTANT: These Terms include a binding arbitration agreement and a class action waiver
+            in Section {arbitration}. Please read them carefully.
+          </p>
+
+          {/* Dev only. A terms page naming a company that does not exist binds
+              nobody, and the paragraph above incorporates a Privacy Policy that
+              is not published yet. Both disappear once they are resolved. */}
+          {process.env.NODE_ENV !== "production" &&
+            (missing.length > 0 || !LEGAL.privacyPolicyPublished) && (
+              <div className="mt-10 border-l-2 border-accent bg-surface-deep px-5 py-4">
+                <p className="label text-accent">Not ready to publish</p>
+                {missing.length > 0 && (
+                  <p className="mt-3 text-body">
+                    {missing.length} legal {missing.length === 1 ? "fact is" : "facts are"} still
+                    unset in <code className="font-display">lib/content/legal.ts</code>:{" "}
+                    {missing.join(", ")}.
+                  </p>
+                )}
+                {!LEGAL.privacyPolicyPublished && (
+                  <p className="mt-3 text-body">
+                    The opening paragraph binds the Client to a Privacy Policy, and{" "}
+                    <code className="font-display">/privacy</code> does not exist yet. Publish it, or
+                    remove the reference, before this page goes live.
+                  </p>
+                )}
+                <p className="mt-3 text-body">
+                  Have an attorney in the governing state read this page before launch.
+                </p>
+              </div>
+            )}
+
+          <div className="mt-4">
             <LegalDoc sections={TERMS} />
-
-            <div className="mt-16 border-t border-line pt-6">
-              <p className="label text-muted">Also on this site</p>
-              <p className="mt-3 max-w-measure text-body">
-                <Link
-                  href="/pricing"
-                  className="link-underline decoration-underline-current hover:decoration-fg"
-                >
-                  What the subscription costs
-                </Link>
-                {", and "}
-                <Link
-                  href="/contact"
-                  className="link-underline decoration-underline-current hover:decoration-fg"
-                >
-                  how to reach us
-                </Link>
-                {" if anything here needs explaining."}
-              </p>
-            </div>
           </div>
         </div>
       </Section>

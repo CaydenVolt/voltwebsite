@@ -46,10 +46,22 @@ export const LEGAL = {
   arbitrationCity: TO_SET("city for arbitration, e.g. Miami"),
 
   /**
-   * The date the current version takes effect. Set this to the day it is
-   * actually published, not the day it was drafted.
+   * The four dates shown at the head of the document. Set `effective` to the
+   * day it is actually published, not the day it was drafted. `nextReview` is
+   * derived from `lastReviewed` plus `reviewMonths`, so it cannot go stale
+   * independently of the review that produced it.
    */
   effective: "2026-09-17",
+  lastUpdated: "2026-09-17",
+  lastReviewed: "2026-09-17",
+  reviewMonths: 6,
+
+  /**
+   * Whether /privacy exists yet. The opening paragraph binds the client to the
+   * Privacy Policy as well as these Terms, so until that page is published the
+   * agreement incorporates a document nobody can read.
+   */
+  privacyPolicyPublished: false,
 
   /** Named because which processor holds the card is material to the client. */
   paymentProcessor: "Stripe",
@@ -73,3 +85,10 @@ const DATE_FMT = new Intl.DateTimeFormat("en-US", {
 });
 
 export const formatLegalDate = (iso: string): string => DATE_FMT.format(new Date(`${iso}T00:00:00Z`));
+
+/** Last reviewed plus the review cadence, as an ISO date. */
+export function nextReviewDue(): string {
+  const d = new Date(`${LEGAL.lastReviewed}T00:00:00Z`);
+  d.setUTCMonth(d.getUTCMonth() + LEGAL.reviewMonths);
+  return d.toISOString().slice(0, 10);
+}
