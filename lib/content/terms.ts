@@ -1,4 +1,4 @@
-import { LEGAL } from "./legal";
+import { LEGAL, type LegalDates, type LegalSection } from "./legal";
 import { PLAN, formatPrice } from "./pricing";
 import { SITE } from "@/lib/site";
 
@@ -21,25 +21,16 @@ import { SITE } from "@/lib/site";
  * it is published. See lib/content/legal.ts for the facts still to set.
  */
 
-export type LegalBlock =
-  | { t: "p"; text: string }
-  | { t: "ul"; items: string[] }
-  | { t: "ol"; items: string[] }
-  /** Term and meaning pairs. Used by the definitions section. */
-  | { t: "defs"; items: { term: string; text: string }[] }
-  /** A clause that carries real consequence, set apart so it is not skimmed. */
-  | { t: "note"; text: string };
-
-export interface TermsSection {
-  /** Stable anchor, used by the contents rail and by any deep link. */
-  id: string;
-  title: string;
-  body: LegalBlock[];
-}
+/** The terms are revised on their own schedule. See LegalDates. */
+export const TERMS_DATES: LegalDates = {
+  effective: "2026-09-17",
+  lastUpdated: "2026-09-17",
+  lastReviewed: "2026-09-17",
+};
 
 const price = formatPrice();
 
-export const TERMS: readonly TermsSection[] = [
+export const TERMS: readonly LegalSection[] = [
   {
     id: "definitions",
     title: "Definitions",
@@ -77,7 +68,7 @@ export const TERMS: readonly TermsSection[] = [
           },
           {
             term: "Usage Charges",
-            text: "Amounts for telephone numbers, text messages, calls, email sending and similar metered items, billed separately from the Subscription. See section 6.",
+            text: "Amounts for telephone numbers, text messages, calls, email sending and similar metered items, billed separately from the Subscription. See section [[usage-charges]].",
           },
           {
             term: "Volt, we, us, our",
@@ -117,7 +108,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "We may improve, change or replace parts of the Services, including the features available in the Platform, provided we do not materially reduce what your Subscription covers without telling you first. Where a change is material and adverse, section 27 applies.",
+        text: "We may improve, change or replace parts of the Services, including the features available in the Platform, provided we do not materially reduce what your Subscription covers without telling you first. Where a change is material and adverse, section [[changes-to-these-terms]] applies.",
       },
       {
         t: "p",
@@ -136,11 +127,11 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "The Subscription covers the products listed in your plan. It does not cover Usage Charges, which are billed separately and are set out in section 6, and it does not cover any separately sold product unless you have bought it.",
+        text: "The Subscription covers the products listed in your plan. It does not cover Usage Charges, which are billed separately and are set out in section [[usage-charges]], and it does not cover any separately sold product unless you have bought it.",
       },
       {
         t: "p",
-        text: "We may change Subscription pricing. If we do, we will give you at least 30 days' written notice before the new price applies to your renewal, and you may cancel before then under section 12 if you do not accept it.",
+        text: "We may change Subscription pricing. If we do, we will give you at least 30 days' written notice before the new price applies to your renewal, and you may cancel before then under section [[cancellation]] if you do not accept it.",
       },
       ...(PLAN.setupFee === null
         ? [{ t: "p" as const, text: "There is no setup fee." }]
@@ -167,19 +158,19 @@ export const TERMS: readonly TermsSection[] = [
     body: [
       {
         t: "p",
-        text: `The Subscription is billed in advance. Card payments are processed by ${LEGAL.paymentProcessor}; we do not store your full card details ourselves. You authorise us to charge the payment method on your Account for the Subscription, for any Usage Charges under section 6, and for any product you separately buy.`,
+        text: `The Subscription is billed in advance. Card payments are processed by ${LEGAL.paymentProcessor}; we do not store your full card details ourselves. You authorise us to charge the payment method on your Account for the Subscription, for any Usage Charges under section [[usage-charges]], and for any product you separately buy.`,
       },
       {
         t: "note",
-        text: "Your Subscription renews automatically at the end of each billing period, at the then-current price, until you cancel. Cancelling is covered in section 12 and takes effect at the end of the period you have already paid for.",
+        text: "Your Subscription renews automatically at the end of each billing period, at the then-current price, until you cancel. Cancelling is covered in section [[cancellation]] and takes effect at the end of the period you have already paid for.",
       },
       {
         t: "p",
-        text: "Keep a valid payment method on the Account at all times. If it expires, is declined or is removed, section 11 applies.",
+        text: "Keep a valid payment method on the Account at all times. If it expires, is declined or is removed, section [[payment-failures-and-suspension]] applies.",
       },
       {
         t: "p",
-        text: "If you believe a charge is wrong, contact us and we will look into it. Do not raise a dispute with your card issuer before speaking to us. See section 8.",
+        text: "If you believe a charge is wrong, contact us and we will look into it. Do not raise a dispute with your card issuer before speaking to us. See section [[no-chargebacks]].",
       },
     ],
   },
@@ -206,7 +197,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "Current rates are published in your Account and may change if our providers change theirs. We will show the rate before you incur the charge. Amounts already spent from the balance are used, not held, and section 7 applies to them.",
+        text: "Current rates are published in your Account and may change if our providers change theirs. We will show the rate before you incur the charge. Amounts already spent from the balance are used, not held, and section [[no-refund-policy]] applies to them.",
       },
     ],
   },
@@ -248,7 +239,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "If you raise a chargeback, we may suspend or terminate your Account immediately under section 17, and we may recover the disputed amount, any fee charged to us by the payment processor, and the reasonable costs of recovering it.",
+        text: "If you raise a chargeback, we may suspend or terminate your Account immediately under section [[term-and-termination]], and we may recover the disputed amount, any fee charged to us by the payment processor, and the reasonable costs of recovering it.",
       },
     ],
   },
@@ -263,7 +254,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "Unless the offer says otherwise: a promotional price applies only for the stated period, the Subscription then renews at the standard price, and Usage Charges under section 6 apply throughout, because those are real costs we pay whether or not you are paying us.",
+        text: "Unless the offer says otherwise: a promotional price applies only for the stated period, the Subscription then renews at the standard price, and Usage Charges under section [[usage-charges]] apply throughout, because those are real costs we pay whether or not you are paying us.",
       },
       {
         t: "p",
@@ -286,7 +277,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "The Services are treated as delivered once the website is live and the Platform is configured for your Account. Delivery is not conditional on you using the system, on any particular number of leads, or on any commercial result. See section 19.",
+        text: "The Services are treated as delivered once the website is live and the Platform is configured for your Account. Delivery is not conditional on you using the system, on any particular number of leads, or on any commercial result. See section [[disclaimers]].",
       },
     ],
   },
@@ -304,12 +295,12 @@ export const TERMS: readonly TermsSection[] = [
         items: [
           "We attempt the charge again, up to four times over roughly three weeks, and email you each time it fails.",
           "If the payment has not cleared 48 hours after the first failure, we may suspend the Services. Suspension means the Services stop working; your data is kept.",
-          "If the payment has not cleared 30 days after the first failure, we may terminate the Account under section 17 and delete the data in it.",
+          "If the payment has not cleared 30 days after the first failure, we may terminate the Account under section [[term-and-termination]] and delete the data in it.",
         ],
       },
       {
         t: "p",
-        text: "Suspension does not pause your Subscription or stop it accruing. Fees for a suspended period remain payable, and section 7 applies to them.",
+        text: "Suspension does not pause your Subscription or stop it accruing. Fees for a suspended period remain payable, and section [[no-refund-policy]] applies to them.",
       },
       {
         t: "p",
@@ -336,7 +327,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "No refund is given for the remainder of a paid period. See section 7. What happens to your website and data after cancellation is covered in sections 13 and 17.",
+        text: "No refund is given for the remainder of a paid period. See section [[no-refund-policy]]. What happens to your website and data after cancellation is covered in sections [[intellectual-property]] and [[term-and-termination]].",
       },
     ],
   },
@@ -359,7 +350,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "note",
-        text: "Websites we build are hosted on our infrastructure as part of the Subscription. We are not obliged to transfer the site, its code or its templates to you or to another provider when the Subscription ends. Your own content and your data can be exported under section 17.",
+        text: "Websites we build are hosted on our infrastructure as part of the Subscription. We are not obliged to transfer the site, its code or its templates to you or to another provider when the Subscription ends. Your own content and your data can be exported under section [[term-and-termination]].",
       },
       {
         t: "p",
@@ -424,7 +415,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "You indemnify us for claims arising from your communications and from the data you process through the Services, on the terms in section 20.",
+        text: "You indemnify us for claims arising from your communications and from the data you process through the Services, on the terms in section [[indemnification]].",
       },
       {
         t: "p",
@@ -451,7 +442,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "Calls your own customers make to numbers on your Account are a separate matter, and recording them is your responsibility under section 15. Several states require the consent of everyone on the call.",
+        text: "Calls your own customers make to numbers on your Account are a separate matter, and recording them is your responsibility under section [[client-compliance-obligations]]. Several states require the consent of everyone on the call.",
       },
     ],
   },
@@ -466,11 +457,11 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "You may terminate by cancelling under section 12. We may terminate or suspend the Services if you materially breach these Terms, if payment fails as set out in section 11, if you raise a chargeback under section 8, or if your use puts us or our infrastructure at legal or operational risk. Where the breach can be fixed and the risk allows it, we will ask you to fix it first.",
+        text: "You may terminate by cancelling under section [[cancellation]]. We may terminate or suspend the Services if you materially breach these Terms, if payment fails as set out in section [[payment-failures-and-suspension]], if you raise a chargeback under section [[no-chargebacks]], or if your use puts us or our infrastructure at legal or operational risk. Where the breach can be fixed and the risk allows it, we will ask you to fix it first.",
       },
       {
         t: "p",
-        text: "We may also terminate for convenience on 30 days' written notice, in which case we will refund any Subscription fee covering the period after termination, which is the one circumstance in which section 7 does not apply.",
+        text: "We may also terminate for convenience on 30 days' written notice, in which case we will refund any Subscription fee covering the period after termination, which is the one circumstance in which section [[no-refund-policy]] does not apply.",
       },
       {
         t: "note",
@@ -478,7 +469,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "Sections that by their nature should survive termination do so, including sections 7, 8, 13, 19, 20, 21, 22 and 23.",
+        text: "Sections that by their nature should survive termination do so, including sections [[no-refund-policy]], [[no-chargebacks]], [[intellectual-property]], [[disclaimers]], [[indemnification]], [[limitation-of-liability]], [[dispute-resolution]] and [[governing-law-and-venue]].",
       },
     ],
   },
@@ -497,7 +488,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "For messages you send through the Services, you are the sender. Section 15 sets out your obligations, and they apply in full to every text message sent from your Account.",
+        text: "For messages you send through the Services, you are the sender. Section [[client-compliance-obligations]] sets out your obligations, and they apply in full to every text message sent from your Account.",
       },
       {
         t: "p",
@@ -627,7 +618,7 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: `Subject to section 22, the state and federal courts located in ${LEGAL.county}, ${LEGAL.state} have exclusive jurisdiction, and both of us consent to their jurisdiction and venue.`,
+        text: `Subject to section [[dispute-resolution]], the state and federal courts located in ${LEGAL.county}, ${LEGAL.state} have exclusive jurisdiction, and both of us consent to their jurisdiction and venue.`,
       },
       {
         t: "p",
@@ -711,11 +702,11 @@ export const TERMS: readonly TermsSection[] = [
       },
       {
         t: "p",
-        text: "Continuing to use the Services after the new version takes effect means you accept it. If you do not accept it, cancel under section 12 before the effective date.",
+        text: "Continuing to use the Services after the new version takes effect means you accept it. If you do not accept it, cancel under section [[cancellation]] before the effective date.",
       },
       {
         t: "p",
-        text: "Changes to the arbitration agreement in section 22 do not apply retroactively to a dispute we already know about.",
+        text: "Changes to the arbitration agreement in section [[dispute-resolution]] do not apply retroactively to a dispute we already know about.",
       },
     ],
   },
@@ -766,12 +757,12 @@ export const TERMS: readonly TermsSection[] = [
       {
         t: "ul",
         items: [
-          "The no refund policy in section 7.",
-          "The agreement not to raise chargebacks in section 8.",
-          "That Usage Charges in section 6 are separate from the Subscription and depend on how much you use.",
-          "The compliance obligations in section 15, which are yours and not ours.",
-          "That we do not guarantee results, as set out in section 19.",
-          "The arbitration agreement and class action waiver in section 22, and your 30-day right to opt out of it.",
+          "The no refund policy in section [[no-refund-policy]].",
+          "The agreement not to raise chargebacks in section [[no-chargebacks]].",
+          "That Usage Charges in section [[usage-charges]] are separate from the Subscription and depend on how much you use.",
+          "The compliance obligations in section [[client-compliance-obligations]], which are yours and not ours.",
+          "That we do not guarantee results, as set out in section [[disclaimers]].",
+          "The arbitration agreement and class action waiver in section [[dispute-resolution]], and your 30-day right to opt out of it.",
         ],
       },
       {

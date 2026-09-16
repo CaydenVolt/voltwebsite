@@ -73,15 +73,7 @@ export const LEGAL = {
   /** Where an arbitration hearing would be seated. */
   arbitrationCity: "Wilmington",
 
-  /**
-   * The four dates shown at the head of the document. Set `effective` to the
-   * day it is actually published, not the day it was drafted. `nextReview` is
-   * derived from `lastReviewed` plus `reviewMonths`, so it cannot go stale
-   * independently of the review that produced it.
-   */
-  effective: "2026-09-17",
-  lastUpdated: "2026-09-17",
-  lastReviewed: "2026-09-17",
+  /** How often each document is reviewed, in months. Drives Next Review Due. */
   reviewMonths: 6,
 
   /** Named because which processor holds the card is material to the client. */
@@ -98,6 +90,42 @@ export const missingLegalFacts = (): string[] =>
     .filter(([, v]) => typeof v === "string" && v.startsWith("[TO SET:"))
     .map(([k]) => k);
 
+/* ------------------------------------------------------- document shapes */
+
+/**
+ * The blocks a legal document is built from. Shared by the terms and the
+ * privacy policy so both render through one component and neither can drift
+ * into its own house style.
+ */
+export type LegalBlock =
+  | { t: "p"; text: string }
+  | { t: "ul"; items: string[] }
+  | { t: "ol"; items: string[] }
+  /** Term and meaning pairs. */
+  | { t: "defs"; items: { term: string; text: string }[] }
+  /** A real table. Data categories and retention schedules need one. */
+  | { t: "table"; head: string[]; rows: string[][] }
+  /** A clause that carries real consequence. Bold, in the flow, never boxed. */
+  | { t: "note"; text: string };
+
+export interface LegalSection {
+  /** Stable anchor, used by any deep link into the document. */
+  id: string;
+  title: string;
+  body: LegalBlock[];
+}
+
+/**
+ * Each document carries its own dates. They are not shared: the terms and the
+ * privacy policy are revised for different reasons and on different days, and
+ * one date block covering both would be wrong for whichever was not touched.
+ */
+export interface LegalDates {
+  effective: string;
+  lastUpdated: string;
+  lastReviewed: string;
+}
+
 const DATE_FMT = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "long",
@@ -107,9 +135,17 @@ const DATE_FMT = new Intl.DateTimeFormat("en-US", {
 
 export const formatLegalDate = (iso: string): string => DATE_FMT.format(new Date(`${iso}T00:00:00Z`));
 
-/** Last reviewed plus the review cadence, as an ISO date. */
-export function nextReviewDue(): string {
-  const d = new Date(`${LEGAL.lastReviewed}T00:00:00Z`);
+/** A document's last review plus the cadence, as an ISO date. */
+export function nextReviewDue(dates: LegalDates): string {
+  const d = new Date(`${dates.lastReviewed}T00:00:00Z`);
   d.setUTCMonth(d.getUTCMonth() + LEGAL.reviewMonths);
   return d.toISOString().slice(0, 10);
 }
+
+/** The four labelled dates at the head of a document, in reading order. */
+export const dateBlock = (dates: LegalDates) => [
+  { label: "Effective Date", iso: dates.effective },
+  { label: "Last Updated", iso: dates.lastUpdated },
+  { label: "Last Reviewed", iso: dates.lastReviewed },
+  { label: "Next Review Due", iso: nextReviewDue(dates) },
+];
