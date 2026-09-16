@@ -102,6 +102,7 @@ export const SITE = {
        lib/content/privacy.ts; renaming that section breaks this link, and
        nothing else points at it. */
     { label: "Cookies", href: "/privacy#cookies-and-tracking" },
+    { label: "DPA", href: "/dpa" },
   ],
   social: [
     { label: "Instagram", href: "https://instagram.com/" },

@@ -717,7 +717,7 @@ export const TERMS: readonly LegalSection[] = [
     body: [
       {
         t: "p",
-        text: "These Terms, together with any written order, quote or offer terms you have accepted, are the entire agreement between us about the Services, and they replace anything said or written beforehand.",
+        text: "These Terms, together with our Privacy Policy, our Data Processing Addendum, and any written order, quote or offer terms you have accepted, are the entire agreement between us about the Services, and they replace anything said or written beforehand.",
       },
       {
         t: "p",
