@@ -187,15 +187,13 @@ export function Hero() {
               <p className="font-display text-lead font-semibold">{LEAD_HOOK}</p>
               <p className="mt-3 text-body sm:text-lead">{LEAD}</p>
             </motion.div>
-            <motion.div
-              {...rise(T.panelContent + T.panelStagger)}
-              className="mt-6 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8"
-            >
+            {/* One action. The secondary link was removed on 2026-09-17: the
+                rail it pointed at sits directly underneath, so the link asked
+                the reader to choose between a CTA and a scroll they were about
+                to do anyway. */}
+            <motion.div {...rise(T.panelContent + T.panelStagger)} className="mt-6">
               <Button href={bookingHref("hero_primary")} source="hero_primary" external>
                 Book a 20-minute call
-              </Button>
-              <Button href="#services" source="hero_secondary" variant="link-inverse">
-                See everything included
               </Button>
             </motion.div>
             <motion.p
@@ -208,7 +206,12 @@ export function Hero() {
 
           {/* Service rail: everything in the plan, under the CTA block. The
               media plate ends with the CTA block above, so the space to the
-              right of the rail stays open. */}
+              right of the rail stays open.
+
+              SLATED FOR REPLACEMENT: this rail is to become customer reviews
+              once there are real ones to show. Whatever replaces it must be
+              genuine; the site has had invented proof removed from it once
+              already and nothing here is to be filled with placeholders. */}
           <div className="order-4 mt-8 lg:col-span-6 lg:col-start-1 lg:row-start-3 lg:self-end">
             <motion.p {...rise(T.meta)} className="label mb-3 text-ink-muted">
               Everything included
