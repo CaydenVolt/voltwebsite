@@ -26,8 +26,14 @@ export const LEGAL = {
   entity: TO_SET("registered company name, e.g. Volt Systems LLC"),
   /** Any trading name, if the entity contracts under a different one. */
   tradingAs: "Volt",
-  /** Registered address, used for notices under the Notices section. */
-  address: TO_SET("registered business address"),
+  /**
+   * Optional. The reference document in this industry publishes no postal
+   * address at all and takes notices by email only, so this does not block
+   * publication. Set it and the postal route appears in Notices and Contact;
+   * leave it empty and both omit it. Check with the attorney whether your
+   * state requires one on commercial communications.
+   */
+  address: "",
   /** The address legal notices and arbitration opt-outs are sent to. */
   email: TO_SET("support email address"),
   /** Optional. Leave empty and the contact section omits the line. */

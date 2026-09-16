@@ -1,5 +1,6 @@
 import { LEGAL } from "./legal";
 import { PLAN, formatPrice } from "./pricing";
+import { SITE } from "@/lib/site";
 
 /**
  * The terms of service, as content rather than markup.
@@ -685,10 +686,14 @@ export const TERMS: readonly TermsSection[] = [
         t: "p",
         text: `You give us notice by emailing ${LEGAL.email}. Where these Terms require written notice for something formal, such as termination or an arbitration opt-out, email to that address is sufficient.`,
       },
-      {
-        t: "p",
-        text: `Notices may also be sent to us by post at ${LEGAL.entity}, ${LEGAL.address}.`,
-      },
+      ...(LEGAL.address
+        ? [
+            {
+              t: "p" as const,
+              text: `Notices may also be sent to us by post at ${LEGAL.entity}, ${LEGAL.address}.`,
+            },
+          ]
+        : []),
       {
         t: "p",
         text: "Keep the contact details on your Account current. A notice sent to an address you have stopped using is still a valid notice.",
@@ -790,7 +795,8 @@ export const TERMS: readonly TermsSection[] = [
           { term: "Company", text: `${LEGAL.entity}, trading as ${LEGAL.tradingAs}` },
           { term: "Email", text: LEGAL.email },
           ...(LEGAL.phone ? [{ term: "Phone", text: LEGAL.phone }] : []),
-          { term: "Address", text: LEGAL.address },
+          ...(LEGAL.address ? [{ term: "Address", text: LEGAL.address }] : []),
+          { term: "Web", text: SITE.url },
         ],
       },
       {
