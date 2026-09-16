@@ -1,26 +1,331 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Volt: design tokens
+   Warm editorial print, with ink slabs as structural anchors.
+   This @theme block is the single source for colour, type, spacing,
+   radius and aspect. JS-side constants live in lib/tokens.ts.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Paper + ink. Bone is hue ~40°, L≈93%. Ink is the same hue pulled to L≈8%
+     so the pair reads as one stock printed in one ink. */
+  --color-bone: #f2ede3;
+  --color-bone-deep: #e6dfd0;   /* plates and pressed/hover fills on bone */
+  --color-bone-muted: #a9a296;  /* secondary text on ink  (7.3:1) */
+  --color-ink: #171410;
+  --color-ink-soft: #2a2620;    /* pressed/hover fill on ink */
+  --color-ink-muted: #5e574d;   /* secondary text on bone (5.9:1) */
+
+  /* Second colour: vermilion, the traditional second ink in two-colour print.
+     Rationed: primary CTA fills, index numerals, focus ring, single marks. */
+  --color-accent: #e4572e;
+  --color-accent-deep: #c7451f;
+
+  /* Type scale. Base 1rem, ratio 1.25 (major third) for UI sizes; display
+     sizes are fluid. Tracking tightens as size grows; leading loosens as
+     size shrinks. Weight travels with the size so hierarchy is one unit. */
+  /* Reading sizes were raised one step across the board (2026-09-14): 12/14/16
+     was too small to read comfortably on a marketing page. Display sizes were
+     already large and did not move. */
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.08em;
+  --text-label--font-weight: 500;
+
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.5;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.5;
+
+  --text-lead: 1.375rem;
+  --text-lead--line-height: 1.4;
+  --text-lead--letter-spacing: -0.005em;
+
+  /* Indexed-row item names, rail entries, nav-scale display text */
+  --text-item: 1.125rem;
+  --text-item--line-height: 1.25;
+  --text-item--letter-spacing: -0.01em;
+  --text-item--font-weight: 600;
+
+  /* Marquee / ticker text (uppercase applied by the component) */
+  --text-ticker: 0.9375rem;
+  --text-ticker--line-height: 1.5;
+  --text-ticker--letter-spacing: 0.06em;
+  --text-ticker--font-weight: 600;
+
+  --text-wordmark: 1.5rem;
+  --text-wordmark--line-height: 1;
+  --text-wordmark--letter-spacing: -0.03em;
+  --text-wordmark--font-weight: 800;
+
+  /* Article section headings. The step the scale was missing: display-md is a
+     poster size and shouts inside a 34rem reading column, h3 does not break
+     the page up enough. Long-form only. */
+  --text-h2: clamp(1.75rem, 1.35rem + 1.3vw, 2.25rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 700;
+
+  --text-h3: 1.625rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+
+  --text-display-md: clamp(2rem, 1.25rem + 2.5vw, 3.5rem);
+  --text-display-md--line-height: 1.05;
+  --text-display-md--letter-spacing: -0.025em;
+  --text-display-md--font-weight: 700;
+
+  --text-display-xl: clamp(2.5rem, 1rem + 4.2vw, 6rem);
+  --text-display-xl--line-height: 0.96;
+  --text-display-xl--letter-spacing: -0.035em;
+  --text-display-xl--font-weight: 800;
+
+  /* The price numeral: one size up from display-xl, with tighter tracking
+     because three digits at this scale drift apart at -0.035em. */
+  --text-price: clamp(5rem, 2rem + 14vw, 14rem);
+  --text-price--line-height: 0.9;
+  --text-price--letter-spacing: -0.05em;
+  --text-price--font-weight: 800;
+
+  /* Spacing. Tailwind's 0.25rem scale covers component-level gaps; these
+     named steps cover layout rhythm. All fluid, all rem. */
+  --spacing-gutter: clamp(1.25rem, 0.5rem + 2.4vw, 3rem);      /* page side padding */
+  --spacing-stack: clamp(1.5rem, 0.25rem + 2.5vw, 3rem);       /* space under the nav / between stacked blocks */
+  --spacing-section-sm: clamp(2.5rem, 2rem + 3vw, 5rem);       /* short sections, hero bottom space */
+  --spacing-section: clamp(4rem, 3rem + 4vw, 7rem);            /* standard section padding */
+  --spacing-nav: 4rem;
+  --spacing-nav-lg: 4.5rem;
+  --spacing-nav-condensed: 3.5rem;                              /* sticky bar once past the hero */
+  --spacing-measure: 34rem;                                     /* max text measure for lead/body blocks */
+  --spacing-slant: 5rem;                                        /* media plate slant offset */
+  --spacing-tilt: 4rem;                                         /* diagonal between two sections */
+
+  /* Radius: one value. A softened sticker corner, never a pill. */
+  --radius-control: 2px;
+
+  /* Aspect: the phone letterbox for media strips, the desktop media plate, and
+     the head of a blog block, which sits between the two. */
+  --aspect-strip: 5 / 2;
+  --aspect-plate: 4 / 3;
+  --aspect-card: 8 / 5;
+}
+
+/* Derived colours, declared once as plain custom properties so both the
+   theme and the surface tones below can reference them. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --rule-ink: color-mix(in srgb, var(--color-ink) 15%, transparent);
+  --rule-bone: color-mix(in srgb, var(--color-bone) 15%, transparent);
+  --underline-ink: color-mix(in srgb, var(--color-ink) 40%, transparent);
+  --underline-bone: color-mix(in srgb, var(--color-bone) 40%, transparent);
+
+  /* Surface tones: what "foreground", "muted", "line" mean on this surface.
+     Bone is the default; an ink slab flips them via data-surface="ink", so a
+     primitive written once with text-fg / text-muted / border-line is correct
+     on both. */
+  --tone-fg: var(--color-ink);
+  --tone-muted: var(--color-ink-muted);
+  --tone-line: var(--rule-ink);
+  --tone-underline: var(--underline-ink);
+  --tone-surface: var(--color-bone);
+  --tone-surface-deep: var(--color-bone-deep);
+}
+[data-surface="ink"] {
+  --tone-fg: var(--color-bone);
+  --tone-muted: var(--color-bone-muted);
+  --tone-line: var(--rule-bone);
+  --tone-underline: var(--underline-bone);
+  --tone-surface: var(--color-ink);
+  --tone-surface-deep: var(--color-ink-soft);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-bricolage), "Arial Black", "Helvetica Neue", sans-serif;
+  --font-body: var(--font-instrument), "Helvetica Neue", Arial, sans-serif;
+
+  /* Explicit hairlines and underlines (used where the surface is known) */
+  --color-rule: var(--rule-ink);
+  --color-rule-inverse: var(--rule-bone);
+  --color-underline: var(--underline-ink);
+  --color-underline-inverse: var(--underline-bone);
+
+  /* Surface-aware colours (used by shared primitives) */
+  --color-fg: var(--tone-fg);
+  --color-muted: var(--tone-muted);
+  --color-line: var(--tone-line);
+  --color-underline-current: var(--tone-underline);
+  --color-surface: var(--tone-surface);
+  --color-surface-deep: var(--tone-surface-deep);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------- base ---------- */
+html {
+  color-scheme: light;
+  background: var(--color-bone);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bone);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-bone);
+}
+[data-surface="ink"] ::selection {
+  background: var(--color-bone);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Native anchor jumps (no JS) stop below the sticky bar; Lenis handles the JS path. */
+[id] {
+  scroll-margin-top: var(--spacing-nav-condensed);
+}
+
+/* ---------- utilities ---------- */
+
+/* Small-caps letterspaced label */
+@utility label {
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  letter-spacing: var(--text-label--letter-spacing);
+  font-weight: var(--text-label--font-weight);
+  text-transform: uppercase;
+}
+
+/* Display headline block: margins in em of its own size so they scale with type */
+@utility headline-space {
+  margin-top: 0.15em;
+  margin-bottom: 0.3em;
+}
+
+/* Word reveal mask: bottom padding keeps descenders inside the clip at 0.96
+   leading; the negative margin gives the space back to the line box. */
+@utility word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
+/* Text link underline geometry */
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+}
+
+/* Media plate: slanted left edge (desktop), and the zoom that keeps the
+   dithered loop's own frame region outside the crop. */
+@utility plate-slant {
+  clip-path: polygon(var(--spacing-slant) 0, 100% 0, 100% 100%, 0 100%);
+}
+/* Section transitions: the lower section's top edge cut on the diagonal. It is
+   pulled up over the section above by the same amount, so the cut reveals that
+   section's own colour rather than the page behind it, and the page keeps its
+   height. "left" drops the left corner, "right" the right. */
+@utility tilt-left {
+  clip-path: polygon(0 var(--spacing-tilt), 100% 0, 100% 100%, 0 100%);
+}
+@utility tilt-right {
+  clip-path: polygon(0 0, 100% var(--spacing-tilt), 100% 100%, 0 100%);
+}
+
+/* Mirrored for plates that sit on the left and bleed off the left edge */
+@utility plate-slant-right {
+  clip-path: polygon(0 0, calc(100% - var(--spacing-slant)) 0, 100% 100%, 0 100%);
+}
+@utility plate-zoom-strip {
+  scale: 1.25;
+}
+@utility plate-zoom {
+  scale: 1.6;
+}
+/* Bone cover that slides off the plate; wider than the plate so the skew never shows a corner */
+@utility plate-cover {
+  left: -15%;
+  width: 130%;
+}
+
+/* Stacking: menu overlay < nav bar (its Close button must stay reachable) < grain < cursor */
+@utility z-menu {
+  z-index: 50;
+}
+@utility z-nav {
+  z-index: 55;
+}
+@utility z-grain {
+  z-index: 60;
+}
+@utility z-cursor {
+  z-index: 70;
+}
+
+/* Paper grain: one fixed layer of greyscale turbulence, blended so it shows
+   on both bone and ink. Depth by texture, not gradient. */
+@utility grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+/* The cut is a fixed height, so the narrower the screen the steeper the angle.
+   Halved on phones, where 4rem across 375px reads as a wedge rather than a
+   tilt. Every tilt utility and its padding read this variable. */
+@media (max-width: 40rem) {
+  :root {
+    --spacing-tilt: 2rem;
+  }
+}
+
+/* ---------- marquee ---------- */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
 }
