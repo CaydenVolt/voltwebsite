@@ -37,6 +37,10 @@ export interface MenuItem {
 /**
  * The About menu. Our Process and Trades We Serve point at the homepage
  * sections that already carry that content; the rest have their own pages.
+ *
+ * Press was removed on 2026-09-17. The /press route still exists as a
+ * placeholder but nothing links to it now, and it stays out of the sitemap
+ * and blocked in robots.txt, so it is unreachable rather than thin.
  */
 export const ABOUT_MENU: readonly MenuItem[] = [
   { label: "About Us", description: "Get to know Volt", href: "/about", icon: "people" },
@@ -45,7 +49,6 @@ export const ABOUT_MENU: readonly MenuItem[] = [
   { label: "Careers", description: "Join the team", href: "/careers", icon: "careers" },
   { label: "Partners", description: "Meet our partners", href: "/partners", icon: "partners" },
   { label: "Contact", description: "Chat with us", href: "/contact", icon: "contact" },
-  { label: "Press", description: "Volt in the news", href: "/press", icon: "press" },
 ];
 
 export const SITE = {
