@@ -19,7 +19,9 @@
  * jurisdiction read it before it goes live.
  */
 
-const TO_SET = (what: string) => `[TO SET: ${what}]`;
+/** Marks a fact that must be filled before publication. Unused right now:
+ *  every blocking value is set. Kept for the next one. */
+export const TO_SET = (what: string) => `[TO SET: ${what}]`;
 
 export const LEGAL = {
   /**
@@ -66,10 +68,10 @@ export const LEGAL = {
    * and which consumer statutes override the disclaimers.
    */
   country: "United States",
-  state: TO_SET("US state, e.g. Florida"),
-  county: TO_SET("county for venue, e.g. Miami-Dade County"),
+  state: "Delaware",
+  county: "New Castle County",
   /** Where an arbitration hearing would be seated. */
-  arbitrationCity: TO_SET("city for arbitration, e.g. Miami"),
+  arbitrationCity: "Wilmington",
 
   /**
    * The four dates shown at the head of the document. Set `effective` to the

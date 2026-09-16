@@ -57,8 +57,12 @@ export const SITE = {
   taglineShort: "Sales systems for solar companies",
   description:
     "Volt builds and runs the complete sales system for solar companies: website, missed-call text-back, automated follow-up, one inbox, review funnel and on-site SEO, for one monthly fee.",
-  /** Placeholder canonical origin for the sitemap and metadata. */
-  url: "https://volt.example",
+  /**
+   * Canonical origin. Every canonical tag, sitemap entry, social card URL and
+   * schema @id on the site resolves from this one value, so it has to match
+   * the domain the site is actually served from, including the www choice.
+   */
+  url: "https://voltagencyio.com",
   /** Raw funnel URL. Prefer bookingHref(source) for links so the click is attributed. */
   bookingUrl: BOOKING_URL,
   /** Placeholder region for the social proof strip. */
