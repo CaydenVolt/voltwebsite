@@ -3,13 +3,17 @@ import { Section } from "@/components/ui/Section";
 import { SITE } from "@/lib/site";
 import { Wordmark } from "@/components/site/Wordmark";
 import { getPublicProducts, productHref } from "@/lib/content/products";
+import { ConsentLinks } from "@/components/consent/ConsentLinks";
 
 function Column({
   title,
   links,
+  children,
 }: {
   title: string;
   links: readonly { label: string; href: string; external?: boolean }[];
+  /** Extra rows appended to the list, for controls that are not links. */
+  children?: React.ReactNode;
 }) {
   return (
     <div>
@@ -28,6 +32,7 @@ function Column({
             </a>
           </li>
         ))}
+        {children}
       </ul>
     </div>
   );
@@ -54,7 +59,9 @@ export function Footer({ mark, masked }: { mark: string | null; masked?: boolean
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
           <Column title="Products" links={products} />
           <Column title="Company" links={SITE.company} />
-          <Column title="Legal" links={SITE.legal} />
+          <Column title="Legal" links={SITE.legal}>
+            <ConsentLinks />
+          </Column>
         </div>
       </div>
       <div className="mt-12 flex flex-col gap-4 border-t border-line pt-5 sm:flex-row sm:items-baseline sm:justify-between">

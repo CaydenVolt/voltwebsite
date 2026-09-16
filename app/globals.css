@@ -278,6 +278,11 @@ h3,
 @utility z-nav {
   z-index: 55;
 }
+/* Consent sits above the nav bar, because the dialog has to cover it, and
+   below the grain, which is a pointer-events-none texture over everything. */
+@utility z-consent {
+  z-index: 58;
+}
 @utility z-grain {
   z-index: 60;
 }
