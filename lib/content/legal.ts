@@ -56,13 +56,6 @@ export const LEGAL = {
   lastReviewed: "2026-09-17",
   reviewMonths: 6,
 
-  /**
-   * Whether /privacy exists yet. The opening paragraph binds the client to the
-   * Privacy Policy as well as these Terms, so until that page is published the
-   * agreement incorporates a document nobody can read.
-   */
-  privacyPolicyPublished: false,
-
   /** Named because which processor holds the card is material to the client. */
   paymentProcessor: "Stripe",
 } as const;
