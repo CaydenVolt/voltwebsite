@@ -96,7 +96,12 @@ export const SITE = {
   legal: [
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
-    { label: "Cookies", href: "/cookies" },
+    /* Cookies are covered as a section of the privacy policy rather than in a
+       document of their own, so this is a deep link rather than a page. The
+       fragment is the `cookies-and-tracking` section id in
+       lib/content/privacy.ts; renaming that section breaks this link, and
+       nothing else points at it. */
+    { label: "Cookies", href: "/privacy#cookies-and-tracking" },
   ],
   social: [
     { label: "Instagram", href: "https://instagram.com/" },
