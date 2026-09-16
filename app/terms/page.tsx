@@ -29,6 +29,9 @@ export default function TermsPage() {
      starts linking the moment /privacy is published and the warning clears
      itself. A manual flag would outlive whichever change it was describing. */
   const privacyPublished = routeExists("/privacy");
+  /* Separate from the unset facts: the name is known, the company is not
+     formed. Publishing while this is false means contracting personally. */
+  const unincorporated = !LEGAL.incorporated;
   /** The section number the arbitration notice points at, found rather than typed. */
   const arbitration = TERMS.findIndex((s) => s.id === "dispute-resolution") + 1;
 
@@ -93,7 +96,8 @@ export default function TermsPage() {
           {/* Dev only. A terms page naming a company that does not exist binds
               nobody, and the paragraph above incorporates a Privacy Policy that
               is not published yet. Both disappear once they are resolved. */}
-          {process.env.NODE_ENV !== "production" && (missing.length > 0 || !privacyPublished) && (
+          {process.env.NODE_ENV !== "production" &&
+            (missing.length > 0 || !privacyPublished || unincorporated) && (
               <div className="mt-10 border-l-2 border-accent bg-surface-deep px-5 py-4">
                 <p className="label text-accent">Not ready to publish</p>
                 {missing.length > 0 && (
@@ -101,6 +105,16 @@ export default function TermsPage() {
                     {missing.length} legal {missing.length === 1 ? "fact is" : "facts are"} still
                     unset in <code className="font-display">lib/content/legal.ts</code>:{" "}
                     {missing.join(", ")}.
+                  </p>
+                )}
+                {unincorporated && (
+                  <p className="mt-3 text-body">
+                    <strong className="font-semibold">{LEGAL.entity} is not registered yet.</strong>{" "}
+                    Until it is, there is no company to contract with: the counterparty is the owner
+                    personally, and the liability cap in section 21 caps a person rather than a
+                    company. Incorporate before publishing, then set{" "}
+                    <code className="font-display">incorporated</code> and add the suffix to{" "}
+                    <code className="font-display">entity</code>.
                   </p>
                 )}
                 {!privacyPublished && (

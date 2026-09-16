@@ -22,10 +22,30 @@
 const TO_SET = (what: string) => `[TO SET: ${what}]`;
 
 export const LEGAL = {
-  /** The registered entity that actually contracts with clients. */
-  entity: TO_SET("registered company name, e.g. Volt Systems LLC"),
+  /**
+   * The entity that contracts with clients.
+   *
+   * No suffix on purpose. "Volt Agency LLC" would assert a registration that
+   * does not exist yet, and asserting one you do not hold is worse than having
+   * none. Add the suffix on the day the filing is accepted, and set
+   * `incorporated` below at the same time.
+   */
+  entity: "Volt Agency",
   /** Any trading name, if the entity contracts under a different one. */
   tradingAs: "Volt",
+
+  /**
+   * Whether `entity` is actually a registered company yet.
+   *
+   * While this is false the business is unincorporated, which means there is
+   * no company to contract with: the counterparty is the owner personally, and
+   * the limitation of liability in section 21 protects a person rather than a
+   * company. In a business that sends bulk SMS on clients' behalf, with the
+   * TCPA exposure that carries, that is the difference between a capped
+   * business risk and an uncapped personal one. Do not publish this page until
+   * it is true.
+   */
+  incorporated: false,
   /**
    * Optional. The reference document in this industry publishes no postal
    * address at all and takes notices by email only, so this does not block
@@ -35,7 +55,7 @@ export const LEGAL = {
    */
   address: "",
   /** The address legal notices and arbitration opt-outs are sent to. */
-  email: TO_SET("support email address"),
+  email: "support@mail.voltagencyio.com",
   /** Optional. Leave empty and the contact section omits the line. */
   phone: "",
 
