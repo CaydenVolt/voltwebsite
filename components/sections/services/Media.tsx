@@ -98,10 +98,16 @@ function Shot({ src, alt }: { src: string; alt: string }) {
  * these assets are 648 by 1388, so letting one fill a wide column would make it
  * taller than the viewport.
  *
- * It is pushed to the edge nearest the text rather than centred. Centred, a
- * 448px image in a wide column put its slack between itself and the copy, which
- * is what made the pair read as two disconnected blocks with a canyon between
- * them. The slack now falls on the page edge, where it is breathing room.
+ * 360px, not the 448px it was. At 448 the phone stood 960px tall, the full
+ * height of a laptop viewport and two thirds again as tall as the copy beside
+ * it, which is what made the pair feel mismatched rather than merely far apart.
+ * At 360 it is 771px, in the same range as the wide screenshots in the other
+ * blocks. Smaller is also sharper here, not softer: the source is 648px wide,
+ * so a 360px slot has 1.8x to draw on where a 448px slot had 1.45x.
+ *
+ * It is pushed to the edge nearest the text rather than centred, because
+ * centring put the column's slack between the figure and the copy. The
+ * deliberate gap is set by padding on the column in ProductBlock.
  */
 function Frame({
   portrait,
@@ -114,7 +120,7 @@ function Frame({
 }) {
   if (!portrait) return <>{children}</>;
   return (
-    <div className={`mx-auto w-full max-w-sm lg:max-w-md ${flip ? "lg:ml-auto lg:mr-0" : "lg:mr-auto lg:ml-0"}`}>
+    <div className={`mx-auto w-full max-w-sm lg:max-w-[22.5rem] ${flip ? "lg:ml-auto lg:mr-0" : "lg:mr-auto lg:ml-0"}`}>
       {children}
     </div>
   );

@@ -102,6 +102,9 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
               </Button>
             </div>
           </Reveal>
+          {/* Column 7 is left empty here, so phone-shaped media already has
+              141px between it and the copy and does not need the extra gutter
+              the homepage blocks give it. */}
           <Reveal as="div" index={1} className="lg:col-span-5 lg:col-start-8">
             <div
               className={
