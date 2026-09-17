@@ -59,4 +59,11 @@ export const TEAM = [
     alt: "Jay, co-founder of Volt",
     position: { x: 50, y: 57 },
   },
+  {
+    name: "Mubarok",
+    role: "Google Ads Specialist",
+    src: "/about/mubarok.jpg",
+    alt: "Mubarok, Google Ads specialist at Volt",
+    position: { x: 50, y: 42 },
+  },
 ] as const;

@@ -22,20 +22,25 @@ export const metadata: Metadata = pageMetadata({
 
 /**
  * Resolves a photo by name prefix, so dropping `cayden.png` or `cayden.jpeg`
- * into public/about works without editing anything. Falls back to the name in
- * the content file when the folder is empty, and DitheredImage then shows its
- * flat plate rather than a broken image.
+ * into public/about works without editing anything.
+ *
+ * Returns null when nothing has been saved yet, so the caller can render an
+ * empty plate rather than pointing next/image at a file that does not exist,
+ * which 400s and leaves a broken image in the layout.
  */
-function photo(name: string, fallback: string): string {
+function photo(name: string): string | null {
   try {
     const file = readdirSync(path.join(process.cwd(), "public", "about")).find(
       (f) => f.toLowerCase().startsWith(name) && /\.(jpe?g|png|webp|avif)$/i.test(f),
     );
-    return file ? `/about/${file}` : fallback;
+    return file ? `/about/${file}` : null;
   } catch {
-    return fallback;
+    return null;
   }
 }
+
+/** The circle a portrait sits in, and what stands in for one that is missing. */
+const PORTRAIT = "w-40 rounded-full border border-line sm:w-48 lg:w-56";
 
 export default function AboutPage() {
   return (
@@ -66,15 +71,27 @@ export default function AboutPage() {
             index={1}
             className="order-2 -mx-gutter lg:order-none lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:-mr-gutter"
           >
-            <Photo
-              src={photo("team", TEAM_PHOTO.src)}
-              alt={TEAM_PHOTO.alt}
-              aspect="16 / 9"
-              position={TEAM_PHOTO.position}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              priority
-              className="lg:plate-slant"
-            />
+            {(() => {
+              const src = photo("team");
+              return src ? (
+                <Photo
+                  src={src}
+                  alt={TEAM_PHOTO.alt}
+                  aspect="16 / 9"
+                  position={TEAM_PHOTO.position}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  priority
+                  className="lg:plate-slant"
+                />
+              ) : (
+                <div
+                  role="img"
+                  aria-label={TEAM_PHOTO.alt}
+                  style={{ aspectRatio: "16 / 9" }}
+                  className="bg-bone-deep lg:plate-slant"
+                />
+              );
+            })()}
           </Reveal>
 
           <Reveal
@@ -119,22 +136,32 @@ export default function AboutPage() {
         <Reveal as="h2" id="team-h" className="mt-6 text-display-md lg:w-8/12">
           Meet your team at {SITE.name}.
         </Reveal>
-        <ul className="mt-12 grid gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-12 lg:gap-x-6">
+        {/* Plain column count rather than explicit placement in a 12-col grid:
+            the old version hardcoded a start column per member and only worked
+            for exactly two of them. */}
+        <ul className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {TEAM.map((member, i) => (
-            <Reveal
-              key={member.name}
-              as="li"
-              index={i}
-              className={`lg:col-span-4 ${i === 0 ? "lg:col-start-1" : "lg:col-start-6"}`}
-            >
-              <Photo
-                src={photo(member.name.toLowerCase(), member.src)}
-                alt={member.alt}
-                aspect="1 / 1"
-                position={member.position}
-                sizes="(min-width: 1024px) 14rem, (min-width: 640px) 12rem, 10rem"
-                className="w-40 rounded-full border border-line sm:w-48 lg:w-56"
-              />
+            <Reveal key={member.name} as="li" index={i}>
+              {(() => {
+                const src = photo(member.name.toLowerCase());
+                return src ? (
+                  <Photo
+                    src={src}
+                    alt={member.alt}
+                    aspect="1 / 1"
+                    position={member.position}
+                    sizes="(min-width: 1024px) 14rem, (min-width: 640px) 12rem, 10rem"
+                    className={PORTRAIT}
+                  />
+                ) : (
+                  <div
+                    role="img"
+                    aria-label={member.alt}
+                    style={{ aspectRatio: "1 / 1" }}
+                    className={`bg-bone-deep ${PORTRAIT}`}
+                  />
+                );
+              })()}
               <p className="mt-6 font-display text-h3 text-fg">{member.name}</p>
               <p className="label mt-2 text-muted">{member.role}</p>
             </Reveal>
