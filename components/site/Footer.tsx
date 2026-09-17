@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SITE, realSocial } from "@/lib/site";
 import { Wordmark } from "@/components/site/Wordmark";
-import { getPublicProducts, productHref } from "@/lib/content/products";
+import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/products";
 import { ConsentLinks } from "@/components/consent/ConsentLinks";
 
 function Column({
@@ -45,6 +45,15 @@ function Column({
  */
 export function Footer({ mark, masked }: { mark: string | null; masked?: boolean }) {
   const products = getPublicProducts().map((p) => ({ label: p.name, href: productHref(p.slug) }));
+  /* Every product sold outside the plan, in its own column rather than mixed
+     in with the six. The separation is load-bearing everywhere else on the
+     site and a single merged list would be the one place that blurs it. The
+     two without a page of their own point at the pricing row that describes
+     them, so nothing here is a dead link. */
+  const separate = getAddonServices().map((a) => ({
+    label: a.name,
+    href: a.page ? productHref(a.slug) : "/pricing#separate-products",
+  }));
   const year = new Date().getFullYear();
 
   return (
@@ -56,8 +65,9 @@ export function Footer({ mark, masked }: { mark: string | null; masked?: boolean
           </Link>
           <p className="mt-4 max-w-measure text-body-sm text-muted">{SITE.tagline}.</p>
         </div>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:col-span-8 lg:col-start-5 lg:grid-cols-4">
           <Column title="Products" links={products} />
+          <Column title="Sold separately" links={separate} />
           <Column title="Company" links={SITE.company} />
           <Column title="Legal" links={SITE.legal}>
             <ConsentLinks />

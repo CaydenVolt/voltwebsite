@@ -54,27 +54,36 @@ export function ProductBlock({
           </span>
           {/* The product's name leads: it is what the block is, and it is the
               block's accessible name. The promise sits under it, a step down. */}
-          <h3 id={`${id}-h`} className="mt-4 flex items-center gap-3 text-display-md">
+          <h3 id={`${id}-h`} className="mt-5 flex items-center gap-3 text-display-md">
             <ProductIcon slug={product.slug} className="size-7 shrink-0 text-muted lg:size-8" />
             {product.name}
           </h3>
           {/* A step down from the name at every width: on phones the name bottoms
-              out at 32px, so the promise drops to lead there to keep the gap */}
+              out at 32px, so the promise drops to lead there to keep the gap.
+              Held tight to the name because the two are one idea. */}
           <p className="mt-4 max-w-measure text-lead text-muted sm:text-h3">{product.headline}</p>
-          <p className="mt-5 max-w-measure text-body text-muted">{product.intro}</p>
-          <ul className="mt-8 border-t border-line">
+          {/* Then the spacing opens up. The column used to step down in near
+              equal increments, which gave it no grouping and made it read as one
+              undifferentiated wall of text. Pair, gap, paragraph, bigger gap,
+              list, bigger gap again. */}
+          <p className="mt-7 max-w-measure text-body text-muted">{product.intro}</p>
+          {/* The benefits were a full-width ruled table: a top border plus a rule
+              under every row. Four of those stacked read as a spreadsheet. The
+              numerals stay, because the index is the house motif, but the rules
+              go and the rows get air. */}
+          <ul className="mt-10 space-y-2">
             {product.benefits.map((b, i) => (
-              <IndexedRow key={b} index={i + 1}>
+              <IndexedRow key={b} index={i + 1} rule={false}>
                 {b}
               </IndexedRow>
             ))}
           </ul>
           {product.addon && (
-            <p className="label mt-6 text-muted">
+            <p className="label mt-8 text-muted">
               Not part of the system or the monthly fee. Quoted per business.
             </p>
           )}
-          <div className="mt-8">
+          <div className="mt-10">
             <Button href={productHref(product.slug)} source={`${prefix}_${position}_how`} variant="link">
               See how it works
             </Button>
