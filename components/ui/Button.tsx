@@ -2,14 +2,18 @@
 
 import { motion } from "motion/react";
 import { PRESS, SPRING } from "@/lib/tokens";
-import { trackCTA } from "@/lib/crm";
 
 type Variant = "primary" | "outline" | "outline-inverse" | "link" | "link-inverse";
 type Size = "sm" | "md";
 
 interface ButtonProps {
   href: string;
-  /** Reported to the CRM on click, e.g. "hero_primary". */
+  /**
+   * Where on the site this CTA sits, e.g. "hero_primary". Booking CTAs carry
+   * it to the landing page as utm_content via bookingHref(), and it is written
+   * to the element as data-cta so click tracking can be added later without
+   * touching forty-five call sites.
+   */
   source: string;
   children: React.ReactNode;
   variant?: Variant;
@@ -43,8 +47,11 @@ const isLink = (v: Variant) => v === "link" || v === "link-inverse";
 
 /**
  * Every CTA on the site. Renders a plain <a>: booking CTAs go straight to the
- * scheduler. Press feedback fires on pointer-down via whileTap; the arrow
+ * landing page. Press feedback fires on pointer-down via whileTap; the arrow
  * nudges on hover; both on the house spring.
+ *
+ * No click handler. Attribution rides the URL as utm_content, which the
+ * landing page reads, so there is nothing for this site to record.
  */
 export function Button({
   href,
@@ -60,7 +67,7 @@ export function Button({
     <motion.a
       href={href}
       data-cursor="grow"
-      onClick={() => trackCTA(source)}
+      data-cta={source}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       initial="rest"

@@ -1,11 +1,18 @@
-/** Placeholder: swap for the GoHighLevel funnel URL. Every booking CTA goes through bookingHref(). */
+/**
+ * Placeholder: swap for the booking subdomain, the landing page that carries
+ * the video and the scheduler. Every booking CTA goes through bookingHref().
+ */
 export const BOOKING_URL = "https://booking.example.com/volt/20-minute-call";
 
 /**
  * The booking link tagged with where on the site the click came from, so the
- * funnel's contact record shows which button sent the lead. `source` matches
- * the Button's `source` prop (hero_primary, nav_book, final_cta, ...).
- * Existing query parameters on the funnel URL are preserved.
+ * landing page can see which button sent the visitor. `source` matches the
+ * Button's `source` prop (hero_primary, nav_book, final_cta, ...). Existing
+ * query parameters on the URL are preserved.
+ *
+ * This is the whole of the site's lead attribution. The marketing site takes
+ * no submissions of its own, so there is no CRM adapter here; that belongs in
+ * the client sites we build, not in this one.
  */
 export function bookingHref(source: string): string {
   const url = new URL(BOOKING_URL);
