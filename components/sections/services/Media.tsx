@@ -93,9 +93,31 @@ function Shot({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-/** Phone-shaped media is held to a phone's width instead of filling the column. */
-function Frame({ portrait, children }: { portrait?: boolean; children: ReactNode }) {
-  return <div className={portrait ? "mx-auto w-full max-w-sm lg:max-w-md" : ""}>{children}</div>;
+/**
+ * Phone-shaped media is held to a phone's width instead of filling the column:
+ * these assets are 648 by 1388, so letting one fill a wide column would make it
+ * taller than the viewport.
+ *
+ * It is pushed to the edge nearest the text rather than centred. Centred, a
+ * 448px image in a wide column put its slack between itself and the copy, which
+ * is what made the pair read as two disconnected blocks with a canyon between
+ * them. The slack now falls on the page edge, where it is breathing room.
+ */
+function Frame({
+  portrait,
+  flip,
+  children,
+}: {
+  portrait?: boolean;
+  flip?: boolean;
+  children: ReactNode;
+}) {
+  if (!portrait) return <>{children}</>;
+  return (
+    <div className={`mx-auto w-full max-w-sm lg:max-w-md ${flip ? "lg:ml-auto lg:mr-0" : "lg:mr-auto lg:ml-0"}`}>
+      {children}
+    </div>
+  );
 }
 
 /**
@@ -111,7 +133,7 @@ export function ProductMediaView({ media, flip = false }: { media: ProductMedia;
         return media.fallback ? <ProductMediaView media={media.fallback} flip={flip} /> : null;
       }
       return (
-        <Frame portrait={media.portrait}>
+        <Frame portrait={media.portrait} flip={flip}>
           <Shot src={resolved} alt={media.alt} />
         </Frame>
       );
@@ -121,7 +143,7 @@ export function ProductMediaView({ media, flip = false }: { media: ProductMedia;
         return media.fallback ? <ProductMediaView media={media.fallback} flip={flip} /> : null;
       }
       return (
-        <Frame portrait={media.portrait}>
+        <Frame portrait={media.portrait} flip={flip}>
           <Clip
             src={media.src}
             poster={media.poster}

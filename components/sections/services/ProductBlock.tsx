@@ -31,6 +31,25 @@ export function ProductBlock({
   const flip = position % 2 === 0;
   /** A real screenshot or recording, rather than a fragment or a photo plate. */
   const real = product.media.kind === "shot" || product.media.kind === "clip";
+  /* Phone-shaped media is capped at 448px, so a seven-column slot left it
+     marooned with 317px of dead space between it and the copy. It gets four
+     columns instead and the text takes the difference. */
+  const portrait =
+    (product.media.kind === "shot" || product.media.kind === "clip") && Boolean(product.media.portrait);
+  const textSpan = portrait ? "lg:col-span-7" : "lg:col-span-5";
+  const mediaSpan = portrait ? "lg:col-span-4" : "lg:col-span-7";
+  const textStart = flip
+    ? portrait
+      ? "lg:col-start-6"
+      : "lg:col-start-8"
+    : "lg:col-start-1";
+  const mediaStart = flip
+    ? portrait
+      ? "lg:col-start-2"
+      : "lg:col-start-1"
+    : portrait
+      ? "lg:col-start-8"
+      : "lg:col-start-6";
   const prefix = product.addon ? "separate" : "service";
   const id = `${prefix}-${position}`;
 
@@ -45,9 +64,7 @@ export function ProductBlock({
       <div className="grid gap-y-8 lg:grid-cols-12 lg:items-center lg:gap-x-6">
         <Reveal
           as="div"
-          className={`order-2 lg:order-none lg:col-span-5 lg:row-start-1 ${
-            flip ? "lg:col-start-8" : "lg:col-start-1"
-          }`}
+          className={`order-2 lg:order-none lg:row-start-1 ${textSpan} ${textStart}`}
         >
           <span className="label text-accent">
             {product.addon ? "Separate product" : pad(product.index ?? position)}
@@ -96,9 +113,7 @@ export function ProductBlock({
         <Reveal
           as="div"
           index={1}
-          className={`order-1 lg:order-none lg:col-span-7 lg:row-start-1 ${
-            flip ? "lg:col-start-1" : "lg:col-start-6"
-          }`}
+          className={`order-1 lg:order-none lg:row-start-1 ${mediaSpan} ${mediaStart}`}
         >
           <div
             className={
