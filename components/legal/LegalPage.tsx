@@ -44,7 +44,7 @@ export function LegalPage({
     ...(LEGAL.incorporated
       ? []
       : [
-          `${LEGAL.entity} is not registered yet. Until it is there is no company to contract with: the counterparty is the owner personally.`,
+          `${LEGAL.entity} is not registered yet, so these documents correctly name ${LEGAL.owner} as the contracting party rather than a company that does not exist. What that costs is the liability cap: it protects a person, not a company, so the exposure behind it is personal and uncapped. Set incorporated to true in lib/content/legal.ts on the day the filing is accepted and every document switches to the entity.`,
         ]),
     ...warnings,
   ];

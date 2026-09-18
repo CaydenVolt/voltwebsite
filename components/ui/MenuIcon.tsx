@@ -29,13 +29,6 @@ const GLYPHS: Record<string, ReactNode> = {
       <path d="M11 7 3.5 14.5v6h6L17 13" />
     </>
   ),
-  /* A book with its marker */
-  careers: (
-    <>
-      <path d="M5 4.5h14v15H7a2 2 0 0 1-2-2z" />
-      <path d="M9.5 4.5v7l2-1.6 2 1.6v-7" />
-    </>
-  ),
   /* Two rings, joined */
   partners: (
     <>

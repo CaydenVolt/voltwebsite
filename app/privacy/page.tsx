@@ -4,7 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { PRIVACY, PRIVACY_DATES } from "@/lib/content/privacy";
-import { LEGAL } from "@/lib/content/legal";
+import { contractingParty } from "@/lib/content/legal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
         ]}
         intro={
           <p>
-            This Privacy Policy explains how {LEGAL.entity}, doing business as {LEGAL.tradingAs}{" "}
+            This Privacy Policy explains how {contractingParty()}{" "}
             (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), collects, uses, shares and
             retains personal information when you visit our website, speak to us, or use our
             Services. It applies to information about you. Information about your own customers,

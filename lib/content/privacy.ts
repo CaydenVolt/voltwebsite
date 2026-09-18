@@ -1,4 +1,4 @@
-import { LEGAL, type LegalDates, type LegalSection } from "./legal";
+import { LEGAL, contractingParty, type LegalDates, type LegalSection } from "./legal";
 import { SITE } from "@/lib/site";
 
 /**
@@ -550,7 +550,7 @@ export const PRIVACY: readonly LegalSection[] = [
       {
         t: "defs",
         items: [
-          { term: "Company", text: `${LEGAL.entity}, trading as ${LEGAL.tradingAs}` },
+          { term: "Company", text: contractingParty() },
           { term: "Email", text: LEGAL.email },
           ...(LEGAL.phone ? [{ term: "Phone", text: LEGAL.phone }] : []),
           ...(LEGAL.address ? [{ term: "Address", text: LEGAL.address }] : []),

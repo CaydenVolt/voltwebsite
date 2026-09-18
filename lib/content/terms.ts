@@ -1,4 +1,4 @@
-import { LEGAL, type LegalDates, type LegalSection } from "./legal";
+import { LEGAL, contractingParty, noticeName, type LegalDates, type LegalSection } from "./legal";
 import { PLAN, formatPrice } from "./pricing";
 import { SITE } from "@/lib/site";
 
@@ -72,7 +72,7 @@ export const TERMS: readonly LegalSection[] = [
           },
           {
             term: "Volt, we, us, our",
-            text: `${LEGAL.entity}, trading as ${LEGAL.tradingAs}.`,
+            text: `${contractingParty()}.`,
           },
         ],
       },
@@ -681,7 +681,7 @@ export const TERMS: readonly LegalSection[] = [
         ? [
             {
               t: "p" as const,
-              text: `Notices may also be sent to us by post at ${LEGAL.entity}, ${LEGAL.address}.`,
+              text: `Notices may also be sent to us by post at ${noticeName()}, ${LEGAL.address}.`,
             },
           ]
         : []),
@@ -783,7 +783,7 @@ export const TERMS: readonly LegalSection[] = [
       {
         t: "defs",
         items: [
-          { term: "Company", text: `${LEGAL.entity}, trading as ${LEGAL.tradingAs}` },
+          { term: "Company", text: contractingParty() },
           { term: "Email", text: LEGAL.email },
           ...(LEGAL.phone ? [{ term: "Phone", text: LEGAL.phone }] : []),
           ...(LEGAL.address ? [{ term: "Address", text: LEGAL.address }] : []),

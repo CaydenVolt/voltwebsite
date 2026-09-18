@@ -4,7 +4,7 @@ import { LegalPage } from "@/components/legal/LegalPage";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { DPA, DPA_DATES, unnamedSubProcessors } from "@/lib/content/dpa";
-import { LEGAL } from "@/lib/content/legal";
+import { contractingParty } from "@/lib/content/legal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -46,8 +46,8 @@ export default function DpaPage() {
             >
               Terms of Service
             </Link>{" "}
-            between you and {LEGAL.entity}, doing business as {LEGAL.tradingAs}. It governs how we
-            process personal information about <em>your</em> customers when we do so on your behalf.
+            between you and {contractingParty()}. It governs how we process personal information
+            about <em>your</em> customers when we do so on your behalf.
             Information about you is covered by our{" "}
             <Link
               href="/privacy"

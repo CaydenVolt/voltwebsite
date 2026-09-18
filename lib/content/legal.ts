@@ -35,6 +35,16 @@ export const LEGAL = {
   entity: "Volt Agency",
   /** Any trading name, if the entity contracts under a different one. */
   tradingAs: "Volt",
+  /**
+   * The person who owns the business.
+   *
+   * Load-bearing only while `incorporated` is false. With no company in
+   * existence there is no entity to contract with, so the counterparty named
+   * in every document is this person, trading under the business name. Once
+   * the filing is accepted this stops appearing anywhere and the entity takes
+   * its place. Check the spelling against the name on the filing.
+   */
+  owner: "Cayden Chern",
 
   /**
    * Whether `entity` is actually a registered company yet.
@@ -44,8 +54,12 @@ export const LEGAL = {
    * the limitation of liability in section 21 protects a person rather than a
    * company. In a business that sends bulk SMS on clients' behalf, with the
    * TCPA exposure that carries, that is the difference between a capped
-   * business risk and an uncapped personal one. Do not publish this page until
-   * it is true.
+   * business risk and an uncapped personal one.
+   *
+   * The documents now say this plainly rather than waiting for it to be true:
+   * `contractingParty()` names the owner while this is false and the entity
+   * once it is true. Flipping this one value rewrites every document. It does
+   * not reduce the personal exposure, which only incorporating does.
    */
   incorporated: false,
   /**
@@ -79,6 +93,24 @@ export const LEGAL = {
   /** Named because which processor holds the card is material to the client. */
   paymentProcessor: "Stripe",
 } as const;
+
+/**
+ * How the party on our side of the agreement is named, in every document.
+ *
+ * An unincorporated business cannot be a party to a contract, so while
+ * `incorporated` is false the documents name the owner as a sole proprietor
+ * doing business under the trading name, which is who a client is actually
+ * contracting with. Naming a company that does not exist would leave the
+ * counterparty undefined, which is the one drafting error that can make a
+ * whole agreement unenforceable.
+ */
+export const contractingParty = (): string =>
+  LEGAL.incorporated
+    ? `${LEGAL.entity}, trading as ${LEGAL.tradingAs}`
+    : `${LEGAL.owner}, a sole proprietor doing business as ${LEGAL.tradingAs}`;
+
+/** The name a posted notice is addressed to. The entity once it exists. */
+export const noticeName = (): string => (LEGAL.incorporated ? LEGAL.entity : LEGAL.owner);
 
 /** True once every blank above has been filled. Guards the page in dev. */
 export const legalFactsComplete = (): boolean =>

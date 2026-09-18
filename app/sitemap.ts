@@ -38,6 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/our-process`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${base}/partners`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    // In from 2026-09-19, when it stopped being a placeholder and got a real
+    // address on it. It is linked from the About menu on every page, so it was
+    // being crawled either way.
+    { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/dpa`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },

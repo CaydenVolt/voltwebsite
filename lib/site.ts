@@ -48,12 +48,15 @@ export interface MenuItem {
  * Press was removed on 2026-09-17. The /press route still exists as a
  * placeholder but nothing links to it now, and it stays out of the sitemap
  * and blocked in robots.txt, so it is unreachable rather than thin.
+ *
+ * Careers went further on 2026-09-19: the route was deleted outright rather
+ * than left blocked, because a link in the global nav to a page robots.txt
+ * forbids is a contradiction on every page of the site.
  */
 export const ABOUT_MENU: readonly MenuItem[] = [
   { label: "About Us", description: "Get to know Volt", href: "/about", icon: "people" },
   { label: "Our Process", description: "Discover how we work", href: "/our-process", icon: "process" },
   { label: "Trades We Serve", description: "Who we work with", href: "/#trades", icon: "trades" },
-  { label: "Careers", description: "Join the team", href: "/careers", icon: "careers" },
   { label: "Partners", description: "Meet our partners", href: "/partners", icon: "partners" },
   { label: "Contact", description: "Chat with us", href: "/contact", icon: "contact" },
 ];
@@ -75,14 +78,12 @@ export const SITE = {
   url: "https://voltagencyio.com",
   /** Raw funnel URL. Prefer bookingHref(source) for links so the click is attributed. */
   bookingUrl: BOOKING_URL,
-  /** Placeholder region for the social proof strip. */
+  /**
+   * Where the business serves, published as `areaServed` in the Organization
+   * and Service schema. The invented star ratings that used to sit beside this
+   * went on 2026-09-19 with the strip that rendered them.
+   */
   region: "the United States",
-  /** Review sources shown in the social proof strip. Placeholder figures. */
-  reviews: [
-    { source: "Google", rating: "4.9" },
-    { source: "Facebook", rating: "4.8" },
-    { source: "Trustpilot", rating: "4.7" },
-  ],
   nav: [
     { label: "Products", href: "/products", menu: "products" },
     { label: "Pricing", href: "/pricing" },

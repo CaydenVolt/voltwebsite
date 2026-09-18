@@ -4,7 +4,7 @@ import { LegalPage, routeExists } from "@/components/legal/LegalPage";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TERMS, TERMS_DATES } from "@/lib/content/terms";
-import { LEGAL } from "@/lib/content/legal";
+import { LEGAL, contractingParty } from "@/lib/content/legal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -42,8 +42,8 @@ export default function TermsPage() {
         }
         intro={
           <p>
-            These Terms of Service constitute an agreement between you and {LEGAL.entity}, doing
-            business as {LEGAL.tradingAs}. These Terms of Service (&ldquo;Terms&rdquo;) bind{" "}
+            These Terms of Service constitute an agreement between you and {contractingParty()}.
+            These Terms of Service (&ldquo;Terms&rdquo;) bind{" "}
             {LEGAL.tradingAs} (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) and you,
             the individual or entity using our Services (&ldquo;you,&rdquo; &ldquo;Client,&rdquo; or
             &ldquo;your&rdquo;). By purchasing, accessing, or using any of our Services, or by

@@ -38,7 +38,7 @@ export const CULTURE = {
 
 /** The landscape plate beside the mission. Cropped to landscape in CSS, not in the file. */
 export const TEAM_PHOTO = {
-  src: "/about/team.jpg",
+  src: "/about/team.jpeg",
   alt: "Cayden and Jay, the team behind Volt",
   /** Focal point as object-position percentages: keeps both faces in a wide crop. */
   position: { x: 50, y: 38 },
@@ -48,21 +48,21 @@ export const TEAM = [
   {
     name: "Cayden",
     role: "CEO / Founder",
-    src: "/about/cayden.jpg",
+    src: "/about/cayden.jpeg",
     alt: "Cayden, founder of Volt",
     position: { x: 50, y: 42 },
   },
   {
     name: "Jay",
     role: "COO / Co-Founder",
-    src: "/about/jay.jpg",
+    src: "/about/jay.jpeg",
     alt: "Jay, co-founder of Volt",
     position: { x: 50, y: 57 },
   },
   {
     name: "Mubarok",
     role: "Google Ads Specialist",
-    src: "/about/mubarok.jpg",
+    src: "/about/mubarok.jpeg",
     alt: "Mubarok, Google Ads specialist at Volt",
     position: { x: 50, y: 42 },
   },

@@ -22,10 +22,6 @@ const LEAD_HOOK = "Drop the act. Marketing isn't rocket science.";
 const LEAD =
   "No agency (including ours) has the miracle solution to all your problems. We'll give you the tools to win, but you need to commit to using them!";
 
-// PLACEHOLDER: the speed-to-lead figure is still a claim with nothing behind
-// it. The client count was removed on 2026-09-15 for exactly that reason.
-const STATS = [{ value: "48 sec", label: "average speed-to-lead" }] as const;
-
 /** The six public products, in funnel order. Same source as the rail, the nav and /products. */
 const PRODUCTS = getPublicProducts();
 const TICKER = PRODUCTS.map((p) => p.name);
@@ -110,24 +106,16 @@ export function Hero() {
       </div>
 
       <div className="flex flex-1 flex-col px-gutter pt-stack pb-section-sm">
-        {/* Eyebrow row: tagline left, two hard numbers right */}
-        <div className="flex items-start justify-between gap-6">
-          <motion.p {...rise(T.eyebrow)} className="label flex items-center gap-3 text-ink-muted">
-            <span aria-hidden className="h-px w-6 shrink-0 bg-ink sm:w-8" />
-            <span className="sm:hidden">{SITE.taglineShort}</span>
-            <span className="hidden sm:inline">{SITE.tagline}</span>
-          </motion.p>
-          <motion.div
-            {...rise(T.eyebrow + T.metaStagger)}
-            className="label hidden text-right text-ink-muted md:block"
-          >
-            {STATS.map((s) => (
-              <p key={s.label} className="mt-1.5 first:mt-0">
-                <span className="text-ink">{s.value}</span> {s.label}
-              </p>
-            ))}
-          </motion.div>
-        </div>
+        {/* Eyebrow row. The right of this row carried an average speed-to-lead
+            figure until 2026-09-19, when it went the way of the client count
+            before it: a number with nothing behind it is not a number. The
+            tagline holds the row on its own until there is something true to
+            put opposite it. */}
+        <motion.p {...rise(T.eyebrow)} className="label flex items-center gap-3 text-ink-muted">
+          <span aria-hidden className="h-px w-6 shrink-0 bg-ink sm:w-8" />
+          <span className="sm:hidden">{SITE.taglineShort}</span>
+          <span className="hidden sm:inline">{SITE.tagline}</span>
+        </motion.p>
 
         {/* Frame. Desktop: text column left (headline, ink CTA block, service
             rail), slanted media plate right spanning the headline and CTA rows
