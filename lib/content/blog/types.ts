@@ -20,7 +20,11 @@ export type CategoryId =
   | "follow-up"
   | "software"
   | "website"
-  | "ads";
+  | "ads"
+  /* Cluster 8, in progress. The id exists so posts/incentives.ts typechecks
+     while it is written; it joins CATEGORIES only once all nine articles are
+     there, because the content gate requires exactly nine per cluster. */
+  | "incentives";
 
 /** Search intent, shown on the card the way a trade magazine tags a column. */
 export type Intent = "Informational" | "Commercial";
