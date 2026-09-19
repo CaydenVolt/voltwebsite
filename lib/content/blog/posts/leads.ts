@@ -44,7 +44,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Adding a tenth channel to that does not fix it. It just spreads a bad conversion rate across more traffic. So this piece is ordered the way the work should actually happen, cheapest and fastest first, and every section says plainly what it costs.",
       },
 
-      { t: "h2", text: "Why the lead count is usually not the problem" },
+      { t: "h2", text: "Is the lead count actually the problem?" },
       {
         t: "p",
         text: "Solar is a high-consideration purchase with a long decision window. A homeowner requesting a quote is not buying today. They are going to check financing, ask a spouse, read reviews, and get two more quotes. The gap between enquiry and signature is measured in weeks, and most of what happens in that gap is not marketing at all. It is whether anyone from your company was present.",
@@ -69,7 +69,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Before you read the rest, pull your last 50 web enquiries and write down the minutes between the form submission and your first outbound attempt. If the median is over an hour, that is the single most profitable number on this page. [Speed to lead for solar companies](/blog/speed-to-lead-for-solar-companies) covers how to fix it.",
       },
 
-      { t: "h2", text: "The nine channels, and what each one really costs" },
+      { t: "h2", text: "What does each solar lead channel really cost?" },
       {
         t: "p",
         text: "Here is every channel worth running for a residential solar company, with the honest cost shape of each. Cost per lead is a national blend and will move with your market. What matters more is the column on the right: how long the channel takes to produce anything.",
@@ -119,7 +119,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Rank where solar buyers actually search" },
+      { t: "h2", text: "Where do solar buyers actually search?" },
       {
         t: "p",
         text: "Most solar searches carry local intent, and most local searches end in the map pack: the three business listings above the blue links. Ranking there is not a website job. It is a Google Business Profile job, and the ingredients are proximity, relevance, review volume and recent activity.",
@@ -169,7 +169,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How to tell whether a channel is working" },
+      { t: "h2", text: "How do you tell whether a channel is working?" },
       {
         t: "p",
         text: "Cost per lead is the metric that hides the most. A $40 lead that never answers the phone is more expensive than a $250 lead that sits for a survey. Track the chain instead, and track it per channel.",
@@ -267,7 +267,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Lead pricing in solar is quoted in a way that makes channels look comparable when they are not. A $40 shared lead and a $240 search lead are different products with different probabilities attached, and until you price them per booked survey you are comparing a lottery ticket to a contract.",
       },
 
-      { t: "h2", text: "What each type of solar lead costs in 2026" },
+      { t: "h2", text: "What does each type of solar lead cost in 2026?" },
       {
         t: "table",
         caption: "Blended national bands. Competitive metros sit at the top of each range.",
@@ -313,7 +313,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Divide your channel spend by the number of appointments that actually sat, not by the number of forms you received. If a vendor will not give you the data to do that, the number they are quoting is a marketing figure, not a cost.",
       },
 
-      { t: "h2", text: "What moves your cost per lead" },
+      { t: "h2", text: "What moves your cost per lead?" },
       {
         t: "ul",
         items: [
@@ -343,7 +343,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Going from 9% to 13% on identical traffic cuts your cost per job by roughly a third, without renegotiating anything. That work is follow-up, appointment confirmation and proof, and it is covered in [why solar leads go cold](/blog/why-solar-leads-go-cold).",
       },
 
-      { t: "h2", text: "What you should be paying" },
+      { t: "h2", text: "What should you actually be paying?" },
       {
         t: "p",
         text: "A reasonable target for a residential installer with an average job value in the $18,000 to $30,000 range is a cost per closed job under 10% of revenue, and comfortably under that once organic and referral volume carries part of the load. If a channel cannot get there after a fair test, it is not a pricing problem, it is the wrong channel for your market.",
@@ -408,7 +408,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "So here is the neutral version. Bought leads are a legitimate instrument with a narrow set of conditions. Meet them and the channel works. Miss one and it does not, no matter how good the vendor is.",
       },
 
-      { t: "h2", text: "The three conditions" },
+      { t: "h2", text: "When are bought solar leads worth it?" },
       {
         t: "steps",
         items: [
@@ -432,7 +432,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "If you cannot say, from memory, what percentage of last month's bought leads were contacted within fifteen minutes, fix that before spending another dollar with a vendor. It is the difference between the channel working and not.",
       },
 
-      { t: "h2", text: "What you are actually buying" },
+      { t: "h2", text: "What are you actually buying?" },
       {
         t: "table",
         head: ["What the vendor says", "What it usually means"],
@@ -449,7 +449,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "The single most useful question to ask a vendor is what percentage of their appointments sit. Anyone who does not track it is not the partner you want, and anyone quoting above 80% should be asked how it is measured.",
       },
 
-      { t: "h2", text: "How to run a 30-day test that tells the truth" },
+      { t: "h2", text: "How do you test a lead vendor in 30 days?" },
       {
         t: "ol",
         items: [
@@ -538,7 +538,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "This choice gets argued as a matter of principle when it is really a matter of arithmetic, and the arithmetic turns on one number you already have: how fast your team responds.",
       },
 
-      { t: "h2", text: "What each one actually is" },
+      { t: "h2", text: "What is an exclusive solar lead, and what is a shared one?" },
       {
         t: "table",
         head: ["", "Shared", "Exclusive"],
@@ -579,7 +579,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Before you upgrade to exclusive leads to escape the competition, check whether you are actually losing to competitors or to your own response time. Fixing the second is cheaper and it makes the exclusive leads work better too. See [speed to lead for solar companies](/blog/speed-to-lead-for-solar-companies).",
       },
 
-      { t: "h2", text: "How to verify exclusivity is real" },
+      { t: "h2", text: "How do you verify a lead is really exclusive?" },
       {
         t: "ol",
         items: [
@@ -611,7 +611,7 @@ export const LEADS_POSTS: readonly Post[] = [
           "Your market is small enough that three installers calling the same homeowner damages your local reputation.",
         ],
       },
-      { t: "h2", text: "Running both at once" },
+      { t: "h2", text: "Can you run both at once?" },
       {
         t: "p",
         text: "Most installers who buy leads at any scale end up running both, and that is a reasonable place to land. The mistake is running them through the same process and then comparing the results, because the two lead types need different handling from the first minute.",
@@ -686,7 +686,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "An unqualified solar appointment costs more than the lead. There is a rep, a vehicle, a two hour round trip, a design, and the opportunity cost of the appointment slot. Getting six facts before that happens is the highest-return hour of process work in a solar company.",
       },
 
-      { t: "h2", text: "The six qualifiers" },
+      { t: "h2", text: "What makes a solar lead qualified?" },
       {
         t: "table",
         head: ["Qualifier", "Ask it", "Disqualifies when"],
@@ -700,7 +700,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What goes on the form, and what does not" },
+      { t: "h2", text: "What should go on the form, and what should not?" },
       {
         t: "p",
         text: "Every field you add reduces submissions. So the form carries only the two qualifiers that are quick to answer, unambiguous, and eliminate the largest share of waste: do you own the property, and roughly what is your monthly electricity bill. A bill range as buttons rather than a number field converts better and is accurate enough.",
@@ -742,7 +742,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Scoring without overcomplicating it" },
+      { t: "h2", text: "How should you score a solar lead?" },
       {
         t: "p",
         text: "Resist building a 40 point scoring model. Three tiers is enough and it survives contact with a busy office.",
@@ -837,7 +837,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Lead generation companies are not villains and they are not partners. They are suppliers with a different incentive from yours, and the whole job is writing terms that line those incentives up.",
       },
 
-      { t: "h2", text: "The three business models" },
+      { t: "h2", text: "How do solar lead generation companies make their money?" },
       {
         t: "table",
         head: ["Model", "How they get paid", "What it means for you"],
@@ -864,7 +864,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "The appointment model is where the incentive gap is widest. A setter paid per booking is rewarded for booking, not for booking well, which is why you ask for sat rate and not set rate.",
       },
 
-      { t: "h2", text: "Eight questions before you sign" },
+      { t: "h2", text: "What should you ask before you sign?" },
       {
         t: "ol",
         items: [
@@ -903,7 +903,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "When you should not hire one at all" },
+      { t: "h2", text: "When should you not hire one at all?" },
       {
         t: "p",
         text: "If your Business Profile is unoptimised, your review count is under 25 and nobody has ever messaged your old database, a lead vendor is an expensive way to avoid work that is free. Those three things also make every bought lead convert better, so doing them first is not a delay, it is preparation.",
@@ -1063,7 +1063,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Write the utility rate change campaign now and keep it in a drawer. When the announcement lands you will have two days of attention, and the companies that send within those two days take the enquiries.",
       },
 
-      { t: "h2", text: "Ideas that compound" },
+      { t: "h2", text: "Which ideas actually compound?" },
       {
         t: "ol",
         items: [
@@ -1075,7 +1075,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How to choose between them" },
+      { t: "h2", text: "How do you choose between them?" },
       {
         t: "p",
         text: "Score each idea on two axes: how fast it could produce a lead, and whether you already own the raw material. Anything that is fast and uses material you own goes first. That is almost always database reactivation, the referral ask and the neighbour campaign, in that order.",
@@ -1144,7 +1144,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Free lead sources have a reputation problem because the phrase is usually attached to something that is not free or not a lead. These six are neither. What they are is slow to start and difficult to stop, which is the opposite shape from buying clicks.",
       },
 
-      { t: "h2", text: "The six sources, and what each really produces" },
+      { t: "h2", text: "Where do free solar leads actually come from?" },
       {
         t: "table",
         head: ["Source", "Time to first lead", "What it costs instead of money"],
@@ -1198,7 +1198,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "The hidden cost, stated plainly" },
+      { t: "h2", text: "What do free leads actually cost you?" },
       {
         t: "p",
         text: "Free channels fail for one reason: nobody owns them. A review request that goes out when someone remembers is not a channel, it is a hobby. The cost of free leads is that somebody has to do the same small thing every week for a year, which is exactly what an automated system is for.",
@@ -1209,7 +1209,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Paid channels cost money and no discipline. Free channels cost discipline and no money. Most solar companies have more money than discipline, which is why they end up paying for leads they could have earned.",
       },
 
-      { t: "h2", text: "What a full year of free channels looks like" },
+      { t: "h2", text: "What does a full year of free channels look like?" },
       {
         t: "steps",
         items: [
@@ -1296,7 +1296,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Residential and commercial solar are sold to different people, on different timescales, through different channels, by different skill sets. Companies that try to run commercial through their residential lead machine conclude that commercial does not work. What does not work is the machine.",
       },
 
-      { t: "h2", text: "Why inbound does not fill a commercial pipeline" },
+      { t: "h2", text: "Why does inbound not fill a commercial pipeline?" },
       {
         t: "p",
         text: "Nobody in a facilities role wakes up and searches for commercial solar installers. The purchase starts with a budget conversation, an energy audit, a lease renewal or a sustainability commitment, and none of those produce a search. The few who do search are valuable and rare, which means inbound is a supplement, not a strategy.",
@@ -1338,7 +1338,7 @@ export const LEADS_POSTS: readonly Post[] = [
         text: "Lists built on industry code alone are mostly tenants in buildings nobody owns. Filtering on ownership first cuts the list by more than half and raises the hit rate by more than double.",
       },
 
-      { t: "h2", text: "Who you are actually selling to" },
+      { t: "h2", text: "Who are you actually selling to?" },
       {
         t: "table",
         head: ["Role", "What they care about", "How they behave"],
@@ -1370,7 +1370,7 @@ export const LEADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Channels that actually produce" },
+      { t: "h2", text: "Which channels actually produce?" },
       {
         t: "ul",
         items: [

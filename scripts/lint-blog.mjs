@@ -101,7 +101,6 @@ const ROUTES = new Set([
   "/",
   "/about",
   "/blog",
-  "/careers",
   "/contact",
   "/our-process",
   "/partners",
@@ -197,6 +196,15 @@ for (const p of posts) {
   if (h2s.length < 4) fail(p.slug, `only ${h2s.length} H2 sections, want at least 4`);
   const ids = h2s.map((b) => headingId(b.text));
   if (new Set(ids).size !== ids.length) fail(p.slug, "two H2s produce the same anchor id");
+  /* Question-form H2s. AI answer engines and the People Also Ask block both
+     match on the way a query is phrased, and a heading that asks the question
+     is the cheapest way to meet that halfway. Two is a floor, not a target:
+     converting every heading reads like a quiz and wrecks the prose, so the
+     narrative beats are meant to stay narrative. */
+  const questionH2s = h2s.filter((b) => plain(b.text).trim().endsWith("?"));
+  if (questionH2s.length < 2)
+    fail(p.slug, `only ${questionH2s.length} H2s phrased as a question, want at least 2`);
+
   if (p.faq.length < 3) fail(p.slug, `only ${p.faq.length} FAQ entries, want at least 3`);
   if (p.takeaways.length < 3) fail(p.slug, `only ${p.takeaways.length} takeaways`);
 

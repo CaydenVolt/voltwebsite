@@ -50,7 +50,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
           "Consumer review figures are widely reported in local search research; the text-versus-email gap comes from review platform data published by [Bodhi](https://www.bodhi.solar/blog/best-practices-for-great-solar-reviews).",
       },
 
-      { t: "h2", text: "When to ask" },
+      { t: "h2", text: "When should you ask for a review?" },
       {
         t: "p",
         text: "Most installers ask on the day the job finishes, which is the worst moment that feels like the right one. The customer has scaffolding marks on the lawn, an inverter they do not understand, and no evidence yet that any of it worked.",
@@ -75,7 +75,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "One follow-up, seven days later, roughly doubles the total. Two follow-ups annoy people. Set the sequence to send twice and stop.",
       },
 
-      { t: "h2", text: "What to send, and on which channel" },
+      { t: "h2", text: "What should you send, and on which channel?" },
       {
         t: "p",
         text: "Text first, email as backup. A review request is a sixty second task and texts are read in minutes, which is the whole reason the gap between the two is so large.",
@@ -126,7 +126,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "One detail worth getting right: put the service and the place in the reply, naturally. Thanks Sarah, glad the 6.4kW system in Fairview is already showing on the bill reads better to a human and to a search engine than Thanks for your feedback.",
       },
 
-      { t: "h2", text: "Where to ask beyond Google" },
+      { t: "h2", text: "Where should you ask beyond Google?" },
       {
         t: "p",
         text: "Google is the priority because it feeds the map pack, but solar buyers check industry-specific sites too. Pick two secondary platforms and be consistent rather than spreading across six.",
@@ -234,7 +234,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Settings and profile hygiene that affect reviews" },
+      { t: "h2", text: "Which profile settings affect your reviews?" },
       {
         t: "ul",
         items: [
@@ -245,7 +245,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Why some reviews never appear" },
+      { t: "h2", text: "Why do some reviews never appear?" },
       {
         t: "p",
         text: "A review that vanishes has usually been filtered rather than deleted. Google's spam systems act automatically, and the common triggers are mundane rather than sinister.",
@@ -277,7 +277,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "Naming the system size, the town and the crew turns a generic thank you into proof that the job was real. It also puts relevant local language on the profile without keyword stuffing anything.",
       },
 
-      { t: "h2", text: "Getting past the awkwardness of asking" },
+      { t: "h2", text: "How do you get past the awkwardness of asking?" },
       {
         t: "p",
         text: "Most owners under-ask because it feels like begging. It is worth reframing: you are asking somebody who is genuinely pleased to spend sixty seconds helping a local business they chose. Framed that way, the ask stops being awkward and the response rate goes up.",
@@ -413,7 +413,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "After that, stop. A third ask converts almost nobody and costs goodwill with the people who were always going to say no.",
       },
 
-      { t: "h2", text: "The ones who say yes and never do it" },
+      { t: "h2", text: "What about the ones who say yes and never do it?" },
       {
         t: "p",
         text: "Most of them are not avoiding you. They read the text while driving, meant to do it later, and later never came. Which is exactly why the second message works, and why sending the link as the last line of the message rather than buried mid-paragraph matters more than it sounds.",
@@ -427,7 +427,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
           "If a customer had a problem that got fixed well, ask them specifically. Recovered customers write the best reviews there are.",
         ],
       },
-      { t: "h2", text: "Who to ask, and who to skip" },
+      { t: "h2", text: "Who should you ask, and who should you skip?" },
       {
         t: "p",
         text: "Ask everyone. That sentence is doing real work, because the instinct is to ask only the customers who seemed delighted, and that instinct is both against platform policy and worse for business.",
@@ -512,7 +512,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "That reframing is the whole skill. You are not writing to the angry customer. You are writing to the homeowner three months from now who is deciding between you and two others and has just read it.",
       },
 
-      { t: "h2", text: "The four-part reply" },
+      { t: "h2", text: "How should you structure the reply?" },
       {
         t: "steps",
         items: [
@@ -547,7 +547,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "The three complaints solar actually gets" },
+      { t: "h2", text: "What do solar customers actually complain about?" },
       {
         t: "table",
         head: ["Complaint", "What is usually behind it", "What the reply should do"],
@@ -587,7 +587,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         t: "p",
         text: "What matters far more than the occasional bad one is the total. Ten reviews with one bad review reads as a risk; three hundred reviews with eleven bad ones reads as a busy company. Volume is the real defence, which is why it is worth building steadily. See [how to get more reviews for solar installers](/blog/how-to-get-more-reviews-for-solar-installers).",
       },
-      { t: "h2", text: "What to do after the reply" },
+      { t: "h2", text: "What do you do after the reply?" },
       {
         t: "p",
         text: "The public reply is the smaller half of the job. The larger half is the private one, and it is where the occasional review actually gets changed.",
@@ -745,7 +745,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How to sequence them" },
+      { t: "h2", text: "How do you sequence them?" },
       {
         t: "ol",
         items: [
@@ -760,7 +760,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         t: "p",
         text: "For the reasoning behind the timing and the compliance rules these templates are written around, see [how to get more reviews for solar installers](/blog/how-to-get-more-reviews-for-solar-installers) and [how to ask a solar customer for a review](/blog/how-to-ask-customers-for-a-review-solar).",
       },
-      { t: "h2", text: "Making them sound like you" },
+      { t: "h2", text: "How do you make them sound like you?" },
       {
         t: "p",
         text: "Templates have one failure mode, which is that every solar company within forty miles is sending a version of the same message. Three small changes fix it and take about ten minutes.",
@@ -838,7 +838,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "Owners ask this question hoping for a number and the honest answer is that it depends on your postcode. But there are thresholds that behave consistently, and a simple way to set your own target in ten minutes.",
       },
 
-      { t: "h2", text: "The three thresholds" },
+      { t: "h2", text: "How many reviews do you actually need?" },
       {
         t: "table",
         head: ["Count", "What changes", "Why"],
@@ -854,7 +854,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "The last row is the one that actually matters, and it is why national benchmarks mislead. In a rural county the leaders might have 40. In a competitive metro they might have 600.",
       },
 
-      { t: "h2", text: "How to set your own target in ten minutes" },
+      { t: "h2", text: "How do you set your own target?" },
       {
         t: "steps",
         items: [
@@ -905,7 +905,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         t: "p",
         text: "And whatever the target, the way to hit it is the same: ask everyone, at the same moment, automatically, with one reminder. See [how to get more reviews for solar installers](/blog/how-to-get-more-reviews-for-solar-installers).",
       },
-      { t: "h2", text: "Why the count matters most when you are new" },
+      { t: "h2", text: "Why does the count matter most when you are new?" },
       {
         t: "p",
         text: "A company in its first two years is in the hardest position in solar: the technical work may be excellent and there is no way for anybody to tell. Reviews are the fastest route out, and they are the only credibility that can be built in months rather than years.",
@@ -980,7 +980,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "Review software gets sold on dashboards and bought for dashboards, and then review counts do not move. What moves review counts is a message that goes out on its own at the right moment, and there are only five features involved in that.",
       },
 
-      { t: "h2", text: "The five features that matter" },
+      { t: "h2", text: "Which features actually matter?" },
       {
         t: "steps",
         items: [
@@ -1023,7 +1023,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "If a tool offers to ask customers how they feel first and only send the review link to the happy ones, that is review gating. It is against policy on every major platform and enforcement can remove a large part of your review history, including the honest reviews.",
       },
 
-      { t: "h2", text: "When you do not need software at all" },
+      { t: "h2", text: "When do you not need software at all?" },
       {
         t: "p",
         text: "Under roughly six installs a month, a recurring calendar task and two saved messages on a phone do the same job for nothing. The threshold is not really volume, it is whether the asking is reliably happening.",
@@ -1051,7 +1051,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         t: "p",
         text: "On the wider point about collapsing tools into one place, see [how to consolidate your solar tech stack](/blog/how-to-consolidate-your-solar-tech-stack).",
       },
-      { t: "h2", text: "How to test a review tool in one month" },
+      { t: "h2", text: "How do you test a review tool in one month?" },
       {
         t: "p",
         text: "Software demos are all convincing. A month of real use is not, which is why the test is worth running before the annual plan.",
@@ -1131,7 +1131,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "Before spending a week on this, be honest about which of two situations you are in, because only one of them has a route.",
       },
 
-      { t: "h2", text: "What actually qualifies for removal" },
+      { t: "h2", text: "What actually qualifies for removal?" },
       {
         t: "table",
         head: ["Ground", "Example", "Realistic chance"],
@@ -1174,7 +1174,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "Do not ask staff, friends or customers to mass-report a review, and do not post replies accusing the reviewer of being a competitor without proof. Coordinated reporting is itself a pattern the systems look for, and a public accusation reads badly to every future reader.",
       },
 
-      { t: "h2", text: "What to do while you wait" },
+      { t: "h2", text: "What do you do while you wait?" },
       {
         t: "p",
         text: "Most of these take days to weeks and many end in no action. So the practical work is everything that happens around the review.",
@@ -1203,7 +1203,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "You cannot control what one person writes. You can control whether it is one of twelve or one of three hundred.",
       },
 
-      { t: "h2", text: "Writing a report that gets read" },
+      { t: "h2", text: "How do you write a report that gets read?" },
       {
         t: "p",
         text: "Where a human does look at a report, the ones that succeed read like a case file rather than a complaint. Four things make the difference.",
@@ -1319,7 +1319,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         text: "There is a third effect that owners rarely price: reviews lower the cost of every paid channel. The same Google Ads spend produces more booked surveys for a company with 200 reviews than for one with eleven, because a higher share of the clicks convert. See [how much do solar leads cost](/blog/how-much-do-solar-leads-cost).",
       },
 
-      { t: "h2", text: "Why the newer company sometimes wins" },
+      { t: "h2", text: "Why does the newer company sometimes win?" },
       {
         t: "quote",
         text: "The installer with fifteen years of experience and nineteen reviews loses to the three-year-old company with four hundred. Google cannot see experience. It can count reviews.",
@@ -1344,7 +1344,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
         t: "p",
         text: "None of this is clever. It is a fortnightly habit that compounds for years, which is exactly the kind of work that gets postponed indefinitely unless something else runs it.",
       },
-      { t: "h2", text: "What reviews will not do" },
+      { t: "h2", text: "What will reviews not do?" },
       {
         t: "p",
         text: "Worth being clear about the limits, because reviews get sold as a cure for things they do not touch.",

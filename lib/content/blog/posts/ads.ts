@@ -58,7 +58,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Every one of those three raises the return on the same ad spend. Fixing them first is not a delay; it is the difference between an account that pays for itself and one that funds an education.",
       },
 
-      { t: "h2", text: "Account structure" },
+      { t: "h2", text: "How should the account be structured?" },
       {
         t: "p",
         text: "Keep it simple. Solar accounts fail from over-complication far more often than from under-optimisation.",
@@ -142,7 +142,7 @@ export const ADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Budget and bidding" },
+      { t: "h2", text: "What budget and bidding should you start with?" },
       {
         t: "p",
         text: "Start on manual or maximise clicks with a cap while you gather conversion data, then move to a conversion-based strategy once there are enough conversions for it to learn from. Smart bidding on three conversions a month has nothing to learn from.",
@@ -220,7 +220,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Cost per lead is the number everybody quotes and the least useful of the four. Here is the whole chain, with the figures reported across the industry in 2026, and then the part that actually matters.",
       },
 
-      { t: "h2", text: "The four numbers" },
+      { t: "h2", text: "What does a solar Google Ads lead cost?" },
       {
         t: "table",
         caption:
@@ -263,7 +263,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Not the bids. Conversion rate on the landing page, then sat rate. A page going from 5% to 9% halves cost per lead across the entire account overnight, and it is a one-off piece of work rather than a permanent negotiation.",
       },
 
-      { t: "h2", text: "What makes your number higher than the benchmark" },
+      { t: "h2", text: "What makes your number higher than the benchmark?" },
       {
         t: "ol",
         items: [
@@ -293,7 +293,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Local Services Ads frequently produce a lower cost per lead than search in the same market, and they sit above search in the results. For most installers they are worth running first. See [Local Services Ads for solar](/blog/local-services-ads-for-solar).",
       },
 
-      { t: "h2", text: "Setting a target you can defend" },
+      { t: "h2", text: "How do you set a target you can defend?" },
       {
         t: "p",
         text: "Work backwards from the job rather than forwards from the click. Take your average job value and your gross margin, decide what share of that margin you are willing to spend acquiring the job, and that gives you a maximum cost per closed job.",
@@ -385,7 +385,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "The volume row is why social matters. In a small market, search volume for solar terms is finite; once you own it you cannot buy more. Social has no such ceiling, which makes it the growth channel once search is saturated.",
       },
 
-      { t: "h2", text: "What actually works as an offer" },
+      { t: "h2", text: "What actually works as an offer?" },
       {
         t: "steps",
         items: [
@@ -413,7 +413,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Stock imagery of panels against a blue sky, and copy about a sustainable future. It looks like every other solar ad, it gets scrolled past, and the impressions are billed either way.",
       },
 
-      { t: "h2", text: "Lead forms versus landing pages" },
+      { t: "h2", text: "Lead forms or landing pages?" },
       {
         t: "p",
         text: "Instant lead forms fill in themselves from the profile, so they produce the cheapest leads available and the coldest. Somebody who tapped twice has committed almost nothing.",
@@ -517,7 +517,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "This gets argued as a choice by people who sell one of the two. In practice they operate on different timescales and different cost structures, and the useful question is not which one but in what order and in what proportion.",
       },
 
-      { t: "h2", text: "How they actually differ" },
+      { t: "h2", text: "How do they actually differ?" },
       {
         t: "table",
         head: ["", "Google Ads", "SEO and local"],
@@ -574,7 +574,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "For a solar company with a limited budget, that is the highest-return work available, ahead of both. It is free, it is fast by SEO standards, and it makes paid traffic convert better at the same time. See [how to rank in the Google map pack](/blog/how-to-rank-in-google-map-pack-solar).",
       },
 
-      { t: "h2", text: "Why running both is cheaper than either" },
+      { t: "h2", text: "Why is running both cheaper than either?" },
       {
         t: "ul",
         items: [
@@ -585,7 +585,7 @@ export const ADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "When one genuinely beats the other" },
+      { t: "h2", text: "When does one genuinely beat the other?" },
       {
         t: "p",
         text: "Ads alone make sense if you need leads within weeks, are testing a new territory before committing, or have crews idle now. SEO alone makes sense if you have no budget at all, or if your market has so little search volume that the ad auction is thin and organic is easy to dominate.",
@@ -657,7 +657,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "And almost every solar company has an intention to ask for referrals rather than a system that does.",
       },
 
-      { t: "h2", text: "Why most programmes stop" },
+      { t: "h2", text: "Why do most referral programmes stop?" },
       {
         t: "ul",
         items: [
@@ -669,7 +669,7 @@ export const ADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "The structures that work" },
+      { t: "h2", text: "Which structures actually work?" },
       {
         t: "table",
         head: ["Structure", "How it works", "Suits"],
@@ -828,7 +828,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "They are already in your system. They cost nothing to reach. And the average solar company has hundreds of them sitting in a status called Lost.",
       },
 
-      { t: "h2", text: "Who to include" },
+      { t: "h2", text: "Who should you include?" },
       {
         t: "table",
         head: ["Group", "Include?", "Why"],
@@ -848,7 +848,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Before sending anything, remove everyone who asked not to be contacted, anyone with an open complaint, and anyone deceased. It takes twenty minutes and it prevents the one outcome that makes this campaign a disaster rather than a windfall.",
       },
 
-      { t: "h2", text: "What to send" },
+      { t: "h2", text: "What should you send?" },
       {
         t: "p",
         text: "Short, direct, from a person, and with an easy exit. The best-performing reactivation messages do not look like campaigns at all, which is precisely why they work.",
@@ -890,7 +890,7 @@ export const ADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What to expect" },
+      { t: "h2", text: "What should you expect?" },
       {
         t: "p",
         text: "Replies within hours rather than days, because the message reads like a person. A meaningful share will be no thanks, which is a genuine result: it cleans your database and it is the honest answer to a direct question.",
@@ -976,7 +976,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Local Services Ads sit at the very top of the results, above both the paid search ads and the map pack, with a verification badge. For a local trade they are usually the best-value paid placement available, and plenty of solar companies never set them up because the verification looks like paperwork.",
       },
 
-      { t: "h2", text: "How they differ from ordinary search ads" },
+      { t: "h2", text: "How do they differ from ordinary search ads?" },
       {
         t: "table",
         head: ["", "Local Services Ads", "Search ads"],
@@ -1023,7 +1023,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "The whole process commonly takes several weeks and occasionally longer if a document needs re-issuing. Begin it now rather than when the diary looks thin, because it cannot be rushed at the point you need it.",
       },
 
-      { t: "h2", text: "How ranking works, and the unusual factor" },
+      { t: "h2", text: "How does ranking work?" },
       {
         t: "p",
         text: "Proximity, review score and review count behave much as they do in the map pack. The factor that surprises people is responsiveness: how quickly and how consistently you answer the leads the platform sends you is explicitly part of how often it sends more.",
@@ -1043,7 +1043,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "In other words, the same speed-to-lead discipline that raises conversion everywhere else also lowers your cost here by raising how often you appear. See [speed to lead for solar companies](/blog/speed-to-lead-for-solar-companies).",
       },
 
-      { t: "h2", text: "Disputing bad leads" },
+      { t: "h2", text: "How do you dispute a bad lead?" },
       {
         t: "p",
         text: "You can request credit for leads that are outside your service area, for a job type you do not offer, spam, or a customer who never engaged at all. Most installers never bother, which is a standing discount left unclaimed.",
@@ -1132,7 +1132,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Most referral asks fail for the same reason most review asks fail: the timing is wrong and the request is too vague to act on. Both are fixable in an afternoon.",
       },
 
-      { t: "h2", text: "Why the usual ask does not work" },
+      { t: "h2", text: "Why does the usual ask not work?" },
       {
         t: "p",
         text: "If you know anyone who needs solar, send them our way. Said warmly, on the last day, and it produces almost nothing. Three reasons.",
@@ -1146,7 +1146,7 @@ export const ADS_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "The two moments" },
+      { t: "h2", text: "When should you ask?" },
       {
         t: "steps",
         items: [
@@ -1186,7 +1186,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "The right-hand column works because it names a specific person the customer can actually picture. The left-hand column asks them to search an entire mental address book, and nobody does.",
       },
 
-      { t: "h2", text: "The message to send" },
+      { t: "h2", text: "What message should you send?" },
       {
         t: "quote",
         text: "Hi Sarah, hope the first bill was a pleasant surprise. Quick ask: if anyone on your street asked about the panels while we were there, would you mind passing this on? [link] We pay $X when a referral goes ahead, and I will tell you if it does. No pressure either way.",
@@ -1302,7 +1302,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "One message to somebody who asked never to be contacted can turn a profitable campaign into a complaint and, in some jurisdictions, a penalty. Twenty minutes of list hygiene is the cheapest insurance available.",
       },
 
-      { t: "h2", text: "Step two: segment into three" },
+      { t: "h2", text: "Step two: how should you segment the list?" },
       {
         t: "table",
         head: ["Segment", "Who", "First line"],
@@ -1329,7 +1329,7 @@ export const ADS_POSTS: readonly Post[] = [
         text: "Three first lines, then the same body and the same closing question. Segmenting further gets you diminishing returns and a much longer afternoon.",
       },
 
-      { t: "h2", text: "Step three: write the message" },
+      { t: "h2", text: "Step three: what should the message say?" },
       {
         t: "p",
         text: "Short. From a person. Honest about being an old enquiry. Ending in a question that is easy to answer either way.",

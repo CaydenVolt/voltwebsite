@@ -219,7 +219,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Most solar companies have bought a CRM. Rather fewer are using one. The gap between those two states is where the money is, and it is almost never closed by switching to a different product.",
       },
 
-      { t: "h2", text: "The seven features that matter" },
+      { t: "h2", text: "Which CRM features actually matter?" },
       {
         t: "steps",
         items: [
@@ -280,7 +280,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "In the demo, ask to see a rep's phone screen at 4pm after a survey. If updating the record and triggering the next step takes more than twenty seconds on a phone, the CRM will be out of date within a month no matter what it does on a desktop.",
       },
 
-      { t: "h2", text: "Questions to ask before you sign" },
+      { t: "h2", text: "What should you ask before you sign?" },
       {
         t: "ol",
         items: [
@@ -372,7 +372,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "The software industry's answer to this question is always yes, immediately, at the highest tier. The honest answer is that it depends on two things: how many leads you handle, and how many people touch one.",
       },
 
-      { t: "h2", text: "When you genuinely do not need one yet" },
+      { t: "h2", text: "When do you genuinely not need one yet?" },
       {
         t: "p",
         text: "A one-person operation doing eight installs a month, where the owner sells every job and remembers every conversation, does not need a CRM. It needs a reliable follow-up habit and somewhere to write things down. A spreadsheet plus calendar reminders does that, and it does it without a migration, a subscription or a training problem.",
@@ -382,7 +382,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "What it does need, and this is not optional at any size, is automated first response. That is a separate thing from a CRM and it can be added on its own. See [speed to lead for solar companies](/blog/speed-to-lead-for-solar-companies).",
       },
 
-      { t: "h2", text: "The four symptoms" },
+      { t: "h2", text: "What are the four symptoms that you need one?" },
       {
         t: "table",
         head: ["Symptom", "What it means"],
@@ -442,7 +442,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Before buying anything, write down your follow-up process on one page: what happens at minute five, day two, day seven, day fourteen. If you cannot write it, a CRM will not fix it, it will simply automate the absence of one.",
       },
 
-      { t: "h2", text: "The cost, honestly" },
+      { t: "h2", text: "What does a CRM actually cost?" },
       {
         t: "ul",
         items: [
@@ -527,7 +527,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Marketing automation in solar is usually sold as sophistication and bought as a newsletter. The version that makes money is duller than that: a handful of messages that go out on time, every time, whether or not the office is busy.",
       },
 
-      { t: "h2", text: "The seven, in order of return" },
+      { t: "h2", text: "Which automations pay back first?" },
       {
         t: "table",
         head: ["#", "Automation", "Typical payback"],
@@ -570,7 +570,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "An automated message that says the right thing at minute one is service. An automated message that pretends to be a personal reply to something the customer actually wrote is a trap: sooner or later it answers a bereavement or a complaint as though it were a new enquiry.",
       },
 
-      { t: "h2", text: "What not to automate" },
+      { t: "h2", text: "What should you not automate?" },
       {
         t: "ul",
         items: [
@@ -605,7 +605,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         t: "p",
         text: "That is five weeks of setup for a system that runs for years, and the first fortnight of it carries most of the value. Everything after that is refinement.",
       },
-      { t: "h2", text: "Who owns it once it is built" },
+      { t: "h2", text: "Who owns it once it is built?" },
       {
         t: "p",
         text: "Automation has a quiet governance problem. It is built by whoever set it up, and then that person leaves, or moves on, and nobody else knows it exists until it breaks or embarrasses you.",
@@ -688,7 +688,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "What is worth being precise about is where it stops working, because the failure is gradual and by the time it is obvious you have usually lost a quarter of leads to it.",
       },
 
-      { t: "h2", text: "What a spreadsheet genuinely does well" },
+      { t: "h2", text: "What does a spreadsheet genuinely do well?" },
       {
         t: "ul",
         items: [
@@ -703,7 +703,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "That last point is underrated. A CRM produces confident reports from incomplete data. A spreadsheet produces obviously incomplete reports from incomplete data, and the second is safer to make decisions with.",
       },
 
-      { t: "h2", text: "The three hard limits" },
+      { t: "h2", text: "Where does a spreadsheet stop working?" },
       {
         t: "steps",
         items: [
@@ -762,7 +762,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "That takes days rather than weeks, changes nothing about how the sales team works, and removes the two leaks that are actually costing you jobs. Pipeline management can follow later. See [do solar companies need a CRM](/blog/do-solar-companies-need-a-crm).",
       },
 
-      { t: "h2", text: "When to actually switch" },
+      { t: "h2", text: "When should you actually switch?" },
       {
         t: "p",
         text: "Switch when two or more of the three limits are biting weekly, not when a demo is persuasive. In practice that is usually around twenty leads a month with two or more people selling.",
@@ -847,7 +847,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "A generic CRM ships with stages like Lead, Qualified, Proposal, Negotiation, Closed. That works for software. It does not describe a business where the customer signs in March and the system is switched on in June, and where most of the anxiety lives in between.",
       },
 
-      { t: "h2", text: "The eleven stages" },
+      { t: "h2", text: "What are the stages of a solar sales pipeline?" },
       {
         t: "table",
         head: ["Stage", "Means", "Exits when"],
@@ -870,7 +870,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Eleven looks like a lot until you notice that the last four are where every customer complaint about communication comes from. Tracking them is what lets you send updates nobody had to be asked for.",
       },
 
-      { t: "h2", text: "Why set and sat must be separate" },
+      { t: "h2", text: "Why must set and sat be separate?" },
       {
         t: "p",
         text: "If they are one stage, a booker with a high set rate and a terrible sat rate looks like your best performer. Separating them exposes the difference, and the difference is usually somebody booking appointments where the co-owner was never going to attend.",
@@ -885,7 +885,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Every stage needs an objective exit test. Proposal sent means a document reached them, not that you talked about numbers. Without exit criteria, deals sit in Verbal Agreement for four months because nobody wants to move them backwards.",
       },
 
-      { t: "h2", text: "Handling the stall" },
+      { t: "h2", text: "How do you handle the stall?" },
       {
         t: "p",
         text: "The most common pipeline distortion in solar is a deal parked in Proposal Sent indefinitely. It flatters the forecast and hides the fact that nothing is happening.",
@@ -1016,7 +1016,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "This is the one software category where solar-specific tools genuinely beat anything general purpose, because production modelling and shading analysis are real engineering rather than configuration. Which makes choosing well worth the effort.",
       },
 
-      { t: "h2", text: "The six criteria" },
+      { t: "h2", text: "What should you judge proposal software on?" },
       {
         t: "steps",
         items: [
@@ -1047,7 +1047,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How to test it properly" },
+      { t: "h2", text: "How do you test it properly?" },
       {
         t: "p",
         text: "Demos use a clean south-facing roof with no obstructions, because that is what the software is best at. That tells you nothing about your Tuesday.",
@@ -1069,7 +1069,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Model a system you installed a year ago and compare against its real production. If the software over-predicts by a wide margin, every proposal you send with it is a future complaint about savings, and those complaints become reviews.",
       },
 
-      { t: "h2", text: "Where demos mislead" },
+      { t: "h2", text: "Where do demos mislead?" },
       {
         t: "ul",
         items: [
@@ -1201,7 +1201,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         text: "Then draw the workflow from enquiry to paid invoice across the top and mark every point where a human moves data between two tools. Those marks are the actual problem. The number of logins is a symptom.",
       },
 
-      { t: "h2", text: "What to collapse and what to keep" },
+      { t: "h2", text: "What should you collapse, and what should you keep?" },
       {
         t: "ul",
         items: [
@@ -1256,7 +1256,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What consolidation is actually worth" },
+      { t: "h2", text: "What is consolidation actually worth?" },
       {
         t: "p",
         text: "The subscription saving is the smallest part and the one people quote. The real returns are elsewhere: leads that stop falling between systems, follow-up that fires because it lives with the data, and reports that are true because there is one source of truth rather than four.",
@@ -1265,7 +1265,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         t: "p",
         text: "At solar job values, one recovered lead a month pays for most stacks several times over. That is the number to put against the migration cost, not the difference between two subscription totals.",
       },
-      { t: "h2", text: "What to do if you cannot migrate yet" },
+      { t: "h2", text: "What if you cannot migrate yet?" },
       {
         t: "p",
         text: "Sometimes the migration is genuinely the wrong move this year: peak season, a contract with eight months left, or nobody with the time to run it. The seams can still be narrowed without replacing anything.",
@@ -1398,7 +1398,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What to stop tracking" },
+      { t: "h2", text: "What should you stop tracking?" },
       {
         t: "ol",
         items: [
@@ -1410,7 +1410,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Making the numbers exist at all" },
+      { t: "h2", text: "How do you make the numbers exist at all?" },
       {
         t: "p",
         text: "Most of these require one thing: every lead has a source, recorded automatically, and it survives into the appointment and job record. If source is typed by hand, it will be blank or wrong for a third of your leads and every per-source number above becomes a guess.",

@@ -38,7 +38,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Of everything in this blog, this is the one with the best return on the least effort. It requires no new spend, no new channel and no new hire, and it routinely produces a bigger lift than any of those would.",
       },
 
-      { t: "h2", text: "The numbers, and why they are so lopsided" },
+      { t: "h2", text: "How fast should a solar company respond to a lead?" },
       {
         t: "figures",
         items: [
@@ -76,7 +76,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Pull your last fifty enquiries and calculate the median minutes to first outbound contact. Median, not average: one lead answered at 3am skews an average and hides the real picture. Most owners are surprised, and the surprise is the point.",
       },
 
-      { t: "h2", text: "Why your team is slow, and it is not laziness" },
+      { t: "h2", text: "Why is your team slow to respond?" },
       {
         t: "p",
         text: "In almost every solar company we look at, the people are trying. The system is what is slow.",
@@ -115,7 +115,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Layer one is the one to build this week. It is the cheapest, it works outside hours, and it is the difference between being first and being third. See [missed-call text-back for solar](/blog/missed-call-text-back-for-solar) and the [all-in-one inbox](/products/all-in-one-inbox).",
       },
 
-      { t: "h2", text: "What the automatic reply should say" },
+      { t: "h2", text: "What should the automatic reply say?" },
       {
         t: "p",
         text: "Short, human, and it must do one job beyond acknowledgement: start a conversation the homeowner can continue with their thumb.",
@@ -130,7 +130,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "The question at the end matters. A reply that only says we will be in touch ends the exchange. A reply ending in one easy question starts one, and a homeowner texting you back is no longer shopping.",
       },
 
-      { t: "h2", text: "What speed does not fix" },
+      { t: "h2", text: "What does speed not fix?" },
       {
         t: "p",
         text: "Being first is worth a great deal and it is not everything. If your review count is thin, your price is out of line, or the follow-up stops after two attempts, speed gets you a conversation you then lose. It is the first fix, not the only one.",
@@ -208,7 +208,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Missed-call text-back is the smallest possible fix for the largest invisible leak in a trades business.",
       },
 
-      { t: "h2", text: "What it does" },
+      { t: "h2", text: "What does missed-call text-back actually do?" },
       {
         t: "p",
         text: "When a call to your business number goes unanswered, an automatic SMS goes out within seconds from that same number. The homeowner gets a message before they have finished dialling the next company, and because it is a text, they can answer it while doing something else.",
@@ -223,7 +223,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What the message should say" },
+      { t: "h2", text: "What should the message say?" },
       {
         t: "p",
         text: "Four elements and nothing else: who you are, an acknowledgement, a promise with a time on it, and a question.",
@@ -291,7 +291,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Rules vary by jurisdiction and change; take local advice if you are operating at scale. The general principle is stable: reply to people who contacted you, stop when asked.",
       },
 
-      { t: "h2", text: "What to expect" },
+      { t: "h2", text: "What should you expect?" },
       {
         t: "p",
         text: "The effect is largest for companies with crews on site and no dedicated phone cover, which is most small and mid-size installers. The leads recovered are ones you never knew you had, so the honest measure is not a percentage lift on something you were tracking but a set of conversations that previously did not exist.",
@@ -365,7 +365,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Solar has a long decision window. A homeowner requesting a quote today may sign in nine weeks, after a bill, a conversation with a spouse, a financing decision and two competing quotes. The company still present at week nine wins, and presence is a sequence rather than an act of will.",
       },
 
-      { t: "h2", text: "The first hour" },
+      { t: "h2", text: "What happens in the first hour?" },
       {
         t: "steps",
         items: [
@@ -449,7 +449,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Keep this running for twelve months. It is the cheapest pipeline a solar company has and almost nobody works it, which is also the subject of [how to reactivate old solar leads](/blog/how-to-reactivate-old-solar-leads) and [solar lead nurturing](/blog/solar-lead-nurturing).",
       },
 
-      { t: "h2", text: "Making it survive contact with a busy week" },
+      { t: "h2", text: "How do you make it survive a busy week?" },
       {
         t: "p",
         text: "Every part of this sequence is easy in week one and impossible by week six, because the crews are behind and somebody is on holiday. Three rules keep it alive.",
@@ -527,7 +527,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "In solar the second group is large, because the purchase gets postponed rather than rejected. The roof needs doing first. The bonus lands in March. A spouse wants to wait. Nurturing is how you stay present through that without becoming a nuisance, and it starts where [the solar sales follow-up sequence](/blog/solar-sales-follow-up-sequence) stops.",
       },
 
-      { t: "h2", text: "Who belongs in a nurture sequence" },
+      { t: "h2", text: "Who belongs in a nurture sequence?" },
       {
         t: "table",
         head: ["Lead", "Nurture?", "Why"],
@@ -552,7 +552,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "One channel, usually email, with text reserved for events that genuinely justify the interruption. A text about a utility rate change is welcome; a monthly text newsletter is not.",
       },
 
-      { t: "h2", text: "What to actually send" },
+      { t: "h2", text: "What should you actually send?" },
       {
         t: "steps",
         items: [
@@ -600,7 +600,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What to stop sending" },
+      { t: "h2", text: "What should you stop sending?" },
       {
         t: "ol",
         items: [
@@ -676,7 +676,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "This is one of the few questions in sales with a straightforwardly evidenced answer, and the answer is more than you are currently doing.",
       },
 
-      { t: "h2", text: "Where most solar companies stop" },
+      { t: "h2", text: "Where do most solar companies stop?" },
       {
         t: "p",
         text: "Two attempts. A call on the day, a call the next day, then the lead moves to a status nobody looks at again. What makes this expensive is that you already paid for the lead, whether in ad spend, vendor fees or the years of reputation that produced the referral.",
@@ -694,7 +694,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Note that the first and last figures are in tension. Speed matters enormously and persistence matters enormously, and they are usually discussed separately. Getting there first and then quitting on attempt two wastes the advantage you just paid for.",
       },
 
-      { t: "h2", text: "Why so many attempts are needed" },
+      { t: "h2", text: "Why are so many attempts needed?" },
       {
         t: "ul",
         items: [
@@ -705,7 +705,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What eight attempts should look like" },
+      { t: "h2", text: "What should eight attempts look like?" },
       {
         t: "table",
         head: ["Attempt", "When", "Channel"],
@@ -753,7 +753,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "When to actually stop" },
+      { t: "h2", text: "When should you actually stop?" },
       {
         t: "ol",
         items: [
@@ -849,7 +849,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "A no-show is more expensive than a bad lead. You paid for the lead, spent the time booking it, lost a slot that could have held a real appointment, and in many cases sent someone driving. Cost per sat appointment is the number that matters in solar, and no-shows are the term in that equation nobody works on.",
       },
 
-      { t: "h2", text: "Why solar appointments do not sit" },
+      { t: "h2", text: "Why do solar appointments not sit?" },
       {
         t: "table",
         head: ["Cause", "How common", "Fixable?"],
@@ -910,7 +910,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Offering a reschedule feels like inviting cancellation. It is not: those people were not going to be there anyway, and now the slot is recoverable and the lead is still alive.",
       },
 
-      { t: "h2", text: "Recovering a no-show" },
+      { t: "h2", text: "How do you recover a no-show?" },
       {
         t: "p",
         text: "Most companies mark a no-show as dead. That is a lead you paid for, who wanted solar enough to book time, being written off over one missed afternoon.",
@@ -937,7 +937,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Measuring it properly" },
+      { t: "h2", text: "How do you measure it properly?" },
       {
         t: "p",
         text: "Track set rate and sat rate separately, per channel and per person booking. The two numbers tell different stories: a booker with a high set rate and a poor sat rate is booking appointments that were never real, which looks like performance on a leaderboard and costs money everywhere else.",
@@ -1007,7 +1007,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Text messages get opened and read within minutes, which is exactly why they are valuable and exactly why they are easy to abuse. The distinction that keeps a solar company on the right side of it is simple: text is a conversation channel and an operational one. It is not a broadcast channel.",
       },
 
-      { t: "h2", text: "Where text works for solar" },
+      { t: "h2", text: "Where does text actually work for solar?" },
       {
         t: "table",
         head: ["Use", "Works?", "Why"],
@@ -1045,7 +1045,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Responding to someone who contacted you is a reply. Messaging a list who did not is marketing. The first is nearly always fine; the second is regulated, and in solar it is heavily scrutinised because of the industry's history with cold outreach.",
       },
 
-      { t: "h2", text: "How to write one" },
+      { t: "h2", text: "How do you write one?" },
       {
         t: "ul",
         items: [
@@ -1103,7 +1103,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
           "**Not watching the replies.** Sending texts from a system nobody monitors is worse than not sending them. See the [all-in-one inbox](/products/all-in-one-inbox).",
         ],
       },
-      { t: "h2", text: "Getting the number right" },
+      { t: "h2", text: "Which number should you send from?" },
       {
         t: "p",
         text: "One detail decides whether any of this works: which number the message appears to come from.",
@@ -1182,7 +1182,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Cold is a label applied to a lead that stopped replying, and it flattens seven quite different situations into one. Telling them apart is what turns a dead list into a pipeline.",
       },
 
-      { t: "h2", text: "The seven reasons" },
+      { t: "h2", text: "Why do solar leads go cold?" },
       {
         t: "table",
         head: ["Reason", "The signal", "Recoverable?"],
@@ -1232,7 +1232,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "And note what this means for your existing database: every lead you abandoned at attempt two is still sitting there, unworked, having cost you money. See [how many times to follow up with a solar lead](/blog/how-many-times-should-you-follow-up-with-a-solar-lead).",
       },
 
-      { t: "h2", text: "Diagnosing yours" },
+      { t: "h2", text: "How do you diagnose yours?" },
       {
         t: "steps",
         items: [
@@ -1255,7 +1255,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What to do with the ones already cold" },
+      { t: "h2", text: "What do you do with the ones already cold?" },
       {
         t: "p",
         text: "Do not delete them. Six of the seven categories are recoverable, and the people in them wanted solar enough to contact you once. They go into a monthly nurture and get woken up by real events rather than by chasing.",
@@ -1419,7 +1419,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Four words, lower case, no company name and no capitals. anything unclear? beats Following Up On Your Solar Quote From Volt Solar, because the first looks like a colleague and the second looks like a campaign.",
       },
 
-      { t: "h2", text: "What to strip out" },
+      { t: "h2", text: "What should you strip out?" },
       {
         t: "ul",
         items: [
@@ -1434,7 +1434,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         t: "p",
         text: "These sit inside the wider cadence in [the solar sales follow-up sequence](/blog/solar-sales-follow-up-sequence), and they work best when the texts and calls around them are also happening. Email on its own is the weakest of the three channels; email as part of a sequence is doing a job the other two cannot. For the long tail, see [solar lead nurturing](/blog/solar-lead-nurturing).",
       },
-      { t: "h2", text: "Making sure they arrive" },
+      { t: "h2", text: "How do you make sure they arrive?" },
       {
         t: "p",
         text: "A perfectly written email in a spam folder is a worse investment than no email at all, because you will conclude the messaging failed when the delivery did.",

@@ -42,7 +42,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "That reframing changes most of the decisions. The hero image matters less than what the first sentence says. The animation budget matters less than the load time. And the thing almost every solar site avoids, the price, is the question most visitors came with.",
       },
 
-      { t: "h2", text: "Who is actually on the page" },
+      { t: "h2", text: "Who is actually on the page?" },
       {
         t: "p",
         text: "A solar visitor is usually further along than site owners assume. They have had a bill they did not like, seen a neighbour's array or an advert, and are now checking whether you are a real company worth letting onto their roof.",
@@ -88,7 +88,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Design decisions that cost leads" },
+      { t: "h2", text: "Which design decisions cost leads?" },
       {
         t: "table",
         head: ["Decision", "What it costs"],
@@ -131,7 +131,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "A solar site that takes five seconds to load on a mid-range phone on mobile data has already lost a share of its visitors before the design is even visible. Most of the cost is images and scripts rather than anything structural. See [page speed for solar websites](/blog/page-speed-for-solar-websites).",
       },
 
-      { t: "h2", text: "What to build first" },
+      { t: "h2", text: "What should you build first?" },
       {
         t: "p",
         text: "If you are starting from nothing, the order is: homepage, one service page per core service, three service area pages, a costs page, and an about page with real people on it. Six to ten pages. That is a complete solar website, and it will outperform a thirty page site with nothing specific on it.",
@@ -205,7 +205,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "If a site converts at 2% and you take it to 4%, you have halved your cost per lead on every channel simultaneously, without spending another pound on traffic. That is why conversion work comes before more advertising, and almost nobody does it in that order.",
       },
 
-      { t: "h2", text: "Where solar visitors actually drop off" },
+      { t: "h2", text: "Where do solar visitors actually drop off?" },
       {
         t: "table",
         head: ["Point", "Why they leave", "Fix"],
@@ -275,7 +275,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What conversion rate to expect" },
+      { t: "h2", text: "What conversion rate should you expect?" },
       {
         t: "p",
         text: "It depends heavily on traffic source, which is why a single site-wide number is close to meaningless. Branded and referral traffic converts far better than cold paid traffic, so a site whose mix shifts toward ads will see its overall rate fall while nothing about the site has changed.",
@@ -285,7 +285,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Segment by source and compare each against itself over time. Then take the lift through to cost per sat appointment, which is where the value actually shows. See [how much do solar leads cost](/blog/how-much-do-solar-leads-cost).",
       },
 
-      { t: "h2", text: "What happens after the form" },
+      { t: "h2", text: "What happens after the form?" },
       {
         t: "p",
         text: "Conversion does not end at submission. A form that converts brilliantly and then leaves the enquiry unanswered for six hours has produced nothing, because the homeowner filled in two other forms as well.",
@@ -355,7 +355,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Paid traffic is expensive in solar: clicks run from single digits into the tens of pounds and raw leads from eighty upward. Where that traffic lands is therefore one of the highest-value decisions in the account, and most installers send it to the homepage.",
       },
 
-      { t: "h2", text: "Why the homepage is the wrong destination" },
+      { t: "h2", text: "Why is the homepage the wrong destination?" },
       {
         t: "p",
         text: "A homepage serves everybody: existing customers, suppliers, job applicants, people who want the phone number, and prospects at every stage. That generality is exactly right for a homepage and exactly wrong for somebody who just clicked an ad about battery storage in a specific town.",
@@ -405,7 +405,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Ad headline: Solar panel installation in Fairview. Landing page H1: Solar panel installation in Fairview. Not Welcome to Volt Solar, not Powering a brighter tomorrow. The same words. It looks unsophisticated and it consistently outperforms the clever version.",
       },
 
-      { t: "h2", text: "How many landing pages" },
+      { t: "h2", text: "How many landing pages do you need?" },
       {
         t: "p",
         text: "One per ad group, not one per campaign and not one for everything. If you are running battery storage, residential installation and EV chargers, that is three pages, each matching its own ads.",
@@ -425,7 +425,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "That is four pages covering most solar ad accounts. Beyond that you are creating maintenance work for diminishing returns.",
       },
 
-      { t: "h2", text: "What wastes ad spend" },
+      { t: "h2", text: "What wastes ad spend?" },
       {
         t: "ol",
         items: [
@@ -508,7 +508,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "The quote form is where most solar websites quietly lose the visitors they worked hardest to get. Every field is a small tax, and most solar forms charge twelve of them before anybody has agreed to anything.",
       },
 
-      { t: "h2", text: "The four fields" },
+      { t: "h2", text: "Which fields should a solar quote form ask for?" },
       {
         t: "table",
         head: ["Field", "Why it stays", "Format"],
@@ -524,7 +524,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Those four qualify hard on the two things that eliminate most waste: are they in your area, and is the bill big enough for solar to make sense. Everything else is better asked by a person. See [how to qualify solar leads](/blog/how-to-qualify-solar-leads).",
       },
 
-      { t: "h2", text: "What to take off" },
+      { t: "h2", text: "What should you take off?" },
       {
         t: "ul",
         items: [
@@ -543,7 +543,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Would you rather have this answer, or would you rather have the submission? For almost every field beyond the four, the honest answer is the submission, because you will get the answer on the call anyway.",
       },
 
-      { t: "h2", text: "Multi-step forms" },
+      { t: "h2", text: "Do multi-step forms work?" },
       {
         t: "p",
         text: "Multi-step forms often outperform single-page ones with the same number of fields, because the first step feels trivial and the commitment builds. In solar, the effective pattern is to ask the bill range first, then the address, then the contact details.",
@@ -574,7 +574,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What happens after submit" },
+      { t: "h2", text: "What happens after submit?" },
       {
         t: "p",
         text: "The form is not finished when it submits. A form that captures beautifully and then leaves the enquiry sitting for four hours has produced nothing, because that homeowner filled in two other forms this evening.",
@@ -679,7 +679,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Website pricing is opaque because the phrase covers wildly different products. The same request produces quotes an order of magnitude apart, and the difference is usually not design quality.",
       },
 
-      { t: "h2", text: "The four bands" },
+      { t: "h2", text: "What does a solar company website cost?" },
       {
         t: "table",
         head: ["Band", "What you get", "Who it suits"],
@@ -711,7 +711,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "The gap between band two and band three is almost entirely content and SEO. A beautiful site with copy written by somebody who has never spoken to a homeowner will lose to a plain one that answers the cost question.",
       },
 
-      { t: "h2", text: "What actually moves the price" },
+      { t: "h2", text: "What actually moves the price?" },
       {
         t: "ol",
         items: [
@@ -729,7 +729,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Ask a prospective builder what happens in month two. If the answer is nothing, you are buying a brochure. Websites that produce leads need content added, reviews displayed, and profile work continuing, and none of that is in a build fee.",
       },
 
-      { t: "h2", text: "The ongoing costs nobody quotes" },
+      { t: "h2", text: "What are the ongoing costs nobody quotes?" },
       {
         t: "ul",
         items: [
@@ -781,7 +781,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         t: "p",
         text: "At typical solar job values, a site producing two extra booked surveys a month pays for almost any build within a year. One producing none is expensive at any price, which is why the content and SEO line items matter more than the design fee. See [solar company website design](/blog/solar-company-website-design) and [how to increase solar website conversion rate](/blog/how-to-increase-solar-website-conversion-rate).",
       },
-      { t: "h2", text: "Build fee or monthly" },
+      { t: "h2", text: "Build fee or monthly?" },
       {
         t: "p",
         text: "Two commercial shapes exist and they suit different companies. Neither is a trick, and confusing them is where most disappointment comes from.",
@@ -862,7 +862,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Solar websites usually have either four pages or forty. Four is too thin to rank or to answer anything; forty is unmaintained within a year. Ten, written properly, is a complete website.",
       },
 
-      { t: "h2", text: "The homepage" },
+      { t: "h2", text: "What goes on the homepage?" },
       {
         t: "ul",
         items: [
@@ -938,7 +938,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What not to build" },
+      { t: "h2", text: "What should you not build?" },
       {
         t: "ol",
         items: [
@@ -1032,7 +1032,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "These are ordered by how much they cost, not by how often they get mentioned. The expensive ones are all quiet: nobody complains, the visitor simply leaves and clicks the next result.",
       },
 
-      { t: "h2", text: "The four expensive ones" },
+      { t: "h2", text: "Which solar website mistakes cost the most?" },
       {
         t: "steps",
         items: [
@@ -1099,7 +1099,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Not answering quickly. A perfectly built site that generates an enquiry at 7pm which nobody reads until 9am the next day has produced nothing, because the homeowner filled in two other forms that evening. See [speed to lead for solar companies](/blog/speed-to-lead-for-solar-companies).",
       },
 
-      { t: "h2", text: "How to audit your own site in twenty minutes" },
+      { t: "h2", text: "How do you audit your own site in twenty minutes?" },
       {
         t: "steps",
         items: [
@@ -1208,7 +1208,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Solar copy fails in a particular way. It is grammatical, professional, and about the wrong subject. Our commitment to a sustainable future is a sentence about the company, and the homeowner reading it wants to know what this costs and who is going to be on their roof.",
       },
 
-      { t: "h2", text: "The six questions" },
+      { t: "h2", text: "What six questions should the copy answer?" },
       {
         t: "p",
         text: "Every page should answer as many of these as apply, in roughly this order. If a paragraph does not serve one of them, it is decoration.",
@@ -1266,7 +1266,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Every one of those is checkable, which is precisely why it works. A claim a buyer could verify is worth more than one they cannot, even when they never check.",
       },
 
-      { t: "h2", text: "Words to cut" },
+      { t: "h2", text: "Which words should you cut?" },
       {
         t: "p",
         text: "Some of these are industry habit and some are marketing habit. All of them cost you nothing to remove.",
@@ -1283,7 +1283,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Structure per page" },
+      { t: "h2", text: "How should each page be structured?" },
       {
         t: "steps",
         items: [
@@ -1374,7 +1374,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "Speed is the least glamorous item on any website list and one of the few with a direct, measurable effect on enquiries. A visitor who leaves before your page renders has not judged your company at all.",
       },
 
-      { t: "h2", text: "The three metrics that matter" },
+      { t: "h2", text: "Which speed metrics actually matter?" },
       {
         t: "table",
         head: ["Metric", "Measures", "Target"],
@@ -1401,7 +1401,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "The third is the one people underestimate. A page where the content shifts as images load causes mis-taps, and on a form that means a visitor tapping the wrong field and giving up. It is also trivially fixable by setting image dimensions.",
       },
 
-      { t: "h2", text: "Why solar sites are slow" },
+      { t: "h2", text: "Why are solar sites slow?" },
       {
         t: "ol",
         items: [
@@ -1456,7 +1456,7 @@ export const WEBSITE_POSTS: readonly Post[] = [
         text: "At solar click prices, that second effect alone can justify a day of image compression. See [solar Google Ads cost per lead](/blog/solar-google-ads-cost-per-lead).",
       },
 
-      { t: "h2", text: "How far to take it" },
+      { t: "h2", text: "How far should you take it?" },
       {
         t: "p",
         text: "Far enough to pass the thresholds on a real phone, and then stop. Chasing a lab score from 92 to 97 is engineering theatre; getting from 34 to 80 is worth a day.",

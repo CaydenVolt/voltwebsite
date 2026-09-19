@@ -43,7 +43,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "So local SEO for a solar contractor is really two jobs running in parallel. One is the profile, which moves in weeks. The other is the website, which moves in months. Most installers do the slow one first and conclude that SEO does not work.",
       },
 
-      { t: "h2", text: "What the map pack is actually ranked on" },
+      { t: "h2", text: "What is the map pack actually ranked on?" },
       {
         t: "p",
         text: "Google states three factors, and they are worth taking literally because they explain most of what you see.",
@@ -130,7 +130,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "One page per town you genuinely serve, each with something true and specific on it: a real install, the local utility, the permitting quirk, a review from that town. If you cannot write two specific paragraphs about a town, do not publish a page for it yet.",
       },
 
-      { t: "h2", text: "Citations and consistency" },
+      { t: "h2", text: "Do citations still matter?" },
       {
         t: "p",
         text: "Your name, address and phone number need to match everywhere they appear: the profile, your site, directories, industry listings. Inconsistency is not a penalty so much as a confidence problem, and it is tedious rather than difficult to fix. See [citations and NAP for solar companies](/blog/citations-and-nap-for-solar-companies).",
@@ -142,7 +142,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Solar keyword research is unusually simple because the commercial terms are few and obvious, and the long tail is where the volume actually is. Chasing solar panels as a term is a waste of a year. [Solar SEO keywords](/blog/solar-seo-keywords) covers what is worth targeting.",
       },
 
-      { t: "h2", text: "The order to do it in" },
+      { t: "h2", text: "What order should you do it in?" },
       {
         t: "ol",
         items: [
@@ -227,7 +227,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Here is every setting that affects that, roughly in order of impact.",
       },
 
-      { t: "h2", text: "Categories" },
+      { t: "h2", text: "Which category should you choose?" },
       {
         t: "p",
         text: "One primary, up to nine secondary. The primary is heavily weighted and it is the setting most often wrong, usually because the profile was created years ago by somebody who picked whatever looked close.",
@@ -242,7 +242,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "Service areas, and the radius mistake" },
+      { t: "h2", text: "How big should your service area be?" },
       {
         t: "p",
         text: "The instinct is to claim everything within ninety minutes. The effect is the opposite of intended: a profile claiming half a state is judged less relevant to each individual town in it than a profile claiming eight towns it genuinely works in.",
@@ -314,7 +314,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "The suspension traps" },
+      { t: "h2", text: "What gets a profile suspended?" },
       {
         t: "p",
         text: "A suspended profile has no reviews, no map pack presence and no traffic, and reinstatement is slow. Four things cause most suspensions.",
@@ -393,7 +393,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "The map pack is the three business listings that sit above the ordinary results on a local search, with a map beside them. Roughly 60% of local clicks land in the top three results, and on a phone the pack occupies most of the first screen. For a solar company it is the single most valuable piece of real estate in search.",
       },
 
-      { t: "h2", text: "Why your ranking changes street by street" },
+      { t: "h2", text: "Why does your ranking change street by street?" },
       {
         t: "p",
         text: "There is no such thing as ranking first for solar installers in a town. There is ranking first for somebody standing on a particular street, and the answer changes as they move.",
@@ -408,7 +408,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Search from the actual towns, on a phone, in an incognito window, or use a rank tracker that reports on a geographic grid rather than a single point. A single-point check tells you almost nothing about a service area business.",
       },
 
-      { t: "h2", text: "The three inputs, and what to do about each" },
+      { t: "h2", text: "What actually feeds a map pack ranking?" },
       {
         t: "table",
         head: ["Input", "Weight", "Your move"],
@@ -462,7 +462,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What does not move it" },
+      { t: "h2", text: "What does not move it?" },
       {
         t: "ul",
         items: [
@@ -587,7 +587,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "The reason is that installers and manufacturers compete for entirely different terms. Volume is the wrong sort order. Intent plus locality is the right one.",
       },
 
-      { t: "h2", text: "The four groups that matter" },
+      { t: "h2", text: "Which keyword groups actually matter?" },
       {
         t: "table",
         head: ["Group", "Examples", "Worth it for an installer?"],
@@ -619,7 +619,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "The last row is where most solar content budgets are spent, because those terms have the biggest numbers next to them. Someone reading about cell chemistry in another state is not going to book a survey with you.",
       },
 
-      { t: "h2", text: "Finding the terms tools do not show" },
+      { t: "h2", text: "How do you find the terms the tools do not show?" },
       {
         t: "p",
         text: "Keyword tools have thin data on small towns, which is exactly where your money is. Four sources beat them.",
@@ -747,7 +747,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Service area pages are how a solar company competes for towns where the map pack is out of reach. They work, and the version that works looks nothing like the version most installers publish.",
       },
 
-      { t: "h2", text: "Why templated pages fail" },
+      { t: "h2", text: "Why do templated pages fail?" },
       {
         t: "p",
         text: "The standard approach is one page, a town name variable, and a bulk publish. The result is fifty pages that are 94% identical, which search engines identify easily and treat as what it is: a thin doorway set.",
@@ -762,7 +762,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Aim for at least 60% of each page being content that could not appear on any other town's page. Below that you are producing near-duplicates, and past about thirty such pages you are producing a problem rather than an asset.",
       },
 
-      { t: "h2", text: "What actually goes on the page" },
+      { t: "h2", text: "What actually goes on the page?" },
       {
         t: "steps",
         items: [
@@ -804,7 +804,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How many pages, and in what order" },
+      { t: "h2", text: "How many pages do you need, and in what order?" },
       {
         t: "p",
         text: "Start with three. The town you are based in, and the two you most want more work in. Write them properly, watch them for a quarter, then add two more.",
@@ -892,7 +892,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Profile posts are one of the few pieces of local SEO advice that is easy, free and almost universally ignored. Look at the three solar companies ranking above you and count how many have posted in the last month. Usually it is none.",
       },
 
-      { t: "h2", text: "What posts do and do not do" },
+      { t: "h2", text: "What do Business Profile posts actually do?" },
       {
         t: "ul",
         items: [
@@ -942,7 +942,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "How to write one" },
+      { t: "h2", text: "How do you write one?" },
       {
         t: "table",
         head: ["Element", "Guidance"],
@@ -961,7 +961,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Batch a quarter of posts in one sitting. Twelve posts, twelve photos from recent jobs, scheduled. It takes about ninety minutes and removes the weekly decision entirely, which is the only reason posting ever stops.",
       },
 
-      { t: "h2", text: "What not to post" },
+      { t: "h2", text: "What should you not post?" },
       {
         t: "ol",
         items: [
@@ -1057,7 +1057,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Citations are the least interesting part of local SEO and one of the easiest to get wrong, usually because a company moved, changed numbers, or was listed by a supplier five years ago with details nobody has looked at since.",
       },
 
-      { t: "h2", text: "What a citation is, and why consistency matters" },
+      { t: "h2", text: "What is a citation, and why does consistency matter?" },
       {
         t: "p",
         text: "A citation is any mention of your business name, address and phone number on another site: a directory, a trade body, a supplier's installer finder, a chamber of commerce listing. NAP is just shorthand for those three fields.",
@@ -1072,7 +1072,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "An old phone number on listings nobody remembers creating, often from a supplier's installer directory or a listing made when the company started. It costs calls directly, not just ranking, because people do dial it.",
       },
 
-      { t: "h2", text: "The citations a solar company actually needs" },
+      { t: "h2", text: "Which citations does a solar company actually need?" },
       {
         t: "table",
         head: ["Tier", "Where", "Why"],
@@ -1146,7 +1146,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "For the Business Profile specifically, the safer arrangement is the tracking number as the primary and the real number as an additional number, which keeps the corroboration intact. What you should not do is scatter three different tracking numbers across directories.",
       },
 
-      { t: "h2", text: "How often to check" },
+      { t: "h2", text: "How often should you check?" },
       {
         t: "ol",
         items: [
@@ -1236,7 +1236,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "How long SEO takes for solar companies is really three questions, because three different kinds of work run at three different speeds. Most of the frustration owners feel comes from expecting the slow one to behave like the fast one.",
       },
 
-      { t: "h2", text: "The three timelines" },
+      { t: "h2", text: "How long does solar SEO actually take?" },
       {
         t: "table",
         head: ["Work", "First signs", "Meaningful result"],
@@ -1255,7 +1255,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Read the first two rows again. The two fastest items are also the two cheapest, which is why the order in [local SEO for solar contractors](/blog/local-seo-for-solar-contractors) puts them first.",
       },
 
-      { t: "h2", text: "Why pages take months" },
+      { t: "h2", text: "Why do pages take months?" },
       {
         t: "ul",
         items: [
@@ -1266,7 +1266,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         ],
       },
 
-      { t: "h2", text: "What to check at 30, 90 and 180 days" },
+      { t: "h2", text: "What should you check at 30, 90 and 180 days?" },
       {
         t: "steps",
         items: [
@@ -1391,7 +1391,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         text: "Most solar SEO advice is a list of things to do once. The reason sites stop performing is almost never the setup, it is that nobody did the fifteen minutes a week afterwards. So this checklist is sorted by frequency rather than by topic.",
       },
 
-      { t: "h2", text: "One-off setup, about a week of work" },
+      { t: "h2", text: "What do you set up once, and how long does it take?" },
       {
         t: "ol",
         items: [
@@ -1484,7 +1484,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
         t: "p",
         text: "None of this is difficult. All of it is boring, recurring and easy to drop, which is precisely why it is a competitive advantage: your competitors have the same list and most of them stopped at the setup.",
       },
-      { t: "h2", text: "What is deliberately not on this list" },
+      { t: "h2", text: "What is deliberately not on this list?" },
       {
         t: "p",
         text: "Plenty of standard SEO advice does not earn its place for a solar installer, and leaving it off is what makes the rest fit into fifteen minutes a week.",
