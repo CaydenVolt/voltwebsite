@@ -88,6 +88,11 @@ function blockText(b: Block): string {
       return `${b.text} ${b.cite ?? ""}`;
     case "link":
       return `${b.label} ${b.note}`;
+    /* The caption only. The labels inside the diagram are real words on the
+       page, but they are not prose, and counting them toward the 900-word
+       floor would let an article pad its way there with chart furniture. */
+    case "diagram":
+      return b.caption ?? "";
   }
 }
 

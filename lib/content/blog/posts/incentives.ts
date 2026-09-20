@@ -70,6 +70,12 @@ export const INCENTIVES_POSTS: readonly Post[] = [
         text: "The One Big Beautiful Bill Act, signed 4 July 2025, repealed Section 25D, the Residential Clean Energy Credit. The credit is not allowed for any expenditure made after 31 December 2025, and the IRS treats an expenditure as made when the original installation is completed, not when the contract was signed or the deposit taken. A job sold in November 2025 and commissioned in February 2026 does not qualify. [See the IRS guidance on the change](https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb).",
       },
       {
+        t: "diagram",
+        src: "/blog/fig-01-who-claims-the-credit.svg",
+        caption:
+          "The credit did not disappear. It changed hands, and it only reaches a homeowner through a structure where somebody else owns the system.",
+      },
+      {
         t: "callout",
         label: "Not tax advice",
         text: "This is a sales article written for installers, not tax guidance. The rules here are summarised from the IRS and the Congressional Research Service, and any individual homeowner's position should be confirmed with their own tax professional before it appears in a proposal.",

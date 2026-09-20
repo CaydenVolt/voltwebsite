@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import type { Block } from "@/lib/content/blog";
 import { headingId } from "@/lib/content/blog";
@@ -15,6 +17,23 @@ import { pad } from "@/lib/format";
  * the column.
  */
 const measure = "max-w-measure";
+
+/**
+ * The diagram's markup, off disk. Server-only: this module reads public/ and
+ * is imported by the article page, which is a server component and stays one.
+ *
+ * Throws rather than degrades. A missing diagram on a built page is a silent
+ * hole in an argument, and the content gate checks the same files, so getting
+ * here with a bad path means something got past it.
+ */
+function readDiagram(src: string): string {
+  const file = path.join(process.cwd(), "public", src);
+  try {
+    return readFileSync(file, "utf8");
+  } catch {
+    throw new Error(`Diagram not found: ${src} (looked in public${src})`);
+  }
+}
 
 export function ArticleBody({ blocks }: { blocks: readonly Block[] }) {
   return (
@@ -174,6 +193,33 @@ function BlockView({ block, first }: { block: Block; first: boolean }) {
           {block.source && (
             <figcaption className="mt-3 text-body-sm text-muted">
               <Prose text={block.source} />
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case "diagram":
+      return (
+        <figure className="mt-10">
+          {/* Inlined, not referenced. An <img src="diagram.svg"> hides its
+              own labels inside a separate file; inlined, every label is text
+              in this page's HTML. That is the entire reason these are SVG.
+
+              Not held to the reading measure either: a diagram is wider than
+              a line of prose, and squeezing one into the column makes its
+              labels unreadable on a phone. No frame, because the file grounds
+              itself in the page's own bone and a border would draw a box
+              around something meant to sit in the flow.
+
+              The markup is ours, read off disk at build time from a closed
+              set of files in public/blog. It is not user input. */}
+          <div
+            className="[&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+            dangerouslySetInnerHTML={{ __html: readDiagram(block.src) }}
+          />
+          {block.caption && (
+            <figcaption className={`${measure} mt-3 text-body-sm text-muted`}>
+              <Prose text={block.caption} />
             </figcaption>
           )}
         </figure>

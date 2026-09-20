@@ -208,6 +208,25 @@ for (const p of posts) {
   if (p.faq.length < 3) fail(p.slug, `only ${p.faq.length} FAQ entries, want at least 3`);
   if (p.takeaways.length < 3) fail(p.slug, `only ${p.takeaways.length} takeaways`);
 
+  /* Diagrams. The file is inlined into the page at build time, so a bad path
+     is a build crash rather than a broken image icon, and a diagram with no
+     title or desc is an unlabelled picture for anyone using a screen reader. */
+  for (const b of p.body) {
+    if (b.t !== "diagram") continue;
+    if (!b.src.endsWith(".svg")) fail(p.slug, `diagram is not an SVG: ${b.src}`);
+    const file = join(root, "public", b.src);
+    let svg = "";
+    try {
+      svg = readFileSync(file, "utf8");
+    } catch {
+      fail(p.slug, `diagram file is missing: public${b.src}`);
+      continue;
+    }
+    if (!/<title[\s>]/.test(svg)) fail(p.slug, `diagram has no <title>: ${b.src}`);
+    if (!/<desc[\s>]/.test(svg)) fail(p.slug, `diagram has no <desc>: ${b.src}`);
+    if (!/viewBox=/.test(svg)) fail(p.slug, `diagram has no viewBox, so it cannot scale: ${b.src}`);
+  }
+
   // Internal linking, gathered from every place a link can appear
   const bodyLinks = [];
   for (const b of p.body) {

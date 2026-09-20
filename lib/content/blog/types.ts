@@ -61,7 +61,27 @@ export type Block =
   /** Pull quote. Display face, no quotation marks drawn. */
   | { t: "quote"; text: string; cite?: string }
   /** Inline route back into the site. One or two per article, never more. */
-  | { t: "link"; href: string; label: string; note: string };
+  | { t: "link"; href: string; label: string; note: string }
+  /**
+   * A diagram. Only for pictures that carry an argument the prose cannot:
+   * a mechanism, a sequence, a split. Never decoration, never a photo.
+   *
+   * `src` is an SVG under public/, and it is inlined into the page rather
+   * than referenced, which is the whole point: the labels inside it become
+   * real text in the served HTML, so a crawler that does not run JavaScript
+   * still reads them. A raster of the same diagram is opaque.
+   *
+   * No width or height. The file's own viewBox carries the ratio, so the
+   * space is reserved before paint without anyone restating the dimensions
+   * in two places and letting them drift apart.
+   *
+   * No alt either. The SVG names itself through its own title and desc,
+   * which is how an inlined one is supposed to work. The content gate
+   * checks both are present.
+   *
+   * Specs for the whole set live in docs/blog-image-specs.md.
+   */
+  | { t: "diagram"; src: string; caption?: string };
 
 /**
  * The mark on the article's card and at the head of the article.
