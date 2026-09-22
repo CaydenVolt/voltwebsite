@@ -85,12 +85,28 @@ interface Base {
 }
 
 /** Everything needed to render a product page and a homepage block. */
+/** One explainer card on a product page: a short title and a paragraph. */
+export interface Feature {
+  title: string;
+  body: string;
+}
+
 interface PageContent {
   /** Short form for the nav and tight columns. */
   navLabel: string;
   /** Benefit-first headline for the block and the page. */
   headline: string;
   benefits: readonly string[];
+  /**
+   * The explainer cards on the product page.
+   *
+   * `benefits` are one-line claims, which is right for the homepage block
+   * where somebody is scanning six products at speed. On the page for a
+   * single product they are too thin: a reader who clicked through has
+   * already decided to read. These carry the same points with a paragraph
+   * behind each, and are what the "What you get" grid renders.
+   */
+  features: readonly Feature[];
   /** Three steps from sign-up to running. */
   steps: readonly Step[];
   /** Three figures, shown beside the media. */
@@ -140,6 +156,28 @@ export const PRODUCTS: readonly Product[] = [
       "Your reviews, your installs, your service area",
       "Ranks for local solar searches from day one",
     ],
+    features: [
+      {
+        title: "Every page has one job",
+        body:
+          "A visitor should never have to work out what to do next. Every page ends in the same two options, text us or call us, and both land in the same inbox. No dead ends, and no contact form pointing at an address nobody checks.",
+      },
+      {
+        title: "Built for a phone in a driveway",
+        body:
+          "Most homeowners open your site on a phone, often on a weak signal, standing outside looking at their roof. Pages are built light enough to load in that situation rather than on office wifi, because a site that takes six seconds has already lost the visit.",
+      },
+      {
+        title: "Your proof, not stock photography",
+        body:
+          "Your Google reviews pull through automatically, your own install photos sit on the pages, and the towns you serve are named. A homeowner is deciding whether you are real and local before they read a word of the copy.",
+      },
+      {
+        title: "Structured to rank from day one",
+        body:
+          "Titles, headings, structured data and internal links are set up correctly while the site is being built rather than bolted on a year later. It is not a substitute for the SEO work, but it means the site is not fighting you when that starts.",
+      },
+    ],
     steps: [
       { title: "We collect", body: "Your photos, reviews, pricing and the towns you serve. About an hour of your time." },
       { title: "We build, you approve", body: "Pages and copy in 7–10 days. You read it, we change what is wrong." },
@@ -174,6 +212,28 @@ export const PRODUCTS: readonly Product[] = [
       "Works while you are on a roof",
       "Homeowner texts back, you answer when you can",
       "Every missed call becomes a written lead",
+    ],
+    features: [
+      {
+        title: "It fires in five seconds",
+        body:
+          "The text goes out before the homeowner has put the phone down and dialled the next company on their list. That window is the entire product. After about a minute they are already in a conversation with somebody else.",
+      },
+      {
+        title: "It works while you are on a roof",
+        body:
+          "Nobody has to notice the missed call, check a log, or remember to ring back at five. The system sees the unanswered ring and handles it, which is the only version of this that survives a genuinely busy week.",
+      },
+      {
+        title: "They reply on their own time",
+        body:
+          "A text does not require both of you to be free at the same moment. The homeowner answers when they can, you answer when you are down off the roof, and the conversation is still warm when you get there.",
+      },
+      {
+        title: "Every missed call leaves a record",
+        body:
+          "An unanswered ring leaves nothing behind but a number in a call log. A text thread leaves a name, a number and what they wanted, sitting in the inbox where anyone on your team can pick it up.",
+      },
     ],
     steps: [
       { title: "We forward your number", body: "Your existing number stays. Missed rings trigger the text." },
@@ -217,6 +277,28 @@ export const PRODUCTS: readonly Product[] = [
       "Stops the moment they reply or book",
       "Every message visible in the inbox",
     ],
+    features: [
+      {
+        title: "First contact inside a minute",
+        body:
+          "The lead gets a call and a text within sixty seconds of the form landing, whatever time of day it is. Speed decides more of the outcome than the script does, and no human process reliably hits one minute at nine on a Sunday evening.",
+      },
+      {
+        title: "Twelve touches, then a check-in",
+        body:
+          "Most companies stop after two attempts. The sequence runs twelve across call, text and email over thirty days, then drops to a monthly check-in, because a real share of solar deals close well past the point everybody else gave up.",
+      },
+      {
+        title: "It stops the second they answer",
+        body:
+          "A reply or a booking cancels the rest of the sequence immediately. Nothing damages a new relationship faster than a chase message arriving the morning after the customer already spoke to you.",
+      },
+      {
+        title: "Nothing happens invisibly",
+        body:
+          "Every automated call, text and email appears in the same thread as your own messages. You can read exactly what went out in your name, and step in at any point without untangling anything.",
+      },
+    ],
     steps: [
       { title: "We connect your lead sources", body: "Website forms, phone, and any lead marketplaces you already pay for." },
       { title: "You approve the sequence", body: "Twelve messages, written for solar, edited for your area." },
@@ -257,6 +339,28 @@ export const PRODUCTS: readonly Product[] = [
       "Reply from your phone in the truck",
       "Notes and reminders on every contact",
     ],
+    features: [
+      {
+        title: "One thread per person",
+        body:
+          "Calls, texts, emails and web chat land in a single conversation against that contact, in the order they happened. No switching between four apps to reconstruct what was said and when.",
+      },
+      {
+        title: "Everyone sees the same history",
+        body:
+          "Whoever picks up a conversation can read everything that came before it. That removes the most common way a solar lead is quietly lost, which is two people half-handling it and each assuming the other followed up.",
+      },
+      {
+        title: "It works from the truck",
+        body:
+          "The same inbox is on your phone and on the office computer, with the same history in both. Replying between jobs becomes the normal case rather than something that waits for the evening.",
+      },
+      {
+        title: "Notes and reminders on the record",
+        body:
+          "Anything worth remembering goes on the contact rather than in somebody's head: the age of the roof, the spouse who actually decides, the date they asked you to call back. The reminder fires whether or not anyone wrote it down.",
+      },
+    ],
     steps: [
       { title: "We connect the channels", body: "Your number, your email and every website form." },
       { title: "Your team logs in", body: "On their phones. Ten minutes to learn." },
@@ -289,6 +393,28 @@ export const PRODUCTS: readonly Product[] = [
       "Two reminders, then it stops",
       "Every review answered automatically, good or bad",
       "Unhappy customers reach you first, so you can fix it",
+    ],
+    features: [
+      {
+        title: "Asked on the best possible day",
+        body:
+          "The request goes out the day the system is switched on, which is the single moment a customer is most pleased with you. Ask a fortnight later and the feeling has already faded into an electricity bill.",
+      },
+      {
+        title: "Two reminders, then silence",
+        body:
+          "People mean to leave a review and forget. Two reminders recover most of them. After that it stops, because a third is the point where asking starts costing you the goodwill you were trying to capture.",
+      },
+      {
+        title: "Every review gets a reply",
+        body:
+          "Replies go out to all of them, not only the good ones. A calm public answer to a complaint is read by every future customer who scrolls past it, and so is an unanswered one-star review.",
+      },
+      {
+        title: "Problems reach you while they are fixable",
+        body:
+          "Every customer is asked, which is the only version Google's rules permit. The message simply makes it just as easy to tell you directly that something is wrong, so a fixable problem reaches you rather than your profile.",
+      },
     ],
     steps: [
       { title: "We connect your Google profile", body: "Reviews land where homeowners actually look, and replies post back there." },
@@ -325,6 +451,28 @@ export const PRODUCTS: readonly Product[] = [
       "Titles, schema and speed handled",
       "Google Business Profile linked",
       "A monthly report you can read in two minutes",
+    ],
+    features: [
+      {
+        title: "A page for every town you serve",
+        body:
+          "Each town you actually install in gets its own page, written rather than spun from a template, because thin location pages have been discounted for years. One page per town you serve, not per town within fifty miles.",
+      },
+      {
+        title: "The technical work, done once",
+        body:
+          "Titles, headings, structured data and page speed are set up properly while the site is built. None of it is interesting and all of it decides whether a page is capable of ranking at all.",
+      },
+      {
+        title: "Tied to your Business Profile",
+        body:
+          "The site and the profile point at each other, with the name, address and phone matching exactly. Those are two separate ranking systems and they feed each other when they agree.",
+      },
+      {
+        title: "A report in plain words",
+        body:
+          "One page a month: what moved, what did not, and what is being worked on next. No jargon, and no dashboard with twenty tabs that nobody opens after the first week.",
+      },
     ],
     steps: [
       { title: "We map the searches", body: "The towns and services you want to rank for." },
@@ -384,6 +532,33 @@ export const PRODUCTS: readonly Product[] = [
         "Hands over to a human the moment the lead asks for one",
         "Every message visible in your inbox, same as the rest",
       ],
+    features: [
+      {
+        title: "It answers the real questions",
+        body:
+          "Price, panel brands, timelines and finance are what leads actually ask first. A reply that ignores the question and asks for a good time to call reads as a robot, and gets treated as one.",
+      },
+      {
+        title: "It qualifies before it books",
+        body:
+          "Roof, ownership, bill size and timeline are established inside the conversation, so what lands on your calendar is an appointment worth driving to rather than a name and a phone number.",
+      },
+      {
+        title: "It works nights and weekends",
+        body:
+          "Most solar enquiries arrive outside working hours and most of them are gone by morning. The conversation happens and the slot is booked while your team is asleep.",
+      },
+      {
+        title: "It hands over when asked",
+        body:
+          "The moment a lead asks for a person, or the conversation goes somewhere it should not be handling, it stops and flags you. Nobody is left trapped talking to software.",
+      },
+      {
+        title: "You can read every word",
+        body:
+          "Every message it sends sits in the same inbox thread as everything else, under your name. If you do not like the way something was answered, you can see it and we change it.",
+      },
+    ],
       steps: [
         { title: "We train it on your business", body: "Your pricing, your panels, your finance options, your service area and the answers you already give." },
         { title: "You set the rules", body: "What it may say, what it must never say, and the point where it hands the thread to a person." },
@@ -419,6 +594,33 @@ export const PRODUCTS: readonly Product[] = [
         "Re-runs on a schedule as the list grows again",
         "You approve every message before it sends",
       ],
+    features: [
+      {
+        title: "No new ad spend",
+        body:
+          "The campaign works a list you have already paid to build. That makes it the cheapest lead source you have access to, and the only one where the cost is effort rather than budget.",
+      },
+      {
+        title: "Segmented before anything sends",
+        body:
+          "A customer from three years ago and a quote that went cold last month need different messages. The list is split before anything goes out, because one message to everybody is how a database gets burned once and for good.",
+      },
+      {
+        title: "Replies are just conversations",
+        body:
+          "Anyone who answers appears in the inbox like any other lead, in a thread, with their history attached. There is no separate campaign tool for somebody to remember to go and check.",
+      },
+      {
+        title: "It runs again as the list refills",
+        body:
+          "Every quote that goes cold this quarter is next quarter's list. The campaign re-runs on a schedule, so the database is something you work rather than something you archive.",
+      },
+      {
+        title: "You approve every message",
+        body:
+          "Nothing reaches your own customers without you reading it first. It is your name on the text and your relationship on the line, so it is your call.",
+      },
+    ],
       steps: [
         { title: "We import and clean the list", body: "Old quotes, past customers and dead leads out of whatever system they are sitting in." },
         { title: "We write the campaign", body: "A short run of texts and emails with a reason to reply now. You approve it." },
@@ -451,6 +653,33 @@ export const PRODUCTS: readonly Product[] = [
         "Referred leads arrive in your inbox like any other lead",
         "You can see who referred whom, for whatever you want to do about it",
       ],
+    features: [
+      {
+        title: "The ask actually happens",
+        body:
+          "Referrals are lost to forgetting rather than to unwillingness. The request goes out after every closed job, on its own, at the point where the customer is most pleased with the work.",
+      },
+      {
+        title: "One tap to pass you on",
+        body:
+          "The customer receives something they can forward without composing anything: your details, ready to send. Anything requiring more effort than that does not get done, however happy they are.",
+      },
+      {
+        title: "One reminder, then it stops",
+        body:
+          "A single nudge recovers a good share of the people who meant to and forgot. After that it stops, because pestering a happy customer costs more than the referral was worth.",
+      },
+      {
+        title: "Referrals arrive as leads",
+        body:
+          "A referred enquiry lands in the inbox and enters follow-up like anything else. Referrals are the warmest leads you get and routinely the worst handled, because they usually arrive as a text to somebody's personal phone.",
+      },
+      {
+        title: "You can see who sent them",
+        body:
+          "The link between referrer and referral is recorded, so you know who to thank, who to reward, and who is quietly worth more to your business than any ad account.",
+      },
+    ],
       steps: [
         { title: "We set the trigger", body: "Job marked complete, or a five-star review left. Usually both." },
         { title: "You approve the ask", body: "One message, your wording, with a link that takes one tap to forward." },
@@ -482,6 +711,33 @@ export const PRODUCTS: readonly Product[] = [
         "Every lead lands in the inbox and goes into follow-up",
         "One report a month: spend, leads, cost per lead",
       ],
+    features: [
+      {
+        title: "Built for your towns",
+        body:
+          "Campaigns target the searches people actually make in the areas you can install in, rather than a national keyword list. Most wasted solar ad spend is geographic before it is anything else.",
+      },
+      {
+        title: "Pointed at the right page",
+        body:
+          "Ads land on a page built for that specific search, not on your homepage. A homepage asks a visitor to work out where to go next, and somebody who arrived from an ad will not do that work.",
+      },
+      {
+        title: "Your account, your money",
+        body:
+          "Spend goes from your own Google account straight to Google. We never sit between you and your ad budget, and you keep the account and everything it has learned if you ever leave.",
+      },
+      {
+        title: "Leads go straight into follow-up",
+        body:
+          "A paid lead is worth no more than any other and decays faster. Everything the ads produce enters the same inbox and the same follow-up sequence within a minute of arriving.",
+      },
+      {
+        title: "Three numbers a month",
+        body:
+          "Spend, leads, and cost per lead. Those three decide whether the channel is working, and everything else on an ads dashboard is decoration around that one question.",
+      },
+    ],
       steps: [
         { title: "We agree a budget", body: "A straight answer on what your area costs per lead before you commit to anything." },
         { title: "We build and launch", body: "Campaigns, keywords, ads and landing pages, in your own Google Ads account." },

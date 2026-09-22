@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { IndexedRow } from "@/components/ui/IndexedRow";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProductIcon } from "@/components/ui/ProductIcon";
 import { ProductRow } from "@/components/products/ProductRow";
@@ -120,36 +119,42 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
         </div>
       </Section>
 
-      {/* What you get, plus the boundary sentence where two products touch */}
+      {/* What you get, plus the boundary sentence where two products touch.
+          A grid of explainer cells rather than the one-line list this used to
+          be: the homepage block is where somebody scans six products, and by
+          the time they are on this page they have decided to read. Same
+          rhythm as How it works below, label and heading on top, grid under,
+          so the page does not change shape halfway down. */}
       <Section variant="deep" aria-labelledby="benefits-h">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <div className="lg:col-span-4">
-            <SectionLabel rule>What you get</SectionLabel>
-            <Reveal as="h2" id="benefits-h" className="mt-6 text-display-md">
-              What it does, plainly.
+        <SectionLabel rule>What you get</SectionLabel>
+        <Reveal as="h2" id="benefits-h" className="mt-6 text-display-md lg:w-7/12">
+          What it does, plainly.
+        </Reveal>
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16">
+          {product.features.map((f, i) => (
+            <Reveal
+              key={f.title}
+              as="li"
+              index={i}
+              className="border border-line p-6 lg:p-8"
+            >
+              <span className="font-display text-item text-accent">{pad(i + 1)}</span>
+              <h3 className="mt-4 text-h3">{f.title}</h3>
+              <p className="mt-3 text-body text-muted">{f.body}</p>
             </Reveal>
-          </div>
-          <div className="mt-10 lg:col-span-7 lg:col-start-6 lg:mt-0">
-            <Reveal as="ul" index={1} className="border-t border-line">
-              {product.benefits.map((b, i) => (
-                <IndexedRow key={b} index={i + 1} size="lg">
-                  {b}
-                </IndexedRow>
-              ))}
-            </Reveal>
-            {product.boundary && sibling && (
-              <Reveal as="div" index={2} className="mt-10 border-t border-line pt-5">
-                <p className="label text-muted">Where it stops</p>
-                <p className="mt-3 max-w-measure text-body">{product.boundary.text}</p>
-                <div className="mt-4">
-                  <Button href={productHref(sibling.slug)} source={`product_${product.slug}_sibling`} variant="link">
-                    See {sibling.name}
-                  </Button>
-                </div>
-              </Reveal>
-            )}
-          </div>
-        </div>
+          ))}
+        </ul>
+        {product.boundary && sibling && (
+          <Reveal as="div" className="mt-12 border-t border-line pt-5">
+            <p className="label text-muted">Where it stops</p>
+            <p className="mt-3 max-w-measure text-body">{product.boundary.text}</p>
+            <div className="mt-4">
+              <Button href={productHref(sibling.slug)} source={`product_${product.slug}_sibling`} variant="link">
+                See {sibling.name}
+              </Button>
+            </div>
+          </Reveal>
+        )}
       </Section>
 
       {/* How it works: three steps on an ink slab */}
