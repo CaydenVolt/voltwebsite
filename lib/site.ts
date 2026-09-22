@@ -1,8 +1,13 @@
 /**
- * Placeholder: swap for the booking subdomain, the landing page that carries
- * the video and the scheduler. Every booking CTA goes through bookingHref().
+ * The booking destination: the quiz on the grow subdomain, which qualifies and
+ * then books. Every booking CTA on the site goes through bookingHref(), so
+ * this is the only place the URL appears.
+ *
+ * Set 2026-09-23. It must stay on HTTPS: the HSTS header in next.config.ts
+ * carries includeSubDomains, so once a visitor has seen the apex their browser
+ * will refuse plain HTTP to this host too.
  */
-export const BOOKING_URL = "https://booking.example.com/volt/20-minute-call";
+export const BOOKING_URL = "https://grow.voltagencyio.com/quiz";
 
 /**
  * The booking link tagged with where on the site the click came from, so the

@@ -52,6 +52,26 @@ const csp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  /**
+   * One canonical host. voltagencyio.com is the apex, every canonical tag,
+   * sitemap entry and schema @id resolves from SITE.url, and www is a
+   * permanent redirect to it rather than a second copy of the site.
+   *
+   * 308 rather than 301, so the method is preserved. This has to exist before
+   * anything is indexed: two hosts serving the same pages splits the ranking
+   * signals between them, and merging them afterwards is a slow repair.
+   */
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.voltagencyio.com" }],
+        destination: "https://voltagencyio.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
