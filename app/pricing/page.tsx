@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
@@ -6,9 +7,9 @@ import { IndexedRow } from "@/components/ui/IndexedRow";
 import { Reveal } from "@/components/ui/Reveal";
 import { DitheredImage } from "@/components/ui/DitheredImage";
 import { ProductIcon } from "@/components/ui/ProductIcon";
-import { ProductRow } from "@/components/products/ProductRow";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { pad } from "@/lib/format";
 import { SITE, bookingHref } from "@/lib/site";
 import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/products";
 import { PLAN, PRICING_FAQ, REPLACES, currencySymbol, formatPrice, priceDigits } from "@/lib/content/pricing";
@@ -50,8 +51,6 @@ function Price({ className = "" }: { className?: string }) {
 export default function PricingPage() {
   const products = getPublicProducts();
   const addons = getAddonServices();
-  const firstColumn = products.slice(0, Math.ceil(products.length / 2));
-  const secondColumn = products.slice(firstColumn.length);
 
   return (
     <main className="flex-1">
@@ -75,7 +74,7 @@ export default function PricingPage() {
           <Reveal
             as="div"
             index={1}
-            className="-mx-gutter -mb-section lg:col-span-5 lg:col-start-8 lg:mx-0 lg:-mr-gutter"
+            className="-mx-gutter lg:col-span-5 lg:col-start-8 lg:mx-0 lg:-mr-gutter"
           >
             <DitheredImage
               src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=70"
@@ -87,81 +86,72 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* 2. The plan: ink slab pulled up over the hero plate. Not a card. */}
-      <Section id="plan" variant="ink" className="-mt-section-sm" aria-labelledby="plan-h">
-        <div className="grid gap-y-10 lg:grid-cols-12 lg:items-end lg:gap-x-6">
-          <Reveal as="div" className="lg:col-span-7">
-            <SectionLabel rule as="h2" id="plan-h">
-              The plan
-            </SectionLabel>
-            <Price className="mt-8" />
-          </Reveal>
-          <Reveal as="div" index={1} className="lg:col-span-5 lg:col-start-8">
-            <p className="max-w-measure text-lead">
-              Every product below, for every client, at the same price. The same system whether you
-              install twenty roofs a year or two hundred.
-            </p>
-            {/* Stacked with hairlines on phones; one ruled row from sm so no wrapped term inherits a divider */}
-            <ul className="mt-8 flex flex-col divide-y divide-line border-y border-line sm:flex-row sm:divide-x sm:divide-y-0">
-              {PLAN.terms.map((t) => (
-                <li key={t} className="label py-3 text-muted sm:px-4 sm:first:pl-0">
-                  {t}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <Button href={bookingHref("pricing_plan")} source="pricing_plan" external>
-                Book a 20-minute call
-              </Button>
-              <Button href="#included" source="pricing_included" variant="link">
-                See what&apos;s included
-              </Button>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+      {/* 2. The plan, as a card. It used to be a full-bleed ink slab with the
+          included products listed in a separate section below it. One card
+          holding the price, what is in it, the terms and the button puts the
+          whole decision in one place, which is the shape the reference uses
+          and the reason it reads quickly.
 
-      {/* 3. What's included: the six, numbered, in two unequal columns */}
-      <Section id="included" aria-labelledby="included-h">
-        <SectionLabel rule>Everything included</SectionLabel>
-        <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <Reveal as="h2" id="included-h" className="text-display-md lg:col-span-7">
-            Six products, all in.
-          </Reveal>
-          <Reveal as="p" index={1} className="mt-6 max-w-measure text-lead lg:col-span-4 lg:col-start-9 lg:mt-0">
-            In the order a lead moves through them. Each one has its own page if you want the
-            detail.
-          </Reveal>
-        </div>
-        <div className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <Reveal as="ul" index={1} className="border-t border-line lg:col-span-7">
-            {firstColumn.map((p, i) => (
-              <ProductRow
-                key={p.slug}
-                slug={p.slug}
-                index={i + 1}
-                name={p.name}
-                description={p.description}
-                href={productHref(p.slug)}
-                accent
-                compact
-              />
+          No "most popular" badge. There is one plan, so there is nothing for
+          it to be more popular than, and a badge implying otherwise would be
+          inventing a signal. */}
+      <Section id="plan" aria-labelledby="plan-h">
+        <div
+          data-surface="ink"
+          className="mx-auto w-full max-w-2xl border border-line bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
+        >
+          <SectionLabel rule as="h2" id="plan-h">
+            The plan
+          </SectionLabel>
+          <Price className="mt-8" />
+          <p className="mt-5 text-body text-muted">
+            Every product below, for every client, at the same price. The same system whether you
+            install twenty roofs a year or two hundred.
+          </p>
+
+          <ul className="mt-9 border-t border-line">
+            {products.map((product, i) => (
+              <li key={product.slug} className="border-b border-line">
+                <Link
+                  href={productHref(product.slug)}
+                  data-cursor="grow"
+                  className="group flex items-baseline gap-4 py-4 transition-colors duration-100 hover:text-bone-muted"
+                >
+                  <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
+                  <span className="font-display text-item">{product.name}</span>
+                  <span
+                    aria-hidden
+                    className="ml-auto shrink-0 translate-x-0 text-body-sm transition-transform duration-100 group-hover:translate-x-1"
+                  >
+                    &rarr;
+                  </span>
+                </Link>
+              </li>
             ))}
-          </Reveal>
-          <Reveal as="ul" index={2} className="border-t border-line lg:col-span-4 lg:col-start-9">
-            {secondColumn.map((p, i) => (
-              <ProductRow
-                key={p.slug}
-                slug={p.slug}
-                index={firstColumn.length + i + 1}
-                name={p.name}
-                description={p.description}
-                href={productHref(p.slug)}
-                accent
-                compact
-              />
+          </ul>
+
+          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
+            {PLAN.terms.map((t) => (
+              <li key={t} className="label text-muted">
+                {t}
+              </li>
             ))}
-          </Reveal>
+          </ul>
+
+          <div className="mt-9">
+            <Button
+              href={bookingHref("pricing_plan")}
+              source="pricing_plan"
+              external
+              className="w-full justify-center"
+            >
+              Book a 20-minute call
+            </Button>
+          </div>
+
+          <p className="mt-5 text-body-sm text-muted">
+            Phone numbers and messaging are billed on top, at what they cost.
+          </p>
         </div>
       </Section>
 
