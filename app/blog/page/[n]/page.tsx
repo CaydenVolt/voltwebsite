@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { BlogIndex } from "@/components/blog/BlogIndex";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata, postListSchema } from "@/lib/seo";
@@ -48,7 +48,9 @@ export default async function BlogPagedPage(props: Props) {
   const { n } = await props.params;
   const page = parsePage(n);
   if (!page) notFound();
-  if (page === 1) redirect("/blog");
+  // 308 rather than 307: page one lives at /blog permanently, and a
+  // temporary redirect asks a crawler to keep checking back forever.
+  if (page === 1) permanentRedirect("/blog");
 
   const posts = getPage(page);
   const total = totalPages();
