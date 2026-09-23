@@ -83,9 +83,13 @@ export const SUB_PROCESSORS: readonly SubProcessor[] = [
     location: "United States",
   },
   {
-    name: "[TO SET: hosting provider]",
+    name: "Cloudflare",
     purpose: "Website hosting and content delivery",
-    location: "United States",
+    // Cloudflare is a US company, but the point of its network is that pages
+    // are served from the edge location nearest the visitor. Saying only
+    // "United States" would understate where processing actually happens,
+    // which is the thing this table exists to disclose.
+    location: "United States, served from a global edge network",
   },
 ];
 
