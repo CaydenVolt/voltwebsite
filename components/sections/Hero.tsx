@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Fragment } from "react";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 import { Button } from "@/components/ui/Button";
@@ -217,6 +218,33 @@ export function Hero() {
               ))}
             </ul>
           </div>
+
+          {/* Certification badge, in the space to the right of the rail that
+              the plate above leaves open. It is the one piece of real proof
+              the hero carries, which is why it sits here rather than being
+              dropped into a logo strip further down.
+
+              Desktop: bottom-right of the grid, baseline-aligned with the
+              rail via self-end so the two read as one row. Phones: the grid
+              collapses, so it follows the rail at a smaller size and stays
+              left-aligned with everything else rather than floating centred.
+
+              The source PNG had no alpha, so it was circle-masked on the way
+              into public/badges. A grey square on bone would have looked like
+              a loading error. */}
+          <motion.div
+            {...rise(T.meta + 7 * T.metaStagger)}
+            className="order-5 mt-8 lg:col-span-3 lg:col-start-10 lg:row-start-3 lg:mt-0 lg:self-end lg:justify-self-end"
+          >
+            <Image
+              src="/badges/google-ads-search-certified.webp"
+              alt="Google Ads Search Certified"
+              width={300}
+              height={300}
+              sizes="(min-width: 1024px) 128px, 76px"
+              className="size-19 lg:size-32"
+            />
+          </motion.div>
         </div>
       </div>
 
