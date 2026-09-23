@@ -3,9 +3,9 @@
  * then books. Every booking CTA on the site goes through bookingHref(), so
  * this is the only place the URL appears.
  *
- * Set 2026-09-23. It must stay on HTTPS: the HSTS header in next.config.ts
- * carries includeSubDomains, so once a visitor has seen the apex their browser
- * will refuse plain HTTP to this host too.
+ * Set 2026-09-23. Its DNS record lives in Cloudflare and is not managed here:
+ * it went missing during the nameserver migration and had to be re-added, so
+ * if every CTA on the site suddenly fails, check that record first.
  */
 export const BOOKING_URL = "https://grow.voltagencyio.com/quiz";
 

@@ -77,12 +77,21 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
-          // Two years, subdomains included. Preload is deliberate: submitting to
-          // the HSTS preload list is a one-way door for the whole domain, so do
-          // that only once the booking subdomain is live and on HTTPS too.
+          /* Two years, apex only.
+             includeSubDomains was here until 2026-09-23 and came out on
+             purpose. It tells every browser that has seen this apex to refuse
+             plain HTTP on every subdomain, and this domain has at least six
+             run by a marketing platform we do not control: app, link, mail,
+             email.mail and the grow subdomain the CTAs point at. app and link
+             do present valid certificates, but email.mail has none, and the
+             next subdomain that platform adds is not ours to vet. One of them
+             served over HTTP and it breaks for everyone who has visited the
+             site, with no way to clear it remotely.
+             preload goes with it: the preload list requires includeSubDomains,
+             and submitting is close to irreversible for the whole domain. */
           {
             key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
+            value: "max-age=63072000",
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
           // Send the origin cross-site, the full path same-site. Enough for
