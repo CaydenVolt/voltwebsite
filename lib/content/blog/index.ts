@@ -7,12 +7,13 @@ import { FOLLOW_UP_POSTS } from "./posts/follow-up";
 import { SOFTWARE_POSTS } from "./posts/software";
 import { WEBSITE_POSTS } from "./posts/website";
 import { ADS_POSTS } from "./posts/ads";
+import { INCENTIVES_POSTS } from "./posts/incentives";
 
 export * from "./types";
 export { CATEGORIES, getCategory, getCategoryBySlug, categoryHref } from "./categories";
 export { AUTHOR, authorHref } from "./author";
 
-/** Nine to a page, seven pages. Changing this changes the paging everywhere. */
+/** Nine to a page, eight pages. Changing this changes the paging everywhere. */
 export const PER_PAGE = 9;
 
 /** Words a minute. The middling adult rate, rounded, used for the read time. */
@@ -26,6 +27,7 @@ const ALL: readonly Post[] = [
   ...SOFTWARE_POSTS,
   ...WEBSITE_POSTS,
   ...ADS_POSTS,
+  ...INCENTIVES_POSTS,
 ];
 
 /** Newest first, the way an index reads. Ties break on slug so the order is stable. */

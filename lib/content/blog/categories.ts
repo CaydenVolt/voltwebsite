@@ -8,7 +8,9 @@ import type { Category, CategoryId } from "./types";
  *
  * Order is the order a solar company's problem usually arrives in: no leads,
  * no proof, not found, too slow, too many logins, a site that does not sell,
- * and finally paid.
+ * and finally paid. Incentives came last, in September 2026, because the
+ * federal residential credit ended and the industry's sales conversation
+ * changed with it.
  */
 export const CATEGORIES: readonly Category[] = [
   {
@@ -87,6 +89,17 @@ export const CATEGORIES: readonly Category[] = [
     metaTitle: "Solar Google Ads, Referrals & Database",
     metaDescription:
       "Solar Google Ads costs, Facebook ads, Local Services Ads, referral programmes and database reactivation: what each channel really returns for installers.",
+  },
+  {
+    id: "incentives",
+    name: "Incentives & financing",
+    slug: "solar-incentives",
+    blurb: "Selling after the credit ended",
+    intro:
+      "The federal residential credit ended for systems installed after 2025, and the sales conversation changed with it. These pieces cover what still carries the 30%, what to stop saying at a kitchen table, how to answer a homeowner who is waiting for it to come back, and how to rebuild a pitch that no longer opens with a rebate.",
+    metaTitle: "Solar Incentives & Financing",
+    metaDescription:
+      "Selling solar after the federal credit ended: what still qualifies, lease versus PPA, state programmes that remain, and how to rebuild a pitch without a rebate.",
   },
 ] as const;
 
