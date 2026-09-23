@@ -23,9 +23,9 @@ import { SITE } from "@/lib/site";
 
 /** The terms are revised on their own schedule. See LegalDates. */
 export const TERMS_DATES: LegalDates = {
-  effective: "2026-09-17",
-  lastUpdated: "2026-09-17",
-  lastReviewed: "2026-09-17",
+  effective: "2026-09-23",
+  lastUpdated: "2026-09-23",
+  lastReviewed: "2026-09-23",
 };
 
 const price = formatPrice();

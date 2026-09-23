@@ -18,9 +18,9 @@ import { SITE } from "@/lib/site";
  */
 
 export const PRIVACY_DATES: LegalDates = {
-  effective: "2026-09-17",
-  lastUpdated: "2026-09-17",
-  lastReviewed: "2026-09-17",
+  effective: "2026-09-23",
+  lastUpdated: "2026-09-23",
+  lastReviewed: "2026-09-23",
 };
 
 const site = SITE.url.replace(/^https?:\/\//, "");
