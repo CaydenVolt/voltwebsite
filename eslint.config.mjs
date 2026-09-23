@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Cloudflare adapter's build output: ~100MB of generated and vendored
+    // JS. Linting it produced thirty thousand problems in somebody else's code.
+    ".open-next/**",
+    ".wrangler/**",
   ]),
 ]);
 

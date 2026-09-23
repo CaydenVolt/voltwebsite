@@ -77,7 +77,7 @@ export default function PricingPage() {
             className="-mx-gutter lg:col-span-5 lg:col-start-8 lg:mx-0 lg:-mr-gutter"
           >
             <DitheredImage
-              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=70"
+              src="/plates/panels.webp"
               alt="Rows of solar panels under a clear sky"
               slant="left"
               className="aspect-strip lg:aspect-plate"

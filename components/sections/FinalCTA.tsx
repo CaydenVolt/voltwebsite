@@ -27,7 +27,7 @@ export function FinalCTA({
           className="order-1 -mx-gutter lg:order-none lg:col-span-5 lg:col-start-1 lg:-ml-gutter lg:mr-0"
         >
           <DitheredImage
-            src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1400&q=70"
+            src="/plates/rooftop.webp"
             alt="Solar array on open ground at dusk"
             slant="right"
             className="aspect-strip lg:aspect-plate"

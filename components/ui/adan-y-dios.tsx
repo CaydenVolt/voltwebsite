@@ -10,6 +10,12 @@ import { useReducedMotion } from "motion/react";
 // Remix the source recipe (styles, animation, palette) in the editor:
 // https://21st.dev/community/ascii/editor?from=b9131b92-b492-41c4-8670-f8404b61fdfc
 //
+// Self-hosted from public/hero since 2026-09-23. It used to stream from the
+// editor's own CDN, which put the site's largest above-the-fold element behind
+// a third party's uptime, and meant the production CSP had to open media-src
+// and img-src to an outside origin to show it at all. Re-bake from the editor
+// if the art changes, then drop the files in public/hero.
+//
 // Adapted for Volt: under prefers-reduced-motion the loop does not autoplay
 // and the poster frame is shown instead. When motion is allowed, playback is
 // nudged on mount and whenever the tab becomes visible again, since browsers
@@ -37,12 +43,8 @@ export function AsciiArt({ className }: { className?: string }) {
     <video
       ref={ref}
       className={className}
-      src={
-        "https://assets.21st.dev/ascii-recipes/videos/user_3ExVfhyU8AKI7RnhKaZ3aw3zJW6/d000d0e8-b80a-4b95-85b5-50d230742f64.mp4"
-      }
-      poster={
-        "https://assets.21st.dev/ascii-recipes/thumbnails/user_3ExVfhyU8AKI7RnhKaZ3aw3zJW6/e397eeb7-cb85-4e83-8fe8-944e1bd6be89.webp"
-      }
+      src="/hero/ascii.mp4"
+      poster="/hero/ascii-poster.webp"
       autoPlay={!reduced}
       loop
       muted
