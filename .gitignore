@@ -43,3 +43,7 @@ next-env.d.ts
 # Windows folder metadata
 desktop.ini
 Thumbs.db
+
+# cloudflare adapter build output
+.open-next
+.wrangler

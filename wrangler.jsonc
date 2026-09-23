@@ -1,0 +1,33 @@
+{
+  // Cloudflare Workers deployment for the Volt marketing site.
+  //
+  // The adapter's template also declares an R2 bucket for the incremental
+  // cache and a self-referencing service binding to reach it. Both are
+  // dropped here: every page is prerendered at build time, so there is no
+  // revalidation to cache. See the note in open-next.config.ts.
+  //
+  // Security headers and the www redirect are NOT configured here. They live
+  // in next.config.ts and are served by Next itself, which keeps one source of
+  // truth. Do not duplicate them into Cloudflare rules, or the two will drift
+  // and nobody will know which one is winning.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "volt-website",
+
+  // Pin the runtime to the date this was set up. Raising it opts into newer
+  // Workers behaviour, so it is a deliberate change rather than a drift.
+  "compatibility_date": "2026-09-23",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  // next/image runs through Cloudflare's image binding. The team portraits and
+  // the product screenshots go through it; the blog diagrams do not, because
+  // they are inlined SVG rather than files.
+  "images": {
+    "binding": "IMAGES"
+  }
+}
