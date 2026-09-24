@@ -46,6 +46,60 @@ After those eight, the spokes in the appendix, roughly one a week.
 
 ---
 
+## The schedule
+
+One a week, sent by the Monday. Sixteen left, so the last lands in
+January 2027.
+
+The date is a floor, not a cage. Send two in a week if a run of them comes
+easily and they get deployed a week apart anyway, because the point of the
+cadence is the rolling `updated` signal rather than the drawing pace.
+
+| # | Send by | Diagram | Article |
+|---|---|---|---|
+| P1 | Mon 28 Sep 2026 | Target response time against reality | `speed-to-lead-for-solar-companies` |
+| P2 | Mon 5 Oct | Five categories and the seams | `best-solar-contractor-software` |
+| P3 | Mon 12 Oct | What the map pack is ranked on | `local-seo-for-solar-contractors` |
+| P4 | Mon 19 Oct | When to ask for a review | `how-to-get-more-reviews-for-solar-installers` |
+| P5 | Mon 26 Oct | The 90-day order of operations | `how-to-get-more-solar-leads` |
+| P6 | Mon 2 Nov | The page, top to bottom | `solar-company-website-design` |
+| P7 | Mon 9 Nov | Google Ads account structure | `google-ads-for-solar-companies` |
+| S1 | Mon 16 Nov | The 8 touches across 90 days | `solar-sales-follow-up-sequence` |
+| S2 | Mon 23 Nov | Missed call to booked lead | `missed-call-text-back-for-solar` |
+| S3 | Mon 30 Nov | The 11 pipeline stages | `solar-sales-pipeline-stages` |
+| S6 | Mon 7 Dec | Lease vs PPA vs cash, who owns what | `solar-lease-vs-ppa-for-installers` |
+| S7 | Mon 14 Dec | LSA vs search ad vs map pack | `local-services-ads-for-solar` |
+| S8 | Mon 21 Dec | Cost per lead against cost per sale | `solar-google-ads-cost-per-lead` |
+| S9 | Mon 28 Dec | Where visitors drop off | `how-to-increase-solar-website-conversion-rate` |
+| S4 | Mon 4 Jan 2027 | How negatives filter traffic | Google Ads cluster, **must exist first** |
+| S5 | Mon 11 Jan 2027 | Click to CRM, with the break marked | Google Ads cluster, **must exist first** |
+
+S4 and S5 sit last because their articles do not exist yet. If the Google
+Ads cluster gets written sooner they move up; if it does not, they wait
+rather than being drawn for a page that is not there.
+
+## What to send
+
+An **SVG file**, not a PNG. The whole reason these are SVG is that the
+labels become real text in the served HTML.
+
+Each one needs, or the content gate fails the build:
+
+- a `viewBox`
+- a `<title>` naming what it shows
+- a `<desc>` describing it in a sentence
+- `role="img"`
+
+Name it `fig-NN-short-slug.svg`, matching the numbering here, so the file
+and the spec stay findable together. Figure 1 is
+`fig-01-who-claims-the-credit.svg`.
+
+Send the file and nothing else. Placing it, writing the caption, wiring the
+`diagram` block into the article, and checking the labels survive into the
+page text is the other half of the job.
+
+---
+
 ## The style preamble
 
 Paste this above any prompt, or set it up once as a Figma style. The values are
