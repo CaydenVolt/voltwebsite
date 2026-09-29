@@ -213,10 +213,24 @@ function BlockView({ block, first }: { block: Block; first: boolean }) {
 
               The markup is ours, read off disk at build time from a closed
               set of files in public/blog. It is not user input. */}
-          <div
-            className="[&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
-            dangerouslySetInnerHTML={{ __html: readDiagram(block.src) }}
-          />
+          {/* Its own scroller below lg, exactly as the tables above get one.
+              These are drawn at roughly the width of the article column, so
+              letting a phone shrink one to 350px puts its smallest labels at
+              about 3px. A diagram nobody can read is worse than no diagram,
+              and squeezing it is the version that looks fine in a screenshot
+              and fails on a real phone.
+
+              780px is the floor because that is roughly the width of this
+              column at lg, so a diagram drawn at that canvas renders 1:1 and
+              its labels come out the size they were drawn. Draw them 780 wide.
+              Figure 1 predates this and is 1200, so it still scales to 0.65
+              here, which is legible but is the reason for the guidance. */}
+          <div className="-mx-gutter overflow-x-auto px-gutter lg:mx-0 lg:px-0">
+            <div
+              className="min-w-[780px] [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+              dangerouslySetInnerHTML={{ __html: readDiagram(block.src) }}
+            />
+          </div>
           {block.caption && (
             <figcaption className={`${measure} mt-3 text-body-sm text-muted`}>
               <Prose text={block.caption} />

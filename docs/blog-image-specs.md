@@ -118,8 +118,19 @@ the real tokens from `app/globals.css`.
 > graphic. No icons unless the spec asks for one, no illustrations of people,
 > no clip art.
 
-**Canvas.** Export at 2x. Wide flow diagrams 1200 x 675 (16:9). Dense or
-stacked 1200 x 900 (4:3). Vertical sequences 900 x 1200 (3:4).
+**Canvas: 780 wide.** Not 1200. The article column is about 797px at lg, so
+a 780 canvas renders essentially 1:1 and every label comes out the size it was
+drawn. A 1200 canvas scales to 0.66, which turns 11px labels into 7px ones.
+Height to suit: 780 x 440 for a wide comparison, 780 x 560 for something
+denser, 560 x 780 for a vertical sequence.
+
+Below lg the renderer gives each diagram a horizontal scroller with a 780px
+floor, the same way the article's tables behave, so it never squeezes down to
+phone width. Figure 1 was drawn at 1200 before this was understood and still
+scales to 0.65; everything from Figure 2 on is 780.
+
+**Type floor: nothing below 11px** in the canvas. At 780 that renders at 11px,
+which is the smallest thing worth putting on a page somebody reads on a train.
 
 **Accent discipline.** One orange element per diagram. If two things are
 orange, neither reads as important.

@@ -76,6 +76,12 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
         text: "Pull your last fifty enquiries and calculate the median minutes to first outbound contact. Median, not average: one lead answered at 3am skews an average and hides the real picture. Most owners are surprised, and the surprise is the point.",
       },
 
+      {
+        t: "diagram",
+        src: "/blog/fig-02-response-time-target-vs-reality.svg",
+        caption:
+          "Every target sits inside fifteen minutes. Three of the five channels have no reliable response time at all, which is why their tracks leave the axis rather than landing somewhere on it.",
+      },
       { t: "h2", text: "Why is your team slow to respond?" },
       {
         t: "p",
