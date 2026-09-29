@@ -5,6 +5,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { bookingHref } from "@/lib/site";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /**
  * The 404. Next serves its own unstyled one otherwise, which on a site this
@@ -33,6 +34,7 @@ export default function NotFound() {
   return (
     <main className="flex-1">
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" aria-labelledby="nf-h">
         <SectionLabel rule>404</SectionLabel>

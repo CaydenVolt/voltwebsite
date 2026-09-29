@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /**
  * The runtime error boundary, in the same voice as the 404.
@@ -30,6 +31,7 @@ export default function Error({
   return (
     <main className="flex-1">
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" aria-labelledby="err-h">
         <SectionLabel rule>Error</SectionLabel>

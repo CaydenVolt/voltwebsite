@@ -12,6 +12,7 @@ import { SITE, bookingHref } from "@/lib/site";
 import { CULTURE, MISSION, TEAM, TEAM_PHOTO } from "@/lib/content/about";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Volt: marketing for solar, minus the nonsense",
@@ -53,6 +54,7 @@ export default function AboutPage() {
       />
       {/* Clear the fixed bar, which is condensed and solid on every page without a hero */}
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       {/* Mission: text left, the team photo as a landscape plate off the right edge */}
       <Section as="header" aria-labelledby="about-h">

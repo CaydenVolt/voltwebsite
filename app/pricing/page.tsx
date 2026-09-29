@@ -15,6 +15,7 @@ import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/
 import { PLAN, PRICING_FAQ, REPLACES, currencySymbol, formatPrice, priceDigits } from "@/lib/content/pricing";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { absolute, faqSchema, planOfferSchema } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 const TITLE = `Pricing: ${formatPrice()} a month, everything included`;
 const DESCRIPTION = `${formatPrice()} a ${PLAN.interval} for the whole Volt system: website, missed-call text-back, automated follow-up, inbox, review funnel and on-site SEO. No contracts, no tiers${
@@ -56,6 +57,7 @@ export default function PricingPage() {
     <main className="flex-1">
       <JsonLd data={[planOfferSchema(), faqSchema(PRICING_FAQ, absolute("/pricing"))]} />
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       {/* 1. Hero: text left, dithered plate right, plate reaching down under the plan slab */}
       <Section aria-labelledby="pricing-h">

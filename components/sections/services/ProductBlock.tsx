@@ -77,10 +77,18 @@ export function ProductBlock({
             {product.addon ? "Separate product" : pad(product.index ?? position)}
           </span>
           {/* The product's name leads: it is what the block is, and it is the
-              block's accessible name. The promise sits under it, a step down. */}
-          <h3 id={`${id}-h`} className="mt-5 flex items-center gap-3 text-display-md">
+              block's accessible name. The promise sits under it, a step down.
+              The tag, when set, sits on the same row rather than above or
+              below, so it reads as a modifier of the name rather than its
+              own separate line. */}
+          <h3 id={`${id}-h`} className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-display-md">
             <ProductIcon slug={product.slug} className="size-7 shrink-0 text-muted lg:size-8" />
-            {product.name}
+            <span>{product.name}</span>
+            {product.tag && (
+              <span className="label inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-1 text-accent">
+                {product.tag}
+              </span>
+            )}
           </h3>
           {/* A step down from the name at every width: on phones the name bottoms
               out at 32px, so the promise drops to lead there to keep the gap.

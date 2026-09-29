@@ -9,6 +9,7 @@ import { AsciiArt } from "@/components/ui/adan-y-dios";
 import { DURATION, EASE_OUT, HERO_TIMING as T, PLATE } from "@/lib/tokens";
 import { SITE, bookingHref } from "@/lib/site";
 import { getPublicProducts } from "@/lib/content/products";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /* Copy ------------------------------------------------------------------ */
 
@@ -105,6 +106,7 @@ export function Hero() {
       <div aria-hidden className="border-b border-rule">
         <div className="h-nav lg:h-nav-lg" />
       </div>
+      <TrustStrip />
 
       <div className="flex flex-1 flex-col px-gutter pt-stack pb-section-sm">
         {/* Eyebrow row. The right of this row carried an average speed-to-lead

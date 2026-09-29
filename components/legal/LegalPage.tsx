@@ -4,6 +4,7 @@ import { LegalDoc } from "@/components/legal/LegalDoc";
 import { LEGAL, dateBlock, formatLegalDate, missingLegalFacts } from "@/lib/content/legal";
 import type { LegalDates, LegalSection } from "@/lib/content/legal";
 import { routeExists } from "@/lib/routes";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /**
  * The shell both legal documents share: title, the four dates, the opening
@@ -52,6 +53,7 @@ export function LegalPage({
   return (
     <main className="flex-1">
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
       <Section rhythm="sm">
         <div className="mx-auto max-w-measure-legal">
           <h1 className="text-display-md">{title}</h1>

@@ -13,6 +13,7 @@ import { pad } from "@/lib/format";
 import { bookingHref } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata, productSchema } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 import {
   getAllPages,
   getPage,
@@ -62,6 +63,7 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
         ]}
       />
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       {/* Header: text left, media plate right bleeding off the edge, as in the hero */}
       <Section as="header" aria-labelledby="product-h">
@@ -80,6 +82,13 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
             <h1 id="product-h" className="mt-4 text-display-xl">
               {product.name}
             </h1>
+            {product.tag && (
+              <p className="mt-4">
+                <span className="label inline-flex items-center rounded-full border border-accent px-3 py-1 text-accent">
+                  {product.tag}
+                </span>
+              </p>
+            )}
             <p className="mt-6 max-w-measure text-lead">{product.headline}</p>
             <p className="mt-4 max-w-measure text-body text-muted">{product.intro}</p>
             {/* The plan boundary, stated on the page itself rather than only on /pricing */}

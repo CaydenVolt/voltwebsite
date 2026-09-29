@@ -15,6 +15,7 @@ import { ReadNext } from "@/components/blog/ReadNext";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleSchema, authorSchema, breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 import {
   AUTHOR,
   authorHref,
@@ -92,6 +93,7 @@ export default async function ArticlePage(props: Props) {
         ]}
       />
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       {/* Header: the trail, the headline, the byline, then the plate */}
       <Section as="header" rhythm="sm" aria-labelledby="article-h">

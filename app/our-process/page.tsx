@@ -9,6 +9,7 @@ import { bookingHref } from "@/lib/site";
 import { PROCESS } from "@/lib/content/sections";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 export const metadata: Metadata = pageMetadata({
   title: "Our process: two calls and about ten days",
@@ -28,6 +29,7 @@ export default function OurProcessPage() {
       />
       {/* Clear the fixed bar, which is condensed and solid on every page without a hero */}
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" aria-labelledby="process-h">
         <SectionLabel rule>Our process</SectionLabel>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { bookingHref } from "@/lib/site";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 export interface BasicPageLink {
   label: string;
@@ -41,6 +42,7 @@ export function BasicPage({
     <main className="flex-1">
       {/* Clear the fixed bar, which is condensed and solid on every page without a hero */}
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" aria-labelledby="page-h">
         <SectionLabel rule>{label}</SectionLabel>

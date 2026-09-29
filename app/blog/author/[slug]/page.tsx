@@ -11,6 +11,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { authorPageSchema, authorSchema, breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { AUTHOR, authorHref, getPosts } from "@/lib/content/blog";
 import { TEAM } from "@/lib/content/about";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /**
  * The byline's own page.
@@ -58,6 +59,7 @@ export default async function AuthorPage(props: Props) {
         ]}
       />
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" aria-labelledby="author-h">
         <div className="grid gap-y-10 lg:grid-cols-12 lg:items-start lg:gap-x-6">

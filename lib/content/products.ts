@@ -82,6 +82,14 @@ interface Base {
   description: string;
   /** Two or three sentences. */
   intro: string;
+  /**
+   * A short label rendered as a small pill next to the product name in the
+   * homepage block and the product page hero. Used to flag technical facts
+   * about a product that would otherwise sit buried in the intro paragraph,
+   * such as the model the AI Lead Nurturing product runs on. Not shown in
+   * tight contexts (nav, footer, pricing rows) where a pill would be noise.
+   */
+  tag?: string;
 }
 
 /** Everything needed to render a product page and a homepage block. */
@@ -518,6 +526,7 @@ export const PRODUCTS: readonly Product[] = [
   {
     slug: "ai-lead-nurturing",
     name: "AI Lead Nurturing",
+    tag: "GPT-5 plugin",
     visibility: "addon",
     description: "Replies that read the lead and book the appointment",
     intro:
@@ -764,6 +773,8 @@ export interface ProductPage extends PageContent {
   name: string;
   description: string;
   intro: string;
+  /** Optional pill next to the name. See `tag` on Base. */
+  tag?: string;
   addon: boolean;
   index: number | null;
 }
@@ -813,6 +824,7 @@ export function getAddonPages(): ProductPage[] {
     name: a.name,
     description: a.description,
     intro: a.intro,
+    tag: a.tag,
     addon: true,
     index: null,
   }));

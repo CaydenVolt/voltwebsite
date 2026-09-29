@@ -23,9 +23,12 @@ import { SITE } from "@/lib/site";
 
 /** The terms are revised on their own schedule. See LegalDates. */
 export const TERMS_DATES: LegalDates = {
-  effective: "2026-09-23",
-  lastUpdated: "2026-09-23",
-  lastReviewed: "2026-09-23",
+  // Bumped 2026-09-29 alongside the switch from a flat no-refund policy to a
+  // 30-day money-back guarantee in section [[refunds]]. A material change to a
+  // paying customer's rights, so `effective` moves with the update.
+  effective: "2026-09-29",
+  lastUpdated: "2026-09-29",
+  lastReviewed: "2026-09-29",
 };
 
 const price = formatPrice();
@@ -197,22 +200,26 @@ export const TERMS: readonly LegalSection[] = [
       },
       {
         t: "p",
-        text: "Current rates are published in your Account and may change if our providers change theirs. We will show the rate before you incur the charge. Amounts already spent from the balance are used, not held, and section [[no-refund-policy]] applies to them.",
+        text: "Current rates are published in your Account and may change if our providers change theirs. We will show the rate before you incur the charge. Amounts already spent from the balance are used, not held, and section [[refunds]] applies to them.",
       },
     ],
   },
 
   {
-    id: "no-refund-policy",
-    title: "No Refund Policy",
+    id: "refunds",
+    title: "Refunds",
     body: [
       {
         t: "note",
-        text: "All payments to Volt are final and non-refundable. That includes Subscription fees, any setup fee, prepaid balances that have been spent on Usage Charges, and payments for separately purchased products.",
+        text: `If you cancel your Subscription within thirty (30) days of your first Subscription payment, we will refund that first Subscription fee in full. Email ${LEGAL.email} to request it, and we will process the refund to the original payment method within 10 business days.`,
       },
       {
         t: "p",
-        text: "This applies whether or not you used the Services during the period you paid for, and whether or not you cancel partway through a billing period. Cancelling stops the next charge; it does not refund the current one.",
+        text: "The 30-day guarantee covers the first Subscription fee only. It does not cover Usage Charges under section [[usage-charges]], because those are amounts we have already paid onwards to third-party providers for telephone numbers, text messages, calls or email delivery, and cannot be recovered once incurred. It does not cover fees for separately purchased products, and it does not apply on renewals after the first thirty days.",
+      },
+      {
+        t: "p",
+        text: "After the first thirty days, and on all renewals, all payments to Volt are final and non-refundable. That includes Subscription fees, prepaid balances that have been spent on Usage Charges, and payments for separately purchased products. This applies whether or not you used the Services during the period you paid for, and whether or not you cancel partway through a billing period. Cancelling stops the next charge; it does not refund the current one.",
       },
       {
         t: "p",
@@ -300,7 +307,7 @@ export const TERMS: readonly LegalSection[] = [
       },
       {
         t: "p",
-        text: "Suspension does not pause your Subscription or stop it accruing. Fees for a suspended period remain payable, and section [[no-refund-policy]] applies to them.",
+        text: "Suspension does not pause your Subscription or stop it accruing. Fees for a suspended period remain payable, and section [[refunds]] applies to them.",
       },
       {
         t: "p",
@@ -327,7 +334,7 @@ export const TERMS: readonly LegalSection[] = [
       },
       {
         t: "p",
-        text: "No refund is given for the remainder of a paid period. See section [[no-refund-policy]]. What happens to your website and data after cancellation is covered in sections [[intellectual-property]] and [[term-and-termination]].",
+        text: "No refund is given for the remainder of a paid period after the first 30 days, when the money-back guarantee in section [[refunds]] applies. See section [[refunds]] for the full policy. What happens to your website and data after cancellation is covered in sections [[intellectual-property]] and [[term-and-termination]].",
       },
     ],
   },
@@ -461,7 +468,7 @@ export const TERMS: readonly LegalSection[] = [
       },
       {
         t: "p",
-        text: "We may also terminate for convenience on 30 days' written notice, in which case we will refund any Subscription fee covering the period after termination, which is the one circumstance in which section [[no-refund-policy]] does not apply.",
+        text: "We may also terminate for convenience on 30 days' written notice, in which case we will refund any Subscription fee covering the period after termination, which is one of the circumstances in which section [[refunds]] does not otherwise apply.",
       },
       {
         t: "note",
@@ -469,7 +476,7 @@ export const TERMS: readonly LegalSection[] = [
       },
       {
         t: "p",
-        text: "Sections that by their nature should survive termination do so, including sections [[no-refund-policy]], [[no-chargebacks]], [[intellectual-property]], [[disclaimers]], [[indemnification]], [[limitation-of-liability]], [[dispute-resolution]] and [[governing-law-and-venue]].",
+        text: "Sections that by their nature should survive termination do so, including sections [[refunds]], [[no-chargebacks]], [[intellectual-property]], [[disclaimers]], [[indemnification]], [[limitation-of-liability]], [[dispute-resolution]] and [[governing-law-and-venue]].",
       },
     ],
   },
@@ -757,7 +764,7 @@ export const TERMS: readonly LegalSection[] = [
       {
         t: "ul",
         items: [
-          "The no refund policy in section [[no-refund-policy]].",
+          "The refund policy in section [[refunds]].",
           "The agreement not to raise chargebacks in section [[no-chargebacks]].",
           "That Usage Charges in section [[usage-charges]] are separate from the Subscription and depend on how much you use.",
           "The compliance obligations in section [[client-compliance-obligations]], which are yours and not ours.",

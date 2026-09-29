@@ -8,6 +8,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { getAddonServices, getFeaturedAddons, getPublicProducts, productHref } from "@/lib/content/products";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 export const metadata: Metadata = pageMetadata({
   title: "Volt products: six in the system, four sold separately",
@@ -32,6 +33,7 @@ export default function ProductsPage() {
       />
       {/* Clear the fixed bar, which is condensed and solid on every page without a hero */}
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section aria-labelledby="products-h">
         <SectionLabel rule>Systems &amp; features</SectionLabel>

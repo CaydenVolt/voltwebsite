@@ -8,6 +8,7 @@ import { ClusterRail } from "@/components/blog/ClusterRail";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import type { CategoryId, Post } from "@/lib/content/blog";
 import { pad } from "@/lib/format";
+import { TrustStrip } from "@/components/site/TrustStrip";
 
 /**
  * The shape every index shares: /blog, each of its numbered pages, and each
@@ -47,6 +48,7 @@ export function BlogIndex({
     <main className="flex-1">
       {/* Clear the fixed bar, which is condensed and solid on every page without a hero */}
       <div aria-hidden className="h-nav-condensed" />
+      <TrustStrip />
 
       <Section as="header" rhythm="sm" aria-labelledby="blog-h">
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-6">
