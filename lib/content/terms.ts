@@ -27,7 +27,7 @@ export const TERMS_DATES: LegalDates = {
   // 30-day money-back guarantee in section [[refunds]]. A material change to a
   // paying customer's rights, so `effective` moves with the update.
   effective: "2026-09-29",
-  lastUpdated: "2026-09-29",
+  lastUpdated: "2026-09-30",
   lastReviewed: "2026-09-29",
 };
 
@@ -211,7 +211,7 @@ export const TERMS: readonly LegalSection[] = [
     body: [
       {
         t: "note",
-        text: `If you cancel your Subscription within thirty (30) days of your first Subscription payment, we will refund that first Subscription fee in full. Email ${LEGAL.email} to request it, and we will process the refund to the original payment method within 10 business days.`,
+        text: `If you cancel your Subscription within thirty (30) days of your first Subscription payment, we will refund that first Subscription fee in full. Request a refund from your Account or by emailing ${LEGAL.email}, and we will process it to the original payment method within 10 business days.`,
       },
       {
         t: "p",

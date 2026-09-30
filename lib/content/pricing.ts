@@ -78,6 +78,10 @@ export const PRICING_FAQ = [
     a: "No. Month to month, cancel with a month's notice. If you cancel in month two we will ask what went wrong, but we will not make it hard.",
   },
   {
+    q: "Is there really a 30-day money back guarantee?",
+    a: "Yes. Cancel inside 30 days of your first payment and we refund the subscription fee in full. Request it in your account or email support@mail.voltagencyio.com. What is not refundable is the pass-through spend on phone numbers, texts and calls, because we have already paid those onwards. Full detail is in section 7 of the terms.",
+  },
+  {
     q: "What happens to my website if I cancel?",
     a: "It stays live for 30 days so you can move. The domain is yours and always was. The site itself runs on our platform, so it would need rebuilding elsewhere; we hand over the copy, the photos and an export of your contacts and conversation history.",
   },
