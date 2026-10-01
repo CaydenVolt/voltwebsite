@@ -278,10 +278,10 @@ export const PRODUCTS: readonly Product[] = [
     related: ["missed-call-text-back", "all-in-one-inbox"],
     headline: "Every new lead gets chased until they answer.",
     intro:
-      "A scheduled sequence of calls, texts and emails over the first thirty days, for any new lead whether or not they called. It is rule-based: the same messages in the same order every time, so you always know exactly what was sent.",
+      "A scheduled sequence of calls, texts and emails that keeps chasing every new lead for up to six months, whether or not they called. Twelve touches in the first thirty days, then a monthly check-in through month six. Rule-based: the same messages in the same order every time, so you always know exactly what was sent.",
     benefits: [
       "Call and text within 60 seconds of the lead arriving",
-      "Twelve touches over thirty days, then a monthly check-in",
+      "Twelve touches in the first thirty days, then monthly through month six",
       "Stops the moment they reply or book",
       "Every message visible in the inbox",
     ],
@@ -292,9 +292,9 @@ export const PRODUCTS: readonly Product[] = [
           "The lead gets a call and a text within sixty seconds of the form landing, whatever time of day it is. Speed decides more of the outcome than the script does, and no human process reliably hits one minute at nine on a Sunday evening.",
       },
       {
-        title: "Twelve touches, then a check-in",
+        title: "Six months of follow-up per lead",
         body:
-          "Most companies stop after two attempts. The sequence runs twelve across call, text and email over thirty days, then drops to a monthly check-in, because a real share of solar deals close well past the point everybody else gave up.",
+          "Twelve touches across call, text and email in the first thirty days, then a monthly check-in every month after that, right through month six. Most companies stop at two attempts, and a real share of solar deals close well past that point. Nothing in the schedule needs your attention to keep running.",
       },
       {
         title: "It stops the second they answer",
@@ -306,16 +306,21 @@ export const PRODUCTS: readonly Product[] = [
         body:
           "Every automated call, text and email appears in the same thread as your own messages. You can read exactly what went out in your name, and step in at any point without untangling anything.",
       },
+      {
+        title: "Add AI replies if you want them",
+        body:
+          "The sequence here is rule-based: the same twelve messages in the same order every time, which is exactly what most companies need and all they will ever use. When you want replies that read what the lead actually said, answer their questions on price and finance and book the slot off the conversation, the AI Lead Nurturing add-on sits on top of this product and does that part. One is in the monthly fee, the other is separate.",
+      },
     ],
     steps: [
       { title: "We connect your lead sources", body: "Website forms, phone, and any lead marketplaces you already pay for." },
       { title: "You approve the sequence", body: "Twelve messages, written for solar, edited for your area." },
-      { title: "It runs on every lead", body: "From the first day, every new lead gets the same sequence until they answer." },
+      { title: "It runs for six months per lead", body: "From the first day, every new lead gets the full schedule: twelve touches in month one, then monthly through month six, or until they answer." },
     ],
     stats: [
       { value: "60 sec", label: "To the first call and text" },
-      { value: "12", label: "Touches over thirty days" },
-      { value: "30 days", label: "Then a monthly check-in" },
+      { value: "12", label: "Touches in the first month" },
+      { value: "6 mo", label: "Of chasing per lead" },
     ],
     boundary: {
       text: "This is the scheduled sequence over days. The single instant reply to an unanswered call is Missed-Call Text-Back.",
