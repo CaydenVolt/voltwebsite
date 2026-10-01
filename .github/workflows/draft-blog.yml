@@ -1,0 +1,63 @@
+# Scheduled blog drafter.
+#
+# Every three days at 09:17 UTC, invokes Claude Code non-interactively with the
+# instructions in scripts/prompts/draft-next-blog.md. The run reads the top
+# QUEUED row in docs/blog-queue.md, writes a draft at
+# docs/blog-drafts/<slug>.md, and opens a PR for human review.
+#
+# ACTIVATION:
+#   1. Add ANTHROPIC_API_KEY to the repo secrets.
+#      Settings -> Secrets and variables -> Actions -> New repository secret.
+#   2. Confirm GITHUB_TOKEN has pull-request write permission (the `permissions`
+#      block below declares it; the default workflow permissions may still need
+#      to be set to "Read and write" in Settings -> Actions -> General).
+#   3. The first scheduled fire can be slow after a quiet period (GitHub throttles
+#      cron on inactive repos). Use the "workflow_dispatch" trigger below to test
+#      the pipeline immediately: Actions tab -> Draft blog -> Run workflow.
+#
+# If the queue is empty the run exits without opening a PR, which is the
+# intended quiet state.
+
+name: Draft blog
+
+on:
+  schedule:
+    # Minute 17 (not :00 or :30, which the global fleet lands on) every third day.
+    - cron: "17 9 */3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name  "volt-drafter"
+          git config user.email "volt-drafter@users.noreply.github.com"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Fire the drafter
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # --print runs non-interactively. --permission-mode acceptEdits lets
+          # the agent write files and run git/gh without each call prompting.
+          # The prompt file is passed as the message body; Claude reads the
+          # repo as its working tree.
+          cat scripts/prompts/draft-next-blog.md | claude \
+            --print \
+            --permission-mode acceptEdits \
+            --model claude-opus-4-7
