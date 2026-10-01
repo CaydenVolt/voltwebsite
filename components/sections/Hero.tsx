@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Marquee } from "@/components/ui/Marquee";
 import { AsciiArt } from "@/components/ui/adan-y-dios";
 import { DURATION, EASE_OUT, HERO_TIMING as T, PLATE } from "@/lib/tokens";
-import { SITE, bookingHref } from "@/lib/site";
+import { bookingHref } from "@/lib/site";
 import { getPublicProducts } from "@/lib/content/products";
 import { TrustStrip } from "@/components/site/TrustStrip";
 
@@ -109,23 +109,18 @@ export function Hero() {
       <TrustStrip />
 
       <div className="flex flex-1 flex-col px-gutter pt-stack pb-section-sm">
-        {/* Eyebrow row. The right of this row carried an average speed-to-lead
-            figure until 2026-09-19, when it went the way of the client count
-            before it: a number with nothing behind it is not a number. The
-            tagline holds the row on its own until there is something true to
-            put opposite it. */}
-        <motion.p {...rise(T.eyebrow)} className="label flex items-center gap-3 text-ink-muted">
-          <span aria-hidden className="h-px w-6 shrink-0 bg-ink sm:w-8" />
-          <span className="sm:hidden">{SITE.taglineShort}</span>
-          <span className="hidden sm:inline">{SITE.tagline}</span>
-        </motion.p>
-
         {/* Frame. Desktop: text column left (headline, ink CTA block, service
             rail), slanted media plate right spanning the headline and CTA rows
             only, so its top meets the headline, its bottom meets the CTA block,
             and the bone below it stays open. Phones stack: headline, media
-            strip flush on top of the CTA block, rail. */}
-        <div className="mt-3 flex flex-1 flex-col lg:mt-4 lg:grid lg:grid-cols-12 lg:grid-rows-[auto_auto_1fr] lg:gap-x-6">
+            strip flush on top of the CTA block, rail.
+
+            The eyebrow row above this frame carried a hairline rule and the
+            tagline until 2026-10-01, when it was pulled on the user's call.
+            The frame's top margin went with it so the headline sits where the
+            eyebrow used to and the trust strip's breathing room comes from
+            `pt-stack` on the container above. */}
+        <div className="flex flex-1 flex-col lg:grid lg:grid-cols-12 lg:grid-rows-[auto_auto_1fr] lg:gap-x-6">
           {/* Headline: word masks so it can wrap naturally on small screens */}
           <h1
             id="hero-heading"
