@@ -24,6 +24,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     icon: "grid",
     pillar: true,
     published: "2026-09-10",
+    updated: "2026-10-06",
     answer:
       "Solar contractor software falls into five categories: design and proposal tools, CRM and sales, project and install management, accounting, and marketing automation. Most companies need three of the five, and the expensive mistake is buying one from each category without checking where they overlap, which is how a company ends up with nine logins and no single source of truth.",
     takeaways: [
@@ -88,6 +89,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         t: "callout",
         label: "The diagnostic",
         text: "Draw your workflow from enquiry to paid invoice and mark every point where a human retypes something from one screen into another. Each of those is a seam. Count them. That number predicts your problems far better than any feature comparison.",
+      },
+      {
+        t: "diagram",
+        src: "/blog/fig-03-five-categories-and-the-seams.svg",
+        caption: "Every handoff between two tools is where a lead or a job goes missing.",
       },
 
       { t: "h2", text: "What each category should actually do" },

@@ -1,0 +1,115 @@
+<!-- Figure 3 — Five categories of solar software and the seams between them
+     Article: best-solar-contractor-software
+     Spec: docs/blog-image-specs.md (P2)
+
+     Five boxes in the order a job moves through them: marketing picks up
+     the lead, CRM holds it, design builds the proposal, project installs,
+     accounting invoices. The spec listed the categories in the article's
+     table order, which is topical rather than sequential, so this uses the
+     workflow order the article itself argues ("A lead exists in the CRM,
+     the proposal lives in the design tool, the job lives in the project
+     tool, and the invoice lives in accounting") plus the marketing layer
+     the article calls out as the one most often left manual.
+
+     The four seams are the handoffs. Seam 1 is in accent: the article
+     names form-to-CRM as the worst one ("Automate the worst seam first.
+     Usually form to CRM, or CRM to texting"). The other three are drawn
+     the same way, in grey, so the accent carries the argument.
+
+     780 canvas. Paste inline. Labels are real text in the served HTML. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440"
+     width="780" height="440" role="img"
+     aria-labelledby="f3-title f3-desc"
+     font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="f3-title">Five categories of solar software and the seams between them</title>
+  <desc id="f3-desc">Five boxes in a row showing the categories of software a solar job moves through: marketing and automation, CRM and sales, design and proposal, project and install, and accounting. Between each pair is a visible break showing a handoff. The first break, form submission into the CRM, is in accent as the one the article names as the worst and the first to automate.</desc>
+
+  <rect width="780" height="440" fill="#f2ede3"/>
+
+  <!-- heading -->
+  <text x="20" y="30" font-size="11" letter-spacing="1.3" fill="#5e574d">THE FIVE CATEGORIES, IN THE ORDER A JOB MOVES THROUGH THEM</text>
+  <text x="20" y="52" font-size="13" fill="#171410">Each break is a handoff. The first one is the one that costs the most.</text>
+
+  <!-- Row of 5 boxes, 128 wide, y 100 to 200.
+       Positions: 20, 173, 326, 479, 632.
+       Seam centres: 160.5, 313.5, 466.5, 619.5 (seam width 25). -->
+
+  <!-- Box 1: Marketing & automation -->
+  <rect x="20" y="100" width="128" height="100" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="84" y="132" font-size="13" fill="#171410" text-anchor="middle">Marketing &amp;</text>
+  <text x="84" y="148" font-size="13" fill="#171410" text-anchor="middle">automation</text>
+  <text x="84" y="175" font-size="11" fill="#5e574d" text-anchor="middle">Forms, calls, nurture</text>
+
+  <!-- Seam 1: ACCENT, form to CRM.
+       Jagged break drawn as two torn edges, matching the "handoff" metaphor. -->
+  <path d="M 148 118 L 154 128 L 148 138 L 154 148 L 148 158 L 154 168 L 148 178"
+        fill="none" stroke="#e4572e" stroke-width="2" stroke-linejoin="miter"/>
+  <path d="M 173 118 L 167 128 L 173 138 L 167 148 L 173 158 L 167 168 L 173 178"
+        fill="none" stroke="#e4572e" stroke-width="2" stroke-linejoin="miter"/>
+
+  <!-- Box 2: CRM & sales -->
+  <rect x="173" y="100" width="128" height="100" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="237" y="140" font-size="13" fill="#171410" text-anchor="middle">CRM &amp; sales</text>
+  <text x="237" y="165" font-size="11" fill="#5e574d" text-anchor="middle">Leads, pipeline,</text>
+  <text x="237" y="180" font-size="11" fill="#5e574d" text-anchor="middle">follow-up</text>
+
+  <!-- Seam 2: CRM to design -->
+  <path d="M 301 118 L 307 128 L 301 138 L 307 148 L 301 158 L 307 168 L 301 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+  <path d="M 326 118 L 320 128 L 326 138 L 320 148 L 326 158 L 320 168 L 326 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+
+  <!-- Box 3: Design & proposal -->
+  <rect x="326" y="100" width="128" height="100" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="390" y="132" font-size="13" fill="#171410" text-anchor="middle">Design &amp;</text>
+  <text x="390" y="148" font-size="13" fill="#171410" text-anchor="middle">proposal</text>
+  <text x="390" y="175" font-size="11" fill="#5e574d" text-anchor="middle">Roof layout, modelling</text>
+
+  <!-- Seam 3: Design to project -->
+  <path d="M 454 118 L 460 128 L 454 138 L 460 148 L 454 158 L 460 168 L 454 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+  <path d="M 479 118 L 473 128 L 479 138 L 473 148 L 479 158 L 473 168 L 479 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+
+  <!-- Box 4: Project & install -->
+  <rect x="479" y="100" width="128" height="100" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="543" y="132" font-size="13" fill="#171410" text-anchor="middle">Project &amp;</text>
+  <text x="543" y="148" font-size="13" fill="#171410" text-anchor="middle">install</text>
+  <text x="543" y="175" font-size="11" fill="#5e574d" text-anchor="middle">Permits, crews, materials</text>
+
+  <!-- Seam 4: Project to accounting -->
+  <path d="M 607 118 L 613 128 L 607 138 L 613 148 L 607 158 L 613 168 L 607 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+  <path d="M 632 118 L 626 128 L 632 138 L 626 148 L 632 158 L 626 168 L 632 178"
+        fill="none" stroke="#5e574d" stroke-width="1.5" stroke-linejoin="miter"/>
+
+  <!-- Box 5: Accounting -->
+  <rect x="632" y="100" width="128" height="100" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="696" y="140" font-size="13" fill="#171410" text-anchor="middle">Accounting</text>
+  <text x="696" y="165" font-size="11" fill="#5e574d" text-anchor="middle">Invoices, payroll,</text>
+  <text x="696" y="180" font-size="11" fill="#5e574d" text-anchor="middle">job cost</text>
+
+  <!-- Seam labels, under the breaks.
+       Seam 1 label in accent and spelled out; the others plain so the eye
+       lands on the first one, which is the argument. -->
+  <text x="160.5" y="222" font-size="11.5" fill="#e4572e" text-anchor="middle">Form to CRM</text>
+  <text x="160.5" y="240" font-size="10.5" fill="#e4572e" text-anchor="middle">The worst one,</text>
+  <text x="160.5" y="254" font-size="10.5" fill="#e4572e" text-anchor="middle">automate first</text>
+
+  <text x="313.5" y="222" font-size="11" fill="#5e574d" text-anchor="middle">Lead to proposal</text>
+  <text x="466.5" y="222" font-size="11" fill="#5e574d" text-anchor="middle">Proposal to install</text>
+  <text x="619.5" y="222" font-size="11" fill="#5e574d" text-anchor="middle">Install to invoice</text>
+
+  <!-- Thin rule across the bottom, carrying the article's own sentence. -->
+  <line x1="20" y1="320" x2="760" y2="320" stroke="#171410" stroke-width="1"/>
+  <text x="20" y="348" font-size="13" fill="#171410">Software failures in solar are almost never about features.</text>
+  <text x="20" y="366" font-size="13" fill="#171410">They are about handoffs.</text>
+
+  <!-- Legend -->
+  <path d="M 500 356 L 506 361 L 500 366" fill="none" stroke="#e4572e" stroke-width="2" stroke-linejoin="miter"/>
+  <path d="M 512 356 L 506 361 L 512 366" fill="none" stroke="#e4572e" stroke-width="2" stroke-linejoin="miter"/>
+  <text x="522" y="365" font-size="11" fill="#5e574d">The one in accent is the one the article names.</text>
+
+  <text x="20" y="412" font-size="11" fill="#5e574d">Four systems, four seams, and a lead or a job falls through one of them every week.</text>
+</svg>
