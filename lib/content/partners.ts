@@ -2,15 +2,19 @@
  * The tools the system runs on, shown as an endless belt under Why Volt.
  *
  * Marks live in `public/partners/` and are referenced by file name. The set
- * is kept white-mono on transparency so the belt reads as one system on the
- * ink slab rather than a colour wheel of competing brand palettes. Most of
- * them are fetched from the Simple Icons CDN in white; Twilio's own mark
- * was recoloured white from brand red; OpenAI arrived with its background
- * baked in and was keyed to transparency with the glyph inverted; Slack is
- * delisted from the icon source and ships without a mark, so the belt
- * renders its name on its own until a licensed asset is dropped in.
+ * uses each brand's own primary colour where it reads cleanly on the ink
+ * slab; brands whose mark is inherently black (X, TikTok, OpenAI, ElevenLabs)
+ * are shown in white, which is their own dark-background treatment. Most
+ * were fetched from the Simple Icons CDN with the brand's default colour;
+ * Twilio's long-standing SVG was kept at brand red; LinkedIn and Slack came
+ * from the public brand-asset mirror because the icon source has delisted
+ * both; OpenAI's inverted-white PNG was kept because its brand is a black
+ * monochrome glyph that lives in white on dark.
  *
- * Order below is the order they appear in the belt.
+ * Order below is the order they appear in the belt. Social and messaging
+ * sit together, Google and Gmail sit together, the infra block runs
+ * through the middle, scheduling and voice close out, then Slack and
+ * Shopify at the back.
  */
 export interface Partner {
   name: string;
@@ -24,7 +28,9 @@ export const PARTNERS: readonly Partner[] = [
   { name: "LINE", file: "line.svg" },
   { name: "X", file: "x.svg" },
   { name: "TikTok", file: "tiktok.svg" },
+  { name: "LinkedIn", file: "linkedin.svg" },
   { name: "Google", file: "google.svg" },
+  { name: "Gmail", file: "gmail.svg" },
   { name: "Twilio", file: "twilio.svg" },
   { name: "OpenAI", file: "openai.png" },
   { name: "Stripe", file: "stripe.svg" },
