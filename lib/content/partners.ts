@@ -40,6 +40,7 @@ export const PARTNERS: readonly Partner[] = [
   { name: "ElevenLabs", file: "elevenlabs.svg" },
   { name: "Slack", file: "slack.svg" },
   { name: "Shopify", file: "shopify.svg" },
+  { name: "Inflowave", file: "inflowave.svg" },
 ];
 
 export const partnerMark = (file: string) => `/partners/${file}`;
