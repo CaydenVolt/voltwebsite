@@ -145,12 +145,12 @@ export const COMMITMENT_PLANS: readonly CommitmentPlan[] = [
   {
     id: "pilot",
     name: "90-day pilot",
-    // Pill emphasised in muted treatment: not a sales pill, a usage warning.
-    // The point is that the client cannot keep renewing this quarterly to
-    // beat the annual price; one quarter only, then they move to monthly
-    // or annual.
-    tag: "One-time only",
-    tagEmphasis: "muted",
+    // Highlighted card: this is the one we actively recommend most new
+    // clients start with. One-time only is still true (and said in the
+    // terms line below), but the lead signal here is "start here", not
+    // "warning".
+    tag: "Get started here",
+    tagEmphasis: "accent",
     price: "$3,000",
     unit: "total",
     terms: "First 90 days of the channel only. Available once per client.",
@@ -163,8 +163,11 @@ export const COMMITMENT_PLANS: readonly CommitmentPlan[] = [
   {
     id: "annual",
     name: "Annual",
+    // De-emphasised: Best value remains true on raw dollars saved per year,
+    // but we no longer push visitors into a twelve-month commitment on their
+    // first conversation. The pilot above gets the loud treatment now.
     tag: "Best value",
-    tagEmphasis: "accent",
+    tagEmphasis: "muted",
     price: "$13,500",
     unit: "/year",
     terms: "Twelve months, paid up front or quarterly.",
@@ -172,7 +175,7 @@ export const COMMITMENT_PLANS: readonly CommitmentPlan[] = [
     savings: "Three months free against the monthly rate.",
     savingsAmount: "$4,500",
     savingsPeriod: "off your first year",
-    note: "Best value for a channel you have already decided to run.",
+    note: "For a channel you have already decided to run.",
   },
 ] as const;
 
