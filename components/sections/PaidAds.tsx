@@ -27,13 +27,13 @@ export function PaidAds() {
         <div className="lg:col-span-5">
           <SectionLabel rule>Paid ads services</SectionLabel>
           <Reveal as="h2" id="paid-ads-h" className="mt-6 text-display-md">
-            Three channels. One flat management fee.
+            One flat fee. On the channels homeowners use to find you.
           </Reveal>
           <Reveal as="p" index={1} className="mt-6 max-w-measure text-lead text-muted">
-            Separate from the monthly system fee. Pick the channel that fits the
-            demand you want to reach, or run all three. Management is the same
-            flat rate either way; the ad budget is paid to the platform
-            directly, in your own account.
+            Separate from the monthly system fee. One channel is usually enough
+            to start, so pick the one that fits where your homeowners already
+            look. Management is the same flat rate whichever you choose, and
+            ad spend goes to the platform directly in your own account.
           </Reveal>
         </div>
       </div>
@@ -58,48 +58,79 @@ export function PaidAds() {
         </Reveal>
 
         <ul className="mt-10 grid gap-6 lg:mt-12 lg:grid-cols-3">
-          {COMMITMENT_PLANS.map((plan, i) => (
-            <Reveal
-              key={plan.id}
-              as="li"
-              index={i}
-              className={`flex flex-col border bg-bone px-6 py-8 sm:px-8 ${
-                plan.tag ? "border-accent" : "border-line"
-              }`}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h4 className="text-h3">{plan.name}</h4>
-                {plan.tag && (
-                  <span className="label inline-flex shrink-0 items-center rounded-full border border-accent px-3 py-1 text-accent">
-                    {plan.tag}
+          {COMMITMENT_PLANS.map((plan, i) => {
+            const emphasised = plan.tagEmphasis === "accent";
+            return (
+              <Reveal
+                key={plan.id}
+                as="li"
+                index={i}
+                className={`flex flex-col border bg-bone px-6 py-8 sm:px-8 ${
+                  emphasised ? "border-accent" : "border-line"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h4 className="text-h3">{plan.name}</h4>
+                  {plan.tag && (
+                    <span
+                      className={`label inline-flex shrink-0 items-center rounded-full border px-3 py-1 ${
+                        emphasised
+                          ? "border-accent text-accent"
+                          : "border-muted/50 text-muted"
+                      }`}
+                    >
+                      {plan.tag}
+                    </span>
+                  )}
+                </div>
+
+                <p className="mt-6 flex items-baseline gap-2 font-display text-fg">
+                  <span className="text-h3">$</span>
+                  <span className="text-display-md">
+                    {plan.price.replace(/^\$/, "")}
                   </span>
-                )}
-              </div>
+                  <span className="label pl-1 text-muted">{plan.unit}</span>
+                </p>
 
-              <p className="mt-6 flex items-baseline gap-2 font-display text-fg">
-                <span className="text-h3">$</span>
-                <span className="text-display-md">
-                  {plan.price.replace(/^\$/, "")}
-                </span>
-                <span className="label pl-1 text-muted">{plan.unit}</span>
-              </p>
+                <p className="mt-5 text-body-sm text-muted">{plan.terms}</p>
 
-              <p className="mt-5 text-body-sm text-muted">{plan.terms}</p>
+                {/* Highlighted stat block: effective rate on top, savings
+                    below, bordered box with a deep bone fill so the eye
+                    lands on it. The dollar figure in savings is the loudest
+                    thing in the card for plans that have one. */}
+                <div className="mt-7 border border-line bg-bone-deep px-5 py-5">
+                  <p className="label text-muted">Effective rate</p>
+                  <p className="mt-1 font-display text-h2 text-fg">
+                    {plan.effective}
+                  </p>
 
-              <dl className="mt-6 border-t border-line pt-5 text-body-sm">
-                <div className="flex justify-between gap-4 py-1">
-                  <dt className="text-muted">Effective rate</dt>
-                  <dd className="text-fg">{plan.effective}</dd>
+                  <div className="mt-5 border-t border-line pt-5">
+                    <p className="label text-muted">You save</p>
+                    {plan.savingsAmount ? (
+                      <>
+                        <p className="mt-1 flex items-baseline gap-2 font-display">
+                          <span className="text-h3 text-accent">$</span>
+                          <span className="text-display-md text-accent">
+                            {plan.savingsAmount.replace(/^\$/, "")}
+                          </span>
+                        </p>
+                        <p className="label mt-1 text-muted">
+                          {plan.savingsPeriod}
+                        </p>
+                      </>
+                    ) : (
+                      <p className="mt-1 font-display text-h3 text-muted">
+                        {plan.savingsPeriod}
+                      </p>
+                    )}
+                    <p className="mt-3 text-body-sm text-muted">{plan.savings}</p>
+                  </div>
                 </div>
-                <div className="flex justify-between gap-4 py-1">
-                  <dt className="text-muted">Savings</dt>
-                  <dd className="text-fg">{plan.savings}</dd>
-                </div>
-              </dl>
 
-              <p className="mt-auto pt-6 text-body-sm text-muted">{plan.note}</p>
-            </Reveal>
-          ))}
+                <p className="mt-auto pt-6 text-body-sm text-muted">{plan.note}</p>
+              </Reveal>
+            );
+          })}
         </ul>
       </div>
 

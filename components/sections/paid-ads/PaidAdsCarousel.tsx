@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CarouselArrows } from "@/components/ui/CarouselArrows";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
+import { PRESS, SPRING } from "@/lib/tokens";
 import { bookingHref } from "@/lib/site";
 import type { PaidAdChannel } from "@/lib/content/paid-ads";
 
@@ -25,14 +26,17 @@ export function PaidAdsCarousel({ channels }: { channels: readonly PaidAdChannel
   );
   const [active, setActive] = useState(initial === -1 ? 0 : initial);
 
+  // Set scrollLeft directly on the scroller rather than scrollIntoView.
+  // scrollIntoView with block: "nearest" still scrolls the ancestor chain
+  // when the target is below the viewport on first paint, which was dragging
+  // the whole pricing page down to the paid-ads section on load. Horizontal
+  // scrollLeft only moves this scroller, which is what we want.
   const scrollTo = useCallback((i: number, smooth = true) => {
     const target = slides.current[i];
-    if (!target) return;
-    target.scrollIntoView({
-      behavior: smooth ? "smooth" : "auto",
-      inline: "center",
-      block: "nearest",
-    });
+    const sc = scroller.current;
+    if (!target || !sc) return;
+    const left = target.offsetLeft - (sc.clientWidth - target.clientWidth) / 2;
+    sc.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
   }, []);
 
   // Pre-select the recommended channel before paint so the first frame is
@@ -79,61 +83,122 @@ export function PaidAdsCarousel({ channels }: { channels: readonly PaidAdChannel
 
   return (
     <div>
-      {/* Header row: dots on the left so the eye lands on the card count
-          first, arrows on the right as the primary interaction on desktop. */}
-      <div className="flex items-center justify-between gap-6">
-        <ol className="flex items-center gap-3" aria-label="Channel selector">
-          {channels.map((c, i) => (
-            <li key={c.id}>
-              <button
-                type="button"
-                aria-label={`Show ${c.short}`}
-                aria-current={i === active ? "true" : undefined}
-                onClick={() => scrollTo(i)}
-                className={`flex items-center gap-2 label transition-colors duration-100 ${
-                  i === active ? "text-fg" : "text-muted hover:text-fg"
-                }`}
-              >
-                <span
-                  aria-hidden
-                  className={`block size-1.5 rounded-full transition-colors duration-100 ${
-                    i === active ? "bg-accent" : "bg-muted/60"
-                  }`}
-                />
-                <span>{c.short}</span>
-              </button>
-            </li>
-          ))}
-        </ol>
-        <div className="hidden sm:block">
-          <CarouselArrows onBack={back} onNext={next} label="paid ads channel" />
-        </div>
-      </div>
-
-      {/* The scroller. Negative gutter so cards can touch the viewport edge
-          on phones; the inner padding is restored by the card's own box. */}
-      <ul
-        ref={scroller}
-        role="group"
-        aria-label="Paid ads channels. Swipe or use the arrow keys to move between cards."
-        tabIndex={0}
-        onKeyDown={onKeyDown}
-        className="mt-6 -mx-gutter flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-gutter pb-2 pt-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-current lg:mt-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
+      {/* Dot nav sits above the carousel. Pure selector; arrows are the big
+          chevrons flanking the card, not up here. */}
+      <ol className="flex items-center justify-center gap-5" aria-label="Channel selector">
         {channels.map((c, i) => (
-          <li
-            key={c.id}
-            ref={(el) => {
-              slides.current[i] = el;
-            }}
-            aria-labelledby={`paid-ads-${c.id}-h`}
-            className="w-full shrink-0 snap-center"
-          >
-            <Card channel={c} />
+          <li key={c.id}>
+            <button
+              type="button"
+              aria-label={`Show ${c.short}`}
+              aria-current={i === active ? "true" : undefined}
+              onClick={() => scrollTo(i)}
+              className={`flex items-center gap-2 label transition-colors duration-100 ${
+                i === active ? "text-fg" : "text-muted hover:text-fg"
+              }`}
+            >
+              <span
+                aria-hidden
+                className={`block size-1.5 rounded-full transition-colors duration-100 ${
+                  i === active ? "bg-accent" : "bg-muted/60"
+                }`}
+              />
+              <span>{c.short}</span>
+            </button>
           </li>
         ))}
-      </ul>
+      </ol>
+
+      {/* Scroller + flanking arrows share a relative wrapper so the arrows
+          sit at the vertical centre of the visible card. Mobile hides them;
+          swipe is the right interaction there. */}
+      <div className="relative mt-8 lg:mt-10">
+        <SideArrow direction="back"  onClick={back} disabled={active === 0} />
+        <SideArrow direction="next"  onClick={next} disabled={active === channels.length - 1} />
+
+        {/* The scroller itself. Negative gutter so cards can touch the viewport
+            edge on phones; the inner padding is restored by the card's own box. */}
+        <ul
+          ref={scroller}
+          role="group"
+          aria-label="Paid ads channels. Swipe, use the arrow keys, or press the chevrons to move between cards."
+          tabIndex={0}
+          onKeyDown={onKeyDown}
+          className="-mx-gutter flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-gutter pb-2 pt-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-current [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {channels.map((c, i) => (
+            <li
+              key={c.id}
+              ref={(el) => {
+                slides.current[i] = el;
+              }}
+              aria-labelledby={`paid-ads-${c.id}-h`}
+              className="w-full shrink-0 snap-center"
+            >
+              <Card channel={c} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+  );
+}
+
+/**
+ * Big chevron flanking the carousel: 56px square, hairline bone box, chevron
+ * glyph, drops its opacity when there is nothing to click to (first or last
+ * card). Hidden under sm because the carousel takes the swipe gesture.
+ *
+ * Positioned absolutely against the carousel wrapper. On lg the arrow sits
+ * outside the max-w-2xl card by a comfortable gutter; between sm and lg it
+ * overlays the card edge with a solid bone background so it stays legible.
+ */
+/* Shared base, written as one literal string so Tailwind's source scan picks
+   up every utility. The earlier version split responsive classes across an
+   array; those tokens never made it to the generated CSS and the arrows
+   never rendered. */
+const ARROW_BASE =
+  "absolute top-1/2 z-10 -translate-y-1/2 flex max-sm:hidden size-14 items-center justify-center border border-line bg-bone text-fg transition-opacity duration-150";
+
+function SideArrow({
+  direction,
+  onClick,
+  disabled,
+}: {
+  direction: "back" | "next";
+  onClick: () => void;
+  disabled: boolean;
+}) {
+  const back = direction === "back";
+  const side = back ? "left-2 lg:left-6" : "right-2 lg:right-6";
+  const state = disabled
+    ? "pointer-events-none opacity-30"
+    : "hover:bg-surface-deep";
+  return (
+    <motion.button
+      type="button"
+      aria-label={back ? "Previous channel" : "Next channel"}
+      onClick={onClick}
+      disabled={disabled}
+      whileTap={disabled ? undefined : { scale: PRESS.scale }}
+      transition={SPRING.touch}
+      data-cursor="grow"
+      className={`${ARROW_BASE} ${side} ${state}`}
+    >
+      <svg
+        aria-hidden
+        width="26"
+        height="26"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="square"
+        className={back ? "rotate-180" : ""}
+      >
+        <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
+      </svg>
+    </motion.button>
   );
 }
 

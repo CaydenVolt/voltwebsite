@@ -52,7 +52,12 @@ function Price({ className = "" }: { className?: string }) {
 
 export default function PricingPage() {
   const products = getPublicProducts();
-  const addons = getAddonServices();
+  // Google Ads Management is covered properly by the Paid Ads block above
+  // (Meta, LSA and Google Search as its own carousel with its own pricing),
+  // so listing it again under Separate products would just be the same
+  // product twice on one page. Filtered here, not in the shared content, so
+  // the /products listing still carries it.
+  const addons = getAddonServices().filter((a) => a.slug !== "google-ads-management");
 
   return (
     <main className="flex-1">

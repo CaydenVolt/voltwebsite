@@ -117,10 +117,16 @@ export interface CommitmentPlan {
   effective: string;
   /** How this compares to paying monthly across the same period. */
   savings: string;
+  /** The big headline savings figure, e.g. "$1,500" or null for no discount. */
+  savingsAmount: string | null;
+  /** The sub-line under that figure, e.g. "vs paying monthly". */
+  savingsPeriod: string;
   /** Short note shown underneath. */
   note: string;
-  /** Only the annual carries a tag today. */
+  /** Optional pill at the top-right of the card. */
   tag?: string;
+  /** "accent" (recommended, orange border) or "muted" (informational). */
+  tagEmphasis?: "accent" | "muted";
 }
 
 export const COMMITMENT_PLANS: readonly CommitmentPlan[] = [
@@ -130,30 +136,43 @@ export const COMMITMENT_PLANS: readonly CommitmentPlan[] = [
     price: "$1,500",
     unit: "/month",
     terms: "Rolling, cancel any month.",
-    effective: "$1,500 per month",
+    effective: "$1,500/month",
     savings: "No commitment, no discount.",
-    note: "The reference rate the other two are measured against.",
+    savingsAmount: null,
+    savingsPeriod: "The reference rate",
+    note: "The rate the other two are measured against. Pick this if you want to try the channel for a month before deciding anything bigger.",
   },
   {
     id: "pilot",
     name: "90-day pilot",
+    // Pill emphasised in muted treatment: not a sales pill, a usage warning.
+    // The point is that the client cannot keep renewing this quarterly to
+    // beat the annual price; one quarter only, then they move to monthly
+    // or annual.
+    tag: "One-time only",
+    tagEmphasis: "muted",
     price: "$3,000",
     unit: "total",
-    terms: "First 90 days, one-time introductory offer.",
-    effective: "$1,000 per month",
+    terms: "First 90 days of the channel only. Available once per client.",
+    effective: "$1,000/month",
     savings: "One month free against the monthly rate.",
-    note: "A quarter to test paid without signing up for a year. Rolls into monthly or annual after.",
+    savingsAmount: "$1,500",
+    savingsPeriod: "vs paying monthly for 3 months",
+    note: "A quarter to test paid without signing up for a year. Rolls into Monthly or Annual after.",
   },
   {
     id: "annual",
     name: "Annual",
+    tag: "Best value",
+    tagEmphasis: "accent",
     price: "$13,500",
     unit: "/year",
     terms: "Twelve months, paid up front or quarterly.",
-    effective: "$1,125 per month",
-    savings: "Three months free against the monthly rate: $4,500 off.",
+    effective: "$1,125/month",
+    savings: "Three months free against the monthly rate.",
+    savingsAmount: "$4,500",
+    savingsPeriod: "off your first year",
     note: "Best value for a channel you have already decided to run.",
-    tag: "Best value",
   },
 ] as const;
 
