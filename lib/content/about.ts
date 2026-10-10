@@ -53,11 +53,11 @@ export const TEAM = [
     position: { x: 50, y: 42 },
   },
   {
-    name: "Jay",
+    name: "McKeith",
     role: "COO / Co-Founder",
-    src: "/about/jay.jpeg",
-    alt: "Jay, co-founder of Volt",
-    position: { x: 50, y: 57 },
+    src: "/about/mckeith.png",
+    alt: "McKeith, co-founder of Volt",
+    position: { x: 50, y: 35 },
   },
   {
     name: "Mubarok",
