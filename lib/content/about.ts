@@ -38,10 +38,10 @@ export const CULTURE = {
 
 /** The landscape plate beside the mission. Cropped to landscape in CSS, not in the file. */
 export const TEAM_PHOTO = {
-  src: "/about/team.jpeg",
-  alt: "Cayden and Jay, the team behind Volt",
-  /** Focal point as object-position percentages: keeps both faces in a wide crop. */
-  position: { x: 50, y: 38 },
+  src: "/about/team.png",
+  alt: "A solar installer silhouetted against a panel array at sunset",
+  /** Focal point as object-position percentages: keeps the figure in a wide crop. */
+  position: { x: 35, y: 55 },
 };
 
 export const TEAM = [

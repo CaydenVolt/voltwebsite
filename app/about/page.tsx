@@ -61,7 +61,7 @@ export default function AboutPage() {
         {/* Headline row 1, photo beside it spanning both rows as on the hero, the
             mission running under the headline so the two paragraphs stay together */}
         <div className="grid gap-y-8 lg:grid-cols-12 lg:items-start lg:gap-x-6">
-          <Reveal as="div" className="order-1 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-1">
+          <Reveal as="div" className="order-1 lg:order-none lg:col-span-5 lg:col-start-2 lg:row-start-1">
             <SectionLabel rule>About us</SectionLabel>
             <h1 id="about-h" className="mt-6 text-display-xl">
               Marketing, minus the nonsense.
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <Reveal
             as="div"
             index={2}
-            className="order-3 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-2"
+            className="order-3 lg:order-none lg:col-span-5 lg:col-start-2 lg:row-start-2"
           >
             <p className="max-w-measure text-lead">{MISSION[0]}</p>
             <p className="mt-4 max-w-measure text-body text-muted">{MISSION[1]}</p>
