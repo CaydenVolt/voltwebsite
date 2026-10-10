@@ -1,7 +1,9 @@
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
 import { PaidAdsCarousel } from "@/components/sections/paid-ads/PaidAdsCarousel";
+import { bookingHref } from "@/lib/site";
 import {
   COMMITMENT_PLANS,
   PAID_ADS,
@@ -128,6 +130,23 @@ export function PaidAds() {
                 </div>
 
                 <p className="mt-auto pt-6 text-body-sm text-muted">{plan.note}</p>
+
+                {/* Book-a-call CTA on every card. The annual (the recommended
+                    one) gets the primary accent fill so the eye lands on it
+                    first; the other two are outline, same text, so a visitor
+                    who already knows which term they want still has a one-tap
+                    path from the card they are reading. */}
+                <div className="mt-6">
+                  <Button
+                    href={bookingHref(`pricing_commitment_${plan.id}`)}
+                    source={`pricing_commitment_${plan.id}`}
+                    external
+                    variant={emphasised ? "primary" : "outline"}
+                    className="w-full justify-center"
+                  >
+                    Book a call
+                  </Button>
+                </div>
               </Reveal>
             );
           })}
