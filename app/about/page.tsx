@@ -71,29 +71,90 @@ export default function AboutPage() {
           <Reveal
             as="div"
             index={1}
-            className="order-2 -mx-gutter lg:order-none lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:-mr-gutter"
+            className="order-2 lg:order-none lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1"
           >
-            {(() => {
-              const src = photo("team");
-              return src ? (
-                <Photo
-                  src={src}
-                  alt={TEAM_PHOTO.alt}
-                  aspect="16 / 9"
-                  position={TEAM_PHOTO.position}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  priority
-                  className="lg:plate-slant"
-                />
-              ) : (
-                <div
-                  role="img"
-                  aria-label={TEAM_PHOTO.alt}
-                  style={{ aspectRatio: "16 / 9" }}
-                  className="bg-bone-deep lg:plate-slant"
-                />
-              );
-            })()}
+            <div className="-mx-gutter lg:mx-0 lg:-mr-gutter">
+              {(() => {
+                const src = photo("team");
+                return src ? (
+                  <Photo
+                    src={src}
+                    alt={TEAM_PHOTO.alt}
+                    aspect="16 / 9"
+                    position={TEAM_PHOTO.position}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority
+                    className="lg:plate-slant"
+                  />
+                ) : (
+                  <div
+                    role="img"
+                    aria-label={TEAM_PHOTO.alt}
+                    style={{ aspectRatio: "16 / 9" }}
+                    className="bg-bone-deep lg:plate-slant"
+                  />
+                );
+              })()}
+            </div>
+
+            {/* Founders composite under the hero plate: two circular
+                portraits with the second overlapping the first, so a reader
+                sees who runs the company before they get down to the Team
+                grid. ring-4 ring-bone on each cuts a clean bone-paper gap
+                where the circles meet, which is the standard avatar-stack
+                shape and makes the overlap read as two people rather than
+                a smudge. */}
+            <div className="mt-10 flex items-center gap-6 lg:mt-12">
+              <div className="flex items-center -space-x-5 sm:-space-x-6">
+                {/* w-28 + aspect "1/1" mirrors the TEAM grid portrait pattern,
+                    which is the one proven to render in this project's Tailwind
+                    build. size-28 looked right in source but did not resolve. */}
+                {(() => {
+                  const src = photo("cayden");
+                  return src ? (
+                    <Photo
+                      src={src}
+                      alt="Cayden Chern, founder"
+                      aspect="1 / 1"
+                      position={{ x: 50, y: 42 }}
+                      sizes="128px"
+                      className="w-28 shrink-0 rounded-full border border-line ring-4 ring-bone sm:w-32"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden
+                      style={{ aspectRatio: "1 / 1" }}
+                      className="w-28 shrink-0 rounded-full border border-line bg-bone-deep ring-4 ring-bone sm:w-32"
+                    />
+                  );
+                })()}
+                {(() => {
+                  const src = photo("mckeith");
+                  return src ? (
+                    <Photo
+                      src={src}
+                      alt="McKeith, co-founder"
+                      aspect="1 / 1"
+                      position={{ x: 50, y: 35 }}
+                      sizes="128px"
+                      className="w-28 shrink-0 rounded-full border border-line ring-4 ring-bone sm:w-32"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden
+                      style={{ aspectRatio: "1 / 1" }}
+                      className="w-28 shrink-0 rounded-full border border-line bg-bone-deep ring-4 ring-bone sm:w-32"
+                    />
+                  );
+                })()}
+              </div>
+              <div>
+                <p className="label text-muted">Founders</p>
+                <p className="mt-1 font-display text-item text-fg">
+                  Cayden &amp; McKeith
+                </p>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal
