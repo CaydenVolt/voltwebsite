@@ -9,6 +9,7 @@ import { DitheredImage } from "@/components/ui/DitheredImage";
 import { ProductIcon } from "@/components/ui/ProductIcon";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { PaidAds } from "@/components/sections/PaidAds";
 import { pad } from "@/lib/format";
 import { SITE, bookingHref } from "@/lib/site";
 import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/products";
@@ -156,6 +157,11 @@ export default function PricingPage() {
           </p>
         </div>
       </Section>
+
+      {/* 3. Paid ads: three channels in a swipeable carousel, LSA pre-selected,
+          with the three commitment plans below. Separate line item, not in the
+          monthly plan above. */}
+      <PaidAds />
 
       {/* 4. Separate products: not in the plan, no plan numerals, priced on the call */}
       <Section id="separate-products" rule="top" aria-labelledby="addons-h">
