@@ -83,7 +83,7 @@ export default function TestimonialsPage() {
                     />
                   </div>
 
-                  <Stars count={t.rating} className="mt-6 text-accent" />
+                  <Stars count={t.rating} className="mt-6 text-yellow-400" />
 
                   <blockquote className="mt-4 text-body">
                     &ldquo;{t.quote}&rdquo;
