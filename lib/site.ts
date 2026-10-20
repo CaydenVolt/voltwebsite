@@ -91,6 +91,10 @@ export const SITE = {
   region: "the United States",
   nav: [
     { label: "Products", href: "/products", menu: "products" },
+    // Sits between Products and Pricing on purpose: Products = what we sell,
+    // Our Work = what we actually ship, Pricing = what it costs. The reading
+    // order mirrors the question order a prospect walks in with.
+    { label: "Our work", href: "/our-work" },
     { label: "Pricing", href: "/pricing" },
     // Top level on purpose: the blog is sixty-three pages deep and a link in
     // the bar on every page is the strongest internal signal we can give it.
