@@ -29,7 +29,15 @@ export interface Testimonial {
 }
 
 export const TESTIMONIALS: readonly Testimonial[] = [
-  // The first testimonial is filmed and in edit. It drops in here as soon as
-  // the MP4 is exported from DaVinci Resolve and the quote text is confirmed
-  // against what the client actually said in the clip.
+  {
+    slug: "lai-yirong",
+    name: "Lai YiRong",
+    videoSrc: "/testimonials/lai-yirong.mp4",
+    poster: "/testimonials/lai-yirong.jpg",
+    rating: 5,
+    // Three sentences lifted directly from the clip (00:00:29 to 00:01:00),
+    // trimmed for the card without changing what the client actually said.
+    quote:
+      "Communication was smooth and we didn't have to wait long for updates. My favourite part is how clean and organised the website looks: all our company information, services and other details are in one place now, making it easier for customers to learn about us. If you are looking to build a website for your business, I would definitely recommend Volt Agency.",
+  },
 ];
