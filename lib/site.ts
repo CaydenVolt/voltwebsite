@@ -95,6 +95,9 @@ export const SITE = {
     // Our Work = what we actually ship, Pricing = what it costs. The reading
     // order mirrors the question order a prospect walks in with.
     { label: "Our work", href: "/our-work" },
+    // Sits beside Our work on purpose: both are proof-of-work pages, one
+    // shows the build, the other shows what the client said about it.
+    { label: "Testimonials", href: "/testimonials" },
     { label: "Pricing", href: "/pricing" },
     // Top level on purpose: the blog is sixty-three pages deep and a link in
     // the bar on every page is the strongest internal signal we can give it.
