@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
 import { Clip } from "@/components/sections/services/Clip";
+import { Video } from "@/components/sections/services/Video";
 import { DitheredImage } from "@/components/ui/DitheredImage";
 import type { ProductMedia } from "@/lib/content/products";
 import {
@@ -151,6 +152,22 @@ export function ProductMediaView({ media, flip = false }: { media: ProductMedia;
       return (
         <Frame portrait={media.portrait} flip={flip}>
           <Clip
+            src={media.src}
+            poster={media.poster}
+            alt={media.alt}
+            width={media.width}
+            height={media.height}
+          />
+        </Frame>
+      );
+    }
+    case "video": {
+      if (!existsSync(path.join(process.cwd(), "public", media.src))) {
+        return media.fallback ? <ProductMediaView media={media.fallback} flip={flip} /> : null;
+      }
+      return (
+        <Frame portrait={media.portrait} flip={flip}>
+          <Video
             src={media.src}
             poster={media.poster}
             alt={media.alt}

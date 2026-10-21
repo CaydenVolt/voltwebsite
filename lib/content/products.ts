@@ -48,6 +48,24 @@ export type ProductMedia =
       portrait?: boolean;
       fallback?: ProductMedia;
     }
+  /**
+   * A standard video player: native controls, audio, no loop, no autoplay.
+   * For walkthroughs and explainers where the viewer should watch
+   * deliberately rather than glance. The counterpart to `clip`, which is
+   * the silent-GIF-style loop.
+   */
+  | {
+      kind: "video";
+      src: string;
+      /** First frame shown before play. */
+      poster: string;
+      alt: string;
+      /** Intrinsic size, so the row reserves its space before the file loads. */
+      width: number;
+      height: number;
+      portrait?: boolean;
+      fallback?: ProductMedia;
+    }
   | { kind: "textback" }
   | { kind: "followup" }
   | { kind: "inbox" }
@@ -197,12 +215,12 @@ export const PRODUCTS: readonly Product[] = [
       { value: "1 inbox", label: "Where every form lands" },
     ],
     media: {
-      kind: "clip",
+      kind: "video",
       src: "/services/functional-website.mp4",
       poster: "/services/functional-website.jpg",
-      alt: "A solar company's website, with a homeowner filling in the quote form",
-      width: 1152,
-      height: 648,
+      alt: "Walkthrough of a solar company's website, narrated by the team",
+      width: 1280,
+      height: 720,
     },
   },
   {
