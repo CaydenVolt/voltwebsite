@@ -29,16 +29,22 @@ export function ProductBlock({
   ruleTop: boolean;
 }) {
   const flip = position % 2 === 0;
+  /* The homepage block prefers the short silent-loop clip when the product
+     carries one, so this rail reads as six quick product glances. The
+     controlled video walkthrough stays on the product's own detail page.
+     Products without a homepageMedia (every one but the two walkthrough
+     videos today) just use their main media. */
+  const media = product.homepageMedia ?? product.media;
   /** A real screenshot or recording, rather than a fragment or a photo plate. */
   const real =
-    product.media.kind === "shot" ||
-    product.media.kind === "clip" ||
-    product.media.kind === "video";
+    media.kind === "shot" ||
+    media.kind === "clip" ||
+    media.kind === "video";
   /* Phone-shaped media is capped at 360px, so a seven-column slot left it
      marooned with 317px of dead space between it and the copy. It gets four
      columns instead and the text takes the difference. */
   const portrait =
-    (product.media.kind === "shot" || product.media.kind === "clip") && Boolean(product.media.portrait);
+    (media.kind === "shot" || media.kind === "clip") && Boolean(media.portrait);
   /* Video media uses the same seven-column media slot as a regular clip but
      carries its own hairline card frame (added inside the Video component)
      so the player reads as framed content beside the copy rather than as a
@@ -144,7 +150,7 @@ export function ProductBlock({
                 : `-mx-gutter lg:mx-0 ${flip ? "lg:-ml-gutter" : "lg:-mr-gutter"}`
             }
           >
-            <ProductMediaView media={product.media} flip={flip} />
+            <ProductMediaView media={media} flip={flip} />
           </div>
           {/* The figures sit under the media, which is what the space below it is for */}
           <ProductStats stats={product.stats} className="mt-8" />

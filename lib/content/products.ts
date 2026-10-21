@@ -137,7 +137,16 @@ interface PageContent {
   steps: readonly Step[];
   /** Three figures, shown beside the media. */
   stats: readonly Stat[];
+  /** The product's media on its own dedicated page. */
   media: ProductMedia;
+  /**
+   * Optional media variant for the homepage product block only. When set, the
+   * homepage renders this instead of `media`. Lets a product carry a short
+   * silent-loop clip for the "six-products-at-a-glance" rail on the home
+   * page and a longer controlled video walkthrough for its own detail page,
+   * from one product entry.
+   */
+  homepageMedia?: ProductMedia;
   /** Slugs of two related products. Only public products may appear here. */
   related: readonly string[];
   /** One sentence naming the line between this and a neighbouring product. */
@@ -221,6 +230,14 @@ export const PRODUCTS: readonly Product[] = [
       alt: "Walkthrough of a solar company's website, narrated by the team",
       width: 1280,
       height: 720,
+    },
+    homepageMedia: {
+      kind: "clip",
+      src: "/services/functional-website-clip.mp4",
+      poster: "/services/functional-website-clip.jpg",
+      alt: "A solar company's website, with a homeowner filling in the quote form",
+      width: 1152,
+      height: 648,
     },
   },
   {
@@ -351,6 +368,15 @@ export const PRODUCTS: readonly Product[] = [
       alt: "Walkthrough of the Volt Relay follow-up sequence, narrated by the team",
       width: 1920,
       height: 1080,
+      fallback: { kind: "followup" },
+    },
+    homepageMedia: {
+      kind: "clip",
+      src: "/services/automated-lead-follow-up-clip.mp4",
+      poster: "/services/automated-lead-follow-up-clip.jpg",
+      alt: "A website and a phone side by side, with the follow-up thread running on the phone",
+      width: 1152,
+      height: 822,
       fallback: { kind: "followup" },
     },
   },
