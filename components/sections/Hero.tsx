@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { Marquee } from "@/components/ui/Marquee";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { AsciiArt } from "@/components/ui/adan-y-dios";
 import { DURATION, EASE_OUT, HERO_TIMING as T, PLATE } from "@/lib/tokens";
 import { bookingHref } from "@/lib/site";
@@ -190,31 +191,22 @@ export function Hero() {
             </motion.p>
           </motion.div>
 
-          {/* Service rail: everything in the plan, under the CTA block. The
-              media plate ends with the CTA block above, so the space to the
-              right of the rail stays open.
-
-              SLATED FOR REPLACEMENT: this rail is to become customer reviews
-              once there are real ones to show. Whatever replaces it must be
-              genuine; the site has had invented proof removed from it once
-              already and nothing here is to be filled with placeholders. */}
-          <div className="order-4 mt-8 lg:col-span-6 lg:col-start-1 lg:row-start-3 lg:self-end">
-            <motion.p {...rise(T.meta)} className="label mb-3 text-ink-muted">
-              Everything included
-            </motion.p>
-            <ul className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-x-6 border-t border-rule">
-              {PRODUCTS.map((s, i) => (
-                <motion.li
-                  key={s.slug}
-                  {...rise(T.meta + (i + 1) * T.metaStagger)}
-                  className="flex items-baseline gap-3 border-b border-rule py-2.5"
-                >
-                  <span className="label text-ink-muted">{pad(i + 1)}</span>
-                  <span className="font-display text-item">{s.name}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
+          {/* Review proof, replacing the service rail that lived here from launch
+              through 2026-10-21. The protective comment on the old block
+              asked that whatever took its place be real; this one is: it
+              links to Volt Agency's actual Google Business profile where
+              the single five-star review lives. No "from N reviews" count
+              because there is only one; add the count the moment the number
+              grows past one. */}
+          <motion.div
+            {...rise(T.meta)}
+            className="order-4 mt-8 lg:col-span-6 lg:col-start-1 lg:row-start-3 lg:self-end"
+          >
+            <p className="label mb-3 text-ink-muted">Reviewed on</p>
+            <div className="border-t border-rule pt-5">
+              <ReviewBadge href="https://share.google/XtaShdEPoGFOQEwdt" />
+            </div>
+          </motion.div>
 
           {/* Certification badge, in the space to the right of the rail that
               the plate above leaves open. It is the one piece of real proof
