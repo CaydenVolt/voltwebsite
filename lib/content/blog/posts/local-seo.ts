@@ -25,6 +25,7 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     icon: "pin",
     pillar: true,
     published: "2026-09-06",
+    updated: "2026-10-21",
     answer:
       "Local SEO for solar contractors comes down to four things: a Google Business Profile with the right category and service areas, a steady flow of reviews, a page on your site for each town you install in, and consistent business details across the web. The profile and the reviews move fastest; the pages take three to nine months.",
     takeaways: [
@@ -72,6 +73,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
       {
         t: "p",
         text: "Proximity is the one owners fight and lose. You will not rank in the map pack for a town ninety minutes away just because you install there. What you can do is rank strongly where you are and win the organic results for the further towns with real pages, which is a different mechanism.",
+      },
+      {
+        t: "diagram",
+        src: "/blog/fig-04-what-the-map-pack-is-ranked-on.svg",
+        caption: "Proximity is the one owners fight and lose.",
       },
 
       { t: "h2", text: "Fix the profile first" },

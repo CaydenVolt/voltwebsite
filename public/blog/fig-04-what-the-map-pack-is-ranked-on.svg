@@ -1,0 +1,134 @@
+<!-- Figure 4 — What the map pack is ranked on
+     Article: local-seo-for-solar-contractors
+     Spec: docs/blog-image-specs.md (P3)
+
+     Three factors Google lists for local pack ranking, from the article's
+     own three-row table: Proximity, Relevance, Prominence. Each panel
+     carries the "what it means" line, the "can you change it" answer,
+     and the inputs that feed it, pulled from the article's prose. The
+     accent is reserved for the one argument the article makes loudly:
+     Proximity is the one you cannot change, which is why the same
+     business ranks differently street by street.
+
+     The 5x5 lattice at the bottom shows that street-by-street variance
+     as a shape: the same business, the same profile, but only a few
+     grid cells where it rises into the pack.
+
+     780 canvas, 560 tall for density. Labels are real text in the
+     served HTML. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 560"
+     width="780" height="560" role="img"
+     aria-labelledby="f4-title f4-desc"
+     font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="f4-title">What the map pack is ranked on</title>
+  <desc id="f4-desc">Three vertical panels showing the three factors Google uses to rank the local map pack: Proximity, Relevance and Prominence. Each panel carries what the factor means, whether a solar contractor can change it, and the inputs that feed it. Proximity is marked in accent as the one that cannot be changed. Below the three panels, a five by five grid of squares with three filled in accent shows that the same business ranks differently street by street.</desc>
+
+  <rect width="780" height="560" fill="#f2ede3"/>
+
+  <!-- heading -->
+  <text x="20" y="30" font-size="11" letter-spacing="1.3" fill="#5e574d">WHAT THE MAP PACK IS RANKED ON</text>
+  <text x="20" y="52" font-size="13" fill="#171410">Google states three. Two are yours. One is not.</text>
+
+  <!-- Panel 1: Proximity (accent-emphasised: the one you cannot change) -->
+  <rect x="20" y="85" width="240" height="315" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="34" y="112" font-size="11" letter-spacing="1.3" fill="#5e574d">01</text>
+  <text x="34" y="138" font-size="19" fill="#171410">Proximity</text>
+
+  <line x1="34" y1="156" x2="246" y2="156" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="175" font-size="11" fill="#5e574d">What it means</text>
+  <text x="34" y="193" font-size="12" fill="#171410">How close the searcher is</text>
+  <text x="34" y="208" font-size="12" fill="#171410">to your listed location.</text>
+
+  <line x1="34" y1="226" x2="246" y2="226" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="245" font-size="11" fill="#5e574d">Can you change it?</text>
+  <text x="34" y="263" font-size="12" fill="#e4572e">Barely. It is why you cannot</text>
+  <text x="34" y="278" font-size="12" fill="#e4572e">rank everywhere.</text>
+
+  <line x1="34" y1="296" x2="246" y2="296" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="34" y="315" font-size="11" fill="#5e574d">Inputs it reads</text>
+  <text x="34" y="333" font-size="11.5" fill="#171410">• Your listed address</text>
+  <text x="34" y="351" font-size="11.5" fill="#171410">• The searcher's device location</text>
+  <text x="34" y="369" font-size="11.5" fill="#171410">• Your declared service area</text>
+  <text x="34" y="391" font-size="12" fill="#e4572e" font-weight="500">You cannot change this one.</text>
+
+  <!-- Panel 2: Relevance -->
+  <rect x="270" y="85" width="240" height="315" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="284" y="112" font-size="11" letter-spacing="1.3" fill="#5e574d">02</text>
+  <text x="284" y="138" font-size="19" fill="#171410">Relevance</text>
+
+  <line x1="284" y1="156" x2="496" y2="156" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="284" y="175" font-size="11" fill="#5e574d">What it means</text>
+  <text x="284" y="193" font-size="12" fill="#171410">How well your profile matches</text>
+  <text x="284" y="208" font-size="12" fill="#171410">what was searched.</text>
+
+  <line x1="284" y1="226" x2="496" y2="226" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="284" y="245" font-size="11" fill="#5e574d">Can you change it?</text>
+  <text x="284" y="263" font-size="12" fill="#171410">Yes. Category, services,</text>
+  <text x="284" y="278" font-size="12" fill="#171410">description, posts.</text>
+
+  <line x1="284" y1="296" x2="496" y2="296" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="284" y="315" font-size="11" fill="#5e574d">Inputs it reads</text>
+  <text x="284" y="333" font-size="11.5" fill="#171410">• Primary category</text>
+  <text x="284" y="351" font-size="11.5" fill="#171410">• Services and service areas</text>
+  <text x="284" y="369" font-size="11.5" fill="#171410">• Business description</text>
+  <text x="284" y="387" font-size="11.5" fill="#171410">• Posts and photos</text>
+
+  <!-- Panel 3: Prominence -->
+  <rect x="520" y="85" width="240" height="315" fill="#e6dfd0" stroke="#171410" stroke-width="1" rx="2" ry="2"/>
+  <text x="534" y="112" font-size="11" letter-spacing="1.3" fill="#5e574d">03</text>
+  <text x="534" y="138" font-size="19" fill="#171410">Prominence</text>
+
+  <line x1="534" y1="156" x2="746" y2="156" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="534" y="175" font-size="11" fill="#5e574d">What it means</text>
+  <text x="534" y="193" font-size="12" fill="#171410">How well known and well</text>
+  <text x="534" y="208" font-size="12" fill="#171410">reviewed you are.</text>
+
+  <line x1="534" y1="226" x2="746" y2="226" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="534" y="245" font-size="11" fill="#5e574d">Can you change it?</text>
+  <text x="534" y="263" font-size="12" fill="#171410">Yes. Reviews, citations, links,</text>
+  <text x="534" y="278" font-size="12" fill="#171410">brand mentions.</text>
+
+  <line x1="534" y1="296" x2="746" y2="296" stroke="#171410" stroke-width="0.5" opacity="0.3"/>
+  <text x="534" y="315" font-size="11" fill="#5e574d">Inputs it reads</text>
+  <text x="534" y="333" font-size="11.5" fill="#171410">• Review count and recency</text>
+  <text x="534" y="351" font-size="11.5" fill="#171410">• Review rating</text>
+  <text x="534" y="369" font-size="11.5" fill="#171410">• Mentions in local press</text>
+  <text x="534" y="387" font-size="11.5" fill="#171410">• Citation consistency</text>
+
+  <!-- 5x5 lattice: same business, same profile, three cells it rises into
+       the pack from. Shows the street-by-street variance proximity enforces. -->
+  <g transform="translate(293, 435)">
+    <rect x="0"   y="0"  width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="24"  y="0"  width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="48"  y="0"  width="20" height="20" fill="#e4572e"   stroke="#e4572e" stroke-width="1"/>
+    <rect x="72"  y="0"  width="20" height="20" fill="#e4572e"   stroke="#e4572e" stroke-width="1"/>
+    <rect x="96"  y="0"  width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+
+    <rect x="0"   y="24" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="24"  y="24" width="20" height="20" fill="#e4572e"   stroke="#e4572e" stroke-width="1"/>
+    <rect x="48"  y="24" width="20" height="20" fill="#e4572e"   stroke="#e4572e" stroke-width="1"/>
+    <rect x="72"  y="24" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="96"  y="24" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+
+    <rect x="0"   y="48" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="24"  y="48" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="48"  y="48" width="20" height="20" fill="#e4572e"   stroke="#e4572e" stroke-width="1"/>
+    <rect x="72"  y="48" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="96"  y="48" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+
+    <rect x="0"   y="72" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="24"  y="72" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="48"  y="72" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="72"  y="72" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="96"  y="72" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+
+    <rect x="0"   y="96" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="24"  y="96" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="48"  y="96" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="72"  y="96" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+    <rect x="96"  y="96" width="20" height="20" fill="none"      stroke="#5e574d" stroke-width="1"/>
+  </g>
+
+  <text x="390" y="545" font-size="13" fill="#171410" text-anchor="middle">The same business ranks differently street by street.</text>
+</svg>

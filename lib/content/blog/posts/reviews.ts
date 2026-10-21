@@ -26,6 +26,7 @@ export const REVIEWS_POSTS: readonly Post[] = [
     icon: "star",
     pillar: true,
     published: "2026-09-02",
+    updated: "2026-10-21",
     answer:
       "Solar installers get more reviews by asking every customer at a fixed point in the job, by text rather than email, with a direct link and one polite follow-up. The strongest moment is two to six weeks after commissioning, once the first lower bill has landed and the customer can see the result rather than just the panels.",
     takeaways: [
@@ -68,6 +69,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
           ["First lower bill", "Highest", "Specific, with numbers in it"],
           ["Twelve months", "Low", "Excellent when it lands, rarely does"],
         ],
+      },
+      {
+        t: "diagram",
+        src: "/blog/fig-05-when-to-ask-for-a-review.svg",
+        caption: "Most installers ask on the day the job finishes, which is the worst moment that feels like the right one.",
       },
       {
         t: "callout",
