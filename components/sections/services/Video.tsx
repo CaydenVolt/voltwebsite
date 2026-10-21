@@ -25,16 +25,18 @@ export function Video({
   height?: number;
 }) {
   return (
-    <video
-      src={src}
-      poster={poster}
-      width={width}
-      height={height}
-      controls
-      playsInline
-      preload="metadata"
-      aria-label={alt}
-      className="block h-auto w-full bg-ink"
-    />
+    <div className="border border-line bg-bone-deep p-3 sm:p-4">
+      <video
+        src={src}
+        poster={poster}
+        width={width}
+        height={height}
+        controls
+        playsInline
+        preload="metadata"
+        aria-label={alt}
+        className="block h-auto w-full bg-ink"
+      />
+    </div>
   );
 }

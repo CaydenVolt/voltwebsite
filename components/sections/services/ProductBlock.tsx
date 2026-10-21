@@ -39,32 +39,24 @@ export function ProductBlock({
      columns instead and the text takes the difference. */
   const portrait =
     (product.media.kind === "shot" || product.media.kind === "clip") && Boolean(product.media.portrait);
-  /* A controlled video with native controls feels "stuck to the right" at the
-     full seven-column media slot, because its right edge then sits at the
-     page gutter. Pulled in by one column on each side so the player lives
-     between cols 5 and 10 (odd) / 3 and 8 (even), with two columns of empty
-     breathing room on the opposite side. Text takes the column back. */
-  const isVideo = product.media.kind === "video";
-  const textSpan = portrait ? "lg:col-span-7" : isVideo ? "lg:col-span-4" : "lg:col-span-5";
-  const mediaSpan = portrait ? "lg:col-span-4" : isVideo ? "lg:col-span-6" : "lg:col-span-7";
+  /* Video media uses the same seven-column media slot as a regular clip but
+     carries its own hairline card frame (added inside the Video component)
+     so the player reads as framed content beside the copy rather than as a
+     bare recording. No special column reshuffling needed. */
+  const textSpan = portrait ? "lg:col-span-7" : "lg:col-span-5";
+  const mediaSpan = portrait ? "lg:col-span-4" : "lg:col-span-7";
   const textStart = flip
     ? portrait
       ? "lg:col-start-6"
-      : isVideo
-        ? "lg:col-start-9"
-        : "lg:col-start-8"
+      : "lg:col-start-8"
     : "lg:col-start-1";
   const mediaStart = flip
     ? portrait
       ? "lg:col-start-2"
-      : isVideo
-        ? "lg:col-start-3"
-        : "lg:col-start-1"
+      : "lg:col-start-1"
     : portrait
       ? "lg:col-start-8"
-      : isVideo
-        ? "lg:col-start-5"
-        : "lg:col-start-6";
+      : "lg:col-start-6";
   /* A narrow figure does not want to sit in the bare grid gutter next to the
      copy the way a full-width screenshot does: at 24px the phone read as
      butted against the text rather than set beside it. Portrait media gets

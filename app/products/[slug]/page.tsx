@@ -65,11 +65,11 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
       <div aria-hidden className="h-nav-condensed" />
       <TrustStrip />
 
-      {/* Header: text left, media plate right bleeding off the edge, as in the
-          hero. Exception: a controlled video stacks beneath the text in its
-          own centred row, because a player with native controls at seven
-          columns on the right side reads as "stuck to the edge" rather than
-          as beside the copy. */}
+      {/* Header: text left, media on the right. For video media the text
+          column narrows and the video takes a wider slot (col-span-7 instead
+          of 5), so the player is the visually weighted element rather than
+          an afterthought beside the copy. This mirrors how feature pages
+          with product walkthroughs are usually laid out. */}
       <Section as="header" aria-labelledby="product-h">
         {(() => {
           const isVideo = product.media.kind === "video";
@@ -77,9 +77,9 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
             product.media.kind === "shot" ||
             product.media.kind === "clip" ||
             isVideo;
-          const textCols = isVideo ? "lg:col-span-12" : "lg:col-span-6";
+          const textCols = isVideo ? "lg:col-span-5" : "lg:col-span-6";
           const mediaCols = isVideo
-            ? "lg:col-span-8 lg:col-start-3"
+            ? "lg:col-span-7 lg:col-start-6"
             : "lg:col-span-5 lg:col-start-8";
           return (
             <div className="grid gap-y-10 lg:grid-cols-12 lg:items-start lg:gap-x-6">
@@ -125,11 +125,11 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
                   </Button>
                 </div>
               </Reveal>
-              {/* Column 7 is left empty here (non-video), so phone-shaped media
-                  already has 141px between it and the copy and does not need
-                  the extra gutter the homepage blocks give it. For video,
-                  text takes the whole row above and the player sits centred
-                  in the row below. */}
+              {/* Column 7 is empty for non-video media (phone-shaped shots and
+                  clips get 141px breathing room between them and the copy
+                  without an extra gutter). For video, the player takes a
+                  wider seven-column slot starting at col 6 and carries its
+                  own hairline card frame via the Video component. */}
               <Reveal as="div" index={1} className={mediaCols}>
                 <div
                   className={
