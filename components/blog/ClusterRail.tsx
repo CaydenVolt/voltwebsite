@@ -36,7 +36,7 @@ export function ClusterRail({ current }: { current?: CategoryId }) {
                   {pad(i + 1)}
                 </span>
                 <span>
-                  <span className="block font-display text-h3 text-fg transition-transform duration-100 group-hover:translate-x-1">
+                  <span className="block font-display text-h3 text-fg">
                     {c.name}
                   </span>
                   <span className="mt-1 block text-body text-muted">{c.blurb}</span>

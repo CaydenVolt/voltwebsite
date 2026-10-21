@@ -1,9 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
-import { PRESS, SPRING } from "@/lib/tokens";
 import { bookingHref } from "@/lib/site";
 import type { PaidAdChannel } from "@/lib/content/paid-ads";
 
@@ -175,13 +173,11 @@ function SideArrow({
     ? "pointer-events-none opacity-30"
     : "hover:bg-surface-deep";
   return (
-    <motion.button
+    <button
       type="button"
       aria-label={back ? "Previous channel" : "Next channel"}
       onClick={onClick}
       disabled={disabled}
-      whileTap={disabled ? undefined : { scale: PRESS.scale }}
-      transition={SPRING.touch}
       data-cursor="grow"
       className={`${ARROW_BASE} ${side} ${state}`}
     >
@@ -198,7 +194,7 @@ function SideArrow({
       >
         <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
       </svg>
-    </motion.button>
+    </button>
   );
 }
 

@@ -143,7 +143,7 @@ them.
 
 # The pillar diagrams
 
-## F1. Who claims the solar tax credit — DONE
+## F1. Who claims the solar tax credit (DONE)
 
 Live in `how-to-sell-solar-after-the-tax-credit`. Kept here as the reference
 for what a finished one looks like: two columns, a struck-through dead route on

@@ -1,8 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
-import { PRESS, SPRING } from "@/lib/tokens";
-
 type Variant = "primary" | "outline" | "outline-inverse" | "link" | "link-inverse";
 type Size = "sm" | "md";
 
@@ -29,9 +24,9 @@ const base =
 /* `outline` and `link` are tone-aware: correct on bone and inside an ink slab.
    The `-inverse` variants remain for places that set colour explicitly. */
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-ink active:bg-accent-deep",
-  outline: "border border-fg text-fg active:bg-surface-deep",
-  "outline-inverse": "border border-bone text-bone active:bg-ink-soft",
+  primary: "bg-accent text-ink hover:bg-accent-deep active:bg-accent-deep",
+  outline: "border border-fg text-fg hover:bg-surface-deep active:bg-surface-deep",
+  "outline-inverse": "border border-bone text-bone hover:bg-ink-soft active:bg-ink-soft",
   link: "text-fg link-underline decoration-underline-current hover:decoration-fg",
   "link-inverse": "text-bone link-underline decoration-underline-inverse hover:decoration-bone",
 };
@@ -46,12 +41,10 @@ const sizes: Record<Size, string> = {
 const isLink = (v: Variant) => v === "link" || v === "link-inverse";
 
 /**
- * Every CTA on the site. Renders a plain <a>: booking CTAs go straight to the
- * landing page. Press feedback fires on pointer-down via whileTap; the arrow
- * nudges on hover; both on the house spring.
- *
- * No click handler. Attribution rides the URL as utm_content, which the
- * landing page reads, so there is nothing for this site to record.
+ * Every CTA on the site. Plain anchor. Attribution rides the URL as
+ * utm_content, which the landing page reads, so there is nothing for this
+ * site to record. Colour change on hover is standard web affordance; no
+ * transforms, no spring press feedback, no arrow nudge.
  */
 export function Button({
   href,
@@ -64,17 +57,12 @@ export function Button({
 }: ButtonProps) {
   const linkStyle = isLink(variant);
   return (
-    <motion.a
+    <a
       href={href}
       data-cursor="grow"
       data-cta={source}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      initial="rest"
-      whileHover="hover"
-      whileFocus="hover"
-      whileTap={{ scale: PRESS.scale }}
-      transition={SPRING.touch}
       className={`${base} ${variants[variant]} ${
         // Text links: pad the hit area to 44px and give the space back with a
         // matching negative margin so the layout does not move.
@@ -82,10 +70,8 @@ export function Button({
       } ${className}`}
     >
       <span>{children}</span>
-      <motion.svg
+      <svg
         aria-hidden
-        variants={{ rest: { x: 0 }, hover: { x: "0.25em" } }}
-        transition={SPRING.touch}
         width="1em"
         height="1em"
         viewBox="0 0 16 16"
@@ -96,7 +82,7 @@ export function Button({
         className="shrink-0"
       >
         <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
-      </motion.svg>
-    </motion.a>
+      </svg>
+    </a>
   );
 }

@@ -1,11 +1,7 @@
-"use client";
-
-import { motion } from "motion/react";
-import { PRESS, SPRING } from "@/lib/tokens";
-
 /**
  * Back and forward for a belt: 44px targets, hairline, tone-aware. Neither is
- * ever disabled, because an endless belt has no first item and no last.
+ * ever disabled, because an endless belt has no first item and no last. Plain
+ * buttons; colour change on hover, no transforms or press-scale animation.
  */
 export function CarouselArrows({
   onBack,
@@ -35,12 +31,10 @@ function Arrow({
   back?: boolean;
 }) {
   return (
-    <motion.button
+    <button
       type="button"
       aria-label={label}
       onClick={onClick}
-      whileTap={{ scale: PRESS.scale }}
-      transition={SPRING.touch}
       data-cursor="grow"
       className="flex size-11 items-center justify-center border border-line text-fg transition-colors duration-100 hover:bg-surface-deep"
     >
@@ -57,6 +51,6 @@ function Arrow({
       >
         <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
       </svg>
-    </motion.button>
+    </button>
   );
 }

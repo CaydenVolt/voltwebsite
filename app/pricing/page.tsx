@@ -127,10 +127,7 @@ export default function PricingPage() {
                 >
                   <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
                   <span className="font-display text-item">{product.name}</span>
-                  <span
-                    aria-hidden
-                    className="ml-auto shrink-0 translate-x-0 text-body-sm transition-transform duration-100 group-hover:translate-x-1"
-                  >
+                  <span aria-hidden className="ml-auto shrink-0 text-body-sm">
                     &rarr;
                   </span>
                 </Link>

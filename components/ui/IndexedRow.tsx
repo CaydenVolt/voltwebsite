@@ -1,8 +1,4 @@
-"use client";
-
 import type { ReactNode } from "react";
-import { motion } from "motion/react";
-import { SPRING } from "@/lib/tokens";
 import { pad } from "@/lib/format";
 
 type Tag = "li" | "div";
@@ -16,7 +12,7 @@ interface IndexedRowProps {
   detail?: ReactNode;
   /** Numeral in accent at rest. Rationed: block headers only. */
   accent?: boolean;
-  /** Hover reveals accent on the numeral and shifts the label a few px. */
+  /** Hover reveals accent on the numeral (colour only, no motion). */
   interactive?: boolean;
   /** Hairline below the row (lists add their own top rule). */
   rule?: boolean;
@@ -31,9 +27,9 @@ const labelSize: Record<Size, string> = {
 };
 
 /**
- * The `01 —— Label` hairline row from the hero's "Everything included" rail.
- * Numeral in the label style, name in the display face, optional detail on
- * the right, hairline underneath. Tone-aware.
+ * Numeral, label, optional right-aligned detail, hairline underneath. Used by
+ * the hero rail and the "What this replaces" block. Interactive variant tints
+ * the numeral in accent on hover; no transforms, no motion.
  */
 export function IndexedRow({
   index,
@@ -46,12 +42,9 @@ export function IndexedRow({
   as = "li",
   className = "",
 }: IndexedRowProps) {
-  const Row = as === "li" ? motion.li : motion.div;
+  const Row = as;
   return (
     <Row
-      initial="rest"
-      whileHover={interactive ? "hover" : undefined}
-      whileFocus={interactive ? "hover" : undefined}
       className={`group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-3 py-2.5 ${
         rule ? "border-b border-line" : ""
       } ${className}`}
@@ -63,13 +56,7 @@ export function IndexedRow({
       >
         {pad(index)}
       </span>
-      <motion.span
-        variants={{ rest: { x: 0 }, hover: { x: 4 } }}
-        transition={SPRING.touch}
-        className={`font-display text-fg ${labelSize[size]}`}
-      >
-        {children}
-      </motion.span>
+      <span className={`font-display text-fg ${labelSize[size]}`}>{children}</span>
       {detail !== undefined && (
         <span className="text-right text-body-sm text-muted">{detail}</span>
       )}

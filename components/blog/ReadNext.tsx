@@ -38,7 +38,7 @@ export function ReadNext({ posts, categoryId }: { posts: readonly Post[]; catego
               className="group grid items-baseline gap-x-3 gap-y-2 py-5 sm:grid-cols-[2.5rem_1fr_auto]"
             >
               <span className="label hidden text-muted sm:block">{pad(i + 1)}</span>
-              <span className="font-display text-h3 text-fg transition-transform duration-100 group-hover:translate-x-1">
+              <span className="font-display text-h3 text-fg">
                 {p.title}
               </span>
               <span className="label text-muted sm:text-right">

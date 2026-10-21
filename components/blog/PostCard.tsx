@@ -70,7 +70,7 @@ export function PostCard({ post, index }: { post: Post; index: number }) {
                 stroke="currentColor"
                 strokeWidth="1.5"
                 strokeLinecap="square"
-                className="shrink-0 transition-transform duration-100 group-hover:translate-x-1"
+                className="shrink-0"
               >
                 <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
               </svg>

@@ -18,7 +18,6 @@ import { getFeaturedAddons, getPublicProducts, productHref } from "@/lib/content
 const PRODUCTS = getPublicProducts();
 /** The four sold outside the plan. Their own group in the menu, never numbered. */
 const SEPARATE = getFeaturedAddons();
-const MotionLink = motion.create(Link);
 
 /**
  * Fixed navigation. Transparent over the hero (the hero draws its own
@@ -558,24 +557,21 @@ function MegaPanel({
  */
 function AboutItem({ item }: { item: MenuItem }) {
   return (
-    <MotionLink
+    <Link
       href={item.href}
       data-item
       data-cursor="grow"
-      initial="rest"
-      whileHover="hover"
-      whileFocus="hover"
       className="group grid grid-cols-[2.5rem_1fr] gap-x-3 py-1"
     >
       <MenuIcon
         name={item.icon}
         className="mt-0.5 size-5 text-muted transition-colors duration-100 group-hover:text-accent group-focus-visible:text-accent"
       />
-      <motion.span variants={{ rest: { x: 0 }, hover: { x: 4 } }} transition={SPRING.touch} className="block">
+      <span className="block">
         <span className="block text-body font-medium text-fg">{item.label}</span>
         <span className="mt-1 block text-body-sm text-muted">{item.description}</span>
-      </motion.span>
-    </MotionLink>
+      </span>
+    </Link>
   );
 }
 
@@ -598,26 +594,23 @@ function MegaItem({
   href: string;
 }) {
   return (
-    <MotionLink
+    <Link
       href={href}
       data-item
       data-cursor="grow"
-      initial="rest"
-      whileHover="hover"
-      whileFocus="hover"
       className="group grid grid-cols-[2.5rem_1fr] gap-x-3 py-1"
     >
       <span className="label pt-1.5 text-muted transition-colors duration-100 group-hover:text-accent group-focus-visible:text-accent">
         {index !== undefined ? pad(index) : ""}
       </span>
-      <motion.span variants={{ rest: { x: 0 }, hover: { x: 4 } }} transition={SPRING.touch} className="block">
+      <span className="block">
         <span className="flex items-center gap-2.5 text-body font-medium text-fg">
           <ProductIcon slug={slug} className="size-4 text-muted" />
           {name}
         </span>
         <span className="mt-1 block text-body-sm text-muted">{description}</span>
-      </motion.span>
-    </MotionLink>
+      </span>
+    </Link>
   );
 }
 
@@ -723,21 +716,12 @@ function MobileSection({
 
 function NavAnchor({ label, href }: { label: string; href: string }) {
   return (
-    <motion.a
+    <a
       href={href}
       data-cursor="grow"
-      initial="rest"
-      whileHover="hover"
-      whileFocus="hover"
-      className="relative py-1 text-body-sm font-medium text-fg"
+      className="py-1 text-body-sm font-medium text-fg hover:underline hover:underline-offset-4 hover:decoration-fg"
     >
       {label}
-      <motion.span
-        aria-hidden
-        variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
-        transition={SPRING.touch}
-        className="absolute inset-x-0 bottom-0 h-px origin-left bg-fg"
-      />
-    </motion.a>
+    </a>
   );
 }

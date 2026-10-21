@@ -1,10 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "motion/react";
 import { ProductIcon } from "@/components/ui/ProductIcon";
 import { pad } from "@/lib/format";
-import { SPRING } from "@/lib/tokens";
 
 interface ProductRowProps {
   /** Omitted for products sold outside the plan: the numerals belong to the six. */
@@ -20,23 +16,18 @@ interface ProductRowProps {
   compact?: boolean;
 }
 
-const MotionLink = motion.create(Link);
-
 /**
  * One row of a product list: numeral, name, description, arrow, hairline
- * beneath. Hover turns the numeral accent and shifts the name on the touch
- * spring. Used by /products, the related-products block and /pricing.
+ * beneath. Hover turns the numeral accent. Used by /products, the
+ * related-products block and /pricing. No transforms, no spring.
  */
 export function ProductRow({ index, slug, name, description, href, accent = false, compact = false }: ProductRowProps) {
   const numbered = index !== undefined;
   return (
     <li className="border-b border-line">
-      <MotionLink
+      <Link
         href={href}
         data-cursor="grow"
-        initial="rest"
-        whileHover="hover"
-        whileFocus="hover"
         className={`group grid items-baseline gap-x-3 py-5 ${
           numbered ? "grid-cols-[2.5rem_1fr_auto]" : "grid-cols-[1fr_auto]"
         } ${compact ? "" : "lg:grid-cols-12 lg:gap-x-6"}`}
@@ -50,17 +41,13 @@ export function ProductRow({ index, slug, name, description, href, accent = fals
             {pad(index)}
           </span>
         )}
-        <motion.span
-          variants={{ rest: { x: 0 }, hover: { x: 4 } }}
-          transition={SPRING.touch}
-          className={`block ${compact ? "" : numbered ? "lg:col-span-5" : "lg:col-span-6"}`}
-        >
+        <span className={`block ${compact ? "" : numbered ? "lg:col-span-5" : "lg:col-span-6"}`}>
           <span className="flex items-center gap-3 font-display text-h3 text-fg">
             <ProductIcon slug={slug} className="size-5 text-muted" />
             {name}
           </span>
           <span className={`mt-2 block text-body text-muted ${compact ? "" : "lg:hidden"}`}>{description}</span>
-        </motion.span>
+        </span>
         {!compact && (
           <span className="hidden text-body text-muted lg:col-span-5 lg:block lg:pt-1">{description}</span>
         )}
@@ -77,7 +64,7 @@ export function ProductRow({ index, slug, name, description, href, accent = fals
         >
           <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
         </svg>
-      </MotionLink>
+      </Link>
     </li>
   );
 }

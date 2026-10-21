@@ -50,4 +50,4 @@ deleted. Keeps the queue table readable without losing history.
 
 | Slug | Shipped | PR |
 |---|---|---|
-| — | — | — |
+| none yet | - | - |
