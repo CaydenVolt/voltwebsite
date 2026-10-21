@@ -30,26 +30,41 @@ export function ProductBlock({
 }) {
   const flip = position % 2 === 0;
   /** A real screenshot or recording, rather than a fragment or a photo plate. */
-  const real = product.media.kind === "shot" || product.media.kind === "clip";
+  const real =
+    product.media.kind === "shot" ||
+    product.media.kind === "clip" ||
+    product.media.kind === "video";
   /* Phone-shaped media is capped at 360px, so a seven-column slot left it
      marooned with 317px of dead space between it and the copy. It gets four
      columns instead and the text takes the difference. */
   const portrait =
     (product.media.kind === "shot" || product.media.kind === "clip") && Boolean(product.media.portrait);
-  const textSpan = portrait ? "lg:col-span-7" : "lg:col-span-5";
-  const mediaSpan = portrait ? "lg:col-span-4" : "lg:col-span-7";
+  /* A controlled video with native controls feels "stuck to the right" at the
+     full seven-column media slot, because its right edge then sits at the
+     page gutter. Pulled in by one column on each side so the player lives
+     between cols 5 and 10 (odd) / 3 and 8 (even), with two columns of empty
+     breathing room on the opposite side. Text takes the column back. */
+  const isVideo = product.media.kind === "video";
+  const textSpan = portrait ? "lg:col-span-7" : isVideo ? "lg:col-span-4" : "lg:col-span-5";
+  const mediaSpan = portrait ? "lg:col-span-4" : isVideo ? "lg:col-span-6" : "lg:col-span-7";
   const textStart = flip
     ? portrait
       ? "lg:col-start-6"
-      : "lg:col-start-8"
+      : isVideo
+        ? "lg:col-start-9"
+        : "lg:col-start-8"
     : "lg:col-start-1";
   const mediaStart = flip
     ? portrait
       ? "lg:col-start-2"
-      : "lg:col-start-1"
+      : isVideo
+        ? "lg:col-start-3"
+        : "lg:col-start-1"
     : portrait
       ? "lg:col-start-8"
-      : "lg:col-start-6";
+      : isVideo
+        ? "lg:col-start-5"
+        : "lg:col-start-6";
   /* A narrow figure does not want to sit in the bare grid gutter next to the
      copy the way a full-width screenshot does: at 24px the phone read as
      butted against the text rather than set beside it. Portrait media gets

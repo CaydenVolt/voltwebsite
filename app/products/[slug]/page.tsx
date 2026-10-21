@@ -65,67 +65,86 @@ export default async function ProductPage(props: PageProps<"/products/[slug]">) 
       <div aria-hidden className="h-nav-condensed" />
       <TrustStrip />
 
-      {/* Header: text left, media plate right bleeding off the edge, as in the hero */}
+      {/* Header: text left, media plate right bleeding off the edge, as in the
+          hero. Exception: a controlled video stacks beneath the text in its
+          own centred row, because a player with native controls at seven
+          columns on the right side reads as "stuck to the edge" rather than
+          as beside the copy. */}
       <Section as="header" aria-labelledby="product-h">
-        <div className="grid gap-y-10 lg:grid-cols-12 lg:items-start lg:gap-x-6">
-          <Reveal as="div" className="lg:col-span-6">
-            <SectionLabel rule>
-              {product.addon ? (
-                "Separate product"
-              ) : (
-                <>
-                  Systems &amp; features · {pad(product.index ?? 1)} of {pad(total)}
-                </>
-              )}
-            </SectionLabel>
-            <ProductIcon slug={product.slug} className="mt-8 size-8 text-muted" />
-            <h1 id="product-h" className="mt-4 text-display-xl">
-              {product.name}
-            </h1>
-            {product.tag && (
-              <p className="mt-4">
-                <span className="label inline-flex items-center rounded-full border border-accent px-3 py-1 text-accent">
-                  {product.tag}
-                </span>
-              </p>
-            )}
-            <p className="mt-6 max-w-measure text-lead">{product.headline}</p>
-            <p className="mt-4 max-w-measure text-body text-muted">{product.intro}</p>
-            {/* The plan boundary, stated on the page itself rather than only on /pricing */}
-            <p className="label mt-6 border-t border-line pt-4 text-muted">
-              {product.addon
-                ? "Sold separately. Not part of the monthly system, quoted per business."
-                : "In the monthly fee, with the other five products."}
-            </p>
-            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <Button href={bookingHref(`product_${product.slug}`)} source={`product_${product.slug}`} external>
-                Book a 20-minute call
-              </Button>
-              <Button
-                href={product.addon ? "/pricing#separate-products" : "/pricing"}
-                source={`product_${product.slug}_pricing`}
-                variant="link"
-              >
-                {product.addon ? "How it is priced" : "See the price"}
-              </Button>
+        {(() => {
+          const isVideo = product.media.kind === "video";
+          const isReal =
+            product.media.kind === "shot" ||
+            product.media.kind === "clip" ||
+            isVideo;
+          const textCols = isVideo ? "lg:col-span-12" : "lg:col-span-6";
+          const mediaCols = isVideo
+            ? "lg:col-span-8 lg:col-start-3"
+            : "lg:col-span-5 lg:col-start-8";
+          return (
+            <div className="grid gap-y-10 lg:grid-cols-12 lg:items-start lg:gap-x-6">
+              <Reveal as="div" className={textCols}>
+                <SectionLabel rule>
+                  {product.addon ? (
+                    "Separate product"
+                  ) : (
+                    <>
+                      Systems &amp; features · {pad(product.index ?? 1)} of {pad(total)}
+                    </>
+                  )}
+                </SectionLabel>
+                <ProductIcon slug={product.slug} className="mt-8 size-8 text-muted" />
+                <h1 id="product-h" className="mt-4 text-display-xl">
+                  {product.name}
+                </h1>
+                {product.tag && (
+                  <p className="mt-4">
+                    <span className="label inline-flex items-center rounded-full border border-accent px-3 py-1 text-accent">
+                      {product.tag}
+                    </span>
+                  </p>
+                )}
+                <p className="mt-6 max-w-measure text-lead">{product.headline}</p>
+                <p className="mt-4 max-w-measure text-body text-muted">{product.intro}</p>
+                {/* The plan boundary, stated on the page itself rather than only on /pricing */}
+                <p className="label mt-6 border-t border-line pt-4 text-muted">
+                  {product.addon
+                    ? "Sold separately. Not part of the monthly system, quoted per business."
+                    : "In the monthly fee, with the other five products."}
+                </p>
+                <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+                  <Button href={bookingHref(`product_${product.slug}`)} source={`product_${product.slug}`} external>
+                    Book a 20-minute call
+                  </Button>
+                  <Button
+                    href={product.addon ? "/pricing#separate-products" : "/pricing"}
+                    source={`product_${product.slug}_pricing`}
+                    variant="link"
+                  >
+                    {product.addon ? "How it is priced" : "See the price"}
+                  </Button>
+                </div>
+              </Reveal>
+              {/* Column 7 is left empty here (non-video), so phone-shaped media
+                  already has 141px between it and the copy and does not need
+                  the extra gutter the homepage blocks give it. For video,
+                  text takes the whole row above and the player sits centred
+                  in the row below. */}
+              <Reveal as="div" index={1} className={mediaCols}>
+                <div
+                  className={
+                    isReal
+                      ? ""
+                      : "-mx-gutter lg:mx-0 lg:-mr-gutter"
+                  }
+                >
+                  <ProductMediaView media={product.media} />
+                </div>
+                <ProductStats stats={product.stats} className="mt-6 lg:mt-8" />
+              </Reveal>
             </div>
-          </Reveal>
-          {/* Column 7 is left empty here, so phone-shaped media already has
-              141px between it and the copy and does not need the extra gutter
-              the homepage blocks give it. */}
-          <Reveal as="div" index={1} className="lg:col-span-5 lg:col-start-8">
-            <div
-              className={
-                product.media.kind === "shot" || product.media.kind === "clip"
-                  ? ""
-                  : "-mx-gutter lg:mx-0 lg:-mr-gutter"
-              }
-            >
-              <ProductMediaView media={product.media} />
-            </div>
-            <ProductStats stats={product.stats} className="mt-6 lg:mt-8" />
-          </Reveal>
-        </div>
+          );
+        })()}
       </Section>
 
       {/* What you get, plus the boundary sentence where two products touch.
