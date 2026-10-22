@@ -367,7 +367,7 @@ export const PRODUCTS: readonly Product[] = [
       poster: "/services/automated-lead-follow-up.jpg",
       alt: "Walkthrough of the Volt Relay follow-up sequence, narrated by the team",
       width: 1920,
-      height: 1080,
+      height: 994,
       fallback: { kind: "followup" },
     },
     homepageMedia: {
