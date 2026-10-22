@@ -223,7 +223,7 @@ export function Hero() {
               a loading error. */}
           <motion.div
             {...rise(T.meta + 7 * T.metaStagger)}
-            className="order-5 mt-8 lg:col-span-3 lg:col-start-10 lg:row-start-3 lg:mt-0 lg:self-end lg:justify-self-end"
+            className="order-5 mt-8 lg:col-span-12 lg:col-start-1 lg:row-start-3 lg:mt-0 lg:self-end lg:justify-self-center"
           >
             <Image
               src="/badges/google-ads-search-certified.webp"
