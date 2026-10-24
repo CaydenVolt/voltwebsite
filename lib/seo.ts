@@ -1,7 +1,7 @@
 import { SITE, realSocial } from "@/lib/site";
 import { getPublicProducts, type ProductPage } from "@/lib/content/products";
 import { PLAN, formatPrice } from "@/lib/content/pricing";
-import { AUTHOR, authorHref, getCategory, postHref, type Post } from "@/lib/content/blog";
+import { AUTHOR, authorHref, getCategory, plain, postHref, type Post } from "@/lib/content/blog";
 
 /**
  * Structured data, built from the same content the pages render so the two can
@@ -17,7 +17,27 @@ const SITE_ID = `${SITE.url}/#website`;
 
 export const absolute = (path: string) => `${SITE.url}${path}`;
 
+/**
+ * The founder's public profile, used both in `sameAs` and in `founder` on the
+ * Organization. Lives here rather than in `SITE.social` because the platform
+ * placeholders filter would strip it on the way to the schema, and the
+ * attribution is to the person, not to the company's own profile.
+ */
+const FOUNDER_LINKEDIN = "https://www.linkedin.com/in/cayden-chern-hao-tian-883739408/";
+
+/**
+ * Everywhere the entity is also published, de-duped. `realSocial()` is empty
+ * while the brand's own profiles are platform-homepage placeholders; the
+ * founder's LinkedIn is live, so it is listed on its own. Any real social
+ * profile that lands in `SITE.social` later shows up here automatically.
+ */
+function organizationSameAs(): string[] {
+  const urls = [...realSocial().map((s) => s.href), FOUNDER_LINKEDIN];
+  return Array.from(new Set(urls));
+}
+
 export function organizationSchema() {
+  const sameAs = organizationSameAs();
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -26,9 +46,28 @@ export function organizationSchema() {
     url: SITE.url,
     description: SITE.description,
     slogan: SITE.tagline,
-    // Omitted rather than wrong while the profiles are placeholders. A sameAs
-    // pointing at a platform homepage is a false claim about the entity.
-    ...(realSocial().length > 0 ? { sameAs: realSocial().map((s) => s.href) } : {}),
+    logo: {
+      "@type": "ImageObject",
+      url: absolute("/icon.png"),
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "support@mail.voltagencyio.com",
+        areaServed: "US",
+        availableLanguage: "English",
+      },
+    ],
+    founder: {
+      "@type": "Person",
+      name: "Cayden Chern",
+      url: absolute("/about"),
+    },
+    // sameAs is always populated now that the founder's profile is live; any
+    // real brand profile added to SITE.social (filtered through realSocial)
+    // joins it here, platform-homepage placeholders excluded.
+    ...(sameAs.length > 0 ? { sameAs } : {}),
     areaServed: SITE.region,
     knowsAbout: getPublicProducts().map((p) => p.name),
   };
@@ -97,6 +136,11 @@ export function planOfferSchema() {
   };
 }
 
+/**
+ * FAQPage schema. Answers are flattened through `plain()` so the inline link
+ * and bold markers do not reach the JSON-LD: an answer engine lifting the
+ * passage sees the words a reader sees, not "[label](/path)".
+ */
 export function faqSchema(items: readonly { q: string; a: string }[], pageUrl: string) {
   return {
     "@context": "https://schema.org",
@@ -105,7 +149,7 @@ export function faqSchema(items: readonly { q: string; a: string }[], pageUrl: s
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
+      acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
     })),
   };
 }

@@ -25,7 +25,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     pillar: true,
     published: "2026-08-29",
     answer:
-      "Speed to lead is the time between an enquiry arriving and your first response, and in solar it is the strongest predictor of whether the lead converts. Around 78% of buyers go with whoever replies first, and leads contacted within five minutes are roughly 21 times more likely to qualify than those contacted after thirty.",
+      "Speed to lead is the time between an enquiry arriving and your first response, and in solar it is the strongest predictor of whether the lead converts. Around 78% of buyers go with whoever replies first, and leads contacted within five minutes are roughly 21 times more likely to qualify than those contacted after thirty, per the 2007 Lead Response Management research widely quoted in the speed-to-lead literature.",
     takeaways: [
       "Target: an automated text inside 60 seconds, a human call inside five minutes.",
       "The average lead response time across industries is measured in hours, not minutes.",
@@ -694,6 +694,8 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
           { value: "8+", label: "Attempts a reached lead often needs" },
           { value: "21x", label: "Qualification lift from a fast first attempt" },
         ],
+        source:
+          "The 21x figure comes from the 2007 Lead Response Management research widely quoted in the speed-to-lead literature; the persistence figures are reported consistently across sales studies.",
       },
       {
         t: "p",

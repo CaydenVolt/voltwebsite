@@ -29,7 +29,7 @@ export const LEADS_POSTS: readonly Post[] = [
     answer:
       "Solar companies get more leads by fixing three things in this order: response time on the enquiries they already receive, a Google Business Profile that ranks in the local map pack, and one paid channel run properly. Most owners add a fourth channel before the first three work, which is why the pipeline stays flat while the ad spend climbs.",
     takeaways: [
-      "Answer inside five minutes. Around 78% of buyers go with whoever replies first, and the average lead waits far longer than that.",
+      "Answer inside five minutes. Around 78% of buyers go with whoever replies first (per the 2007 Lead Response Management research), and the average lead waits far longer than that.",
       "Fix the channels that cost nothing per lead first: the Business Profile, reviews, past customers and referrals.",
       "One paid channel run properly beats three run badly. Budget $80 to $300 per raw lead on Google search.",
       "Measure cost per sat appointment, not cost per lead. A cheap lead that never sits is the expensive one.",
@@ -414,7 +414,7 @@ export const LEADS_POSTS: readonly Post[] = [
         items: [
           {
             title: "You answer in minutes",
-            body: "A shared lead is sold to three or four installers at once. The one who calls first has an enormous advantage, and the research is blunt about it: roughly 78% of buyers go with whoever responds first. If your median response is an hour, you are buying the right to be second.",
+            body: "A shared lead is sold to three or four installers at once. The one who calls first has an enormous advantage, and the 2007 Lead Response Management research is blunt about it: roughly 78% of buyers go with whoever responds first. If your median response is an hour, you are buying the right to be second.",
           },
           {
             title: "You follow up eight times or more",

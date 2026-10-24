@@ -14,7 +14,7 @@ import { AsideCTA } from "@/components/blog/AsideCTA";
 import { ReadNext } from "@/components/blog/ReadNext";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { articleSchema, authorSchema, breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { absolute, articleSchema, authorSchema, breadcrumbSchema, faqSchema, pageMetadata } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import {
   AUTHOR,
@@ -90,6 +90,13 @@ export default async function ArticlePage(props: Props) {
             { name: category.name, path: categoryHref(category) },
             { name: post.title, path: postHref(post.slug) },
           ]),
+          // FAQPage: the article's visible Q&A, marked up for answer engines.
+          // Google retired FAQ rich results in May 2026, so this earns nothing
+          // in the SERP, but ChatGPT, Perplexity and AI Overviews still read
+          // schema and the pattern is a cheap way to be lifted intact.
+          ...(post.faq.length > 0
+            ? [faqSchema(post.faq, absolute(postHref(post.slug)))]
+            : []),
         ]}
       />
       <div aria-hidden className="h-nav-condensed" />
