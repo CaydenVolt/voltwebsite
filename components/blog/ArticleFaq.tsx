@@ -4,12 +4,12 @@ import type { FaqItem } from "@/lib/content/blog";
 /**
  * The questions readers still have at the end.
  *
- * Rendered, deliberately not marked up as FAQPage. Google retired FAQ rich
- * results for every site in May 2026, so the schema buys no SERP feature any
- * more, and adding it to sixty-three articles would be sixty-three blocks of
- * markup earning nothing. The answers still do their work as text: a question
- * heading with a short, self-contained answer under it is exactly what an
- * assistant lifts when it quotes a page.
+ * FAQPage JSON-LD for these items is emitted at the page level in
+ * `app/blog/[slug]/page.tsx`; it earns nothing in a Google SERP since the FAQ
+ * rich result retired in May 2026, but ChatGPT, Perplexity and AI Overviews
+ * still read schema, and the pattern is a cheap way to be lifted intact. The
+ * answers also do their work as text: a question heading with a short,
+ * self-contained answer under it is exactly what an assistant lifts.
  *
  * Open by default, no accordion. A collapsed answer is an answer a reader has
  * to ask for twice.

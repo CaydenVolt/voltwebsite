@@ -220,6 +220,10 @@ export function authorSchema() {
     description: AUTHOR.short,
     knowsAbout: [...AUTHOR.knowsAbout],
     worksFor: { "@id": ORG_ID },
+    // The author's public profile. Lets an answer engine join the byline on an
+    // article to the person behind it, which is what gives the article a
+    // real-world provenance it would otherwise just claim in text.
+    sameAs: [FOUNDER_LINKEDIN],
   };
 }
 
