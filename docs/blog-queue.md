@@ -33,15 +33,7 @@ and exits.
 
 | # | Status | Slug | Keyword | Intent | Pillar | Brief |
 |---|---|---|---|---|---|---|
-| 1 | IN REVIEW | `google-ads-for-solar-contractors` | google ads for solar contractors | Informational | yes | Draft at `docs/blog-drafts/google-ads-for-solar-contractors.md`. The new cluster hub. Full account structure, keyword themes, negative lists, landing-page match, conversion tracking, and the three things to fix before spending a dollar. Reads as the single page a solar operator would hand to a new ads manager. Must not duplicate `google-ads-for-solar-companies` (which stays as the Paid ads pillar); this one goes deeper on account build, where the existing pillar stays broad across paid channels. |
-| 2 | IN REVIEW | `what-solar-leads-cost-on-google-ads` | what do solar leads cost on google ads | Commercial | no | Draft at `docs/blog-drafts/what-solar-leads-cost-on-google-ads.md`. What a solar lead actually costs on Google Ads, broken down by residential install, battery, EV charger and brand. Why cost-per-click is the wrong metric and cost-per-sat-appointment is the right one. Unblocks diagram S8. Slug renamed from `solar-google-ads-cost-per-lead` because that slug is already in `posts/ads.ts` for a broader cross-channel piece. |
-| 3 | IN REVIEW | `negative-keywords-for-solar-google-ads` | negative keywords for solar google ads | Informational | no | Draft at `docs/blog-drafts/negative-keywords-for-solar-google-ads.md`. The negative keyword list is as important as the keyword list. The categories that always need excluding (DIY, jobs, research, free, cheap, downloadable), how to mine the search terms report, and the account-level list every solar account should start with. Unblocks diagram S4. |
-| 4 | IN REVIEW | `solar-google-ads-landing-pages` | solar google ads landing pages | Informational | no | Why the homepage is the wrong destination. What a matched landing page carries: the ad's headline, one form, proof above the fold, and a single action. Three solar landing pages taken apart. |
-| 5 | IN REVIEW | `solar-google-ads-conversion-tracking` | solar google ads conversion tracking | Informational | no | Click to CRM, with the usual break marked. GA4 events, enhanced conversions, call tracking, offline conversion imports for the sat-appointment. Why most solar accounts optimise on lead-form submits and leak the sales signal. Unblocks diagram S5. |
-| 6 | IN REVIEW | `solar-google-ads-bidding-strategies` | solar google ads bidding strategies | Informational | no | Manual CPC, maximise clicks, maximise conversions, target CPA, target ROAS. When to use each in a solar account, how much conversion data each one needs, and the sequence a new account should move through. |
-| 7 | IN REVIEW | `solar-google-ads-vs-local-services-ads` | solar google ads vs local services ads | Commercial | no | The two Google products a solar company can run, compared head to head. What LSA buys that search ads do not (the Google Guaranteed badge, pay-per-lead not per-click, map-pack adjacency) and what it costs instead (less control, worse tracking). When to run which. |
-| 8 | IN REVIEW | `solar-google-ads-performance-max-for-installers` | solar google ads performance max | Informational | no | Why Performance Max without conversion data spends into nothing, why solar brands run it after search is working, what asset groups to build, and the audience signals that keep it from eating brand traffic. Honest about what you give up for the automation. |
-| 9 | IN REVIEW | `solar-google-ads-remarketing` | solar google ads remarketing | Informational | no | The audience lists a solar account should have (quote-form visitors who did not submit, submitted leads who did not book, pricing-page viewers), the exclusions that matter, and the one or two display placements worth running against them. |
+| (queue empty) | - | - | - | - | - | - |
 
 ## Done
 
@@ -50,4 +42,12 @@ deleted. Keeps the queue table readable without losing history.
 
 | Slug | Shipped | PR |
 |---|---|---|
-| none yet | - | - |
+| `google-ads-for-solar-contractors` | 2026-10-26 | direct to main |
+| `what-solar-leads-cost-on-google-ads` | 2026-10-26 | direct to main |
+| `negative-keywords-for-solar-google-ads` | 2026-10-26 | direct to main |
+| `solar-google-ads-landing-pages` | 2026-10-26 | direct to main |
+| `solar-google-ads-conversion-tracking` | 2026-10-26 | direct to main |
+| `solar-google-ads-bidding-strategies` | 2026-10-26 | direct to main |
+| `solar-google-ads-vs-local-services-ads` | 2026-10-26 | direct to main |
+| `solar-google-ads-performance-max-for-installers` | 2026-10-26 | direct to main |
+| `solar-google-ads-remarketing` | 2026-10-26 | direct to main |

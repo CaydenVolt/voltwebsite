@@ -101,6 +101,17 @@ export const CATEGORIES: readonly Category[] = [
     metaDescription:
       "Selling solar after the federal credit ended: what still qualifies, lease versus PPA, state programmes that remain, and how to rebuild a pitch without a rebate.",
   },
+  {
+    id: "google-ads",
+    name: "Google Ads",
+    slug: "solar-google-ads",
+    blurb: "The paid search channel done honestly",
+    intro:
+      "Google Ads is the fastest way for a solar company to generate enquiries and the fastest way to waste money. These pieces cover the account build a new solar contractor should ship with: campaign structure, keyword themes, the negative list, matched landing pages, conversion tracking that reaches sat appointments, and the bidding strategy sequence that actually trains the auction rather than guessing at it.",
+    metaTitle: "Solar Google Ads: Build and Run It Right",
+    metaDescription:
+      "Google Ads for solar companies: the account build, keyword themes, negatives, landing pages, conversion tracking that catches installs, and the bid strategy sequence.",
+  },
 ] as const;
 
 const BY_ID = new Map(CATEGORIES.map((c) => [c.id, c]));

@@ -12,7 +12,7 @@
  * Anything richer is a block.
  */
 
-/** The seven clusters. Each is a hub with nine spokes. */
+/** The nine clusters. Each is a hub with nine spokes. */
 export type CategoryId =
   | "leads"
   | "reviews"
@@ -21,10 +21,8 @@ export type CategoryId =
   | "software"
   | "website"
   | "ads"
-  /* Cluster 8, in progress. The id exists so posts/incentives.ts typechecks
-     while it is written; it joins CATEGORIES only once all nine articles are
-     there, because the content gate requires exactly nine per cluster. */
-  | "incentives";
+  | "incentives"
+  | "google-ads";
 
 /** Search intent, shown on the card the way a trade magazine tags a column. */
 export type Intent = "Informational" | "Commercial";

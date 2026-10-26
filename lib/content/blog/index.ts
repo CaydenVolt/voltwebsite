@@ -8,6 +8,7 @@ import { SOFTWARE_POSTS } from "./posts/software";
 import { WEBSITE_POSTS } from "./posts/website";
 import { ADS_POSTS } from "./posts/ads";
 import { INCENTIVES_POSTS } from "./posts/incentives";
+import { GOOGLE_ADS_POSTS } from "./posts/google-ads";
 
 export * from "./types";
 export { CATEGORIES, getCategory, getCategoryBySlug, categoryHref } from "./categories";
@@ -28,6 +29,7 @@ const ALL: readonly Post[] = [
   ...WEBSITE_POSTS,
   ...ADS_POSTS,
   ...INCENTIVES_POSTS,
+  ...GOOGLE_ADS_POSTS,
 ];
 
 /** Newest first, the way an index reads. Ties break on slug so the order is stable. */
