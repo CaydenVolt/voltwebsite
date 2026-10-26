@@ -40,7 +40,17 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   applicationName: SITE.name,
-  alternates: { canonical: "/" },
+  // Explicit US-English targeting. x-default aliases the same URL because
+  // the site has no non-US variant to redirect to; the hreflang pair tells
+  // Google the audience without implying a region-switched site exists.
+  // Pages that pass through pageMetadata() set their own languages map.
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -67,7 +77,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const logo = getLogo();
 
   return (
-    <html lang="en" className={`${bricolage.variable} ${instrument.variable} h-full`}>
+    <html lang="en-US" className={`${bricolage.variable} ${instrument.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-bone font-body text-ink">
         {/* Who the company is and what the site is, once for the whole site */}
         <JsonLd data={[organizationSchema(), websiteSchema()]} />

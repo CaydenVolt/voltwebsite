@@ -18,6 +18,17 @@ const SITE_ID = `${SITE.url}/#website`;
 export const absolute = (path: string) => `${SITE.url}${path}`;
 
 /**
+ * The business's audience is US solar operators. Published as a proper
+ * Country entity on every schema that carries `areaServed` so a parser reads
+ * it as geographic data rather than a loose English phrase: Google's own
+ * guidance is to pass structured country data, not a sentence. The string
+ * form (`SITE.region`) still runs on surfaces that need it in prose, but it
+ * does not reach the JSON-LD.
+ */
+const US_COUNTRY = { "@type": "Country", name: "United States" } as const;
+const US_AUDIENCE_GEO = { "@type": "AdministrativeArea", name: "United States" } as const;
+
+/**
  * The founder's public profile, used both in `sameAs` and in `founder` on the
  * Organization. Lives here rather than in `SITE.social` because the platform
  * placeholders filter would strip it on the way to the schema, and the
@@ -68,7 +79,14 @@ export function organizationSchema() {
     // real brand profile added to SITE.social (filtered through realSocial)
     // joins it here, platform-homepage placeholders excluded.
     ...(sameAs.length > 0 ? { sameAs } : {}),
-    areaServed: SITE.region,
+    areaServed: US_COUNTRY,
+    audience: {
+      "@type": "BusinessAudience",
+      name: "US solar companies",
+      audienceType: "Solar companies",
+      geographicArea: US_AUDIENCE_GEO,
+    },
+    knowsLanguage: ["en-US"],
     knowsAbout: getPublicProducts().map((p) => p.name),
   };
 }
@@ -82,7 +100,7 @@ export function websiteSchema() {
     name: SITE.name,
     description: SITE.description,
     publisher: { "@id": ORG_ID },
-    inLanguage: "en",
+    inLanguage: "en-US",
   };
 }
 
@@ -96,8 +114,12 @@ export function productSchema(product: ProductPage) {
     description: product.intro,
     serviceType: product.name,
     provider: { "@id": ORG_ID },
-    areaServed: SITE.region,
-    audience: { "@type": "Audience", audienceType: "Solar companies" },
+    areaServed: US_COUNTRY,
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Solar companies",
+      geographicArea: US_AUDIENCE_GEO,
+    },
     url: absolute(`/products/${product.slug}`),
     ...(product.addon
       ? {}
@@ -186,7 +208,16 @@ export function pageMetadata({
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: {
+      canonical: path,
+      // Explicit US-English targeting so Google reads the audience from the
+      // tag rather than inferring it. x-default points at the same URL
+      // because there is no non-US variant of the site to send someone to.
+      languages: {
+        "en-US": path,
+        "x-default": path,
+      },
+    },
     openGraph: {
       type: "website" as const,
       siteName: SITE.name,
