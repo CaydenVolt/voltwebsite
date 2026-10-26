@@ -17,8 +17,8 @@ import {
  * Every URL worth indexing, and only those.
  *
  * Marketing pages, one entry per product with a page, then the blog: the
- * index and its numbered pages, the seven cluster hubs, the author, and all
- * sixty-three articles. Articles carry their own revision date rather than
+ * index and its numbered pages, the nine cluster hubs, the author, and all
+ * eighty-one articles. Articles carry their own revision date rather than
  * today's, so a crawler is told what actually changed.
  *
  * The company pages that are still placeholders stay out, and robots.ts
@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${base}/our-process`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    /* Proof pages: linked from the top nav on every page, worth their own
+       sitemap entries so a crawler lands on them from Search Console
+       discovery rather than only via the nav. Added when the sitemap was
+       audited for missing routes. */
+    { url: `${base}/our-work`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/testimonials`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/partners`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     // In from 2026-09-19, when it stopped being a placeholder and got a real
     // address on it. It is linked from the About menu on every page, so it was
