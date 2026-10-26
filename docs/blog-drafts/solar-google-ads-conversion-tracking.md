@@ -31,7 +31,7 @@ takeaways:
   - The sat appointment is the signal worth sending back. Offline conversion imports do the sending.
 related:
   - google-ads-for-solar-contractors
-  - solar-google-ads-cost-per-lead
+  - what-solar-leads-cost-on-google-ads
   - solar-google-ads-landing-pages
 ---
 

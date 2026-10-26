@@ -1,9 +1,9 @@
 ---
-slug: solar-google-ads-cost-per-lead
+slug: what-solar-leads-cost-on-google-ads
 title: What solar leads actually cost on Google Ads
-metaTitle: "Solar Google Ads Cost per Lead: Real Numbers"
+metaTitle: "What Solar Leads Cost on Google Ads: 2026 Ranges"
 metaDescription: "What solar leads cost on Google Ads in 2026: ranges by product, why cost per click is the wrong metric, and what cost per sat appointment should be."
-keyword: solar google ads cost per lead
+keyword: what do solar leads cost on google ads
 secondary:
   - solar cpc
   - solar ppc cost

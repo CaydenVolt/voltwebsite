@@ -30,7 +30,7 @@ takeaways:
   - The two channels compound. Running both usually beats running either alone once budget supports it.
 related:
   - google-ads-for-solar-contractors
-  - solar-google-ads-cost-per-lead
+  - what-solar-leads-cost-on-google-ads
   - solar-google-ads-landing-pages
 ---
 

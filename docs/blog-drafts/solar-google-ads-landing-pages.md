@@ -30,7 +30,7 @@ takeaways:
   - Doubling conversion rate halves cost per lead. It is almost always a better next dollar than keyword work.
 related:
   - google-ads-for-solar-contractors
-  - solar-google-ads-cost-per-lead
+  - what-solar-leads-cost-on-google-ads
   - solar-google-ads-conversion-tracking
 ---
 

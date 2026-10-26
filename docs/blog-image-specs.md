@@ -69,7 +69,7 @@ cadence is the rolling `updated` signal rather than the drawing pace.
 | S3 | Mon 30 Nov | The 11 pipeline stages | `solar-sales-pipeline-stages` |
 | S6 | Mon 7 Dec | Lease vs PPA vs cash, who owns what | `solar-lease-vs-ppa-for-installers` |
 | S7 | Mon 14 Dec | LSA vs search ad vs map pack | `local-services-ads-for-solar` |
-| S8 | Mon 21 Dec | Cost per lead against cost per sale | `solar-google-ads-cost-per-lead` |
+| S8 | Mon 21 Dec | Cost per lead against cost per sale | `what-solar-leads-cost-on-google-ads` |
 | S9 | Mon 28 Dec | Where visitors drop off | `how-to-increase-solar-website-conversion-rate` |
 | S4 | Mon 4 Jan 2027 | How negatives filter traffic | Google Ads cluster, **must exist first** |
 | S5 | Mon 11 Jan 2027 | Click to CRM, with the break marked | Google Ads cluster, **must exist first** |
@@ -345,7 +345,7 @@ Draw these after the pillars, one a week, in roughly this order.
 | S5 | Click → landing page → form → CRM, with the usual break marked | Google Ads cluster, when written |
 | S6 | Lease vs PPA vs cash: who owns what | `solar-lease-vs-ppa-for-installers` |
 | S7 | LSA vs search ad vs map pack on one SERP | `local-services-ads-for-solar` |
-| S8 | Cost per lead against cost per sale | `solar-google-ads-cost-per-lead` |
+| S8 | Cost per lead against cost per sale | `what-solar-leads-cost-on-google-ads` |
 | S9 | Where solar visitors drop off, as a funnel | `how-to-increase-solar-website-conversion-rate` |
 
 Two of these are deliberately unnumbered when drawn. **S8** and **S9** are
