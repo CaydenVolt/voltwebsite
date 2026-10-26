@@ -101,4 +101,8 @@ export const PRICING_FAQ = [
     q: "Who owns the domain and content?",
     a: "You do. The domain is registered in your name, the photos and copy are yours, and your contacts export at any time.",
   },
+  {
+    q: "Do you work with solar companies outside the United States?",
+    a: "Rarely, and only case by case. The system is purpose-built for US solar: US regulatory references (NABCEP, NEM, the post-ITC pricing landscape), US dollar pricing, US review platforms (Google, BBB, Yelp) and US customer psychology. If you operate outside the United States and the fundamentals line up (English-speaking market, similar sales cycle, comparable auction economics on paid), say so on the demo call and we will tell you honestly whether the system fits. The default answer is US-only.",
+  },
 ] as const;

@@ -32,4 +32,8 @@ export const FAQ = [
     q: "Do you work with companies outside solar?",
     a: "No. Every script, page and campaign is written for solar, and that is the reason it converts. If you also do roofing or batteries alongside solar, that is covered.",
   },
+  {
+    q: "Where in the world does Volt work?",
+    a: "Volt is built for US solar companies. The scripts, the quote-form fields, the review funnel copy, the pricing and the reporting all assume American operators selling to American homeowners, with US regulatory shorthand (NABCEP, NEM, the post-ITC landscape) built in. We will consider solar companies outside the United States case by case when the market is close enough, but the system is purpose-built for the US and that is where it performs best.",
+  },
 ] as const;

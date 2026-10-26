@@ -10,9 +10,9 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Our work: real client builds",
+  title: "Our work: real client builds from Volt Agency",
   description:
-    "Case studies from real Volt builds. Each one is a client site, live or recently launched, with the brief, the mechanism and the result where there is one to show.",
+    "Case studies from Volt builds. Volt is built for US solar companies; the two cases live today are early international clients, with US solar case studies landing as the current pilots launch.",
   path: "/our-work",
 });
 
@@ -44,6 +44,24 @@ export default function OurWorkPage() {
             go live.
           </Reveal>
         </div>
+      </Section>
+
+      {/* Short honesty note. Volt is positioned for US solar operators, but the
+          first two cases shipped happen to be international (an early-days
+          reality the page should not hide). Framing it as context rather than
+          an apology keeps the US positioning intact for a visitor who is
+          scanning the page and wondering whether the agency works in their
+          country. */}
+      <Section>
+        <Reveal
+          as="p"
+          className="max-w-measure border-t border-line pt-6 text-body text-muted"
+        >
+          Volt is built for US solar companies. The two case studies below are
+          early international builds we shipped before the US pilot wave
+          launched. US solar case studies land on this page as those pilots
+          complete and the clients approve the write-ups.
+        </Reveal>
       </Section>
 
       {/* Three to a row on lg, two on sm, one on phone. Only two case studies

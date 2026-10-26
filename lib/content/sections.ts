@@ -40,8 +40,8 @@ export const WHY = [
     body: "Month to month. If it stops paying for itself, cancel with a month's notice.",
   },
   {
-    title: "Built for solar specifically",
-    body: "Scripts, pages and campaigns written for panels, batteries and rebates, not generic home services.",
+    title: "Built for US solar specifically",
+    body: "Scripts, pages and campaigns written for US panel installers, battery storage and the post-ITC rebate landscape, not generic home services.",
   },
   {
     title: "Proof, not promises",

@@ -70,11 +70,15 @@ export const SITE = {
   name: "Volt",
   /** Volt's own follow-up system. The only name used for it anywhere on the site. */
   system: "Volt Relay",
-  tagline: "The complete sales system for solar companies",
-  /** Fits one line at 375px next to the eyebrow rule. */
+  /* The metadata tagline carries the US specifier that the hero itself does not
+     (the hero stays as it is). Browser tab, SERP title, OpenGraph and Twitter
+     card all read from here, so Google's result listing names the US audience
+     without changing anything a visitor on the homepage actually sees. */
+  tagline: "The complete sales system for US solar companies",
+  /** Fits one line at 375px next to the eyebrow rule. User-visible in the trust strip. */
   taglineShort: "Sales systems for solar companies",
   description:
-    "Volt builds and runs the complete sales system for solar companies: website, missed-call text-back, automated follow-up, one inbox, review funnel and on-site SEO, on one monthly subscription.",
+    "Volt builds and runs the complete sales system for US solar companies: website, missed-call text-back, automated follow-up, one inbox, review funnel and on-site SEO, on one monthly subscription for American solar operators.",
   /**
    * Canonical origin. Every canonical tag, sitemap entry, social card URL and
    * schema @id on the site resolves from this one value, so it has to match

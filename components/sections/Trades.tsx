@@ -22,11 +22,11 @@ export function Trades({ tilt }: { tilt?: "left" | "right" }) {
         <div className="lg:col-span-7">
           <SectionLabel rule>Who it is for</SectionLabel>
           <Reveal as="h2" id="trades-h" className="mt-6 text-display-md">
-            Serving these trades and more.
+            Serving these US solar trades and more.
           </Reveal>
         </div>
         <Reveal as="p" index={1} className="mt-6 max-w-measure text-body text-muted lg:col-span-4 lg:col-start-9 lg:mt-0">
-          Same system, different scripts. We have set it up for every one of these.
+          Same system, different scripts, built for US solar operators. We have set it up for every one of these.
         </Reveal>
       </div>
 

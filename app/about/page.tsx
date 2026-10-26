@@ -15,9 +15,9 @@ import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About Volt: marketing for solar, minus the nonsense",
+  title: "About Volt: US solar marketing, minus the nonsense",
   description:
-    "Volt builds affordable, no-nonsense systems for solar companies: the website, the follow-up, the inbox and the reviews, on one monthly subscription. Meet the team.",
+    "Volt builds affordable, no-nonsense marketing systems for US solar companies: the website, the follow-up, the inbox and the reviews, on one monthly subscription. Meet the team.",
   path: "/about",
 });
 

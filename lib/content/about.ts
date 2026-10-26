@@ -10,8 +10,8 @@
  */
 
 export const MISSION: readonly string[] = [
-  "At Volt, our mission is simple: cut the complexity and nonsense (aka the bullsh*t) out of marketing. We've seen too many agencies drown solar companies in buzzwords and technical terms that make the basics sound like rocket science. Marketing doesn't need to be complicated, and it definitely shouldn't come with a hefty price tag just because someone tries to make it sound fancy.",
-  "Volt was built to offer affordable, no-nonsense systems for solar companies that want to grow their business and their online presence the right way, not the overpriced, overcomplicated way. Just like every array needs a solid roof under it, your business needs a foundation. Without one, even the best design won't hold up. You just need something that works, a strong base to build your company on. That's why we built Volt. Let us be the foundation you need while you focus on what you do best: building your business.",
+  "At Volt, our mission is simple: cut the complexity and nonsense (aka the bullsh*t) out of marketing for US solar companies. We've seen too many agencies drown solar operators in buzzwords and technical terms that make the basics sound like rocket science. Marketing doesn't need to be complicated, and it definitely shouldn't come with a hefty price tag just because someone tries to make it sound fancy.",
+  "Volt was built to offer affordable, no-nonsense systems for US solar companies that want to grow their business and their online presence the right way, not the overpriced, overcomplicated way. The scripts, the quote-form fields, the review funnel and the reporting all assume American solar operators selling to American homeowners, with US regulatory shorthand like NABCEP, NEM and the post-ITC pricing landscape built in. Just like every array needs a solid roof under it, your business needs a foundation. Without one, even the best design won't hold up. You just need something that works, a strong base to build your company on. That's why we built Volt. Let us be the foundation you need while you focus on what you do best: building your business.",
 ];
 
 export const CULTURE = {
