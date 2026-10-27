@@ -12,7 +12,7 @@ import { TrustStrip } from "@/components/site/TrustStrip";
 export const metadata: Metadata = pageMetadata({
   title: "Our work: real client builds from Volt Agency",
   description:
-    "Case studies from Volt builds. Volt is built for US solar companies; the two cases live today are early international clients, with US solar case studies landing as the current pilots launch.",
+    "Real Volt builds for paying clients: the brief they arrived with, the system we shipped, and walkthroughs landing here as the clients approve them.",
   path: "/our-work",
 });
 
@@ -40,37 +40,36 @@ export default function OurWorkPage() {
             className="mt-6 max-w-measure text-lead lg:col-span-4 lg:col-start-9 lg:mt-0"
           >
             Each one is a live Volt build, with the brief the client arrived
-            with and the mechanism we shipped. New case studies slot in as they
-            go live.
+            with and the mechanism we shipped. New builds slot in as they go
+            live.
           </Reveal>
         </div>
       </Section>
 
-      {/* Short honesty note. Volt is positioned for US solar operators, but the
-          first two cases shipped happen to be international (an early-days
-          reality the page should not hide). Framing it as context rather than
-          an apology keeps the US positioning intact for a visitor who is
-          scanning the page and wondering whether the agency works in their
-          country. */}
+      {/* Short honesty note. Tells a scanning visitor what is live now (the
+          card grid) and what is coming (per-build walkthrough videos and
+          deeper write-ups) without the "coming soon" apology tone. Deliberately
+          avoids any geo claim: these builds are not strictly one country's,
+          and the page is growing with more work regardless of where the client
+          sits. */}
       <Section>
         <Reveal
           as="p"
           className="max-w-measure border-t border-line pt-6 text-body text-muted"
         >
-          Volt is built for US solar companies. The two case studies below are
-          early international builds we shipped before the US pilot wave
-          launched. US solar case studies land on this page as those pilots
-          complete and the clients approve the write-ups.
+          Everything below is live Volt work for a real paying client.
+          Walkthrough videos and deeper write-ups land here as the clients
+          approve them.
         </Reveal>
       </Section>
 
-      {/* Three to a row on lg, two on sm, one on phone. Only two case studies
-          are populated today, so the third slot on the first row is naturally
-          empty and the grid grows into it as more builds ship.
+      {/* Three to a row on lg, two on sm, one on phone. Only two builds are
+          populated today, so the third slot on the first row is naturally
+          empty and the grid grows into it as more work ships.
 
           Cards are static for now, not links. Detail pages land once the
-          per-build video walkthroughs and case study copy are ready. */}
-      <Section rule="top" aria-label="Case studies">
+          per-build video walkthroughs and longer write-ups are ready. */}
+      <Section rule="top" aria-label="Client builds">
         <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {WORKS.map((work, i) => (
             <Reveal key={work.slug} as="li" index={i}>
