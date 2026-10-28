@@ -253,6 +253,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Commercial",
     icon: "chart",
+    image: {
+      src: "/blog/heroes/what-solar-leads-cost-on-google-ads.jpg",
+      alt: "Four blank paper price-tag cards laid out in a row on a plain surface, strings looped through the holes.",
+      credit: "Photo: Angèle Kamp / Unsplash",
+    },
     published: "2026-10-15",
     answer:
       "On a well-structured Google Ads account, solar leads typically run $80 to $300 depending on market and product. Residential installs are the most expensive, battery storage is middle, EV chargers are usually cheaper, brand traffic is almost free. The number that actually matters is cost per sat appointment, which runs two to four times the raw lead cost once no-shows and tyre-kickers are filtered out.",
@@ -458,6 +463,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "shield",
+    image: {
+      src: "/blog/heroes/negative-keywords-for-solar-google-ads.jpg",
+      alt: "A close-up of a red street stop sign at a junction: the universal 'do not come down this road' signal.",
+      credit: "Photo: Kai Pilger / Unsplash",
+    },
     published: "2026-10-21",
     answer:
       "A solar Google Ads account should launch with an account-level negative keyword list of about one hundred terms, grouped into six categories: DIY and research, jobs and education, free and cheap, downloadable and digital, forum and comparison, and unrelated solar words. Add campaign and ad group negatives from the search terms report weekly for the first ninety days, then monthly. Done properly, negatives raise the quality of the leads your budget buys without raising the budget.",
@@ -646,6 +656,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "browser",
+    image: {
+      src: "/blog/heroes/solar-google-ads-landing-pages.jpg",
+      alt: "A large yellow billboard overlooking a highway with cars passing beneath it: the oversized shape of a landing page in physical form.",
+      credit: "Photo: Ridham Supriyanto / Unsplash",
+    },
     published: "2026-10-28",
     answer:
       "The homepage is the wrong destination for solar Google Ads because it was built for a cold visitor who could be anyone, and the ad click is the opposite: a warm visitor who already said what they want. A matched landing page carries the ad's exact headline, one form, proof above the fold, and a single action. The lift is roughly double on form conversion, which halves cost per lead.",
@@ -852,6 +867,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "funnel",
+    image: {
+      src: "/blog/heroes/solar-google-ads-conversion-tracking.jpg",
+      alt: "A single magnifying glass sitting on a white table: the posture of looking closely at a specific thing in a wider report.",
+      credit: "Photo: Markus Winkler / Unsplash",
+    },
     published: "2026-10-30",
     answer:
       "Solar Google Ads conversion tracking fails in the same place in almost every account: the signal stops at the form submission. Google optimises toward what you measure, so an account tracking only form fills pulls in form fills, including the half that never book a survey. The fix is a four-stage pipeline: form fill in GA4, answered call via call tracking, sat appointment via offline conversion import from the CRM, and enhanced conversions sending hashed data to survive privacy signals.",
@@ -1062,6 +1082,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "gauge",
+    image: {
+      src: "/blog/heroes/solar-google-ads-bidding-strategies.jpg",
+      alt: "A wooden gavel resting on a dark surface next to a closed book: the moment a bid closes.",
+      credit: "Photo: Sasun Bughdaryan / Unsplash",
+    },
     published: "2026-11-01",
     answer:
       "A new solar Google Ads account starts on manual CPC for the first 60 to 90 days to control which keywords win auctions while the account builds conversion history. Once there are at least 30 conversions in rolling 30 days, maximise conversions or target CPA becomes the better default. Target ROAS needs 50 to 100 conversions per month. The failure mode is switching to smart bidding before volume supports it.",
@@ -1306,6 +1331,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Commercial",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/solar-google-ads-vs-local-services-ads.jpg",
+      alt: "Two boxers sparring in a lit ring at a crowded arena: a side-by-side comparison in physical form.",
+      credit: "Photo: Joel Muniz / Unsplash",
+    },
     published: "2026-11-03",
     answer:
       "Local Services Ads sit above search ads on the Google results page, carry the Google Guaranteed badge, and bill per lead rather than per click. Search ads give full control of message, landing page and tracking; LSA trades that for the top placement and a pricing model that often works out cheaper per sat appointment in competitive solar markets. Most solar operators should run LSA first in a new metro, then layer search ads on top.",
@@ -1546,6 +1576,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "grid",
+    image: {
+      src: "/blog/heroes/solar-google-ads-performance-max-for-installers.jpg",
+      alt: "A blurred photo of a car hurtling down a race track, motion smearing the body: performance taken to the maximum.",
+      credit: "Photo: Thomas De Giorgio / Unsplash",
+    },
     published: "2026-11-05",
     answer:
       "Performance Max for solar should be the second or third campaign type a solar account runs, not the first. It needs 50 to 100 conversions per month to train against, which a new account does not have. Run it after search has worked for 90 days and tracking is complete. Build asset groups by product, feed it customer match lists and website visitors, and exclude your brand terms so it does not eat the brand search ads already running cheaper.",
@@ -1838,6 +1873,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "cursor",
+    image: {
+      src: "/blog/heroes/solar-google-ads-remarketing.jpg",
+      alt: "A single dart embedded dead-centre in a black and white target: the picture of a second attempt that landed.",
+      credit: "Photo: Mauro Gigli / Unsplash",
+    },
     published: "2026-11-07",
     answer:
       "Solar Google Ads remarketing matters because the sales cycle is long and most visitors need three to seven touches before they book a survey. Build three audiences first: quote-form visitors who did not submit, submitted leads who have not booked, and product-page viewers who stayed longer than two minutes. Exclude existing customers and anyone past 90 days. Run display and YouTube at 10 to 15 percent of total ad spend.",
