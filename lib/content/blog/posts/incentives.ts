@@ -248,6 +248,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/is-there-still-a-solar-tax-credit-in-2026.jpg",
+      alt: "A silver iMac on a brown wooden desk, screen filled with a calendar view: the obvious place to check what the current rules are.",
+      credit: "Photo: Roman Bozhko / Unsplash",
+    },
     published: "2026-09-19",
     answer:
       "No federal tax credit is available to a homeowner buying solar outright in 2026. Section 25D ended for systems whose installation completed after 31 December 2025. A 30% credit still applies to leases and power purchase agreements under Section 48E, but the finance company claims it, not the homeowner, and passes it on as a lower payment.",
@@ -407,6 +412,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "shield",
+    image: {
+      src: "/blog/heroes/section-48e-explained-for-solar-installers.jpg",
+      alt: "Floor-to-ceiling bookshelves filled with old leather-bound books: the physical weight of the regulatory text underneath the summary.",
+      credit: "Photo: Ilya Semenov / Unsplash",
+    },
     published: "2026-09-18",
     answer:
       "Section 48E is the clean electricity investment credit claimed by whoever owns a solar system, worth 30% of eligible cost. In residential solar it applies when a finance company owns the equipment under a lease or power purchase agreement. Projects beginning construction after 4 July 2026 must be placed in service by 31 December 2027.",
@@ -552,6 +562,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "chat",
+    image: {
+      src: "/blog/heroes/how-to-explain-the-tax-credit-change-to-homeowners.jpg",
+      alt: "A woman smiling and gesturing at a whiteboard mid-presentation: the posture of someone explaining a change to the people it affects.",
+      credit: "Photo: ThisisEngineering / Unsplash",
+    },
     published: "2026-09-18",
     answer:
       "Explaining the change works best in three moves: state plainly that the homeowner credit ended, say where the 30% still applies and who claims it, then move the conversation to the monthly bill comparison. Homeowners forgive bad news delivered early. They do not forgive discovering it from their accountant in April.",
@@ -689,6 +704,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "tag",
+    image: {
+      src: "/blog/heroes/solar-lease-vs-ppa-for-installers.jpg",
+      alt: "A hand holding a set of house keys in front of a doorway: the moment ownership either does or does not change hands.",
+      credit: "Photo: Jakub Żerdzicki / Unsplash",
+    },
     published: "2026-09-17",
     answer:
       "A solar lease charges a fixed monthly payment for the equipment on the roof. A power purchase agreement charges per kilowatt hour the system actually produces. Both are third-party ownership, so the finance company owns the system and claims the Section 48E credit either way. What differs for the homeowner is whether the bill is predictable or tied to output.",
@@ -847,6 +867,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "stopwatch",
+    image: {
+      src: "/blog/heroes/will-the-solar-tax-credit-come-back.jpg",
+      alt: "A low-light photo of a person holding a blue lit glass ball: a hand-held crystal ball standing in for forecasting the unknown.",
+      credit: "Photo: Melanie Magdalena / Unsplash",
+    },
     published: "2026-09-17",
     answer:
       "Nobody can say whether the residential solar credit returns. Repeal came through primary legislation in 2025, so restoring it would take the same. A homeowner deferring on that basis is deferring indefinitely, while their utility bill keeps rising and the third-party credit that does still exist runs against a deadline at the end of 2027.",
@@ -987,6 +1012,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "pin",
+    image: {
+      src: "/blog/heroes/state-solar-incentives-that-still-matter.jpg",
+      alt: "A folded paper map in yellow, green and white, open to a region: the picture of per-state rules differing from state to state.",
+      credit: "Photo: Nico Smit / Unsplash",
+    },
     published: "2026-09-16",
     answer:
       "State and utility solar incentives were untouched by the federal repeal. Five categories still exist across various states: income tax credits, utility rebates, property tax exemptions, sales tax exemptions, and renewable energy certificate markets. For many homeowners these are now the only incentives claimable in their own name, which makes knowing yours precisely worth the afternoon.",
@@ -1124,6 +1154,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "megaphone",
+    image: {
+      src: "/blog/heroes/how-to-rebuild-your-solar-pitch-without-the-credit.jpg",
+      alt: "A black bench vise mounted on a brown wooden workbench: the heavy end of actually rebuilding something by hand.",
+      credit: "Photo: Steve Giampa / Unsplash",
+    },
     published: "2026-09-16",
     answer:
       "Rebuilding the pitch means replacing one number with two. The credit gave a rep a single figure to write at the bottom of a page. What replaces it is a comparison: what the homeowner pays the utility now against what they would pay instead, plus the widening gap between those two lines as rates rise and a fixed payment does not.",
@@ -1265,6 +1300,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "chart",
+    image: {
+      src: "/blog/heroes/solar-payback-period-without-the-tax-credit.jpg",
+      alt: "A pink ceramic piggy bank sitting on a brown wooden table: the universal shape of money accumulating slowly over time.",
+      credit: "Photo: Andre Taissin / Unsplash",
+    },
     published: "2026-09-15",
     answer:
       "Payback periods lengthened when the federal credit ended, because the same system now costs a homeowner roughly a third more while producing the same savings. Quoting a pre-2026 payback figure is the most common error in solar sales right now. The honest response is to recalculate for each quote rather than keep using a number that assumed a rebate.",
