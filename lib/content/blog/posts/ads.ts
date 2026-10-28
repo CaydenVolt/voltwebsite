@@ -210,6 +210,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Commercial",
     icon: "tag",
+    image: {
+      src: "/blog/heroes/solar-google-ads-cost-per-lead.jpg",
+      alt: "A person at a laptop holding a bank card in one hand, mid-checkout: the shape of a paid click arriving at a form.",
+      credit: "Photo: rupixen / Unsplash",
+    },
     published: "2026-07-24",
     answer:
       "Solar Google Ads clicks typically cost $8 to $45 and raw leads $80 to $300, with non-branded search at the expensive end. A sat appointment commonly costs $300 to $800 once no-shows and unqualified enquiries are filtered out, and a closed job runs into the low thousands on a blended basis.",
@@ -353,6 +358,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "megaphone",
+    image: {
+      src: "/blog/heroes/facebook-ads-for-solar-companies.jpg",
+      alt: "The blue Facebook F logo rendered large and plain on a flat surface: the platform the ads run on.",
+      credit: "Photo: BoliviaInteligente / Unsplash",
+    },
     published: "2026-06-22",
     answer:
       "Facebook ads work for solar companies as a demand creation channel rather than a demand capture one. Leads cost less than Google search, commonly $25 to $90, and convert at a lower rate because the person was not searching. They need a longer, more persistent follow-up sequence to produce booked appointments.",
@@ -507,6 +517,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/google-ads-vs-seo-for-solar.jpg",
+      alt: "Two teams of people pulling on opposite ends of a thick rope across uneven ground: the picture of a trade-off.",
+      credit: "Photo: Joaquin Arenas / Unsplash",
+    },
     published: "2026-05-29",
     answer:
       "Google Ads produces solar leads within days at $80 to $300 each and stops the moment you stop paying. SEO produces leads at effectively no cost per lead but takes three to nine months to arrive. Most solar companies should run ads to carry the pipeline while the organic and local work builds underneath it.",
@@ -643,6 +658,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "magnet",
+    image: {
+      src: "/blog/heroes/solar-referral-program-ideas.jpg",
+      alt: "Two women arriving at a doorway, greeted warmly by another woman: a referral arriving in physical form.",
+      credit: "Photo: Land O'Lakes, Inc. / Unsplash",
+    },
     published: "2026-04-27",
     answer:
       "A solar referral programme works when the ask is built into the job at a fixed point, the reward is meaningful and paid promptly, and the customer is given something concrete to pass on. Most programmes fail because the ask depends on somebody remembering rather than being part of the process.",
@@ -814,6 +834,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "database",
+    image: {
+      src: "/blog/heroes/how-to-reactivate-old-solar-leads.jpg",
+      alt: "An old wooden storage box sitting in a wooden cabin, lid closed, waiting for someone to open it.",
+      credit: "Photo: Piotr Pienkowski / Unsplash",
+    },
     published: "2026-04-23",
     answer:
       "Reactivate old solar leads by messaging everyone who enquired or was quoted and never bought, with a short, direct, non-promotional message that gives them an easy way to say no. The cost is the messages, the leads are already yours, and most solar companies have never once done it.",
@@ -966,6 +991,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "megaphone",
+    image: {
+      src: "/blog/heroes/local-services-ads-for-solar.jpg",
+      alt: "A man in work clothes holding a black and yellow power tool: a licensed trades professional on a job.",
+      credit: "Photo: Kevin Grieve / Unsplash",
+    },
     published: "2026-03-26",
     answer:
       "Local Services Ads place a solar company above the search results and charge per lead rather than per click, commonly around $53 to $110 compared to $80 to $300 on search. They require licence, insurance and background verification that takes several weeks, and ranking depends heavily on review score, responsiveness and proximity.",
@@ -1122,6 +1152,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "handshake",
+    image: {
+      src: "/blog/heroes/how-to-ask-for-solar-referrals.jpg",
+      alt: "A person's single raised hand against a plain backdrop: the gesture of actually asking for something.",
+      credit: "Photo: Marcos Luiz / Unsplash",
+    },
     published: "2026-03-02",
     answer:
       "Ask for solar referrals at two moments: verbally at commissioning, and in writing a few weeks later once the first lower bill has arrived. Ask for something specific rather than for referrals in general, name the kind of person you help, and give the customer a ready-made message and a tracked link to pass on.",
@@ -1271,6 +1306,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "database",
+    image: {
+      src: "/blog/heroes/solar-database-reactivation-campaign.jpg",
+      alt: "A rack of servers in a server room, rows of flashing indicator lights lined up: the physical database the campaign runs against.",
+      credit: "Photo: Kevin Ache / Unsplash",
+    },
     published: "2026-02-06",
     answer:
       "A solar database reactivation campaign works in five steps: export and clean the list, segment by how the lead left, write a short honest message per segment, send in daily batches small enough to handle the replies, and move everyone who does not respond into ongoing monthly nurture rather than back into a Lost pile.",
