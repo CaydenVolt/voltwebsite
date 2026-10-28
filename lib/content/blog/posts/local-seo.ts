@@ -219,6 +219,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "building",
+    image: {
+      src: "/blog/heroes/how-to-optimize-your-google-business-profile-for-solar.jpg",
+      alt: "A red Google Maps location pin standing on a sheet of plain paper: the single element every local search comes back to.",
+      credit: "Photo: Anandu Chandran / Unsplash",
+    },
     published: "2026-08-17",
     answer:
       "Optimise a solar Google Business Profile by setting the primary category to solar energy contractor, listing only the service areas you genuinely install in, adding each service as a separate entry, uploading real install photos monthly, posting weekly, and collecting reviews continuously. Category and service areas matter most and are the two most commonly set wrong.",
@@ -389,6 +394,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "pin",
+    image: {
+      src: "/blog/heroes/how-to-rank-in-google-map-pack-solar.jpg",
+      alt: "A black vehicle GPS screen mounted on a dashboard, map view glowing, mid-route.",
+      credit: "Photo: Alvaro Reyes / Unsplash",
+    },
     published: "2026-07-28",
     answer:
       "Ranking in the Google map pack for solar depends on proximity to the searcher, relevance of your profile to the query, and prominence measured largely through reviews, citations and links. Proximity is fixed, so the work is category accuracy, service areas, review volume and consistent business details across the web.",
@@ -579,6 +589,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "search",
+    image: {
+      src: "/blog/heroes/solar-seo-keywords.jpg",
+      alt: "Shallow focus on a dictionary page's thumb index: the physical shape of looking words up.",
+      credit: "Photo: Romain Vignes / Unsplash",
+    },
     published: "2026-07-08",
     answer:
       "The solar keywords worth targeting are local commercial terms such as solar installers plus a town name, solar panel installation plus a town, and solar quote plus a town, plus buyer-stage questions about cost, payback and financing. National informational terms like how do solar panels work bring traffic that never becomes a job for an installer.",
@@ -743,6 +758,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "pin",
+    image: {
+      src: "/blog/heroes/how-to-write-solar-service-area-pages.jpg",
+      alt: "A beige and white vintage typewriter on a wooden desk, paper loaded, keys waiting.",
+      credit: "Photo: Luke Lung / Unsplash",
+    },
     published: "2026-06-10",
     answer:
       "A solar service area page needs at least 60% content unique to that town: a real install you completed there, the local utility and its rates, the permitting process, a review from a customer in that area, and the specific roof types common locally. Swapping a town name into a template produces thin pages that will not rank.",
@@ -888,6 +908,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "building",
+    image: {
+      src: "/blog/heroes/google-business-profile-posts-for-solar.jpg",
+      alt: "A smartphone screen filled with social media app icons on a textured grey background: the surface a short post lands on.",
+      credit: "Photo: Adem AY / Unsplash",
+    },
     published: "2026-05-17",
     answer:
       "Post to a solar Google Business Profile weekly using finished installs, seasonal advice, service spotlights, FAQ answers, team introductions, local community involvement, genuine offers and utility or incentive news. Posts are an activity signal and appear on the profile, and almost no solar competitor posts consistently, which makes it cheap ground to take.",
@@ -1053,6 +1078,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "pin",
+    image: {
+      src: "/blog/heroes/citations-and-nap-for-solar-companies.jpg",
+      alt: "A brown rotary-dial telephone sitting on a shelf in a grey painted room: the kind of listing that used to be in a phone book.",
+      credit: "Photo: Annie Spratt / Unsplash",
+    },
     published: "2026-04-19",
     answer:
       "Citations are listings of your business name, address and phone number on other websites, and consistency across them supports local ranking by confirming the business is real and where it says it is. A solar company needs around fifteen to twenty-five accurate citations on relevant directories, not hundreds of bought ones.",
@@ -1232,6 +1262,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "search",
+    image: {
+      src: "/blog/heroes/how-long-does-seo-take-for-solar-companies.jpg",
+      alt: "A brown and blue hourglass balanced on stacked stones, sand mid-fall, selective focus.",
+      credit: "Photo: Aron Visuals / Unsplash",
+    },
     published: "2026-03-22",
     answer:
       "Solar SEO produces results on three different schedules. Google Business Profile corrections and review growth typically show within four to twelve weeks. Service area and service pages usually take three to nine months to rank. Competitive head terms and the authority behind them take twelve months or more.",
@@ -1387,6 +1422,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "checklist",
+    image: {
+      src: "/blog/heroes/solar-company-seo-checklist.jpg",
+      alt: "A ballpoint pen resting on white lined paper, selective focus: the start of a hand-written list.",
+      credit: "Photo: Aaron Burden / Unsplash",
+    },
     published: "2026-02-26",
     answer:
       "A solar company SEO checklist has four layers: a one-off setup covering the Business Profile, citations and core pages; weekly tasks of one profile post and review replies; a monthly review of Search Console and profile insights; and a quarterly audit of categories, citations and page performance. Most solar SEO fails on the weekly layer.",
