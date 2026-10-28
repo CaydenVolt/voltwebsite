@@ -22,6 +22,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "browser",
+    image: {
+      src: "/blog/heroes/solar-company-website-design.jpg",
+      alt: "An open MacBook Pro on a wooden desk, screen filled with a code editor and a browser preview side by side, a grey mug set beside it: a web build in progress.",
+      credit: "Photo: Igor Miske / Unsplash",
+    },
     pillar: true,
     published: "2026-08-21",
     answer:

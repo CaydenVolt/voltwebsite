@@ -46,6 +46,11 @@ export const INCENTIVES_POSTS: readonly Post[] = [
     category: "incentives",
     intent: "Informational",
     icon: "handshake",
+    image: {
+      src: "/blog/heroes/how-to-sell-solar-after-the-tax-credit.jpg",
+      alt: "A black smartphone, a silver ballpoint pen and a US tax withholding certificate laid out on a white folder: the stacks of paperwork a homeowner weighs before signing anything solar.",
+      credit: "Photo: Kelly Sikkema / Unsplash",
+    },
     pillar: true,
     published: "2026-09-20",
     answer:

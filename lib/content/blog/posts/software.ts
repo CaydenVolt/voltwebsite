@@ -22,6 +22,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Commercial",
     icon: "grid",
+    image: {
+      src: "/blog/heroes/best-solar-contractor-software.jpg",
+      alt: "Two large flat-screen monitors on a dark desk showing side-by-side dashboards and code editors: the kind of multi-tool workspace that comes with running several apps at once.",
+      credit: "Photo: Fotis Fotopoulos / Unsplash",
+    },
     pillar: true,
     published: "2026-09-10",
     updated: "2026-10-06",

@@ -119,6 +119,31 @@ export interface FaqItem {
   a: string;
 }
 
+/**
+ * The hero photograph for the article, shown on the card and at the head of
+ * the article in place of the drawn Plate + icon.
+ *
+ * Optional on purpose: when a post has no image set, the page falls back to
+ * the ornament plate, so sourcing photos can be rolled out one post at a time
+ * without 81 pages breaking mid-pass.
+ *
+ * `alt` is required when the field is set and must describe what the picture
+ * shows, not what the article is about: screen readers and image search both
+ * read the alt and both ignore the surrounding headline.
+ *
+ * `credit` is the attribution line for the photographer. Not rendered on-page
+ * today because the licences used do not require it, but kept on the post so
+ * a visible credit can be added later without re-sourcing the images.
+ */
+export interface PostImage {
+  /** Absolute path under /public, e.g. "/blog/heroes/local-seo.jpg". */
+  src: string;
+  /** Describes the picture itself. Written for a sighted reader with eyes closed. */
+  alt: string;
+  /** "Photo: Jane Doe / Unsplash". Optional; never rendered on-page today. */
+  credit?: string;
+}
+
 export interface Post {
   /** The keyword, verbatim, as the URL segment. /blog/<slug>. */
   slug: string;
@@ -138,6 +163,12 @@ export interface Post {
   intent: Intent;
   /** The mark on the card and at the head of the article. */
   icon: IconKey;
+  /**
+   * Optional hero photograph. When set, it replaces the Plate + icon on the
+   * card and at the head of the article; when absent, the stand-in draws
+   * instead, so this can be rolled out one post at a time.
+   */
+  image?: PostImage;
   /** The cluster hub. Exactly one post per category sets this. */
   pillar?: boolean;
   /** ISO date. Drives the order of the index and the paging. */

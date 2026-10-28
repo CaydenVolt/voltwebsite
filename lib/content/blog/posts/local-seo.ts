@@ -23,6 +23,11 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     category: "local-seo",
     intent: "Informational",
     icon: "pin",
+    image: {
+      src: "/blog/heroes/local-seo-for-solar-contractors.jpg",
+      alt: "An open MacBook on a dark desk, screen filled with a web traffic dashboard: line charts, bar charts and a map view, all in the kind of layout a Business Profile owner stares at every morning.",
+      credit: "Photo: Myriam Jessier / Unsplash",
+    },
     pillar: true,
     published: "2026-09-06",
     updated: "2026-10-21",

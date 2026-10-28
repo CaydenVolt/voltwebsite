@@ -24,6 +24,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Informational",
     icon: "magnet",
+    image: {
+      src: "/blog/heroes/how-to-get-more-solar-leads.jpg",
+      alt: "Dozens of hand-written sticky notes in pinks, yellows and blues, pinned to a cork board in rough columns: the kind of planning wall where a team is sorting ideas into channels.",
+      credit: "Photo: Patrick Perkins / Unsplash",
+    },
     pillar: true,
     published: "2026-09-14",
     answer:

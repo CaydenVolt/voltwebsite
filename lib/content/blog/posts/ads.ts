@@ -23,6 +23,11 @@ export const ADS_POSTS: readonly Post[] = [
     category: "ads",
     intent: "Informational",
     icon: "megaphone",
+    image: {
+      src: "/blog/heroes/google-ads-for-solar-companies.jpg",
+      alt: "A desktop screen showing the Google home page with the search bar focused and the cursor sitting ready, the moment before someone types a query.",
+      credit: "Photo: Nathana Rebouças / Unsplash",
+    },
     pillar: true,
     published: "2026-08-25",
     answer:

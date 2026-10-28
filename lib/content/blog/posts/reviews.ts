@@ -24,6 +24,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "star",
+    image: {
+      src: "/blog/heroes/how-to-get-more-reviews-for-solar-installers.jpg",
+      alt: "Five hand-cut yellow paper stars arranged in a row on a soft blue and pink background: a still-life stand-in for a perfect online review.",
+      credit: "Photo: Towfiqu barbhuiya / Unsplash",
+    },
     pillar: true,
     published: "2026-09-02",
     updated: "2026-10-21",

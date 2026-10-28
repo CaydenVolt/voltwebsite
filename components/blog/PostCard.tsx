@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Plate } from "@/components/blog/Plate";
 import { BlogIcon } from "@/components/blog/BlogIcon";
@@ -8,10 +9,11 @@ import { pad } from "@/lib/format";
  * One block in the three-up index.
  *
  * A block, not a floating card: a hairline border and a 2px corner, no
- * shadow, no gradient. The head of the block is a plate of printer's
- * ornaments with the article's mark set over it, so the grid has colour and
- * variety without a single stock photograph. Under it: the intent tag, the
- * date, the heading, the byline, the subheading, and the way in.
+ * shadow, no gradient. The head of the block is either the post's hero
+ * photograph (when the post has one) or the drawn ornament plate with the
+ * article's mark set over it (the stand-in that lets the grid stay complete
+ * while photos are rolled out one post at a time). Under it: the intent tag,
+ * the date, the heading, the byline, the subheading, and the way in.
  */
 export function PostCard({ post, index }: { post: Post; index: number }) {
   return (
@@ -22,15 +24,30 @@ export function PostCard({ post, index }: { post: Post; index: number }) {
         className="group flex h-full flex-col rounded-control border border-line bg-surface transition-colors duration-100 hover:border-fg"
       >
         {/* The mark, over the ornament plate */}
-        <div className="relative aspect-card overflow-hidden border-b border-line">
-          {/* The ornaments are texture, not subject: held well back so the mark
-              reads first. */}
-          <div className="absolute inset-0 opacity-20">
-            <Plate slug={post.slug} />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <BlogIcon icon={post.icon} className="size-24 text-ink" />
-          </div>
+        <div className="relative aspect-card overflow-hidden border-b border-line bg-bone-deep">
+          {post.image ? (
+            <Image
+              src={post.image.src}
+              alt={post.image.alt}
+              fill
+              /* Three cards across on lg, two on sm, one on phone. These sizes
+                 track the grid so Next serves the right file size for each
+                 breakpoint rather than always serving the largest. */
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          ) : (
+            <>
+              {/* The ornaments are texture, not subject: held well back so the
+                  mark reads first. */}
+              <div className="absolute inset-0 opacity-20">
+                <Plate slug={post.slug} />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <BlogIcon icon={post.icon} className="size-24 text-ink" />
+              </div>
+            </>
+          )}
           <span className="label absolute left-3 top-3 text-muted">{pad(index)}</span>
         </div>
 

@@ -22,6 +22,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "stopwatch",
+    image: {
+      src: "/blog/heroes/speed-to-lead-for-solar-companies.jpg",
+      alt: "A woman mid-call in natural daylight, phone held to her ear, caught at the moment of actually answering the incoming call rather than letting it ring out.",
+      credit: "Photo: Taylor Grote / Unsplash",
+    },
     pillar: true,
     published: "2026-08-29",
     answer:

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section } from "@/components/ui/Section";
@@ -142,19 +143,36 @@ export default async function ArticlePage(props: Props) {
           <span>{readingMinutes(post)} min read</span>
         </Reveal>
 
-        {/* The article's mark over its ornament plate: the same image the card
-            carries, so the grid and the page agree. */}
+        {/* The article's hero. When the post has an image set it is used
+            here and on the card; when it does not, the Plate + icon pattern
+            draws a stand-in so pages ship complete while photographs are
+            rolled out one post at a time. */}
         <Reveal
           as="div"
           index={2}
-          className="relative mt-8 aspect-strip overflow-hidden rounded-control border border-line lg:mt-10 lg:aspect-plate lg:max-h-96"
+          className="relative mt-8 aspect-strip overflow-hidden rounded-control border border-line bg-bone-deep lg:mt-10 lg:aspect-plate lg:max-h-96"
         >
-          <div className="absolute inset-0 opacity-20">
-            <Plate slug={post.slug} feature />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <BlogIcon icon={post.icon} className="size-24 text-ink lg:size-32" />
-          </div>
+          {post.image ? (
+            <Image
+              src={post.image.src}
+              alt={post.image.alt}
+              fill
+              /* Priority: this is the LCP element on an article page, so it
+                 preloads rather than lazy-loads. */
+              priority
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="object-cover"
+            />
+          ) : (
+            <>
+              <div className="absolute inset-0 opacity-20">
+                <Plate slug={post.slug} feature />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <BlogIcon icon={post.icon} className="size-24 text-ink lg:size-32" />
+              </div>
+            </>
+          )}
           <span className="label absolute left-4 top-4 rounded-control bg-accent px-2.5 py-1.5 text-ink">
             {post.intent}
           </span>

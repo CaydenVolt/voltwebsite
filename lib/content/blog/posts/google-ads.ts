@@ -27,6 +27,11 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     category: "google-ads",
     intent: "Informational",
     icon: "megaphone",
+    image: {
+      src: "/blog/heroes/google-ads-for-solar-contractors.jpg",
+      alt: "A laptop screen filled with brightly coloured line charts and bar charts: the performance view of a paid marketing campaign reporting its results mid-flight.",
+      credit: "Photo: Luke Chesser / Unsplash",
+    },
     pillar: true,
     published: "2026-10-15",
     answer:
