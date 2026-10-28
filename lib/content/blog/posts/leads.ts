@@ -257,6 +257,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Commercial",
     icon: "tag",
+    image: {
+      src: "/blog/heroes/how-much-do-solar-leads-cost.jpg",
+      alt: "A calculator, a ballpoint pen and a loose stack of US dollar bills laid out on a desk: the actual arithmetic a buyer runs before deciding whether a channel is worth it.",
+      credit: "Photo: Sasun Bughdaryan / Unsplash",
+    },
     published: "2026-08-13",
     answer:
       "Solar leads cost roughly $30 to $150 when bought from a lead vendor, $80 to $300 when generated through Google Ads, and around $53 to $110 through Local Services Ads. A booked appointment that actually sits costs far more, commonly $300 to $800, because no-shows and unqualified enquiries are filtered out at your expense.",
@@ -394,6 +399,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Commercial",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/are-solar-leads-worth-buying.jpg",
+      alt: "A brown and beige balance-arm weighing scale on a plain surface, trays empty, waiting for something to be measured.",
+      credit: "Photo: Piret Ilver / Unsplash",
+    },
     published: "2026-07-12",
     answer:
       "Buying solar leads is worth it when you answer within five minutes, follow up at least eight times, and can measure cost per sat appointment. Without all three, bought leads lose money reliably, because you are usually one of several installers who purchased the same homeowner and the slowest one gets nothing.",
@@ -528,6 +538,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Commercial",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/exclusive-vs-shared-solar-leads.jpg",
+      alt: "An aerial view of a Y-shaped road junction cutting through a dense pine forest: one road arriving, two paths leaving.",
+      credit: "Photo: Adam / Unsplash",
+    },
     published: "2026-06-30",
     answer:
       "Exclusive solar leads are sold to one installer and typically cost $90 to $200. Shared leads go to three or four installers at $30 to $110. Exclusive usually wins on cost per closed job, but only for companies whose response time is slower than five minutes. Fast responders can make shared leads work profitably.",
@@ -676,6 +691,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Informational",
     icon: "funnel",
+    image: {
+      src: "/blog/heroes/how-to-qualify-solar-leads.jpg",
+      alt: "A hand holding a pen marks items off a printed checklist, the kind of inspection worksheet a surveyor would carry.",
+      credit: "Photo: Jakub Żerdzicki / Unsplash",
+    },
     published: "2026-06-02",
     answer:
       "Qualify solar leads on six things: property ownership, roof condition and orientation, monthly electricity bill, shading, decision timeline, and whether everyone who has to sign is involved. Ask ownership and bill on the form, the rest on a short call, and never send a truck before all six are answered.",
@@ -827,6 +847,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Commercial",
     icon: "handshake",
+    image: {
+      src: "/blog/heroes/solar-lead-generation-companies.jpg",
+      alt: "Two people in business attire shaking hands outside a modern glass office building, the moment a vendor contract gets signed.",
+      credit: "Photo: Vitaly Gariev / Unsplash",
+    },
     published: "2026-05-05",
     answer:
       "Solar lead generation companies sell either marketplace leads, exclusive leads, or appointments, and the business models pay them differently from you. Judge them on eight things: exclusivity in writing, lead source transparency, return policy, contact data quality, sat rate, contract length, attribution support and how they handle disputes.",
@@ -987,6 +1012,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Informational",
     icon: "bulb",
+    image: {
+      src: "/blog/heroes/solar-lead-generation-ideas.jpg",
+      alt: "A black and silver retractable pen resting on an open blank notebook: a page waiting for a list of ideas to be written down.",
+      credit: "Photo: Mike Tinnion / Unsplash",
+    },
     published: "2026-03-30",
     answer:
       "The solar lead ideas that reliably work without paid ads are neighbour campaigns around completed installs, trade partnerships with roofers and electricians, database reactivation, review-led local ranking, utility rate change campaigns, and a structured referral ask. Most cost nothing per lead and produce results within weeks rather than months.",
@@ -1134,6 +1164,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Informational",
     icon: "magnet",
+    image: {
+      src: "/blog/heroes/free-solar-leads.jpg",
+      alt: "An Olympia typewriter on a marble surface, a sheet of paper rolled in with the words 'Write something' typed across it.",
+      credit: "Photo: Markus Winkler / Unsplash",
+    },
     published: "2026-02-14",
     answer:
       "Free solar leads come from six places: your Google Business Profile, customer reviews, referrals from past customers, your existing database, trade partnerships, and organic search. None cost money per lead, all cost time, and together they usually produce more work than a small ad budget does once they have been running for a quarter.",
@@ -1286,6 +1321,11 @@ export const LEADS_POSTS: readonly Post[] = [
     category: "leads",
     intent: "Informational",
     icon: "building",
+    image: {
+      src: "/blog/heroes/how-to-get-commercial-solar-leads.jpg",
+      alt: "A tall white and blue glass-walled commercial office building shot from street level against clear sky.",
+      credit: "Photo: Kenrick Baksh / Unsplash",
+    },
     published: "2026-01-09",
     answer:
       "Commercial solar leads come mainly from outbound prospecting against a built target list, not from inbound forms. Build the list from roof area, energy spend and ownership, reach the finance decision maker rather than the facilities manager, and expect a sales cycle of six to eighteen months with a committee involved.",
