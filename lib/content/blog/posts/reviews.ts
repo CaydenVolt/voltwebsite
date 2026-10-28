@@ -215,6 +215,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "star",
+    image: {
+      src: "/blog/heroes/how-to-get-more-google-reviews-for-solar-business.jpg",
+      alt: "An open MacBook Pro on a bright desk with a cup of coffee alongside: the kind of laptop setup an owner opens the review dashboard on.",
+      credit: "Photo: Firmbee.com / Unsplash",
+    },
     published: "2026-08-09",
     answer:
       "To get more Google reviews for a solar business, send every customer a direct review short link by text two to six weeks after commissioning, follow up once, and reply to every review within a day. Reviews left through the direct link, by verified accounts, on an active profile are the ones least likely to be filtered out.",
@@ -361,6 +366,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "chat",
+    image: {
+      src: "/blog/heroes/how-to-ask-customers-for-a-review-solar.jpg",
+      alt: "Two women wearing telephone headsets in a bright office workspace, mid-conversation with customers.",
+      credit: "Photo: Charanjeet Dhiman / Unsplash",
+    },
     published: "2026-07-04",
     answer:
       "Ask a solar customer for a review by text, from a named person, two to six weeks after commissioning, with one specific reason and a direct link. Keep it under forty words, mention nothing about ratings or stars, and follow up once seven days later if nothing arrives.",
@@ -504,6 +514,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "shield",
+    image: {
+      src: "/blog/heroes/how-to-respond-to-negative-solar-reviews.jpg",
+      alt: "Hands holding a black computer keyboard against a dark background: the posture of someone about to type a careful reply.",
+      credit: "Photo: Michael Marais / Unsplash",
+    },
     published: "2026-06-06",
     answer:
       "Respond to a negative solar review within 24 hours using four parts: thank them, acknowledge the specific problem without excuses, state what you are doing about it, and move the detail to a phone call. Never argue facts in public, never mention the contract, and never imply the customer misunderstood.",
@@ -670,6 +685,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "chat",
+    image: {
+      src: "/blog/heroes/solar-review-request-templates.jpg",
+      alt: "A black iPhone 5 lying face-up on a white table, screen off: a blank canvas for the review request about to go out.",
+      credit: "Photo: charlesdeluvio / Unsplash",
+    },
     published: "2026-05-13",
     answer:
       "A solar review request template should be under forty words, sent by text from a named person, reference the specific job, and end with a direct review link on its own line. Below are the four requests and three replies most solar installers need, written to stay inside Google's rules.",
@@ -834,6 +854,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "star",
+    image: {
+      src: "/blog/heroes/how-many-google-reviews-do-you-need.jpg",
+      alt: "A close-up of a wooden box with hand-painted numbers lined up along its edge, like a tally board.",
+      credit: "Photo: Annie Spratt / Unsplash",
+    },
     published: "2026-04-15",
     answer:
       "A solar company needs at least 25 Google reviews to clear the credibility floor, around 50 before review volume starts producing a measurable lift in enquiries, and roughly as many as the top three competitors in its service area to compete in the map pack. The target is relative, not absolute: count what the local leaders have.",
@@ -976,6 +1001,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Commercial",
     icon: "star",
+    image: {
+      src: "/blog/heroes/best-review-management-software-for-solar.jpg",
+      alt: "A person holding a black tablet computer in both hands, screen filled with a software interface.",
+      credit: "Photo: ThisisEngineering / Unsplash",
+    },
     published: "2026-03-14",
     answer:
       "Review management software for a solar company needs five things: an automatic trigger off job status, text as the primary channel, a direct review link, one scheduled reminder, and replies from one inbox. Anything beyond that is optional. Below roughly six installs a month, a calendar reminder and a saved message do the same job.",
@@ -1127,6 +1157,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "shield",
+    image: {
+      src: "/blog/heroes/how-to-remove-a-fake-google-review.jpg",
+      alt: "A single red flag flying on a pole against a clear blue sky: the universal signal that something needs reporting.",
+      credit: "Photo: mhrezaa / Unsplash",
+    },
     published: "2026-01-17",
     answer:
       "A Google review can only be removed if it breaks a content policy: it is fake or has no basis in a real experience, contains abuse or profanity, is off-topic, includes personal information, or is a conflict of interest such as a competitor posting. A review you simply disagree with will not be removed, however unfair it is.",
@@ -1272,6 +1307,11 @@ export const REVIEWS_POSTS: readonly Post[] = [
     category: "reviews",
     intent: "Informational",
     icon: "star",
+    image: {
+      src: "/blog/heroes/why-solar-reviews-matter.jpg",
+      alt: "A hand-painted 'Come in, we're open' sign in a shop window: the small, visible signal of social proof that keeps a business trading.",
+      credit: "Photo: Tim Mossholder / Unsplash",
+    },
     published: "2026-02-02",
     answer:
       "Solar reviews matter more than in most trades because the purchase combines roof access, a large sum, a twenty year warranty and a company the buyer has never heard of. With no way to judge the technical work, buyers substitute the one signal they can read, which is what previous customers said and how many of them said it.",
