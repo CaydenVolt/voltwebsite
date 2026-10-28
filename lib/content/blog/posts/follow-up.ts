@@ -200,6 +200,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "phone",
+    image: {
+      src: "/blog/heroes/missed-call-text-back-for-solar.jpg",
+      alt: "Selective focus on a person's hands using a smartphone to tap out a quick reply.",
+      credit: "Photo: freestocks / Unsplash",
+    },
     published: "2026-08-01",
     answer:
       "Missed call text-back sends an automatic text message within seconds of an unanswered call, acknowledging the caller and inviting a reply. For solar companies it recovers enquiries that would otherwise go to the next installer, and it works outside office hours, on roofs and during every other moment nobody can reach a phone.",
@@ -361,6 +366,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "envelope",
+    image: {
+      src: "/blog/heroes/solar-sales-follow-up-sequence.jpg",
+      alt: "A long row of dominoes standing on end on a plain surface, lined up for the chain reaction that follows one tap.",
+      credit: "Photo: Robert Stump / Unsplash",
+    },
     published: "2026-07-16",
     answer:
       "A solar sales follow-up sequence should run at least eight touches over three weeks, then continue monthly for a year. The first hour carries an instant text and a call attempt, the first week carries four more attempts across text, call and email, and the long tail keeps a light monthly touch going until the lead buys or asks you to stop.",
@@ -519,6 +529,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "envelope",
+    image: {
+      src: "/blog/heroes/solar-lead-nurturing.jpg",
+      alt: "Soil-covered hands planting a small green seedling in the ground: slow, patient care that pays off months later.",
+      credit: "Photo: GreenForce Staffing / Unsplash",
+    },
     published: "2026-06-26",
     answer:
       "Solar lead nurturing is the long, low-frequency follow-up that keeps you present with buyers whose decision is months away. It works on a monthly cadence of genuinely useful messages, triggered by real events such as utility rate changes and incentive deadlines rather than by arbitrary drip schedules.",
@@ -672,6 +687,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "stopwatch",
+    image: {
+      src: "/blog/heroes/how-many-times-should-you-follow-up-with-a-solar-lead.jpg",
+      alt: "A white front door with the house number 35 on it in black figures: the kind of door someone knocks on more than once.",
+      credit: "Photo: Megan Lee / Unsplash",
+    },
     published: "2026-05-21",
     answer:
       "Follow up with a solar lead at least eight times across three weeks, then move to a monthly touch for up to a year. Most companies stop after two attempts, while a large share of contacts happen on the fourth attempt or later, which means the leads they already paid for are being abandoned just before they would have answered.",
@@ -847,6 +867,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "calendar",
+    image: {
+      src: "/blog/heroes/solar-appointment-no-show-rate.jpg",
+      alt: "A single wooden chair sitting against a bare brick wall: the universal picture of the person who did not turn up.",
+      credit: "Photo: Linus Belanger / Unsplash",
+    },
     published: "2026-04-11",
     answer:
       "Solar appointment no-shows are reduced most by three things: confirming that every decision maker will be present at the time of booking, sending a reminder sequence at 24 hours and 1 hour, and keeping the gap between booking and appointment under five days. Long gaps are the single biggest predictor of a no-show.",
@@ -1005,6 +1030,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "chat",
+    image: {
+      src: "/blog/heroes/sms-marketing-for-solar-companies.jpg",
+      alt: "Two paper speech bubbles cut and set on a brown surface: a text thread rendered in physical form.",
+      credit: "Photo: Kelly Sikkema / Unsplash",
+    },
     published: "2026-03-18",
     answer:
       "SMS works for solar companies in conversational use: replying to enquiries, confirming appointments, recovering missed calls and asking for reviews. It works poorly as a broadcast channel. Response rates are far higher than email, which makes it valuable and also makes misuse expensive in opt-outs and complaints.",
@@ -1180,6 +1210,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "stopwatch",
+    image: {
+      src: "/blog/heroes/why-solar-leads-go-cold.jpg",
+      alt: "A close-up of a frost-covered window pane, ice crystals forming across the glass: a lead going quiet.",
+      credit: "Photo: Osman Rana / Unsplash",
+    },
     published: "2026-02-22",
     answer:
       "Solar leads go cold for seven main reasons: a slow first response, follow-up that stopped too early, a competitor getting there first, a missing decision maker, an unresolved objection nobody surfaced, a timeline that was always further out, or a genuine disqualification. Only the last is final, and most companies treat all seven the same way.",
@@ -1335,6 +1370,11 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     category: "follow-up",
     intent: "Informational",
     icon: "envelope",
+    image: {
+      src: "/blog/heroes/email-follow-up-templates-for-solar.jpg",
+      alt: "A black laptop computer open on a desk with an email client taking up the screen, cursor sitting in the compose window.",
+      credit: "Photo: Stephen Phillips / Unsplash",
+    },
     published: "2026-01-29",
     answer:
       "Solar follow-up emails should be under 120 words, written in plain text from a named person, and carry one specific thing rather than a check-in. The nine below cover the sequence from the instant acknowledgement through the quote follow-up, the stalled deal, re-engagement and the polite close.",
