@@ -195,6 +195,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "cursor",
+    image: {
+      src: "/blog/heroes/how-to-increase-solar-website-conversion-rate.jpg",
+      alt: "Close-up of a human finger about to press a wall switch: the exact gesture conversion is trying to encourage.",
+      credit: "Photo: Aleksandar Cvetanovic / Unsplash",
+    },
     published: "2026-07-20",
     answer:
       "Raise a solar website's conversion rate by answering the cost question on the page, cutting the enquiry form to four fields, putting real review counts above the fold, adding local proof, making the phone number tappable, loading in under three seconds, and offering one action per page rather than several.",
@@ -345,6 +350,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "browser",
+    image: {
+      src: "/blog/heroes/solar-landing-page-best-practices.jpg",
+      alt: "A desktop monitor showing the Google home page: the page a visitor was on seconds before they land on yours.",
+      credit: "Photo: Christian Wiediger / Unsplash",
+    },
     published: "2026-06-18",
     answer:
       "A solar landing page should match the promise of the ad that sent the visitor, carry one action and no navigation, answer the cost question, show local proof, and load in under three seconds. Sending paid traffic to a homepage instead typically wastes a meaningful share of the spend because the visitor has to find their own way.",
@@ -498,6 +508,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "checklist",
+    image: {
+      src: "/blog/heroes/solar-quote-form-best-practices.jpg",
+      alt: "A black ballpoint pen resting on blank white paper: the posture of someone about to fill in a form.",
+      credit: "Photo: Ire Photocreative / Unsplash",
+    },
     published: "2026-05-25",
     answer:
       "A solar quote form should ask for four things: name, phone number, property address and a monthly electricity bill range. Everything else, including roof details, shading, timeline and financing interest, belongs on the qualification call, where you can ask follow-up questions rather than losing the submission to a dropdown.",
@@ -669,6 +684,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Commercial",
     icon: "tag",
+    image: {
+      src: "/blog/heroes/how-much-does-a-solar-company-website-cost.jpg",
+      alt: "A single hundred-dollar bill lying flat on a plain surface: the unit of currency the budget conversation happens in.",
+      credit: "Photo: engin akyurt / Unsplash",
+    },
     published: "2026-05-01",
     answer:
       "A solar company website typically costs from a few hundred for a template build to five figures for a custom site with content and SEO included. The number is driven mainly by who writes the content, whether local SEO is part of it, and who maintains it afterwards, rather than by the design itself.",
@@ -852,6 +872,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "browser",
+    image: {
+      src: "/blog/heroes/what-to-put-on-a-solar-company-website.jpg",
+      alt: "Watercolour wireframe sketches of website layouts drawn on paper: the pre-visual of what belongs on a page.",
+      credit: "Photo: Hal Gatewood / Unsplash",
+    },
     published: "2026-04-07",
     answer:
       "A solar company website needs ten pages: a homepage, one page per core service, three service area pages, a costs page, an about page with real people, and a contact page. Each should carry proof, a cost indication and one booking action. Pages about industry trends and company news are not worth building.",
@@ -1022,6 +1047,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "browser",
+    image: {
+      src: "/blog/heroes/solar-website-mistakes.jpg",
+      alt: "Close-up of a window pane shattered into radiating cracks: the visual shorthand for something that is quietly broken.",
+      credit: "Photo: Heather Newsom / Unsplash",
+    },
     published: "2026-03-10",
     answer:
       "The most costly solar website mistakes are hiding the price, using a long enquiry form, showing no real proof, writing about the company instead of the buyer, loading slowly on mobile, offering several competing actions, and not answering enquiries quickly. Each one loses visitors who had already decided they were interested.",
@@ -1198,6 +1228,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "cursor",
+    image: {
+      src: "/blog/heroes/how-to-write-solar-website-copy.jpg",
+      alt: "A person writing in a lined notebook with a cup of coffee alongside: the physical half of the writing that becomes copy.",
+      credit: "Photo: Alehandra / Unsplash",
+    },
     published: "2026-02-10",
     answer:
       "Write solar website copy by answering the six questions every homeowner has: what it costs, how long it takes, who is coming to the house, what happens if something breaks, why you rather than the other three, and what to do next. Write it in the words customers use, not the words the industry uses.",
@@ -1364,6 +1399,11 @@ export const WEBSITE_POSTS: readonly Post[] = [
     category: "website",
     intent: "Informational",
     icon: "gauge",
+    image: {
+      src: "/blog/heroes/page-speed-for-solar-websites.jpg",
+      alt: "A red athletics running track with white lane lines and numbered starting positions, shot straight down.",
+      credit: "Photo: Austris Augusts / Unsplash",
+    },
     published: "2026-01-25",
     answer:
       "Page speed matters for solar websites because most visitors arrive on a phone on mobile data and leave if the page takes more than about three seconds. The three metrics worth tracking are Largest Contentful Paint, Interaction to Next Paint and Cumulative Layout Shift, and oversized images cause most solar site slowness.",
