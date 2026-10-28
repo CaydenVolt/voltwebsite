@@ -540,8 +540,8 @@ export const LEADS_POSTS: readonly Post[] = [
     icon: "scales",
     image: {
       src: "/blog/heroes/exclusive-vs-shared-solar-leads.jpg",
-      alt: "An aerial view of a Y-shaped road junction cutting through a dense pine forest: one road arriving, two paths leaving.",
-      credit: "Photo: Adam / Unsplash",
+      alt: "A row of red velvet rope stanchions with gold ball tops lined up in a hall: the physical sign of an exclusive, one-at-a-time entry.",
+      credit: "Photo: Jakub Żerdzicki / Unsplash",
     },
     published: "2026-06-30",
     answer:

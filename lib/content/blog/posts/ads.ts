@@ -519,8 +519,8 @@ export const ADS_POSTS: readonly Post[] = [
     icon: "scales",
     image: {
       src: "/blog/heroes/google-ads-vs-seo-for-solar.jpg",
-      alt: "Two teams of people pulling on opposite ends of a thick rope across uneven ground: the picture of a trade-off.",
-      credit: "Photo: Joaquin Arenas / Unsplash",
+      alt: "A black and white photograph of two runners stride for stride down a track: two competitors covering the same ground at different paces.",
+      credit: "Photo: Tom Patmore / Unsplash",
     },
     published: "2026-05-29",
     answer:

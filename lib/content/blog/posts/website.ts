@@ -197,8 +197,8 @@ export const WEBSITE_POSTS: readonly Post[] = [
     icon: "cursor",
     image: {
       src: "/blog/heroes/how-to-increase-solar-website-conversion-rate.jpg",
-      alt: "Close-up of a human finger about to press a wall switch: the exact gesture conversion is trying to encourage.",
-      credit: "Photo: Aleksandar Cvetanovic / Unsplash",
+      alt: "An online checkout screen with payment details and a shopping cart filled in: the moment a visitor becomes a buyer.",
+      credit: "Photo: Ze Vieira / Unsplash",
     },
     published: "2026-07-20",
     answer:

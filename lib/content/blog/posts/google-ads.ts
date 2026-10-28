@@ -658,8 +658,8 @@ export const GOOGLE_ADS_POSTS: readonly Post[] = [
     icon: "browser",
     image: {
       src: "/blog/heroes/solar-google-ads-landing-pages.jpg",
-      alt: "A large yellow billboard overlooking a highway with cars passing beneath it: the oversized shape of a landing page in physical form.",
-      credit: "Photo: Ridham Supriyanto / Unsplash",
+      alt: "The interior of a department store, racks of clothing on display across the floor: the everyone-store, which is what a homepage is to a paid click.",
+      credit: "Photo: Albert Stoynov / Unsplash",
     },
     published: "2026-10-28",
     answer:

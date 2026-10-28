@@ -396,8 +396,8 @@ export const LOCAL_SEO_POSTS: readonly Post[] = [
     icon: "pin",
     image: {
       src: "/blog/heroes/how-to-rank-in-google-map-pack-solar.jpg",
-      alt: "A black vehicle GPS screen mounted on a dashboard, map view glowing, mid-route.",
-      credit: "Photo: Alvaro Reyes / Unsplash",
+      alt: "A hand holding a black smartphone displaying a local map search: the exact view a homeowner has when they tap a solar query on a phone.",
+      credit: "Photo: henry perks / Unsplash",
     },
     published: "2026-07-28",
     answer:

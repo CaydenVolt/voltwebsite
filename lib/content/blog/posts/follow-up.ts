@@ -531,8 +531,8 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     icon: "envelope",
     image: {
       src: "/blog/heroes/solar-lead-nurturing.jpg",
-      alt: "Soil-covered hands planting a small green seedling in the ground: slow, patient care that pays off months later.",
-      credit: "Photo: GreenForce Staffing / Unsplash",
+      alt: "A woman cradling a warm ceramic mug in both hands: the posture of a long, patient conversation that is still ongoing.",
+      credit: "Photo: Alisa Anton / Unsplash",
     },
     published: "2026-06-26",
     answer:
@@ -689,8 +689,8 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
     icon: "stopwatch",
     image: {
       src: "/blog/heroes/how-many-times-should-you-follow-up-with-a-solar-lead.jpg",
-      alt: "A white front door with the house number 35 on it in black figures: the kind of door someone knocks on more than once.",
-      credit: "Photo: Megan Lee / Unsplash",
+      alt: "A smartphone screen filled with an incoming call interface, round answer and FaceTime buttons glowing: a call attempt mid-connection.",
+      credit: "Photo: Jay Openiano / Unsplash",
     },
     published: "2026-05-21",
     answer:
