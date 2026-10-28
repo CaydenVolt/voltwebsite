@@ -215,6 +215,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Commercial",
     icon: "database",
+    image: {
+      src: "/blog/heroes/best-crm-for-solar-companies.jpg",
+      alt: "A hand holding a single business card beside a potted plant: the kind of contact a CRM is built to keep track of.",
+      credit: "Photo: Ashish Sangai / Unsplash",
+    },
     published: "2026-08-05",
     answer:
       "The best CRM for a solar company is the one that captures every lead channel automatically, fires follow-up without anybody remembering, works properly on a phone, and holds the full communication history on the contact record. Industry-specific features matter far less than whether the daily workflow actually happens inside it.",
@@ -368,6 +373,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Commercial",
     icon: "database",
+    image: {
+      src: "/blog/heroes/do-solar-companies-need-a-crm.jpg",
+      alt: "A row of colored ring binders lined up on a shelf: the pre-software version of a contact and job archive.",
+      credit: "Photo: Jonas Augustin / Unsplash",
+    },
     published: "2026-06-14",
     answer:
       "A solar company needs a CRM once it is handling more than about twenty leads a month, has more than one person touching a lead, or cannot say from memory which enquiries are outstanding. Below that a spreadsheet and a disciplined follow-up habit genuinely work, and a CRM nobody updates is worse than the spreadsheet it replaced.",
@@ -523,6 +533,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Informational",
     icon: "grid",
+    image: {
+      src: "/blog/heroes/solar-marketing-automation.jpg",
+      alt: "Close-up of a mechanical assembly with dozens of interlocking metal gears: automation at its most physical.",
+      credit: "Photo: Kirill Prikhodko / Unsplash",
+    },
     published: "2026-05-09",
     answer:
       "The solar marketing automations worth building, in order of return, are: instant response to new enquiries, missed-call text-back, the multi-touch follow-up sequence, review requests after commissioning, appointment reminders, long-term nurture, and database reactivation. The first three typically pay for an entire system on their own.",
@@ -680,6 +695,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Commercial",
     icon: "scales",
+    image: {
+      src: "/blog/heroes/solar-crm-vs-spreadsheet.jpg",
+      alt: "Hands typing on a laptop whose screen is filled with the rows and columns of a data spreadsheet.",
+      credit: "Photo: Gorilla ROI Data Connector / Unsplash",
+    },
     published: "2026-04-03",
     answer:
       "A spreadsheet works for a solar company until leads arrive from more than two channels, more than one person touches a lead, or follow-up needs to happen without somebody remembering. Those are the three hard limits. Below them a spreadsheet is faster, cheaper and more reliable than a badly implemented CRM.",
@@ -843,6 +863,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Informational",
     icon: "funnel",
+    image: {
+      src: "/blog/heroes/solar-sales-pipeline-stages.jpg",
+      alt: "A set of white concrete stairs rising past black metal railings: discrete, ordered stages leading up to the next.",
+      credit: "Photo: Ricardo Gomez Angel / Unsplash",
+    },
     published: "2026-03-06",
     answer:
       "A solar sales pipeline needs eleven stages: new enquiry, contacted, qualified, appointment set, appointment sat, proposal sent, verbal agreement, contract signed, permitting, installed and commissioned. The stages after signature matter because solar revenue is not recognised at signature and a third of problems happen in the waiting.",
@@ -1012,6 +1037,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Commercial",
     icon: "grid",
+    image: {
+      src: "/blog/heroes/how-to-choose-solar-proposal-software.jpg",
+      alt: "Selective focus on a person's finger pointing at an app icon on a tablet screen: the moment of choosing a tool.",
+      credit: "Photo: Timothy Muza / Unsplash",
+    },
     published: "2026-02-18",
     answer:
       "Choose solar proposal software on six criteria: production modelling accuracy, remote shading analysis quality, how long a proposal takes to produce, whether financing options are built in, what the customer actually receives, and whether it connects to your CRM. Visual polish in a demo predicts very little about any of them.",
@@ -1177,6 +1207,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Informational",
     icon: "grid",
+    image: {
+      src: "/blog/heroes/how-to-consolidate-your-solar-tech-stack.jpg",
+      alt: "A tidy stack of white wooden blocks on a black surface: a tech stack rendered as a tower.",
+      credit: "Photo: Valery Fedotov / Unsplash",
+    },
     published: "2026-01-21",
     answer:
       "Consolidate a solar tech stack by auditing every tool against the workflow it serves, identifying the seams where humans retype data, and collapsing the sales, marketing and communication tools first. Keep design and accounting separate. Migrate new leads before historical data so nothing arriving today falls into the gap.",
@@ -1337,6 +1372,11 @@ export const SOFTWARE_POSTS: readonly Post[] = [
     category: "software",
     intent: "Informational",
     icon: "chart",
+    image: {
+      src: "/blog/heroes/solar-company-kpis-to-track.jpg",
+      alt: "A black and red analog speedometer dial, needle hovering mid-range: the shape of a KPI reading.",
+      credit: "Photo: Claude Gabriel / Unsplash",
+    },
     published: "2026-01-13",
     answer:
       "The KPIs that run a solar company are speed to lead, contact rate, appointment set rate, sat rate, close rate, cost per sat appointment by source, average job value, gross margin per install, review count and rating, install-to-commission time, referral rate and pipeline stage age. Twelve numbers, most of them weekly.",
