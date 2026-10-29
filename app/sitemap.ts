@@ -17,6 +17,7 @@ import {
   comparisonsLastModified,
   getComparisons,
 } from "@/lib/content/compare";
+import { getTools, toolHref, toolsLastModified } from "@/lib/content/tools";
 
 /**
  * Every URL worth indexing, and only those.
@@ -110,6 +111,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${c.updated ?? c.published}T00:00:00Z`),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+
+    /* Interactive tools. Each is a standalone calculator with its own
+       surrounding content. Priority 0.7 (above most of the blog, below the
+       commercial comparison pages). */
+    {
+      url: `${base}/tools`,
+      lastModified: new Date(`${toolsLastModified()}T00:00:00Z`),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...getTools().map((t) => ({
+      url: `${base}${toolHref(t.slug)}`,
+      lastModified: new Date(`${t.updated ?? t.published}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }

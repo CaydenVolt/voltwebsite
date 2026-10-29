@@ -119,6 +119,7 @@ export const SITE = {
     { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
     { label: "Compare", href: "/compare" },
+    { label: "Tools", href: "/tools" },
     { label: "Process", href: "/our-process" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/#faq" },
