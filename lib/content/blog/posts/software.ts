@@ -171,6 +171,12 @@ export const SOFTWARE_POSTS: readonly Post[] = [
         label: "What Volt covers",
         note: "The sales, marketing and communication layer, in one place",
       },
+      {
+        t: "link",
+        href: "/compare",
+        label: "Volt next to every tool you are weighing",
+        note: "Honest comparisons: HubSpot, Jobber, Housecall Pro, ServiceTitan, Enerflo, Scoop, Aurora, Podium, Birdeye, Scorpion",
+      },
     ],
     faq: [
       {
@@ -288,7 +294,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
       },
       {
         t: "p",
-        text: "The honest answer is that this matters less than people expect. Pipeline stages take an afternoon to configure. The thing that decides whether a CRM works is whether the daily workflow genuinely happens inside it, and that is about usability and automation rather than about industry labels.",
+        text: "The honest answer is that this matters less than people expect. Pipeline stages take an afternoon to configure. The thing that decides whether a CRM works is whether the daily workflow genuinely happens inside it, and that is about usability and automation rather than about industry labels. If you want the specific head-to-heads, we have written honest comparisons against [HubSpot](/compare/hubspot), [Enerflo](/compare/enerflo) and [Scoop](/compare/scoop).",
       },
       {
         t: "callout",
@@ -1254,7 +1260,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
           "**Collapse: sales, marketing and communication.** Forms, texting, email, calls, review requests, follow-up, pipeline. These share one dataset, the customer, and separating them is what creates most of the seams.",
           "**Keep: design and proposal.** Genuinely specialist. See [how to choose solar proposal software](/blog/how-to-choose-solar-proposal-software).",
           "**Keep: accounting.** It already works and your accountant knows it.",
-          "**Decide case by case: project management.** Worth collapsing in if your volume is modest, worth keeping separate if install operations are complex.",
+          "**Decide case by case: project management.** Worth collapsing in if your volume is modest, worth keeping separate if install operations are complex. If you are weighing a dedicated field-service tool for this, we have written honest comparisons against [Jobber](/compare/jobber), [Housecall Pro](/compare/housecall-pro) and [ServiceTitan](/compare/servicetitan).",
         ],
       },
       {

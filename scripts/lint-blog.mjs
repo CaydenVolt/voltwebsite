@@ -15,7 +15,7 @@
  */
 import { execFileSync } from "node:child_process";
 import { createRequire } from "node:module";
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -101,6 +101,7 @@ const ROUTES = new Set([
   "/",
   "/about",
   "/blog",
+  "/compare",
   "/contact",
   "/our-process",
   "/partners",
@@ -123,6 +124,17 @@ if (productSlugs.length < 5) {
   process.exit(1);
 }
 for (const slug of productSlugs) ROUTES.add(`/products/${slug}`);
+
+// Comparison routes, parsed out of the compare registry files for the same
+// reason as products: a hardcoded mirror here would go stale as competitors
+// are added or renamed.
+const compareDir = join(root, "lib/content/compare/competitors");
+const compareFiles = readdirSync(compareDir).filter((f) => f.endsWith(".ts"));
+for (const f of compareFiles) {
+  const src = readFileSync(join(compareDir, f), "utf8");
+  const m = src.match(/slug:\s*"([a-z0-9-]+)"/);
+  if (m) ROUTES.add(`/compare/${m[1]}`);
+}
 
 const LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
 

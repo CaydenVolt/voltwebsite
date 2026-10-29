@@ -103,6 +103,10 @@ export const SITE = {
     // shows the build, the other shows what the client said about it.
     { label: "Testimonials", href: "/testimonials" },
     { label: "Pricing", href: "/pricing" },
+    // Sits between Pricing and Blog: a prospect who just read the price is
+    // often the same person who was about to compare us to another tool.
+    // The link in the bar surfaces /compare so they do not have to search.
+    { label: "Compare", href: "/compare" },
     // Top level on purpose: the blog is sixty-three pages deep and a link in
     // the bar on every page is the strongest internal signal we can give it.
     { label: "Blog", href: "/blog" },
@@ -114,6 +118,7 @@ export const SITE = {
   company: [
     { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Compare", href: "/compare" },
     { label: "Process", href: "/our-process" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/#faq" },

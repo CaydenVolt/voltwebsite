@@ -246,7 +246,31 @@ export default function PricingPage() {
       {/* 6. Pricing FAQ: the homepage accordion, different questions */}
       <FAQ id="pricing-faq" label="Pricing questions" heading="Straight answers on the fee." items={PRICING_FAQ} />
 
-      {/* 7. Final CTA, reused as is */}
+      {/* 7. Compare bridge: a visitor on the pricing page is usually also
+          weighing another tool. Rather than let the question drop, point at
+          the honest comparisons we already wrote. Low-key band, not a slab. */}
+      <Section rule="top" aria-labelledby="compare-bridge-h" rhythm="sm">
+        <SectionLabel rule>Compare</SectionLabel>
+        <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
+          <Reveal as="h2" id="compare-bridge-h" className="text-h2 lg:col-span-7">
+            Still weighing Volt against another tool?
+          </Reveal>
+          <Reveal as="div" index={1} className="mt-6 max-w-measure lg:col-span-5 lg:col-start-8 lg:mt-0">
+            <p className="text-body text-muted">
+              Honest side-by-side comparisons against HubSpot, Jobber, Housecall Pro,
+              ServiceTitan, Enerflo, Scoop, Aurora, Podium, Birdeye and Scorpion.
+              Who should pick which, feature matrices, real pricing.
+            </p>
+            <p className="mt-6">
+              <Button href="/compare" source="pricing_compare_bridge" variant="link">
+                See every comparison
+              </Button>
+            </p>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 8. Final CTA, reused as is */}
       <FinalCTA />
     </main>
   );
