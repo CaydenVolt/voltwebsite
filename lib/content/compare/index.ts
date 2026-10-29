@@ -3,6 +3,9 @@ import { HUBSPOT } from "./competitors/hubspot";
 import { JOBBER } from "./competitors/jobber";
 import { HOUSECALL_PRO } from "./competitors/housecall-pro";
 import { SERVICETITAN } from "./competitors/servicetitan";
+import { ENERFLO } from "./competitors/enerflo";
+import { SCOOP } from "./competitors/scoop";
+import { AURORA_SOLAR } from "./competitors/aurora-solar";
 
 export * from "./types";
 
@@ -14,7 +17,15 @@ export * from "./types";
  * sit at the top; older ones below. Add a new competitor by importing its
  * data file and inserting it here.
  */
-const ALL: readonly Comparison[] = [HUBSPOT, JOBBER, HOUSECALL_PRO, SERVICETITAN];
+const ALL: readonly Comparison[] = [
+  HUBSPOT,
+  JOBBER,
+  HOUSECALL_PRO,
+  SERVICETITAN,
+  ENERFLO,
+  SCOOP,
+  AURORA_SOLAR,
+];
 
 /** Newest first, with slug as tiebreaker for a stable sort. */
 const SORTED: readonly Comparison[] = [...ALL].sort(
