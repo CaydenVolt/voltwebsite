@@ -120,6 +120,7 @@ export const SITE = {
     { label: "Pricing", href: "/pricing" },
     { label: "Compare", href: "/compare" },
     { label: "Tools", href: "/tools" },
+    { label: "Solar by state", href: "/solar" },
     { label: "Process", href: "/our-process" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/#faq" },

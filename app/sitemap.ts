@@ -18,6 +18,7 @@ import {
   getComparisons,
 } from "@/lib/content/compare";
 import { getTools, toolHref, toolsLastModified } from "@/lib/content/tools";
+import { getStates, stateHref, statesLastModified } from "@/lib/content/states";
 
 /**
  * Every URL worth indexing, and only those.
@@ -125,6 +126,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getTools().map((t) => ({
       url: `${base}${toolHref(t.slug)}`,
       lastModified: new Date(`${t.updated ?? t.published}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+
+    /* US state solar market pages. Mixed intent (homeowners + installers).
+       Priority 0.7 to match the tools; the state market data moves slowly so
+       changeFrequency sits at monthly. */
+    {
+      url: `${base}/solar`,
+      lastModified: new Date(`${statesLastModified()}T00:00:00Z`),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...getStates().map((s) => ({
+      url: `${base}${stateHref(s.slug)}`,
+      lastModified: new Date(`${s.updated ?? s.published}T00:00:00Z`),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
