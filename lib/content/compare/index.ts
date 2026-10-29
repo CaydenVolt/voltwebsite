@@ -6,6 +6,9 @@ import { SERVICETITAN } from "./competitors/servicetitan";
 import { ENERFLO } from "./competitors/enerflo";
 import { SCOOP } from "./competitors/scoop";
 import { AURORA_SOLAR } from "./competitors/aurora-solar";
+import { PODIUM } from "./competitors/podium";
+import { BIRDEYE } from "./competitors/birdeye";
+import { SCORPION } from "./competitors/scorpion";
 
 export * from "./types";
 
@@ -25,6 +28,9 @@ const ALL: readonly Comparison[] = [
   ENERFLO,
   SCOOP,
   AURORA_SOLAR,
+  PODIUM,
+  BIRDEYE,
+  SCORPION,
 ];
 
 /** Newest first, with slug as tiebreaker for a stable sort. */
