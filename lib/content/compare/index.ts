@@ -1,0 +1,44 @@
+import type { Comparison, CompetitorCategory } from "./types";
+import { HUBSPOT } from "./competitors/hubspot";
+
+export * from "./types";
+
+/**
+ * Registry of all competitor comparison pages.
+ *
+ * Order here does not drive URL order (slug does), but it drives the default
+ * order on the /compare index when no sort is applied. Newest comparisons
+ * sit at the top; older ones below. Add a new competitor by importing its
+ * data file and inserting it here.
+ */
+const ALL: readonly Comparison[] = [HUBSPOT];
+
+/** Newest first, with slug as tiebreaker for a stable sort. */
+const SORTED: readonly Comparison[] = [...ALL].sort(
+  (a, b) => b.published.localeCompare(a.published) || a.slug.localeCompare(b.slug),
+);
+
+const BY_SLUG = new Map(SORTED.map((c) => [c.slug, c]));
+
+export const getComparisons = (): readonly Comparison[] => SORTED;
+export const getComparison = (slug: string): Comparison | undefined => BY_SLUG.get(slug);
+export const comparisonHref = (slug: string) => `/compare/${slug}`;
+
+/** Grouping used by the /compare index to section the list by competitor category. */
+export function getComparisonsByCategory(): Record<CompetitorCategory, readonly Comparison[]> {
+  const groups: Partial<Record<CompetitorCategory, Comparison[]>> = {};
+  for (const c of SORTED) {
+    const cat = c.competitor.category;
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat]!.push(c);
+  }
+  return groups as Record<CompetitorCategory, readonly Comparison[]>;
+}
+
+/** Most recent revision across all comparisons, for the index's lastModified. */
+export function comparisonsLastModified(): string {
+  return SORTED.reduce((latest, c) => {
+    const d = c.updated ?? c.published;
+    return d > latest ? d : latest;
+  }, SORTED[0]?.published ?? "2026-01-01");
+}

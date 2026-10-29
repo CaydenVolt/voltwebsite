@@ -12,6 +12,11 @@ import {
   postHref,
   totalPages,
 } from "@/lib/content/blog";
+import {
+  comparisonHref,
+  comparisonsLastModified,
+  getComparisons,
+} from "@/lib/content/compare";
 
 /**
  * Every URL worth indexing, and only those.
@@ -88,6 +93,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       // The seven cluster hubs are the pages built to rank hardest.
       priority: p.pillar ? 0.8 : 0.6,
+    })),
+
+    /* Competitor comparison pages. Commercial intent, so priority sits above
+       the blog spokes. The index at /compare is listed once; each individual
+       comparison is listed with its own revision date so a crawler is told
+       which pages genuinely changed. */
+    {
+      url: `${base}/compare`,
+      lastModified: new Date(`${comparisonsLastModified()}T00:00:00Z`),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...getComparisons().map((c) => ({
+      url: `${base}${comparisonHref(c.slug)}`,
+      lastModified: new Date(`${c.updated ?? c.published}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
   ];
 }
