@@ -9,6 +9,7 @@ import { absolute, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { bookingHref } from "@/lib/site";
 import { stateHref, type State } from "@/lib/content/states";
+import { cityHref, getCitiesByState } from "@/lib/content/cities";
 
 /**
  * The shared wrapper every /solar/<state> page renders. Structured as:
@@ -25,6 +26,7 @@ import { stateHref, type State } from "@/lib/content/states";
  */
 export function StatePage({ state }: { state: State }) {
   const path = stateHref(state.slug);
+  const cities = getCitiesByState(state.slug);
 
   const fmtInt = (n: number) => new Intl.NumberFormat("en-US").format(Math.round(n));
   const fmtMoney = (n: number) =>
@@ -167,6 +169,32 @@ export function StatePage({ state }: { state: State }) {
           {state.installerLandscape}
         </Reveal>
       </Section>
+
+      {/* Cities covered within this state */}
+      {cities.length > 0 ? (
+        <Section rule="top" aria-labelledby="cities-h">
+          <SectionLabel rule>Cities we cover</SectionLabel>
+          <h2 id="cities-h" className="mt-6 text-h2">
+            Solar in {state.name} metros
+          </h2>
+          <ul className="mt-8 grid gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+            {cities.map((c, i) => (
+              <Reveal key={c.slug} as="li" index={i}>
+                <Link
+                  href={cityHref(c.stateSlug, c.slug)}
+                  data-cursor="grow"
+                  className="group flex items-center justify-between rounded-control border border-line bg-surface px-5 py-4 transition-colors duration-100 hover:border-fg"
+                >
+                  <span className="text-h3 text-fg">Solar in {c.name}</span>
+                  <svg aria-hidden width="1em" height="1em" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" className="text-accent">
+                    <path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" />
+                  </svg>
+                </Link>
+              </Reveal>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
 
       {/* FAQ */}
       <Section rule="top" aria-labelledby="faq-h">
