@@ -9,6 +9,11 @@ import { AURORA_SOLAR } from "./competitors/aurora-solar";
 import { PODIUM } from "./competitors/podium";
 import { BIRDEYE } from "./competitors/birdeye";
 import { SCORPION } from "./competitors/scorpion";
+import { FIELDPULSE } from "./competitors/fieldpulse";
+import { SALESFORCE } from "./competitors/salesforce";
+import { ZOHO_CRM } from "./competitors/zoho-crm";
+import { PIPEDRIVE } from "./competitors/pipedrive";
+import { SOLO } from "./competitors/solo";
 
 export * from "./types";
 
@@ -31,6 +36,11 @@ const ALL: readonly Comparison[] = [
   PODIUM,
   BIRDEYE,
   SCORPION,
+  FIELDPULSE,
+  SALESFORCE,
+  ZOHO_CRM,
+  PIPEDRIVE,
+  SOLO,
 ];
 
 /** Newest first, with slug as tiebreaker for a stable sort. */
