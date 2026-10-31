@@ -7,6 +7,11 @@ import { REVIEW_IMPACT } from "./calculators/review-impact";
 import { SOLAR_ROI } from "./calculators/solar-roi";
 import { BATTERY_PAYBACK } from "./calculators/battery-payback";
 import { SYSTEM_SIZE } from "./calculators/system-size";
+import { MISSED_CALL_COST } from "./calculators/missed-call-cost";
+import { FOLLOW_UP_ROI } from "./calculators/follow-up-roi";
+import { FUNNEL_VISUALIZER } from "./calculators/funnel-visualizer";
+import { BATTERY_VS_GENERATOR } from "./calculators/battery-vs-generator";
+import { SALES_COMMISSION } from "./calculators/sales-commission";
 
 export * from "./types";
 
@@ -27,6 +32,11 @@ const ALL: readonly Tool[] = [
   SOLAR_ROI,
   BATTERY_PAYBACK,
   SYSTEM_SIZE,
+  MISSED_CALL_COST,
+  FOLLOW_UP_ROI,
+  FUNNEL_VISUALIZER,
+  BATTERY_VS_GENERATOR,
+  SALES_COMMISSION,
 ];
 
 const SORTED: readonly Tool[] = [...ALL].sort(
