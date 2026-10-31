@@ -14,6 +14,11 @@ import { SALESFORCE } from "./competitors/salesforce";
 import { ZOHO_CRM } from "./competitors/zoho-crm";
 import { PIPEDRIVE } from "./competitors/pipedrive";
 import { SOLO } from "./competitors/solo";
+import { OPENSOLAR } from "./competitors/opensolar";
+import { SUNBASE } from "./competitors/sunbase";
+import { ACCULYNX } from "./competitors/acculynx";
+import { ACTIVECAMPAIGN } from "./competitors/activecampaign";
+import { COMPANYCAM } from "./competitors/companycam";
 
 export * from "./types";
 
@@ -41,6 +46,11 @@ const ALL: readonly Comparison[] = [
   ZOHO_CRM,
   PIPEDRIVE,
   SOLO,
+  OPENSOLAR,
+  SUNBASE,
+  ACCULYNX,
+  ACTIVECAMPAIGN,
+  COMPANYCAM,
 ];
 
 /** Newest first, with slug as tiebreaker for a stable sort. */
