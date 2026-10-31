@@ -21,6 +21,21 @@ import { MIAMI } from "./data/miami";
 import { ORLANDO } from "./data/orlando";
 import { TAMPA } from "./data/tampa";
 import { CHARLOTTE } from "./data/charlotte";
+import { SAN_FRANCISCO } from "./data/san-francisco";
+import { SACRAMENTO } from "./data/sacramento";
+import { SAN_ANTONIO } from "./data/san-antonio";
+import { FORT_WORTH } from "./data/fort-worth";
+import { JACKSONVILLE } from "./data/jacksonville";
+import { TUCSON } from "./data/tucson";
+import { MESA } from "./data/mesa";
+import { SCOTTSDALE } from "./data/scottsdale";
+import { RALEIGH } from "./data/raleigh";
+import { LAS_VEGAS } from "./data/las-vegas";
+import { HENDERSON } from "./data/henderson";
+import { NEW_YORK_CITY } from "./data/new-york-city";
+import { NEWARK } from "./data/newark";
+import { BOSTON } from "./data/boston";
+import { ATLANTA } from "./data/atlanta";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -33,6 +48,21 @@ const ALL: readonly City[] = [
   ORLANDO,
   TAMPA,
   CHARLOTTE,
+  SAN_FRANCISCO,
+  SACRAMENTO,
+  SAN_ANTONIO,
+  FORT_WORTH,
+  JACKSONVILLE,
+  TUCSON,
+  MESA,
+  SCOTTSDALE,
+  RALEIGH,
+  LAS_VEGAS,
+  HENDERSON,
+  NEW_YORK_CITY,
+  NEWARK,
+  BOSTON,
+  ATLANTA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
