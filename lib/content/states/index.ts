@@ -9,6 +9,21 @@ import { NEW_YORK } from "./data/new-york";
 import { NEW_JERSEY } from "./data/new-jersey";
 import { MASSACHUSETTS } from "./data/massachusetts";
 import { GEORGIA } from "./data/georgia";
+import { VIRGINIA } from "./data/virginia";
+import { MICHIGAN } from "./data/michigan";
+import { MINNESOTA } from "./data/minnesota";
+import { SOUTH_CAROLINA } from "./data/south-carolina";
+import { INDIANA } from "./data/indiana";
+import { PENNSYLVANIA } from "./data/pennsylvania";
+import { COLORADO } from "./data/colorado";
+import { ILLINOIS } from "./data/illinois";
+import { OREGON } from "./data/oregon";
+import { OHIO } from "./data/ohio";
+import { MARYLAND } from "./data/maryland";
+import { NEW_MEXICO } from "./data/new-mexico";
+import { LOUISIANA } from "./data/louisiana";
+import { WASHINGTON } from "./data/washington";
+import { UTAH } from "./data/utah";
 
 export * from "./types";
 
@@ -30,6 +45,21 @@ const ALL: readonly State[] = [
   NEW_JERSEY,
   MASSACHUSETTS,
   GEORGIA,
+  VIRGINIA,
+  MICHIGAN,
+  MINNESOTA,
+  SOUTH_CAROLINA,
+  INDIANA,
+  PENNSYLVANIA,
+  COLORADO,
+  ILLINOIS,
+  OREGON,
+  OHIO,
+  MARYLAND,
+  NEW_MEXICO,
+  LOUISIANA,
+  WASHINGTON,
+  UTAH,
 ];
 
 const SORTED: readonly State[] = [...ALL].sort(
