@@ -61,6 +61,16 @@ import { ALBUQUERQUE } from "./data/albuquerque";
 import { NEW_ORLEANS } from "./data/new-orleans";
 import { SEATTLE } from "./data/seattle";
 import { SALT_LAKE_CITY } from "./data/salt-lake-city";
+import { OAKLAND } from "./data/oakland";
+import { FRESNO } from "./data/fresno";
+import { RIVERSIDE } from "./data/riverside";
+import { FORT_LAUDERDALE } from "./data/fort-lauderdale";
+import { ST_PETERSBURG } from "./data/st-petersburg";
+import { CHANDLER } from "./data/chandler";
+import { ARLINGTON } from "./data/arlington";
+import { PITTSBURGH } from "./data/pittsburgh";
+import { CINCINNATI } from "./data/cincinnati";
+import { AUGUSTA } from "./data/augusta";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -113,6 +123,16 @@ const ALL: readonly City[] = [
   NEW_ORLEANS,
   SEATTLE,
   SALT_LAKE_CITY,
+  OAKLAND,
+  FRESNO,
+  RIVERSIDE,
+  FORT_LAUDERDALE,
+  ST_PETERSBURG,
+  CHANDLER,
+  ARLINGTON,
+  PITTSBURGH,
+  CINCINNATI,
+  AUGUSTA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
