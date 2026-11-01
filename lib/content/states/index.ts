@@ -34,6 +34,16 @@ import { MAINE } from "./data/maine";
 import { ALABAMA } from "./data/alabama";
 import { MISSOURI } from "./data/missouri";
 import { NEW_HAMPSHIRE } from "./data/new-hampshire";
+import { RHODE_ISLAND } from "./data/rhode-island";
+import { MISSISSIPPI } from "./data/mississippi";
+import { IOWA } from "./data/iowa";
+import { OKLAHOMA } from "./data/oklahoma";
+import { ARKANSAS } from "./data/arkansas";
+import { KENTUCKY } from "./data/kentucky";
+import { KANSAS } from "./data/kansas";
+import { WEST_VIRGINIA } from "./data/west-virginia";
+import { MONTANA } from "./data/montana";
+import { NEBRASKA } from "./data/nebraska";
 
 export * from "./types";
 
@@ -80,6 +90,16 @@ const ALL: readonly State[] = [
   ALABAMA,
   MISSOURI,
   NEW_HAMPSHIRE,
+  RHODE_ISLAND,
+  MISSISSIPPI,
+  IOWA,
+  OKLAHOMA,
+  ARKANSAS,
+  KENTUCKY,
+  KANSAS,
+  WEST_VIRGINIA,
+  MONTANA,
+  NEBRASKA,
 ];
 
 const SORTED: readonly State[] = [...ALL].sort(
