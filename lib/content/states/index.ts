@@ -44,6 +44,11 @@ import { KANSAS } from "./data/kansas";
 import { WEST_VIRGINIA } from "./data/west-virginia";
 import { MONTANA } from "./data/montana";
 import { NEBRASKA } from "./data/nebraska";
+import { TENNESSEE } from "./data/tennessee";
+import { WYOMING } from "./data/wyoming";
+import { SOUTH_DAKOTA } from "./data/south-dakota";
+import { NORTH_DAKOTA } from "./data/north-dakota";
+import { ALASKA } from "./data/alaska";
 
 export * from "./types";
 
@@ -100,6 +105,11 @@ const ALL: readonly State[] = [
   WEST_VIRGINIA,
   MONTANA,
   NEBRASKA,
+  TENNESSEE,
+  WYOMING,
+  SOUTH_DAKOTA,
+  NORTH_DAKOTA,
+  ALASKA,
 ];
 
 const SORTED: readonly State[] = [...ALL].sort(

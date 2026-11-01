@@ -10,7 +10,7 @@ import type { Comparison } from "../types";
  * conversion website, no on-site SEO work. Most solar operators who buy
  * Jobber also end up buying three or four other tools around it.
  *
- * Pricing moves — the paragraph says "at list" and asks the reader to
+ * Pricing moves, so the paragraph says "at list" and asks the reader to
  * reconfirm on jobber.com before deciding.
  */
 export const JOBBER: Comparison = {

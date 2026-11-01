@@ -11,9 +11,9 @@ import { getStates, stateHref } from "@/lib/content/states";
 import { pad } from "@/lib/format";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Solar by US state: market guides for the top 45",
+  title: "Solar by US state: market guides for all 50 states",
   description:
-    "Honest state-by-state guides to the US solar market: California, Texas, Florida, Arizona and the rest of the top 45 by installed capacity. Incentives, net metering, utilities, running a solar company.",
+    "Honest state-by-state guides to the US solar market, covering all 50 states by installed capacity. Incentives, net metering, utilities, running a solar company.",
   path: "/solar",
 });
 
@@ -50,8 +50,8 @@ export default function SolarByStateIndex() {
             index={1}
             className="mt-6 max-w-measure text-lead text-muted lg:col-span-4 lg:col-start-9 lg:mt-0"
           >
-            Market size, incentives, net metering and utilities for the top
-            forty-five US states by installed solar capacity. Written for both
+            Market size, incentives, net metering and utilities for all
+            fifty US states by installed solar capacity. Written for both
             operators running a solar business there and homeowners weighing
             the economics.
           </Reveal>

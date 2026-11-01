@@ -91,6 +91,11 @@ import { WICHITA } from "./data/wichita";
 import { CHARLESTON_WV } from "./data/charleston-wv";
 import { BILLINGS } from "./data/billings";
 import { OMAHA } from "./data/omaha";
+import { NASHVILLE } from "./data/nashville";
+import { CHEYENNE } from "./data/cheyenne";
+import { SIOUX_FALLS } from "./data/sioux-falls";
+import { FARGO } from "./data/fargo";
+import { ANCHORAGE } from "./data/anchorage";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -173,6 +178,11 @@ const ALL: readonly City[] = [
   CHARLESTON_WV,
   BILLINGS,
   OMAHA,
+  NASHVILLE,
+  CHEYENNE,
+  SIOUX_FALLS,
+  FARGO,
+  ANCHORAGE,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
