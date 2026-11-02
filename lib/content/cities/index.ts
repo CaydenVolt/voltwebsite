@@ -171,6 +171,21 @@ import { COLORADO_SPRINGS } from "./data/colorado-springs";
 import { OWENSBORO } from "./data/owensboro";
 import { MOBILE } from "./data/mobile";
 import { PENSACOLA } from "./data/pensacola";
+import { HILO } from "./data/hilo";
+import { FLAGSTAFF } from "./data/flagstaff";
+import { ASHEVILLE } from "./data/asheville";
+import { LAS_CRUCES } from "./data/las-cruces";
+import { DULUTH } from "./data/duluth";
+import { BOULDER } from "./data/boulder";
+import { TOPEKA } from "./data/topeka";
+import { LINCOLN } from "./data/lincoln";
+import { DAYTONA_BEACH } from "./data/daytona-beach";
+import { HARRISBURG } from "./data/harrisburg";
+import { MONTGOMERY } from "./data/montgomery";
+import { YORK } from "./data/york";
+import { NEWPORT_NEWS } from "./data/newport-news";
+import { PINE_BLUFF } from "./data/pine-bluff";
+import { SARASOTA } from "./data/sarasota";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -333,6 +348,21 @@ const ALL: readonly City[] = [
   OWENSBORO,
   MOBILE,
   PENSACOLA,
+  HILO,
+  FLAGSTAFF,
+  ASHEVILLE,
+  LAS_CRUCES,
+  DULUTH,
+  BOULDER,
+  TOPEKA,
+  LINCOLN,
+  DAYTONA_BEACH,
+  HARRISBURG,
+  MONTGOMERY,
+  YORK,
+  NEWPORT_NEWS,
+  PINE_BLUFF,
+  SARASOTA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
