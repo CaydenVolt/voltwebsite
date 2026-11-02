@@ -19,6 +19,11 @@ import { SUNBASE } from "./competitors/sunbase";
 import { ACCULYNX } from "./competitors/acculynx";
 import { ACTIVECAMPAIGN } from "./competitors/activecampaign";
 import { COMPANYCAM } from "./competitors/companycam";
+import { KEAP } from "./competitors/keap";
+import { NICEJOB } from "./competitors/nicejob";
+import { SALESRABBIT } from "./competitors/salesrabbit";
+import { MAILCHIMP } from "./competitors/mailchimp";
+import { MONDAY } from "./competitors/monday";
 
 export * from "./types";
 
@@ -51,6 +56,11 @@ const ALL: readonly Comparison[] = [
   ACCULYNX,
   ACTIVECAMPAIGN,
   COMPANYCAM,
+  KEAP,
+  NICEJOB,
+  SALESRABBIT,
+  MAILCHIMP,
+  MONDAY,
 ];
 
 /** Newest first, with slug as tiebreaker for a stable sort. */
