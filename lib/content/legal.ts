@@ -79,13 +79,17 @@ export const LEGAL = {
    * Governing law, venue and the seat of arbitration. The owner has chosen
    * the United States; the state decides the rest of this document, including
    * whether the arbitration and class-action waiver are enforceable as written
-   * and which consumer statutes override the disclaimers.
+   * and which consumer statutes override the disclaimers. Set to Florida on
+   * 2026-11-02 alongside the LLC transition: the entity is a Florida LLC with
+   * a Brandon FL support address (Hillsborough County), so Florida law is the
+   * natural choice and is substantially more defensible than the earlier
+   * Delaware pick for a FL-registered entity with no DE presence.
    */
   country: "United States",
-  state: "Delaware",
-  county: "New Castle County",
+  state: "Florida",
+  county: "Hillsborough County",
   /** Where an arbitration hearing would be seated. */
-  arbitrationCity: "Wilmington",
+  arbitrationCity: "Tampa",
 
   /** How often each document is reviewed, in months. Drives Next Review Due. */
   reviewMonths: 6,
