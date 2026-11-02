@@ -111,6 +111,21 @@ import { KNOXVILLE } from "./data/knoxville";
 import { CHATTANOOGA } from "./data/chattanooga";
 import { VIRGINIA_BEACH } from "./data/virginia-beach";
 import { BATON_ROUGE } from "./data/baton-rouge";
+import { ANAHEIM } from "./data/anaheim";
+import { LONG_BEACH } from "./data/long-beach";
+import { BAKERSFIELD } from "./data/bakersfield";
+import { PLANO } from "./data/plano";
+import { FRISCO } from "./data/frisco";
+import { CORPUS_CHRISTI } from "./data/corpus-christi";
+import { LUBBOCK } from "./data/lubbock";
+import { HIALEAH } from "./data/hialeah";
+import { CAPE_CORAL } from "./data/cape-coral";
+import { HOLLYWOOD_FL } from "./data/hollywood-fl";
+import { SYRACUSE } from "./data/syracuse";
+import { PATERSON } from "./data/paterson";
+import { CARY } from "./data/cary";
+import { WILMINGTON_NC } from "./data/wilmington-nc";
+import { YONKERS } from "./data/yonkers";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -213,6 +228,21 @@ const ALL: readonly City[] = [
   CHATTANOOGA,
   VIRGINIA_BEACH,
   BATON_ROUGE,
+  ANAHEIM,
+  LONG_BEACH,
+  BAKERSFIELD,
+  PLANO,
+  FRISCO,
+  CORPUS_CHRISTI,
+  LUBBOCK,
+  HIALEAH,
+  CAPE_CORAL,
+  HOLLYWOOD_FL,
+  SYRACUSE,
+  PATERSON,
+  CARY,
+  WILMINGTON_NC,
+  YONKERS,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
