@@ -136,7 +136,7 @@ export default function PricingPage() {
             data-surface="ink"
             className="relative flex flex-col border-2 border-accent bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
           >
-            <span className="absolute -top-3 right-6 inline-flex items-center rounded-full bg-accent px-3 py-1 label text-ink sm:right-10">
+            <span className="absolute -top-4 right-6 inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-body-sm font-semibold uppercase tracking-wider text-ink sm:right-10">
               Best offer
             </span>
             <p className="label text-accent">Core</p>
