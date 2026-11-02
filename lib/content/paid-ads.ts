@@ -58,7 +58,7 @@ export const PAID_ADS: readonly PaidAdChannel[] = [
     // Pre-selected in the carousel. "Start here" keeps the house voice: short,
     // no hype, no "best"/"most popular" invented claim.
     tag: "Start here",
-    tagNote: "Pay-per-lead, so the lowest-risk way to try paid first.",
+    tagNote: "The only paid channel priced per lead, not per click.",
     fee: 1500,
     headline: "Get calls from local customers looking for your services.",
     description:
