@@ -2,6 +2,7 @@ import { SITE, realSocial } from "@/lib/site";
 import { getPublicProducts, type ProductPage } from "@/lib/content/products";
 import { PLAN, formatPrice } from "@/lib/content/pricing";
 import { AUTHOR, authorHref, getCategory, plain, postHref, type Post } from "@/lib/content/blog";
+import { LEGAL } from "@/lib/content/legal";
 
 /**
  * Structured data, built from the same content the pages render so the two can
@@ -54,6 +55,9 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": ORG_ID,
     name: SITE.name,
+    // Legal registered entity shown separately from the public brand so a
+    // search engine or AI reader can distinguish them.
+    ...(LEGAL.incorporated ? { legalName: LEGAL.entity } : {}),
     url: SITE.url,
     description: SITE.description,
     slogan: SITE.tagline,
@@ -61,11 +65,27 @@ export function organizationSchema() {
       "@type": "ImageObject",
       url: absolute("/icon.png"),
     },
+    // Postal address and telephone are published once the LLC has a real
+    // support address and support number set in `lib/content/legal.ts`.
+    ...(LEGAL.address
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "1111 Oakfield Drive",
+            addressLocality: "Brandon",
+            addressRegion: "FL",
+            postalCode: "33511",
+            addressCountry: "US",
+          },
+        }
+      : {}),
+    ...(LEGAL.phone ? { telephone: LEGAL.phone } : {}),
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: "support@mail.voltagencyio.com",
+        ...(LEGAL.phone ? { telephone: LEGAL.phone } : {}),
         areaServed: "US",
         availableLanguage: "English",
       },

@@ -18,9 +18,13 @@ import { SITE } from "@/lib/site";
  */
 
 export const PRIVACY_DATES: LegalDates = {
-  effective: "2026-09-23",
-  lastUpdated: "2026-09-23",
-  lastReviewed: "2026-09-23",
+  // Bumped 2026-11-02 when the registered entity became MGJ Digital, LLC
+  // (trading as Volt Agency) and the postal address and phone were added to
+  // the contact section. Material change to who the counterparty is, so
+  // `effective` moves with the update.
+  effective: "2026-11-02",
+  lastUpdated: "2026-11-02",
+  lastReviewed: "2026-11-02",
 };
 
 const site = SITE.url.replace(/^https?:\/\//, "");

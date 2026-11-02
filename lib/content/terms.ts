@@ -23,12 +23,14 @@ import { SITE } from "@/lib/site";
 
 /** The terms are revised on their own schedule. See LegalDates. */
 export const TERMS_DATES: LegalDates = {
-  // Bumped 2026-09-29 alongside the switch from a flat no-refund policy to a
-  // 30-day money-back guarantee in section [[refunds]]. A material change to a
-  // paying customer's rights, so `effective` moves with the update.
-  effective: "2026-09-29",
-  lastUpdated: "2026-09-30",
-  lastReviewed: "2026-09-29",
+  // Bumped 2026-11-02 when the registered entity became MGJ Digital, LLC
+  // (trading as Volt Agency) and the postal address and phone were added
+  // to the contact and notices sections. The counterparty on every clause
+  // changes from a sole proprietor to the LLC, so `effective` moves with
+  // the update.
+  effective: "2026-11-02",
+  lastUpdated: "2026-11-02",
+  lastReviewed: "2026-11-02",
 };
 
 const price = formatPrice();

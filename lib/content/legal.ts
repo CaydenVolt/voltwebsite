@@ -27,14 +27,14 @@ export const LEGAL = {
   /**
    * The entity that contracts with clients.
    *
-   * No suffix on purpose. "Volt Agency LLC" would assert a registration that
-   * does not exist yet, and asserting one you do not hold is worse than having
-   * none. Add the suffix on the day the filing is accepted, and set
-   * `incorporated` below at the same time.
+   * The registered company name as it appears on the LLC filing. The public
+   * brand is `tradingAs` below; this is the legal counterparty on every
+   * document the DBA signs. A future rebrand of the LLC changes this value;
+   * the public brand stays where it is.
    */
-  entity: "Volt Agency",
-  /** Any trading name, if the entity contracts under a different one. */
-  tradingAs: "Volt",
+  entity: "MGJ Digital, LLC",
+  /** The public-facing brand the entity contracts under. */
+  tradingAs: "Volt Agency",
   /**
    * The person who owns the business.
    *
@@ -61,7 +61,7 @@ export const LEGAL = {
    * once it is true. Flipping this one value rewrites every document. It does
    * not reduce the personal exposure, which only incorporating does.
    */
-  incorporated: false,
+  incorporated: true,
   /**
    * Optional. The reference document in this industry publishes no postal
    * address at all and takes notices by email only, so this does not block
@@ -69,11 +69,11 @@ export const LEGAL = {
    * leave it empty and both omit it. Check with the attorney whether your
    * state requires one on commercial communications.
    */
-  address: "",
+  address: "1111 Oakfield Drive, Brandon, FL 33511, United States",
   /** The address legal notices and arbitration opt-outs are sent to. */
   email: "support@mail.voltagencyio.com",
   /** Optional. Leave empty and the contact section omits the line. */
-  phone: "",
+  phone: "+1 (656) 218-8098",
 
   /**
    * Governing law, venue and the seat of arbitration. The owner has chosen
