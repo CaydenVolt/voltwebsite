@@ -51,6 +51,36 @@ const RESOURCES: ResourceCard[] = [
       "Permit office turnaround and SolarAPP+ acceptance for 140+ US cities. The real reason project timelines vary across the country.",
   },
   {
+    slug: "state-electric-rates",
+    title: "State electric rates comparison",
+    description:
+      "Average residential electric rate for every US state, sorted. The single biggest driver of solar payback math alongside sun hours.",
+  },
+  {
+    slug: "municipal-utility-cities",
+    title: "Municipal utility cities for solar",
+    description:
+      "US cities served by a municipal utility rather than the state's dominant investor-owned utility. The economics work very differently.",
+  },
+  {
+    slug: "cca-cities",
+    title: "Community Choice Aggregator cities",
+    description:
+      "US cities with a CCA bundling generation alongside the utility's delivery. Mostly California; the generation rate differs from the utility default.",
+  },
+  {
+    slug: "hurricane-and-hvhz-permits",
+    title: "Hurricane and HVHZ solar permits",
+    description:
+      "US coastal cities where hurricane wind-load engineering adds cost and timeline to residential solar install. HVHZ specifics for Miami-Dade and Broward.",
+  },
+  {
+    slug: "winter-snow-derating-cities",
+    title: "Winter snow derating by city",
+    description:
+      "US cities where winter snow materially reduces annual solar yield. Honest annual yield modelling matters most in these metros.",
+  },
+  {
     slug: "solar-utility-glossary",
     title: "Solar utility glossary",
     description:
