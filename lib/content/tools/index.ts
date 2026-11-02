@@ -12,6 +12,11 @@ import { FOLLOW_UP_ROI } from "./calculators/follow-up-roi";
 import { FUNNEL_VISUALIZER } from "./calculators/funnel-visualizer";
 import { BATTERY_VS_GENERATOR } from "./calculators/battery-vs-generator";
 import { SALES_COMMISSION } from "./calculators/sales-commission";
+import { SHADE_IMPACT } from "./calculators/shade-impact";
+import { PRODUCTION_PROJECTOR } from "./calculators/production-projector";
+import { LOAN_VS_CASH } from "./calculators/loan-vs-cash";
+import { LEAD_TO_INSTALL } from "./calculators/lead-to-install";
+import { REVIEW_GOAL } from "./calculators/review-goal";
 
 export * from "./types";
 
@@ -37,6 +42,11 @@ const ALL: readonly Tool[] = [
   FUNNEL_VISUALIZER,
   BATTERY_VS_GENERATOR,
   SALES_COMMISSION,
+  SHADE_IMPACT,
+  PRODUCTION_PROJECTOR,
+  LOAN_VS_CASH,
+  LEAD_TO_INSTALL,
+  REVIEW_GOAL,
 ];
 
 const SORTED: readonly Tool[] = [...ALL].sort(
