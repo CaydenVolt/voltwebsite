@@ -141,6 +141,16 @@ import { BELLEVUE } from "./data/bellevue";
 import { SPRINGFIELD_MA } from "./data/springfield-ma";
 import { ERIE } from "./data/erie";
 import { PEORIA } from "./data/peoria";
+import { MODESTO } from "./data/modesto";
+import { CHULA_VISTA } from "./data/chula-vista";
+import { PASADENA_CA } from "./data/pasadena-ca";
+import { SUGAR_LAND } from "./data/sugar-land";
+import { THE_WOODLANDS } from "./data/the-woodlands";
+import { GARLAND } from "./data/garland";
+import { NAPERVILLE } from "./data/naperville";
+import { LAKELAND } from "./data/lakeland";
+import { MARIETTA } from "./data/marietta";
+import { ALEXANDRIA } from "./data/alexandria";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -273,6 +283,16 @@ const ALL: readonly City[] = [
   SPRINGFIELD_MA,
   ERIE,
   PEORIA,
+  MODESTO,
+  CHULA_VISTA,
+  PASADENA_CA,
+  SUGAR_LAND,
+  THE_WOODLANDS,
+  GARLAND,
+  NAPERVILLE,
+  LAKELAND,
+  MARIETTA,
+  ALEXANDRIA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
