@@ -46,8 +46,7 @@ export function FollowUpTimeline() {
     <Plate>
       <FragmentHeader label={`${SITE.system} · Lead 4811`} meta="Tuesday" />
       <Row lead="0:00">New lead from the website quote form.</Row>
-      <Row lead="0:41">Call placed to the homeowner. No answer.</Row>
-      <Row lead="0:52">Text sent: &ldquo;Hi Dana, this is Sam at Volt Solar. Saw your quote request, when is a good time to talk?&rdquo;</Row>
+      <Row lead="0:41">Text sent: &ldquo;Hi Dana, this is Sam at Volt Solar. Saw your quote request, when is a good time to talk?&rdquo;</Row>
       <Row lead="Day 2">Follow-up text. Homeowner replies: &ldquo;Thursday after 5 works.&rdquo;</Row>
       <Row lead="Day 4" strong last>
         Appointment booked. Thursday 5:30 PM, on your calendar.

@@ -313,23 +313,23 @@ export const PRODUCTS: readonly Product[] = [
     related: ["missed-call-text-back", "all-in-one-inbox"],
     headline: "Every new lead gets chased until they answer.",
     intro:
-      "A scheduled sequence of calls, texts and emails that keeps chasing every new lead for up to six months, whether or not they called. Twelve touches in the first thirty days, then a monthly check-in through month six. Rule-based: the same messages in the same order every time, so you always know exactly what was sent.",
+      "A scheduled sequence of texts and emails that keeps chasing every new lead for up to six months, whether or not they called. Twelve touches in the first thirty days, then a monthly check-in through month six. Rule-based: the same messages in the same order every time, so you always know exactly what was sent.",
     benefits: [
-      "Call and text within 60 seconds of the lead arriving",
+      "Text within 60 seconds of the lead arriving",
       "Twelve touches in the first thirty days, then monthly through month six",
       "Stops the moment they reply or book",
       "Every message visible in the inbox",
     ],
     features: [
       {
-        title: "First contact inside a minute",
+        title: "First text inside a minute",
         body:
-          "The lead gets a call and a text within sixty seconds of the form landing, whatever time of day it is. Speed decides more of the outcome than the script does, and no human process reliably hits one minute at nine on a Sunday evening.",
+          "The lead gets a text within sixty seconds of the form landing, whatever time of day it is. The dialling is left to your team; the automated piece is a written touch, because that is the one that reliably reaches a homeowner at nine on a Sunday evening and does not read as a robot pretending to be a person.",
       },
       {
         title: "Six months of follow-up per lead",
         body:
-          "Twelve touches across call, text and email in the first thirty days, then a monthly check-in every month after that, right through month six. Most companies stop at two attempts, and a real share of solar deals close well past that point. Nothing in the schedule needs your attention to keep running.",
+          "Twelve touches across text and email in the first thirty days, then a monthly check-in every month after that, right through month six. Most companies stop at two attempts, and a real share of solar deals close well past that point. Nothing in the schedule needs your attention to keep running.",
       },
       {
         title: "It stops the second they answer",
@@ -339,7 +339,7 @@ export const PRODUCTS: readonly Product[] = [
       {
         title: "Nothing happens invisibly",
         body:
-          "Every automated call, text and email appears in the same thread as your own messages. You can read exactly what went out in your name, and step in at any point without untangling anything.",
+          "Every automated text and email appears in the same thread as your own messages. You can read exactly what went out in your name, and step in at any point without untangling anything.",
       },
       {
         title: "Add AI replies if you want them",
@@ -353,7 +353,7 @@ export const PRODUCTS: readonly Product[] = [
       { title: "It runs for six months per lead", body: "From the first day, every new lead gets the full schedule: twelve touches in month one, then monthly through month six, or until they answer." },
     ],
     stats: [
-      { value: "60 sec", label: "To the first call and text" },
+      { value: "60 sec", label: "To the first text" },
       { value: "12", label: "Touches in the first month" },
       { value: "6 mo", label: "Of chasing per lead" },
     ],
