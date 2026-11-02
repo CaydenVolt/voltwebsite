@@ -203,12 +203,12 @@ export default function PricingPage() {
             </p>
 
             <p className="label mt-9 text-accent">Everything in Core, plus</p>
-            <ul className="mt-3 border-t border-accent/60">
+            <ul className="mt-3 border-t border-line">
               {advancedExtras.map((a, i) => (
-                <li key={a.slug} className="border-b border-accent/60">
+                <li key={a.slug} className="border-b border-line">
                   <div className="flex items-baseline gap-4 py-4">
                     <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
-                    <span className="font-display text-item text-accent">{a.name}</span>
+                    <span className="font-display text-item">{a.name}</span>
                   </div>
                 </li>
               ))}
