@@ -186,6 +186,16 @@ import { YORK } from "./data/york";
 import { NEWPORT_NEWS } from "./data/newport-news";
 import { PINE_BLUFF } from "./data/pine-bluff";
 import { SARASOTA } from "./data/sarasota";
+import { READING } from "./data/reading";
+import { LANCASTER } from "./data/lancaster";
+import { FORT_WAYNE } from "./data/fort-wayne";
+import { SOUTH_BEND } from "./data/south-bend";
+import { EVANSVILLE } from "./data/evansville";
+import { COLUMBIA_SC } from "./data/columbia-sc";
+import { SPARTANBURG } from "./data/spartanburg";
+import { HUNTSVILLE } from "./data/huntsville";
+import { DECATUR_AL } from "./data/decatur-al";
+import { ALBANY_GA } from "./data/albany-ga";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -363,6 +373,16 @@ const ALL: readonly City[] = [
   NEWPORT_NEWS,
   PINE_BLUFF,
   SARASOTA,
+  READING,
+  LANCASTER,
+  FORT_WAYNE,
+  SOUTH_BEND,
+  EVANSVILLE,
+  COLUMBIA_SC,
+  SPARTANBURG,
+  HUNTSVILLE,
+  DECATUR_AL,
+  ALBANY_GA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
