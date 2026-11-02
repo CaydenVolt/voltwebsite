@@ -161,6 +161,16 @@ import { MESQUITE } from "./data/mesquite";
 import { CLOVIS } from "./data/clovis";
 import { ONTARIO } from "./data/ontario";
 import { FONTANA } from "./data/fontana";
+import { ALLENTOWN } from "./data/allentown";
+import { SCRANTON } from "./data/scranton";
+import { NEW_HAVEN } from "./data/new-haven";
+import { AKRON } from "./data/akron";
+import { SHREVEPORT } from "./data/shreveport";
+import { FORT_COLLINS } from "./data/fort-collins";
+import { COLORADO_SPRINGS } from "./data/colorado-springs";
+import { OWENSBORO } from "./data/owensboro";
+import { MOBILE } from "./data/mobile";
+import { PENSACOLA } from "./data/pensacola";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -313,6 +323,16 @@ const ALL: readonly City[] = [
   CLOVIS,
   ONTARIO,
   FONTANA,
+  ALLENTOWN,
+  SCRANTON,
+  NEW_HAVEN,
+  AKRON,
+  SHREVEPORT,
+  FORT_COLLINS,
+  COLORADO_SPRINGS,
+  OWENSBORO,
+  MOBILE,
+  PENSACOLA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
