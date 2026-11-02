@@ -17,11 +17,16 @@ export interface PaidAdChannel {
   short: string;
   /** Pre-select / recommend badge, if any. One channel only. */
   tag?: string;
-  /** The one-line reason for the tag, shown as a muted sub-label. */
+  /**
+   * The one-line reason for the tag. On the only card that carries one (LSA)
+   * it is the headline-replacement: the card drops its `headline` and lets
+   * this prominent accent line do that job instead.
+   */
   tagNote?: string;
   /** Flat monthly management fee, dollars. */
   fee: number;
-  headline: string;
+  /** The card's lead line. Omitted on a card whose `tagNote` takes its place. */
+  headline?: string;
   description: string;
   includes: readonly string[];
   pros: string;
@@ -58,9 +63,10 @@ export const PAID_ADS: readonly PaidAdChannel[] = [
     // Pre-selected in the carousel. "Start here" keeps the house voice: short,
     // no hype, no "best"/"most popular" invented claim.
     tag: "Start here",
-    tagNote: "The only paid channel priced per lead, not per click.",
+    // Takes the headline's job on this card: rendered as a prominent accent
+    // line, with `headline` deliberately omitted so the two do not stack.
+    tagNote: "Pay-per-lead, so the lowest-risk form of paid advertising.",
     fee: 1500,
-    headline: "Get calls from local customers looking for your services.",
     description:
       "Reach homeowners actively searching for help and pay for valid leads, not clicks.",
     includes: [

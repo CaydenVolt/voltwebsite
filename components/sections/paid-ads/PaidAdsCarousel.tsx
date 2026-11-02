@@ -207,7 +207,12 @@ function Card({ channel }: { channel: PaidAdChannel }) {
             {channel.tag}
           </span>
           {channel.tagNote && (
-            <p className="label mt-2 text-muted">{channel.tagNote}</p>
+            // Prominent accent-orange line: the LSA card drops its `headline`
+            // and lets this carry the lead-message role, so it needs the
+            // visual weight of a headline, not a sub-label.
+            <p className="mt-3 max-w-measure text-lead font-medium leading-snug text-accent">
+              {channel.tagNote}
+            </p>
           )}
         </div>
       )}
@@ -225,8 +230,14 @@ function Card({ channel }: { channel: PaidAdChannel }) {
         <span className="label pl-1 text-muted">/month + ad spend</span>
       </p>
 
-      <p className="mt-6 max-w-measure text-lead">{channel.headline}</p>
-      <p className="mt-3 max-w-measure text-body text-muted">{channel.description}</p>
+      {channel.headline && (
+        <p className="mt-6 max-w-measure text-lead">{channel.headline}</p>
+      )}
+      <p
+        className={`${channel.headline ? "mt-3" : "mt-6"} max-w-measure text-body text-muted`}
+      >
+        {channel.description}
+      </p>
 
       <div className="mt-8">
         <p className="label text-muted">Includes</p>
