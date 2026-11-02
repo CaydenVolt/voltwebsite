@@ -126,6 +126,21 @@ import { PATERSON } from "./data/paterson";
 import { CARY } from "./data/cary";
 import { WILMINGTON_NC } from "./data/wilmington-nc";
 import { YONKERS } from "./data/yonkers";
+import { DAYTON } from "./data/dayton";
+import { TOLEDO } from "./data/toledo";
+import { LEXINGTON } from "./data/lexington";
+import { ROUND_ROCK } from "./data/round-rock";
+import { ROCKFORD } from "./data/rockford";
+import { SPRINGFIELD_IL } from "./data/springfield-il";
+import { GRAND_RAPIDS } from "./data/grand-rapids";
+import { ROCHESTER_MN } from "./data/rochester-mn";
+import { ST_PAUL } from "./data/st-paul";
+import { EUGENE } from "./data/eugene";
+import { TACOMA } from "./data/tacoma";
+import { BELLEVUE } from "./data/bellevue";
+import { SPRINGFIELD_MA } from "./data/springfield-ma";
+import { ERIE } from "./data/erie";
+import { PEORIA } from "./data/peoria";
 
 const ALL: readonly City[] = [
   LOS_ANGELES,
@@ -243,6 +258,21 @@ const ALL: readonly City[] = [
   CARY,
   WILMINGTON_NC,
   YONKERS,
+  DAYTON,
+  TOLEDO,
+  LEXINGTON,
+  ROUND_ROCK,
+  ROCKFORD,
+  SPRINGFIELD_IL,
+  GRAND_RAPIDS,
+  ROCHESTER_MN,
+  ST_PAUL,
+  EUGENE,
+  TACOMA,
+  BELLEVUE,
+  SPRINGFIELD_MA,
+  ERIE,
+  PEORIA,
 ];
 
 const SORTED: readonly City[] = [...ALL].sort((a, b) =>
