@@ -128,11 +128,17 @@ export default function PricingPage() {
           The plans
         </SectionLabel>
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {/* Core: the main offer. Six public products on one flat fee. */}
+          {/* Core: the main offer. Six public products on one flat fee.
+              Highlighted as "Best offer" because this is the plan every
+              other surface of the site sends visitors to, and the price the
+              reference comparison on this page benchmarks against. */}
           <div
             data-surface="ink"
-            className="flex flex-col border border-line bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
+            className="relative flex flex-col border-2 border-accent bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
           >
+            <span className="absolute -top-3 right-6 inline-flex items-center rounded-full bg-accent px-3 py-1 label text-ink sm:right-10">
+              Best offer
+            </span>
             <p className="label text-accent">Core</p>
             <Price className="mt-6" />
             <p className="mt-5 text-body text-muted">
@@ -196,13 +202,13 @@ export default function PricingPage() {
               another vendor.
             </p>
 
-            <p className="label mt-9 text-muted">Everything in Core, plus</p>
-            <ul className="mt-3 border-t border-line">
+            <p className="label mt-9 text-accent">Everything in Core, plus</p>
+            <ul className="mt-3 border-t border-accent/60">
               {advancedExtras.map((a, i) => (
-                <li key={a.slug} className="border-b border-line">
+                <li key={a.slug} className="border-b border-accent/60">
                   <div className="flex items-baseline gap-4 py-4">
                     <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
-                    <span className="font-display text-item">{a.name}</span>
+                    <span className="font-display text-item text-accent">{a.name}</span>
                   </div>
                 </li>
               ))}
