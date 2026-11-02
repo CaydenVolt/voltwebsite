@@ -27,6 +27,36 @@ export const PLAN: Plan = {
   terms: ["No contracts", "Cancel anytime", "No setup fee"],
 };
 
+/**
+ * The Advanced plan. Rendered only on the pricing page as a second card
+ * next to the main $297 plan; the rest of the site keeps $297 as the one
+ * offer. Includes everything in `PLAN` plus three services that are
+ * otherwise sold as separate addons: Advanced SEO, Google My Business
+ * Optimization and Automatic Referrals.
+ *
+ * `extraSlugs` lists the three additional products so the pricing card
+ * resolves them against the products registry and nothing can drift if
+ * a slug is renamed.
+ */
+export interface AdvancedPlan extends Plan {
+  /** Addon-product slugs rolled into the Advanced plan. */
+  extraSlugs: string[];
+}
+
+export const ADVANCED_PLAN: AdvancedPlan = {
+  price: 597,
+  currency: "USD",
+  interval: "month",
+  setupFee: null,
+  includes: PLAN.includes,
+  extraSlugs: [
+    "advanced-seo",
+    "google-my-business-optimization",
+    "automated-referrals",
+  ],
+  terms: ["No contracts", "Cancel anytime", "No setup fee"],
+};
+
 /** "$297", no decimals, locale en-US. */
 export function formatPrice(plan: Plan = PLAN): string {
   return new Intl.NumberFormat("en-US", {
@@ -68,6 +98,10 @@ export const PRICING_FAQ = [
   {
     q: "What is actually included for the monthly fee?",
     a: "All six products: the website, missed-call text-back, automated lead follow-up, the inbox, the review funnel and on-site SEO. Hosting, the phone number forwarding, the monthly report and support are part of it. Anything under Separate products is its own product, bought on top of the plan and quoted on its own.",
+  },
+  {
+    q: "What's the difference between Core and Advanced?",
+    a: "Core at $297 a month is the full system: all six products, flat fee. Advanced at $597 a month is the same six, plus three services we would otherwise sell as separate add-ons: Advanced SEO, Google My Business Optimization and Automatic Referrals. If you were already planning to add those three, Advanced bundles them for less than buying them separately. If you only need the six core products, Core is the right pick.",
   },
   {
     q: "Is there a setup fee?",
