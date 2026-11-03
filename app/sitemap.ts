@@ -19,6 +19,31 @@ import {
 } from "@/lib/content/compare";
 import { getTools, toolHref, toolsLastModified } from "@/lib/content/tools";
 import { getStates, stateHref, statesLastModified } from "@/lib/content/states";
+import { cityHref, getCities } from "@/lib/content/cities";
+
+/**
+ * The resources section is nine aggregator pages plus the hub. They are
+ * static routes under app/resources (not a content-registry type), so they
+ * are listed here as a plain array. If this list ever grows past "a handful"
+ * it should move to a `lib/content/resources` registry and this import drops;
+ * for now the inline list is honest about the scale.
+ *
+ * Each one is a long-tail reference page (net metering by state, state solar
+ * tax credits, municipal utility cities, etc.) and was not reaching the
+ * sitemap at all until 2026-11-03, which is almost certainly why none of
+ * them had earned an impression in Search Console.
+ */
+const RESOURCE_SLUGS = [
+  "net-metering-by-state",
+  "state-solar-tax-credits",
+  "state-electric-rates",
+  "solar-permits-by-state",
+  "municipal-utility-cities",
+  "cca-cities",
+  "hurricane-and-hvhz-permits",
+  "winter-snow-derating-cities",
+  "solar-utility-glossary",
+] as const;
 
 /**
  * Every URL worth indexing, and only those.
@@ -142,6 +167,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getStates().map((s) => ({
       url: `${base}${stateHref(s.slug)}`,
       lastModified: new Date(`${s.updated ?? s.published}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+
+    /* City pages under /solar/[state]/[city]. 185 pages, were missing from
+       this sitemap through 2026-11-02 and almost certainly the reason
+       Search Console reported effectively zero impressions on the entire
+       programmatic city set. Priority 0.6, below their parent states
+       because a city is a leaf and the state is the hub for crawl flow. */
+    ...getCities().map((c) => ({
+      url: `${base}${cityHref(c.stateSlug, c.slug)}`,
+      lastModified: new Date(`${c.updated ?? c.published}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+
+    /* Resources hub and the nine aggregator pages under it. Added the same
+       day as cities, same reason: they were not in the sitemap and were
+       therefore invisible to crawl discovery outside what the footer and
+       the hub itself pointed at. Priority 0.7 (matches tools and states,
+       below commercial pages and above individual blog spokes). */
+    {
+      url: `${base}/resources`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...RESOURCE_SLUGS.map((slug) => ({
+      url: `${base}/resources/${slug}`,
+      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
