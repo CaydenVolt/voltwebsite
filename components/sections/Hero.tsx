@@ -6,6 +6,7 @@ import { motion, useReducedMotion, type Transition } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { Marquee } from "@/components/ui/Marquee";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { Photo } from "@/components/ui/Photo";
 import { AsciiArt } from "@/components/ui/adan-y-dios";
 import { DURATION, EASE_OUT, HERO_TIMING as T, PLATE } from "@/lib/tokens";
 import { bookingHref } from "@/lib/site";
@@ -174,14 +175,51 @@ export function Hero() {
               <p className="font-display text-lead font-semibold">{LEAD_HOOK}</p>
               <p className="mt-3 text-body sm:text-lead">{LEAD}</p>
             </motion.div>
-            {/* One action. The secondary link was removed on 2026-09-17: the
+            {/* One action, with the two founders' faces beside it as a quiet
+                human proof. The secondary link was removed on 2026-09-17: the
                 rail it pointed at sits directly underneath, so the link asked
                 the reader to choose between a CTA and a scroll they were about
                 to do anyway. */}
-            <motion.div {...rise(T.panelContent + T.panelStagger)} className="mt-6">
+            <motion.div
+              {...rise(T.panelContent + T.panelStagger)}
+              className="mt-6 flex flex-wrap items-center gap-5"
+            >
               <Button href={bookingHref("hero_primary")} source="hero_primary" external>
                 Book a 20-minute call
               </Button>
+              {/* Two overlapping circular portraits of Cayden and McKeith.
+                  `ring-4 ring-ink` carves the ink-coloured gap between the
+                  circles that reads as "two people" rather than "one smudge",
+                  which is the standard avatar-stack trick (the About page's
+                  founders composite uses the same pattern against bone with
+                  `ring-bone`). A tiny "Founders" eyebrow above the names
+                  stops the pair from reading as decorative. */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center -space-x-3">
+                  <Photo
+                    src="/about/cayden.jpeg"
+                    alt="Cayden Chern, founder of Volt"
+                    aspect="1 / 1"
+                    position={{ x: 50, y: 42 }}
+                    sizes="56px"
+                    className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
+                  />
+                  <Photo
+                    src="/about/mckeith.png"
+                    alt="McKeith, co-founder of Volt"
+                    aspect="1 / 1"
+                    position={{ x: 50, y: 35 }}
+                    sizes="56px"
+                    className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
+                  />
+                </div>
+                <div>
+                  <p className="label text-bone-muted">Founders</p>
+                  <p className="font-display text-body-sm text-bone">
+                    Cayden &amp; McKeith
+                  </p>
+                </div>
+              </div>
             </motion.div>
             <motion.p
               {...rise(T.panelContent + 2 * T.panelStagger)}

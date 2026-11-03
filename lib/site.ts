@@ -103,10 +103,10 @@ export const SITE = {
     // shows the build, the other shows what the client said about it.
     { label: "Testimonials", href: "/testimonials" },
     { label: "Pricing", href: "/pricing" },
-    // Sits between Pricing and Blog: a prospect who just read the price is
-    // often the same person who was about to compare us to another tool.
-    // The link in the bar surfaces /compare so they do not have to search.
-    { label: "Compare", href: "/compare" },
+    // Compare lived here between Pricing and Blog until 2026-11-03, when it
+    // moved off the top bar. It stays reachable through the footer and
+    // through cross-links from blog posts about the specific tools it
+    // compares, which is where that visitor's journey actually starts.
     // Top level on purpose: the blog is sixty-three pages deep and a link in
     // the bar on every page is the strongest internal signal we can give it.
     { label: "Blog", href: "/blog" },
