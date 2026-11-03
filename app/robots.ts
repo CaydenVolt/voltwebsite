@@ -17,7 +17,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/_next/", "/press"],
+        /* `/video-vsl` is an unlisted sales-letter page handed out by direct
+           link only. It also carries `noindex, nofollow` in its own
+           metadata; this entry stops the crawl before the fetch, which is
+           the belt to that suspenders. Not a security boundary. */
+        disallow: ["/_next/", "/press", "/video-vsl"],
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
