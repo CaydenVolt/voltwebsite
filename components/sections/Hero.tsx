@@ -187,38 +187,32 @@ export function Hero() {
               <Button href={bookingHref("hero_primary")} source="hero_primary" external>
                 Book a 20-minute call
               </Button>
-              {/* Two overlapping circular portraits of Cayden and McKeith.
-                  `ring-4 ring-ink` carves the ink-coloured gap between the
-                  circles that reads as "two people" rather than "one smudge",
-                  which is the standard avatar-stack trick (the About page's
-                  founders composite uses the same pattern against bone with
-                  `ring-bone`). A tiny "Founders" eyebrow above the names
-                  stops the pair from reading as decorative. */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center -space-x-3">
-                  <Photo
-                    src="/about/cayden.jpeg"
-                    alt="Cayden Chern, founder of Volt"
-                    aspect="1 / 1"
-                    position={{ x: 50, y: 42 }}
-                    sizes="56px"
-                    className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
-                  />
-                  <Photo
-                    src="/about/mckeith.png"
-                    alt="McKeith, co-founder of Volt"
-                    aspect="1 / 1"
-                    position={{ x: 50, y: 35 }}
-                    sizes="56px"
-                    className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
-                  />
-                </div>
-                <div>
-                  <p className="label text-bone-muted">Founders</p>
-                  <p className="font-display text-body-sm text-bone">
-                    Cayden &amp; McKeith
-                  </p>
-                </div>
+              {/* Two overlapping circular portraits of Cayden and McKeith,
+                  faces only. `ring-4 ring-ink` carves the ink-coloured gap
+                  between the circles that reads as "two people" rather than
+                  "one smudge", which is the standard avatar-stack trick (the
+                  About page's founders composite uses the same pattern
+                  against bone with `ring-bone`). The names are deliberately
+                  not spelled out here: visitors who want to know who the
+                  faces belong to click through to About, where the same two
+                  circles sit under the Cayden & McKeith heading. */}
+              <div className="flex items-center -space-x-3">
+                <Photo
+                  src="/about/cayden.jpeg"
+                  alt="Cayden Chern, founder of Volt"
+                  aspect="1 / 1"
+                  position={{ x: 50, y: 42 }}
+                  sizes="56px"
+                  className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
+                />
+                <Photo
+                  src="/about/mckeith.png"
+                  alt="McKeith, co-founder of Volt"
+                  aspect="1 / 1"
+                  position={{ x: 50, y: 35 }}
+                  sizes="56px"
+                  className="w-12 shrink-0 rounded-full ring-4 ring-ink sm:w-14"
+                />
               </div>
             </motion.div>
             <motion.p
