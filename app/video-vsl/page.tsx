@@ -72,26 +72,30 @@ export default function VideoVslPage() {
       <div aria-hidden className="h-nav-condensed" />
       <TrustStrip />
 
-      {/* Header. Centered on every width, the entire pitch in one sentence
-          with the price pulled out as its own line in accent so the number
-          is impossible to miss. "Watch these two videos before the call"
-          sits underneath as a quiet directive that explains what the rest
-          of the page is for.
-
-          Not using SectionLabel, display-xl across the whole thing, or any
-          supporting paragraph: this is a cold-landing sales page, so the
-          one job of the fold is to state the offer and point to the videos. */}
+      {/* Header. Centered, wide enough that the sentence breaks on natural
+          clauses rather than compressing into a narrow stack. Three stacked
+          beats: the pitch, the price on its own line in accent, and the
+          "watch these" directive with a down-arrow pointing at the first
+          video. Pulling the price out of the sentence is the key move —
+          dropping it inline with "for just" buried the number; standing it
+          on its own line makes it the second thing a viewer sees. */}
       <Section as="header" aria-labelledby="vsl-h">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal as="h1" id="vsl-h" className="text-display-lg lg:text-display-xl">
+        <div className="mx-auto max-w-5xl text-center">
+          <Reveal as="h1" id="vsl-h" className="text-display-md sm:text-display-lg lg:text-display-xl">
             We help solar businesses and contractors get more jobs with
-            Websites, AI, and Automated 5 Star reviews for just{" "}
-            <span className="text-accent">$297 a month</span>.
+            Websites, AI, and Automated 5 Star reviews for just
           </Reveal>
           <Reveal
             as="p"
             index={1}
-            className="mt-8 label text-muted"
+            className="mt-6 font-display text-display-md text-accent sm:text-display-lg"
+          >
+            $297 a month
+          </Reveal>
+          <Reveal
+            as="p"
+            index={2}
+            className="mt-10 label text-muted"
           >
             Watch these two videos before the call &darr;
           </Reveal>
@@ -101,7 +105,6 @@ export default function VideoVslPage() {
       {/* Co-Founder McKeith */}
       <FounderBlock
         name="McKeith"
-        role="Co-Founder"
         videoSrc="/vsl/mckeith.mp4"
         videoPoster="/vsl/mckeith.jpg"
         photo={mckeith}
@@ -110,55 +113,59 @@ export default function VideoVslPage() {
       {/* Co-Founder Cayden */}
       <FounderBlock
         name="Cayden"
-        role="Co-Founder"
         videoSrc="/vsl/cayden.mp4"
         videoPoster="/vsl/cayden.jpg"
         photo={cayden}
       />
 
       {/* Client proof: the testimonial video and the Google review
-          screenshot, no section heading above them. The page intentionally
-          ends here — no FinalCTA, no site footer below it (FooterGate hides
-          the global Footer for /video-vsl). The booking link lives inside
-          one of the founder videos, which is where it belongs on a VSL. */}
+          screenshot, no section heading above them. Deliberately rendered
+          in a narrower centered column (max-w-2xl) so the two blocks here
+          read as supporting evidence rather than a third video on par with
+          the two founder VSLs above. The page intentionally ends here — no
+          FinalCTA, no site footer below (FooterGate hides the global Footer
+          for /video-vsl). The booking link lives inside one of the founder
+          videos, which is where it belongs on a VSL. */}
       {testimonial ? (
         <Section rule="top" aria-label="Client testimonial">
-          <Reveal as="div">
-            <div className="relative aspect-video w-full overflow-hidden bg-ink">
-              <video
-                src={testimonial.videoSrc}
-                poster={testimonial.poster}
-                controls
-                preload="metadata"
-                playsInline
-                className="h-full w-full object-contain"
-                aria-label={`Video testimonial from ${testimonial.name}`}
-              />
-            </div>
+          <div className="mx-auto max-w-2xl">
+            <Reveal as="div">
+              <div className="relative aspect-video w-full overflow-hidden bg-ink">
+                <video
+                  src={testimonial.videoSrc}
+                  poster={testimonial.poster}
+                  controls
+                  preload="metadata"
+                  playsInline
+                  className="h-full w-full object-contain"
+                  aria-label={`Video testimonial from ${testimonial.name}`}
+                />
+              </div>
 
-            <Stars count={testimonial.rating} className="mt-6 text-yellow-400" />
-            <blockquote className="mt-4 max-w-measure text-body">
-              &ldquo;{testimonial.quote}&rdquo;
-            </blockquote>
-            <p className="mt-4 font-display text-item">&ndash;{testimonial.name}</p>
-          </Reveal>
+              <Stars count={testimonial.rating} className="mt-5 text-yellow-400" />
+              <blockquote className="mt-3 text-body-sm">
+                &ldquo;{testimonial.quote}&rdquo;
+              </blockquote>
+              <p className="mt-3 font-display text-item">&ndash;{testimonial.name}</p>
+            </Reveal>
 
-          {/* The Google review screenshot. One hairline border, nothing else:
-              the point is that it is a verbatim screenshot and the chrome of
-              the page should not compete with it. */}
-          <Reveal as="div" index={1} className="mt-12">
-            <p className="label text-muted">Verified Google review</p>
-            <div className="mt-4 border border-line bg-bone p-4 sm:p-6">
-              <Image
-                src="/testimonials/rong-google-review.png"
-                alt="Five-star Google review from Rong: Had a great experience working with Volt for our company website. They are very responsive, and whenever we requested any changes, they got it done quickly. Easy to communicate with and very helpful throughout the process. The website turned out clean and professional, and they also helped us with SEO to improve our visibility on Google. Overall, really happy with their service. Highly recommended!"
-                width={1600}
-                height={520}
-                sizes="(min-width: 1024px) 900px, 100vw"
-                className="h-auto w-full"
-              />
-            </div>
-          </Reveal>
+            {/* The Google review screenshot. One hairline border, nothing else:
+                the point is that it is a verbatim screenshot and the chrome of
+                the page should not compete with it. */}
+            <Reveal as="div" index={1} className="mt-10">
+              <p className="label text-muted">Verified Google review</p>
+              <div className="mt-3 border border-line bg-bone p-3 sm:p-4">
+                <Image
+                  src="/testimonials/rong-google-review.png"
+                  alt="Five-star Google review from Rong: Had a great experience working with Volt for our company website. They are very responsive, and whenever we requested any changes, they got it done quickly. Easy to communicate with and very helpful throughout the process. The website turned out clean and professional, and they also helped us with SEO to improve our visibility on Google. Overall, really happy with their service. Highly recommended!"
+                  width={1600}
+                  height={520}
+                  sizes="(min-width: 1024px) 672px, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+            </Reveal>
+          </div>
         </Section>
       ) : null}
     </main>
@@ -173,13 +180,11 @@ export default function VideoVslPage() {
  */
 function FounderBlock({
   name,
-  role,
   videoSrc,
   videoPoster,
   photo,
 }: {
   name: string;
-  role: string;
   videoSrc: string;
   videoPoster: string;
   photo:
@@ -192,7 +197,7 @@ function FounderBlock({
 }) {
   return (
     <Section rule="top" aria-labelledby={`${name.toLowerCase()}-h`}>
-      <SectionLabel rule>{role}</SectionLabel>
+      <SectionLabel rule>Co-Founder</SectionLabel>
       <Reveal as="div" className="mt-6 flex items-center gap-4 sm:gap-5">
         {photo ? (
           <Photo
