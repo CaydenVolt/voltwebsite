@@ -127,8 +127,12 @@ export default function VideoVslPage() {
           for /video-vsl). The booking link lives inside one of the founder
           videos, which is where it belongs on a VSL. */}
       {testimonial ? (
-        <Section rule="top" aria-label="Client testimonial">
-          <div className="mx-auto max-w-2xl">
+        <Section rule="top" aria-labelledby="proof-h">
+          <SectionLabel rule>Testimonials and reviews</SectionLabel>
+          <h2 id="proof-h" className="sr-only">
+            Testimonials and reviews
+          </h2>
+          <div className="mx-auto mt-8 max-w-2xl">
             <Reveal as="div">
               <div className="relative aspect-video w-full overflow-hidden bg-ink">
                 <video
@@ -221,7 +225,13 @@ function FounderBlock({
       </Reveal>
 
       <Reveal as="div" index={1} className="mt-8">
-        <div className="relative aspect-video w-full overflow-hidden bg-ink">
+        {/* Capped at max-w-4xl (896px) so a 1440px desktop does not render
+            an 800px-tall frame that spills below the fold on a laptop. The
+            aspect-video ratio means the frame tops out around 504px high
+            when the width hits the cap, which fits a 720p laptop viewport
+            with the heading and the footer margin visible. On phones and
+            tablets `w-full` still owns the width. */}
+        <div className="relative mx-auto aspect-video w-full max-w-4xl overflow-hidden bg-ink">
           <video
             src={videoSrc}
             poster={videoPoster}
