@@ -5,6 +5,7 @@ import { Grain } from "@/components/ui/Grain";
 import { Cursor } from "@/components/ui/Cursor";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { FooterGate } from "@/components/site/FooterGate";
 import { SITE } from "@/lib/site";
 import { getLogo } from "@/lib/assets";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -86,7 +87,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Cursor />
           <Nav mark={logo?.src ?? null} masked={logo?.masked} />
           {children}
-          <Footer mark={logo?.src ?? null} masked={logo?.masked} />
+          <FooterGate>
+            <Footer mark={logo?.src ?? null} masked={logo?.masked} />
+          </FooterGate>
         </Providers>
       </body>
     </html>

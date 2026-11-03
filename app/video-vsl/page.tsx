@@ -5,7 +5,6 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stars } from "@/components/ui/Stars";
 import { Photo } from "@/components/ui/Photo";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
@@ -40,9 +39,9 @@ import { TESTIMONIALS } from "@/lib/content/testimonials";
  */
 export const metadata: Metadata = {
   ...pageMetadata({
-    title: "A message from the Volt founders",
+    title: "Before our call",
     description:
-      "Two short videos from Cayden and McKeith, co-founders of Volt Agency, with a client testimonial and a verified Google review.",
+      "Volt Agency: websites, AI and automated 5-star reviews for US solar businesses from $297 a month. Watch two short videos from the co-founders before the call.",
     path: "/video-vsl",
   }),
   robots: {
@@ -73,21 +72,30 @@ export default function VideoVslPage() {
       <div aria-hidden className="h-nav-condensed" />
       <TrustStrip />
 
-      {/* Header, kept short. The headline is the two founders' names rather
-          than a sales line, because the videos are the sales line. */}
+      {/* Header. Centered on every width, the entire pitch in one sentence
+          with the price pulled out as its own line in accent so the number
+          is impossible to miss. "Watch these two videos before the call"
+          sits underneath as a quiet directive that explains what the rest
+          of the page is for.
+
+          Not using SectionLabel, display-xl across the whole thing, or any
+          supporting paragraph: this is a cold-landing sales page, so the
+          one job of the fold is to state the offer and point to the videos. */}
       <Section as="header" aria-labelledby="vsl-h">
-        <SectionLabel rule>Watch</SectionLabel>
-        <Reveal as="h1" id="vsl-h" className="mt-6 text-display-xl lg:w-10/12">
-          A message from the Volt founders.
-        </Reveal>
-        <Reveal
-          as="p"
-          index={1}
-          className="mt-6 max-w-measure text-lead text-muted"
-        >
-          Two short videos: McKeith on who we are and how we work, Cayden on
-          what the system actually does. A client's take sits at the bottom.
-        </Reveal>
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal as="h1" id="vsl-h" className="text-display-lg lg:text-display-xl">
+            We help solar businesses and contractors get more jobs with
+            Websites, AI, and Automated 5 Star reviews for just{" "}
+            <span className="text-accent">$297 a month</span>.
+          </Reveal>
+          <Reveal
+            as="p"
+            index={1}
+            className="mt-8 label text-muted"
+          >
+            Watch these two videos before the call &darr;
+          </Reveal>
+        </div>
       </Section>
 
       {/* Co-Founder McKeith */}
@@ -108,18 +116,14 @@ export default function VideoVslPage() {
         photo={cayden}
       />
 
-      {/* Client testimonial + verified Google review screenshot. The screenshot
-          is a raster snapshot of a real review on Google Business Profile; it
-          renders at its native width inside a bordered frame so it reads as
-          "a screenshot" rather than "another UI element". */}
-      <Section rule="top" aria-labelledby="proof-h">
-        <SectionLabel rule>What a client said</SectionLabel>
-        <h2 id="proof-h" className="mt-6 text-display-md lg:w-8/12">
-          In their own words.
-        </h2>
-
-        {testimonial ? (
-          <Reveal as="div" index={1} className="mt-10">
+      {/* Client proof: the testimonial video and the Google review
+          screenshot, no section heading above them. The page intentionally
+          ends here — no FinalCTA, no site footer below it (FooterGate hides
+          the global Footer for /video-vsl). The booking link lives inside
+          one of the founder videos, which is where it belongs on a VSL. */}
+      {testimonial ? (
+        <Section rule="top" aria-label="Client testimonial">
+          <Reveal as="div">
             <div className="relative aspect-video w-full overflow-hidden bg-ink">
               <video
                 src={testimonial.videoSrc}
@@ -138,27 +142,25 @@ export default function VideoVslPage() {
             </blockquote>
             <p className="mt-4 font-display text-item">&ndash;{testimonial.name}</p>
           </Reveal>
-        ) : null}
 
-        {/* The Google review screenshot. One hairline border, nothing else:
-            the point is that it is a verbatim screenshot and the chrome of
-            the page should not compete with it. */}
-        <Reveal as="div" index={2} className="mt-12">
-          <p className="label text-muted">Verified Google review</p>
-          <div className="mt-4 border border-line bg-bone p-4 sm:p-6">
-            <Image
-              src="/testimonials/rong-google-review.png"
-              alt="Five-star Google review from Rong: Had a great experience working with Volt for our company website. They are very responsive, and whenever we requested any changes, they got it done quickly. Easy to communicate with and very helpful throughout the process. The website turned out clean and professional, and they also helped us with SEO to improve our visibility on Google. Overall, really happy with their service. Highly recommended!"
-              width={1600}
-              height={520}
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="h-auto w-full"
-            />
-          </div>
-        </Reveal>
-      </Section>
-
-      <FinalCTA source="vsl_final" />
+          {/* The Google review screenshot. One hairline border, nothing else:
+              the point is that it is a verbatim screenshot and the chrome of
+              the page should not compete with it. */}
+          <Reveal as="div" index={1} className="mt-12">
+            <p className="label text-muted">Verified Google review</p>
+            <div className="mt-4 border border-line bg-bone p-4 sm:p-6">
+              <Image
+                src="/testimonials/rong-google-review.png"
+                alt="Five-star Google review from Rong: Had a great experience working with Volt for our company website. They are very responsive, and whenever we requested any changes, they got it done quickly. Easy to communicate with and very helpful throughout the process. The website turned out clean and professional, and they also helped us with SEO to improve our visibility on Google. Overall, really happy with their service. Highly recommended!"
+                width={1600}
+                height={520}
+                sizes="(min-width: 1024px) 900px, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          </Reveal>
+        </Section>
+      ) : null}
     </main>
   );
 }
