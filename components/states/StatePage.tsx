@@ -8,8 +8,31 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { absolute, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { bookingHref } from "@/lib/site";
-import { stateHref, type State } from "@/lib/content/states";
+import { getStates, stateHref, type State } from "@/lib/content/states";
 import { cityHref, getCitiesByState } from "@/lib/content/cities";
+
+/**
+ * Six other state pages, selected deterministically from the current state's
+ * position in the alphabetical state list. The offset means Alabama links to
+ * (Alaska, Arizona, Arkansas, California, Colorado, Connecticut), Wyoming
+ * links to (Alabama, Alaska, Arizona, Arkansas, California, Colorado), and so
+ * on, so every state ends up linked from at least six others and the crawl
+ * graph among the fifty is dense enough that reaching one is reaching all.
+ *
+ * Deterministic rather than random so the link graph is stable across builds
+ * (random would break Google's expectation that an internal link that existed
+ * last crawl still exists this crawl, and would make debugging link graphs
+ * impossible). Alphabetical rather than geographic because adjacency data
+ * does not live in the state registry yet; a geographic-neighbour expansion
+ * is a straight swap in the function body when that data is added.
+ */
+function nearbyStates(current: State): readonly State[] {
+  const all = getStates();
+  const idx = all.findIndex((s) => s.slug === current.slug);
+  if (idx === -1) return [];
+  const others = [...all.slice(idx + 1), ...all.slice(0, idx)];
+  return others.slice(0, 6);
+}
 
 /**
  * The shared wrapper every /solar/<state> page renders. Structured as:
@@ -236,6 +259,37 @@ export function StatePage({ state }: { state: State }) {
             </p>
           </Reveal>
         </div>
+      </Section>
+
+      {/* Six nearby states, so the fifty state pages form a dense internal
+          link graph. Added 2026-11-03 to fix the crawl-topology gap that was
+          leaving most of the programmatic set as islands reachable only
+          through /solar: with this block each state has at least six inbound
+          links from other states, and Google can traverse the whole set from
+          any entry point. See `nearbyStates` above for the selection rule. */}
+      <Section rule="top" aria-labelledby="other-states-h" rhythm="sm">
+        <SectionLabel rule>Also on Volt by state</SectionLabel>
+        <h2 id="other-states-h" className="sr-only">
+          Other US state solar market pages
+        </h2>
+        <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
+          {nearbyStates(state).map((s) => (
+            <li key={s.slug}>
+              <Link
+                href={stateHref(s.slug)}
+                className="text-body text-muted hover:text-fg"
+                data-cursor="grow"
+              >
+                Solar in {s.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6">
+          <Link href="/solar" className="label text-accent hover:underline">
+            See all 50 states &rarr;
+          </Link>
+        </p>
       </Section>
 
       <FinalCTA source={`state_${state.slug}_cta`} />

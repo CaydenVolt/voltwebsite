@@ -55,6 +55,21 @@ export function ReadNext({ posts, categoryId }: { posts: readonly Post[]; catego
         <Button href="/blog" source="blog_all_from_article" variant="link">
           The whole blog
         </Button>
+        {/* Two links to the programmatic hubs below the article. They give the
+            US state market pages (/solar) and the resource aggregators
+            (/resources) one authoritative inbound link from every blog post on
+            the site, which is 70+ internal links each. Added 2026-11-03 after
+            Search Console reported effectively zero impressions on either hub,
+            which was traced to a crawl-authority gap: the two hubs had their
+            own sitemap entries but no inbound links from pages Google already
+            trusted. The ReadNext bar on every post is the shortest route
+            between those two facts. */}
+        <Button href="/solar" source="blog_states_hub_from_article" variant="link">
+          Volt in all 50 states
+        </Button>
+        <Button href="/resources" source="blog_resources_hub_from_article" variant="link">
+          Solar operator resources
+        </Button>
       </Reveal>
     </Section>
   );
