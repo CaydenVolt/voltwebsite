@@ -169,6 +169,27 @@ export default function VideoVslPage() {
                 />
               </div>
             </Reveal>
+
+            {/* A WhatsApp screenshot from a working client, name blurred at
+                the chat-header and quoted-reply positions by
+                scripts/blur-name.mjs. Rendered narrower than the Google
+                review because it is a vertical phone screenshot: full width
+                would make it tower over everything else on the page. The
+                caption below names what the viewer is looking at, since
+                the blurred name removes the obvious cue. */}
+            <Reveal as="div" index={2} className="mt-10">
+              <p className="label text-muted">Client message, name blurred</p>
+              <div className="mx-auto mt-3 max-w-xs border border-line bg-bone p-3 sm:max-w-sm sm:p-4">
+                <Image
+                  src="/testimonials/nathan-whatsapp.png"
+                  alt="WhatsApp message from a Volt client. Quote: Bro things are going very well and im very happy with what you're doing. I really appreciate it."
+                  width={946}
+                  height={2048}
+                  sizes="(min-width: 640px) 384px, 320px"
+                  className="h-auto w-full"
+                />
+              </div>
+            </Reveal>
           </div>
         </Section>
       ) : null}
