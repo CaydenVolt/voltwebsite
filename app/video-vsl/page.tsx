@@ -6,6 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Stars } from "@/components/ui/Stars";
 import { Photo } from "@/components/ui/Photo";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { VslVideo } from "@/components/vsl/VslVideo";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { TEAM } from "@/lib/content/about";
@@ -248,21 +249,14 @@ function FounderBlock({
       <Reveal as="div" index={1} className="mt-8">
         {/* Capped at max-w-4xl (896px) so a 1440px desktop does not render
             an 800px-tall frame that spills below the fold on a laptop. The
-            aspect-video ratio means the frame tops out around 504px high
-            when the width hits the cap, which fits a 720p laptop viewport
-            with the heading and the footer margin visible. On phones and
-            tablets `w-full` still owns the width. */}
-        <div className="relative mx-auto aspect-video w-full max-w-4xl overflow-hidden bg-ink">
-          <video
-            src={videoSrc}
-            poster={videoPoster}
-            controls
-            preload="metadata"
-            playsInline
-            className="h-full w-full object-contain"
-            aria-label={`A message from Co-Founder ${name}`}
-          />
-        </div>
+            VslVideo client component owns the poster, the play-button
+            overlay, and the "overlay disappears once playback starts"
+            behaviour, so the rest of the page stays a server component. */}
+        <VslVideo
+          src={videoSrc}
+          poster={videoPoster}
+          ariaLabel={`A message from Co-Founder ${name}`}
+        />
       </Reveal>
     </Section>
   );
