@@ -113,7 +113,7 @@ export const PRICING_FAQ = [
   },
   {
     q: "Is there really a 30-day money back guarantee?",
-    a: "Yes. Cancel inside 30 days of your first payment and we refund the subscription fee in full. Request it in your account or email support@mail.voltagencyio.com. What is not refundable is the pass-through spend on phone numbers, texts and calls, because we have already paid those onwards. Full detail is in section 7 of the terms.",
+    a: "Yes, on the standard monthly plan. Cancel inside 30 days of your first payment and we refund the subscription fee in full. Request it in your account or email support@mail.voltagencyio.com. What is not refundable is the pass-through spend on phone numbers, texts and calls, because we have already paid those onwards. The one exception: if you agree on a sales call to the Quarterly Prepay Plan (three months upfront in exchange for a one-off free Google Business Profile optimization), a different rule applies. Within 30 days you can cancel and get the two unused months back, but the first month is used and the GBP optimization is not refunded. After 30 days, the prepaid quarter is final. Full detail is in section 7 of the terms.",
   },
   {
     q: "What happens to my website if I cancel?",

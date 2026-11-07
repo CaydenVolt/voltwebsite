@@ -23,14 +23,20 @@ import { SITE } from "@/lib/site";
 
 /** The terms are revised on their own schedule. See LegalDates. */
 export const TERMS_DATES: LegalDates = {
-  // Bumped 2026-11-02 when the registered entity became MGJ Digital, LLC
-  // (trading as Volt Agency) and the postal address and phone were added
-  // to the contact and notices sections. The counterparty on every clause
-  // changes from a sole proprietor to the LLC, so `effective` moves with
-  // the update.
-  effective: "2026-11-02",
-  lastUpdated: "2026-11-02",
-  lastReviewed: "2026-11-02",
+  // Bumped 2026-11-07 when the Quarterly Prepay Plan was introduced:
+  // a three-month-upfront billing option, pitched only on sales calls,
+  // bundled with a one-off GBP Optimization at no extra charge. On that
+  // plan the 30-day money-back guarantee is replaced by a 30-day
+  // unused-months-only refund and the GBP Optimization is non-refundable.
+  // Both the definition and the carve-out are substantive clause changes,
+  // so `effective` moves rather than only `lastReviewed`.
+  //
+  // Previously bumped 2026-11-02 when the registered entity became MGJ
+  // Digital, LLC (trading as Volt Agency) and the postal address and
+  // phone were added to the contact and notices sections.
+  effective: "2026-11-07",
+  lastUpdated: "2026-11-07",
+  lastReviewed: "2026-11-07",
 };
 
 const price = formatPrice();
@@ -70,6 +76,10 @@ export const TERMS: readonly LegalSection[] = [
           {
             term: "Subscription",
             text: "Your recurring plan, its price, and the billing period it renews on.",
+          },
+          {
+            term: "Quarterly Prepay Plan",
+            text: "A Subscription billing option in which you pay for three (3) months at a time in advance instead of monthly. The Quarterly Prepay Plan is offered only during a sales call and takes effect when you accept it in writing at sign-up. It bundles a one-off Google Business Profile optimization at no additional charge (the \"GBP Optimization\"), performed once at the start of your Subscription. Refunds on the Quarterly Prepay Plan are governed by section [[refunds]] and differ from the standard thirty-day money-back guarantee.",
           },
           {
             term: "Usage Charges",
@@ -218,6 +228,14 @@ export const TERMS: readonly LegalSection[] = [
       {
         t: "p",
         text: "The 30-day guarantee covers the first Subscription fee only. It does not cover Usage Charges under section [[usage-charges]], because those are amounts we have already paid onwards to third-party providers for telephone numbers, text messages, calls or email delivery, and cannot be recovered once incurred. It does not cover fees for separately purchased products, and it does not apply on renewals after the first thirty days.",
+      },
+      {
+        t: "note",
+        text: "The 30-day money-back guarantee above applies to the standard monthly Subscription. It does not apply to the Quarterly Prepay Plan. If you accept the Quarterly Prepay Plan, you acknowledge at sign-up that the standard guarantee is replaced by the rule in the next paragraph, in exchange for the GBP Optimization bundled with that plan at no additional charge.",
+      },
+      {
+        t: "p",
+        text: "On the Quarterly Prepay Plan, you may cancel within the first thirty (30) days of your first Subscription payment and we will refund the two (2) months of the prepaid quarter you have not yet begun. The first month, which you have begun to use, is not refunded. The GBP Optimization is not refundable because the work is performed at the start of your Subscription and cannot be undone. After the first thirty (30) days, no refund is given for the remainder of the prepaid quarter, and all renewal quarters are final under the general rule in the next paragraph.",
       },
       {
         t: "p",

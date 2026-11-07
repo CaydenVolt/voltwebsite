@@ -48,7 +48,7 @@ export function GET(): Response {
     "",
     `${SITE.name} builds and runs the complete sales system for US residential solar companies on one monthly subscription: ${formatPrice()} a month, six products included, ${
       PLAN.setupFee === null ? "no setup fee" : `a ${PLAN.setupFee} setup fee`
-    }, 30-day money-back. Add-ons such as Google Ads management, advanced SEO, AI lead nurturing and database reactivation are priced separately on top of the plan.`,
+    }, 30-day money-back on the standard monthly plan. A Quarterly Prepay Plan (three months upfront, bundled with a one-off free Google Business Profile optimization) is offered on sales calls and has a different refund rule, set out in section 7 of the terms. Add-ons such as Google Ads management, advanced SEO, AI lead nurturing and database reactivation are priced separately on top of the plan.`,
     "",
     "## Products",
     "",
