@@ -1,7 +1,7 @@
 import { SITE, realSocial } from "@/lib/site";
 import { getPublicProducts, type ProductPage } from "@/lib/content/products";
 import { PLAN, formatPrice } from "@/lib/content/pricing";
-import { AUTHOR, authorHref, getCategory, plain, postHref, type Post } from "@/lib/content/blog";
+import { AUTHOR, authorHref, categoryHref, getCategory, plain, postHref, type Post } from "@/lib/content/blog";
 import { LEGAL } from "@/lib/content/legal";
 
 /**
@@ -270,6 +270,22 @@ export function authorSchema() {
     jobTitle: AUTHOR.role,
     description: AUTHOR.short,
     knowsAbout: [...AUTHOR.knowsAbout],
+    knowsLanguage: ["en-US"],
+    /**
+     * `hasOccupation` carries the specific skills the author is claiming.
+     * Added 2026-11-09: jobTitle alone is a label; hasOccupation turns it
+     * into a structured claim Google can read as a profession statement,
+     * with the same specific skill vocabulary used by the Person's own
+     * `knowsAbout`. Together they are the single clearest E-E-A-T signal
+     * a solo-author blog can send.
+     */
+    hasOccupation: {
+      "@type": "Occupation",
+      name: AUTHOR.role,
+      skills: [...AUTHOR.knowsAbout],
+      occupationalCategory: "Marketing and Sales Managers",
+      occupationLocation: US_AUDIENCE_GEO,
+    },
     worksFor: { "@id": ORG_ID },
     // The author's public profile. Lets an answer engine join the byline on an
     // article to the person behind it, which is what gives the article a
@@ -303,6 +319,7 @@ export function blogSchema() {
 export function articleSchema(post: Post, words: number) {
   const url = absolute(postHref(post.slug));
   const category = getCategory(post.category);
+  const categoryUrl = absolute(categoryHref(category));
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -317,6 +334,27 @@ export function articleSchema(post: Post, words: number) {
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": BLOG_ID },
     articleSection: category.name,
+    /**
+     * Topical anchors, added 2026-11-09 to improve topical-authority signal.
+     *
+     * `about` names the one primary topic the article is on, as a Thing with
+     * the category hub as its canonical URL. This tells Google the post is a
+     * member of a named topic cluster rather than a one-off article. `mentions`
+     * enumerates every secondary keyword as its own Thing, so the semantic
+     * reach of the piece is spelled out rather than left to NLP guessing. The
+     * net effect is that every spoke on the blog now points at its hub as a
+     * topical parent in structured data, mirroring the internal-link graph
+     * the blog already has.
+     */
+    about: {
+      "@type": "Thing",
+      name: category.name,
+      url: categoryUrl,
+    },
+    mentions: [post.keyword, ...post.secondary].map((k) => ({
+      "@type": "Thing",
+      name: k,
+    })),
     keywords: [post.keyword, ...post.secondary],
     wordCount: words,
     image: [`${url}/opengraph-image`],

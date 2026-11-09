@@ -23,14 +23,49 @@ export const AUTHOR = {
   /**
    * What the author is qualified to talk about, and nothing else. Used as the
    * `knowsAbout` list in the Person schema.
+   *
+   * The list was expanded on 2026-11-09 for topical-authority reasons. Google's
+   * E-E-A-T signal reads this field (and the matching `about` on individual
+   * articles) as the claim an author is making about their expertise, and a
+   * handful of broad terms is a weaker signal than a dense, specific list.
+   * Every entry has to correspond to real content the author has written on
+   * this blog: do not pad it with topics the archive does not actually cover,
+   * because Google's helpful-content system discounts claims that content
+   * fails to back up.
    */
   knowsAbout: [
+    // Lead generation surface
     "Solar lead generation",
-    "Local SEO for solar companies",
-    "Review generation and reputation",
+    "Solar lead qualification",
+    "Cost per solar lead",
+    "Shared vs exclusive solar leads",
+    "Solar lead reactivation",
+    // Follow-up and sales motion
     "Sales follow-up automation",
-    "Solar contractor software",
+    "Speed to lead for solar",
+    "Missed-call text-back",
+    "Solar sales pipeline stages",
+    "Solar appointment setting",
+    // Reviews and reputation
+    "Review generation and reputation",
+    "Google Business Profile optimization",
+    "Responding to negative solar reviews",
+    // Local and on-site SEO
+    "Local SEO for solar companies",
+    "Google Local Service Ads for solar",
+    "On-site SEO for solar websites",
+    // Paid acquisition
+    "Google Ads for solar contractors",
+    "Facebook and Meta ads for solar",
+    "Landing page conversion",
+    // Websites and software
     "Conversion-focused websites",
+    "Solar contractor software and CRM",
+    "Solar proposal and design software",
+    // Market and economics
+    "Post-ITC solar economics",
+    "State-by-state solar incentives",
+    "Net metering by state",
   ],
 } as const;
 

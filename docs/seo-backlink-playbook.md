@@ -111,6 +111,84 @@ Each is a 20-minute signup. Together they're a weekend of work.
 
 ---
 
+## Weeks 4-8: the next ten plays (when the first fifteen are done)
+
+Appended 2026-11-09. These are the plays that work AFTER a domain has a floor of 15-20 referring domains and isn't being filtered as brand-new. Each lands 1-3 editorial links on real publications, which is where position actually moves.
+
+### 16. Build a stat page and pitch journalists
+- **How:** Publish one page at `/resources/solar-marketing-statistics-2026` with 30-50 sourced stats on US solar marketing (CPL by state, close rates, review counts, lead-to-install ratios). Every stat links to its source. Then pitch 30 journalists who cover solar: "writing an article on X? I just published this." Journalists cite stat pages ~30x more than opinion pages because they are afraid of being wrong about numbers.
+- **Why:** The single highest-ROI piece of content for backlink building that exists. Backlinko's canonical stat page has 7000+ referring domains. A small one gets 50-100.
+- **Cost:** Free.
+- **Time:** 8-12 hours to build well, 2-3 hours to pitch.
+
+### 17. Run a small industry survey
+- **How:** 10-question survey to 200+ solar installers via LinkedIn + direct email (reuse the HARO/Qwoted network). Topics: "where do solar leads actually come from in 2026", "what percentage of leads close post-ITC". Publish results as a report with downloadable PDF.
+- **Why:** Original data is the only way to guarantee uniqueness. Solar Power World, EnergySage, PV Magazine will cover it.
+- **Cost:** Free (Google Forms) or $20 (Typeform).
+- **Time:** 2 days to run, 1 day to write up.
+
+### 18. Scholarship play (the classic agency move)
+- **How:** Create a $500-1000 scholarship for solar engineering / renewable energy students. Publish a page at `/scholarship`. Email 30 university career services offices with renewable energy programs (NREL has the list). They add you to their scholarship directories, which are .edu domains with sky-high trust.
+- **Why:** .edu backlinks are among the highest-weighted that exist. Even 3 of them moves a domain's authority meaningfully.
+- **Cost:** The scholarship amount, once.
+- **Time:** 2 hours to set up, 3 hours to pitch.
+
+### 19. Guest post on three solar trade publications
+- **How:** Pitch Solar Builder Magazine, PV Magazine USA, Solar Power World. Topic ideas they accept: "Why Solar Marketing Fails Post-ITC", "How Residential Installers Should Respond to NEM 3.0", "The Real Cost of a Shared Solar Lead in 2026". Email their editors directly (Google their mastheads).
+- **Why:** These are the three highest-DA solar publications. One guest post = one DR 60+ do-follow link + referral traffic from actual installers.
+- **Cost:** Free.
+- **Time:** 4-6 hours per published piece.
+
+### 20. State solar association memberships
+- **How:** Every US state with meaningful solar activity has its own trade body (TSEIA Texas, CalSSA California, FlaSEIA Florida, etc.). Each has a member directory with backlinks. At 10-20 memberships that's 10-20 sector-specific links.
+- **Why:** Local-signal gold. Google treats state-trade-association links as geographic authority markers, which is exactly what the city/state programmatic pages need.
+- **Cost:** $100-300/year each. Pick 3-5 largest solar states first.
+- **Time:** 1 hour per application, 3-6 week turnaround.
+
+### 21. Product Hunt launch (for a free tool)
+- **How:** One of the free calculators (`solar-roi-calculator`, `solar-lead-cost-calculator`) is a Product Hunt-worthy launch. Submit it as a standalone page. Prepare the launch 2 weeks ahead: line up 10 upvotes in the first hour, write the maker comment well.
+- **Why:** A top-5 Product Hunt listing produces 30-80 referring domains in a week. Permanent backlink from producthunt.com (DR 90+).
+- **Cost:** Free.
+- **Time:** 2 weeks of prep, 1 launch day.
+
+### 22. Reddit presence on r/solar and r/solarinstallers
+- **How:** NOT link-dropping. Actually answer questions from installers for 4-6 weeks. After that, Reddit allows self-promotion if you have a reputation. Then share the free calculators when they are genuinely useful.
+- **Why:** Reddit itself doesn't pass link juice (nofollow), but Google reads Reddit mentions as topical citation signals. Also: half of Reddit threads rank in Google's AI Overviews now, so a mention in a high-visibility thread puts you in front of the audience.
+- **Cost:** Free.
+- **Time:** 30 min/day for 6 weeks minimum.
+
+### 23. Public API or embeddable widget
+- **How:** The `solar-roi-calculator` wrapped as a free embeddable widget other solar sites can drop in. Each embed includes a "powered by Volt" link back.
+- **Why:** Lowest-effort scaling play. Once built, it scales without more work. 50 embeds over a year is 50 backlinks with zero outreach.
+- **Cost:** Free to build (dev time).
+- **Time:** 2-3 days to build, promotion ongoing.
+
+### 24. Testimonials for tools you use
+- **How:** Volt runs on Volt Relay (your underlying platform), plus Make, Zapier, a CRM and a design tool. Every SaaS tool's homepage has a testimonials section and the vendor loves a quote from a real customer. Email their marketing teams: "happy to give a quote with headshot in exchange for linking to voltagencyio.com".
+- **Why:** Marketing-page testimonials are DR 70-85 links on landing pages that already rank. Underused play.
+- **Cost:** Free.
+- **Time:** 30 min per vendor; 5-10 vendors is a half-day.
+
+### 25. Solar founder meetup sponsorships
+- **How:** Local solar installer groups and REnewable energy chambers host quarterly meetups. Sponsor one for $200-500. In exchange: speaker slot, directory listing, and a page on their site about sponsors.
+- **Why:** Hyper-targeted audience + a local backlink Google reads as "this business is active in the local market". Compounds when you sponsor 2-3 across your target states.
+- **Cost:** $200-500 per event.
+- **Time:** 1 day per event.
+
+---
+
+## Measurement sanity check
+
+If the first 15 land but position does not move, the problem is usually:
+- Links are nofollow (check with Ahrefs free tool)
+- Links are all from the same TLD (diversify: .com + .org + .edu)
+- Links are to the homepage only (ask for inner-page links too — city pages, blog posts)
+- Pages receiving links are too thin (add content before pitching)
+
+If position is moving but clicks still are not, the problem shifted — it is now a CTR/intent issue, not an authority one. Different fix (meta description rewrites, intent-aligned H1s).
+
+---
+
 ## What NOT to do
 
 - **PBNs or paid backlink services.** Any service selling "100 backlinks for $50" is a private blog network. Google detects them, and the penalty for a 2-month-old domain is deindexation. Not slower growth. Deindexation.
