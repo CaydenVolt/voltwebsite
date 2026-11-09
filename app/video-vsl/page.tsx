@@ -5,6 +5,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stars } from "@/components/ui/Stars";
 import { Photo } from "@/components/ui/Photo";
+import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { VslVideo } from "@/components/vsl/VslVideo";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
@@ -118,6 +119,32 @@ export default function VideoVslPage() {
         videoPoster="/vsl/cayden.jpg"
         photo={cayden}
       />
+
+      {/* See-a-demo button, in its own band between the two founder videos
+          and the testimonials. Opens an interactive demo (hosted as a Claude
+          artifact) in a new tab — `external` on <Button> sets target="_blank"
+          and rel="noopener noreferrer" for us. Centered, with a small
+          directive label above it so the band still reads as "step" rather
+          than a loose button floating on the page. */}
+      <Section rule="top" rhythm="sm" aria-labelledby="demo-h">
+        <div className="mx-auto max-w-2xl text-center">
+          <Reveal as="p" className="label text-muted">
+            Have a look at the system
+          </Reveal>
+          <Reveal as="h2" id="demo-h" index={1} className="mt-3 text-display-md">
+            See a live demo of what we build.
+          </Reveal>
+          <Reveal as="div" index={2} className="mt-8 flex justify-center">
+            <Button
+              href="https://claude.ai/artifact/6itSm5dDa2y7TJobYEckqN#overview"
+              source="vsl_see_demo"
+              external
+            >
+              See a demo
+            </Button>
+          </Reveal>
+        </div>
+      </Section>
 
       {/* Client proof: the testimonial video and the Google review
           screenshot, no section heading above them. Deliberately rendered
