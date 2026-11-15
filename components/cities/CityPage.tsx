@@ -229,7 +229,18 @@ export function CityPage({ city, state }: { city: City; state: State }) {
         </dl>
       </Section>
 
-      {/* Commercial CTA */}
+      {/* Commercial CTA.
+          The paragraph below carries three branded inline links to the pages
+          that matter for the business — / (home), /pricing, /compare — plus
+          a three-link row of secondary routes under the button (/products,
+          /our-process, /about). The city pages attract a lot of homeowner
+          traffic on queries like "<city> solar installers" (useful for
+          crawl authority, useless for revenue), so the explicit job of this
+          block is to pass that authority upward with descriptive anchor text
+          rather than leaving it stranded at the leaf. Google reads inline
+          contextual links in the body as stronger signals than global-nav
+          links, so the body copy itself does the work.
+       */}
       <Section rule="top" aria-labelledby="apply-h" rhythm="sm">
         <SectionLabel rule>For {city.name} solar installers</SectionLabel>
         <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
@@ -238,9 +249,21 @@ export function CityPage({ city, state }: { city: City; state: State }) {
           </Reveal>
           <Reveal as="div" index={1} className="mt-6 max-w-measure lg:col-span-5 lg:col-start-8 lg:mt-0">
             <p className="text-body text-muted">
-              Volt is the complete sales system for US solar companies: website, missed-call text
-              back, follow-up sequences, review funnel and on-site SEO on one flat monthly fee.
-              Built for operators who already have the leads but are losing them in the follow-up.
+              <Link href="/" className="font-medium text-fg underline-offset-4 hover:underline">
+                Volt Agency
+              </Link>{" "}
+              builds and runs the complete sales system for US solar
+              companies: website, missed-call text-back, follow-up, review
+              funnel and on-site SEO on one flat monthly fee.{" "}
+              <Link href="/pricing" className="font-medium text-fg underline-offset-4 hover:underline">
+                See what's included on the plan
+              </Link>{" "}
+              or{" "}
+              <Link href="/compare" className="font-medium text-fg underline-offset-4 hover:underline">
+                compare Volt against the tools you already use
+              </Link>
+              . Built for operators who already have the leads but are losing
+              them in the follow-up.
             </p>
             <p className="mt-6">
               <Button
@@ -250,6 +273,19 @@ export function CityPage({ city, state }: { city: City; state: State }) {
               >
                 Book a 20-minute call
               </Button>
+            </p>
+            <p className="label mt-5 text-muted">
+              <Link href="/products" className="hover:text-fg">
+                The six products
+              </Link>
+              <span aria-hidden className="mx-3">·</span>
+              <Link href="/our-process" className="hover:text-fg">
+                How we work
+              </Link>
+              <span aria-hidden className="mx-3">·</span>
+              <Link href="/about" className="hover:text-fg">
+                About Volt
+              </Link>
             </p>
           </Reveal>
         </div>

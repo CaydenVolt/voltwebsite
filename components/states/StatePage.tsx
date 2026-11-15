@@ -235,7 +235,15 @@ export function StatePage({ state }: { state: State }) {
         </dl>
       </Section>
 
-      {/* Commercial CTA before FinalCTA */}
+      {/* Commercial CTA before FinalCTA.
+          As on CityPage, the paragraph carries branded inline links to the
+          pages that matter for the business — / (home), /pricing, /compare —
+          plus a secondary row to /products, /our-process and /about under
+          the button. State pages attract homeowner intent on queries like
+          "solar in <state>" that bring crawl authority Volt would otherwise
+          waste at the leaf. Descriptive anchor text is the mechanism that
+          pulls it up to the commercial pages.
+       */}
       <Section rule="top" aria-labelledby="apply-h" rhythm="sm">
         <SectionLabel rule>For {state.name} solar installers</SectionLabel>
         <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
@@ -244,9 +252,21 @@ export function StatePage({ state }: { state: State }) {
           </Reveal>
           <Reveal as="div" index={1} className="mt-6 max-w-measure lg:col-span-5 lg:col-start-8 lg:mt-0">
             <p className="text-body text-muted">
-              Volt is the complete sales system for US solar companies: website, missed-call text
-              back, follow-up sequences, review funnel and on-site SEO on one flat monthly fee.
-              Already working with {state.name} installers.
+              <Link href="/" className="font-medium text-fg underline-offset-4 hover:underline">
+                Volt Agency
+              </Link>{" "}
+              builds and runs the complete sales system for US solar
+              companies: website, missed-call text-back, follow-up, review
+              funnel and on-site SEO on one flat monthly fee. Already working
+              with {state.name} installers.{" "}
+              <Link href="/pricing" className="font-medium text-fg underline-offset-4 hover:underline">
+                See what's included on the plan
+              </Link>{" "}
+              or{" "}
+              <Link href="/compare" className="font-medium text-fg underline-offset-4 hover:underline">
+                compare Volt against the tools you already use
+              </Link>
+              .
             </p>
             <p className="mt-6">
               <Button
@@ -256,6 +276,19 @@ export function StatePage({ state }: { state: State }) {
               >
                 Book a 20-minute call
               </Button>
+            </p>
+            <p className="label mt-5 text-muted">
+              <Link href="/products" className="hover:text-fg">
+                The six products
+              </Link>
+              <span aria-hidden className="mx-3">·</span>
+              <Link href="/our-process" className="hover:text-fg">
+                How we work
+              </Link>
+              <span aria-hidden className="mx-3">·</span>
+              <Link href="/about" className="hover:text-fg">
+                About Volt
+              </Link>
             </p>
           </Reveal>
         </div>
