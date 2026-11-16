@@ -125,14 +125,15 @@ export const LEADFLOW_PLAN: Plan = {
   currency: "USD",
   interval: "month",
   setupFee: null,
-  // Leadflow includes everything on Core plus leads delivered to the inbox.
+  // Leadflow includes everything on Core plus leads delivered to the inbox
+  // and appointments booked straight into the client's calendar.
   includes: [...CORE_PLAN.includes],
   bonusSlugs: CORE_BONUSES,
   performanceFee: { amount: 100, unit: "booked appointment" },
   clientBudgetRequired: true,
   terms: ["No contracts", "Cancel anytime", "No setup fee"],
   subheading:
-    "Everything in Core, plus leads delivered to your inbox.",
+    "Everything in Core, plus leads delivered to your inbox and appointments booked straight into your calendar.",
 };
 
 /**
@@ -165,10 +166,13 @@ export const HOSTING_FEE: number = 0;
  * is listed by name in the add-ons section by the slug in `PRICING_ADDONS`.
  */
 export const PRICING_ADDONS: readonly string[] = [
-  // Full product pages exist for both.
+  // Full product pages exist for all three.
   "ai-lead-nurturing",
   // Booking Bot (added 2026-11-16). Registered as an addon in products.ts.
   "ai-booking-bot",
+  // ChatGPT Business Optimization (added 2026-11-16). Addresses the
+  // AI-search layer (ChatGPT, Perplexity, Google AI Overviews).
+  "chatgpt-business-optimization",
 ] as const;
 
 /** "$297", no decimals, locale en-US. */

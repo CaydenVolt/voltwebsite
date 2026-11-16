@@ -154,6 +154,29 @@ function PlanCard({
         </ul>
       ) : null}
 
+      {/* Leadflow-only highlight: appointments are not just leads-in-your-inbox,
+          they land as actual booked slots on the client's calendar. This is the
+          thing that lets a Leadflow client show up and run surveys instead of
+          chasing enquiries, so it earns the loudest treatment under the price
+          block. Accent-bordered badge with a calendar glyph, same visual
+          weight as the website + hosting callout above. Rendered only when
+          plan.id === "leadflow" so the Basic and Core cards stay clean. */}
+      {plan.id === "leadflow" ? (
+        <div className="mt-3 flex items-center gap-3 border border-accent bg-bone/5 px-4 py-3">
+          <svg
+            aria-hidden
+            viewBox="0 0 24 24"
+            className="size-5 shrink-0 fill-accent"
+          >
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14zm0-12H5V6h14z" />
+          </svg>
+          <p className="label text-accent">
+            <span className="font-semibold">Appointments booked</span>{" "}
+            <span className="text-bone-muted">straight into your calendar.</span>
+          </p>
+        </div>
+      ) : null}
+
       {plan.subheading ? (
         <p className="mt-5 text-body text-muted">{plan.subheading}</p>
       ) : null}

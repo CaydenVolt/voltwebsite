@@ -573,6 +573,77 @@ export const PRODUCTS: readonly Product[] = [
       "On-site SEO gets your pages in order. This goes further: keyword research across your service area, dedicated pages for each town you install in, technical fixes, and content built to rank for the searches that actually convert. It takes months, not weeks. If you need leads next Tuesday, run ads instead.",
   },
   {
+    /**
+     * ChatGPT Business Optimization. Added 2026-11-16. The AI-search layer
+     * is where a chunk of research-stage homeowners now ask "best solar
+     * company in [town]" and "how much do solar panels cost in [state]",
+     * and most solar sites are not legible to the engines answering those
+     * queries. This product fixes that: llms.txt, schema, passage-level
+     * answers on the pages, and the cross-citations that let ChatGPT and
+     * Perplexity resolve a business as a real entity rather than a page.
+     *
+     * Full page so it joins the nav mega-menu's "Sold separately" grid
+     * alongside AI Lead Nurturing, the Booking Bot, Customer Reactivation,
+     * Referrals and Google Ads. Media reuses the search fragment because
+     * AI search is adjacent to classic search in intent.
+     */
+    slug: "chatgpt-business-optimization",
+    name: "ChatGPT Business Optimization",
+    visibility: "addon",
+    description: "Show up when homeowners ask ChatGPT about solar in their town",
+    intro:
+      "Homeowners are asking ChatGPT and Perplexity things like 'best solar company in Phoenix' and 'how much do solar panels cost in Austin'. Those answers are built from whichever sources the model can actually read and resolve. We rebuild your site so it is one of those sources: structured data for the business, llms.txt for the crawlers, passage-level answers on the pages that get cited, and the cross-references that let the model treat you as a real entity rather than a random page.",
+    page: {
+      navLabel: "ChatGPT optimization",
+      headline: "Show up when ChatGPT answers the question.",
+      benefits: [
+        "Structured data so the engines resolve your business as an entity",
+        "llms.txt and robots policy that let AI crawlers read the site",
+        "Passage-level answers on the pages, because citations happen at the passage",
+        "Cross-references from your profiles, GBP and local sources",
+        "Monthly report of mentions in ChatGPT, Perplexity and Google AI Overviews",
+      ],
+      features: [
+        {
+          title: "Entity, not just a page",
+          body:
+            "An engine that cannot tell your business from a page about your business will cite neither. We publish the Organization schema, the address, the service areas and the sameAs links the model uses to decide you are the real one.",
+        },
+        {
+          title: "Legible to AI crawlers",
+          body:
+            "A visible llms.txt, a robots policy that admits the engines you want and keeps the rest out, and a Markdown mirror of the pages you want cited. Not a trick, just the current price of being quotable.",
+        },
+        {
+          title: "Written to be quoted",
+          body:
+            "Models cite passages, not pages. The copy on the key pages is rewritten so the specific question — price, timeline, warranty, local permit — has a clean, short, standalone answer the model can lift.",
+        },
+        {
+          title: "Measured against the engines",
+          body:
+            "Every month we run a fixed set of homeowner-intent prompts against ChatGPT, Perplexity and Google AI Overviews and report what they cited. You can see whether the work is landing instead of trusting a chart.",
+        },
+      ],
+      steps: [
+        { title: "We audit your AI legibility", body: "What ChatGPT and Perplexity can read today, what they get wrong about you, and what they ignore." },
+        { title: "We publish the fixes", body: "Schema, llms.txt, a Markdown mirror of key pages, and rewritten answers on the pages the engines cite from." },
+        { title: "We track the citations", body: "A fixed prompt set, run monthly against the engines, reported as which ones cite you and for which questions." },
+      ],
+      stats: [
+        { value: "3 engines", label: "ChatGPT, Perplexity, Google AI Overviews" },
+        { value: "Monthly", label: "Prompt set run and reported" },
+        { value: "Entity-level", label: "Resolved as a business, not a page" },
+      ],
+      boundary: {
+        text: "On-site SEO and Advanced SEO cover classic Google Search. This covers the answer-engine layer: ChatGPT, Perplexity and the AI Overview on top of Google itself.",
+        sibling: "on-site-seo",
+      },
+      related: ["on-site-seo", "advanced-seo"],
+      media: { kind: "search" },
+    },
+  },
+  {
     slug: "ai-lead-nurturing",
     name: "AI Lead Nurturing",
     tag: "GPT-5 plugin",
