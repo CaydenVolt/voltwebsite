@@ -14,8 +14,13 @@ import { pad } from "@/lib/format";
 import { SITE, bookingHref } from "@/lib/site";
 import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/products";
 import {
-  ADVANCED_PLAN,
+  BASIC_PLAN,
+  CORE_PLAN,
+  HOSTING_FEE,
+  LEADFLOW_PLAN,
   PLAN,
+  PLANS,
+  PRICING_ADDONS,
   PRICING_FAQ,
   REPLACES,
   currencySymbol,
@@ -27,8 +32,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { absolute, faqSchema, planOfferSchema } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 
-const TITLE = `Pricing: ${formatPrice()} a month, everything included`;
-const DESCRIPTION = `${formatPrice()} a ${PLAN.interval} for the whole Volt system: website, missed-call text-back, automated follow-up, inbox, review funnel and on-site SEO. No contracts, no annual commitments${
+const TITLE = `Pricing: three plans from ${formatPrice(BASIC_PLAN)} a month, website included`;
+const DESCRIPTION = `Three plans for US solar companies — Basic at ${formatPrice(BASIC_PLAN)} a month, Core at ${formatPrice(CORE_PLAN)}, Leadflow at ${formatPrice(LEADFLOW_PLAN)} plus budget and a per-appointment fee. Website build is included free on every plan. No contracts${
   PLAN.setupFee === null ? ", no setup fee" : ""
 }.`;
 
@@ -59,25 +64,216 @@ function Price({ plan = PLAN, className = "" }: { plan?: Plan; className?: strin
   );
 }
 
+/**
+ * A single plan card on the pricing page. Shared shape across Basic, Core
+ * and Lead Generation, with a few small variations:
+ *
+ *   - `highlighted` adds the accent border and the pinned "badge" label.
+ *   - `bonuses` renders a second orange-headed list ("Free with Core, plus")
+ *     under the primary products list, for Core and Lead Generation.
+ *   - If the plan carries a `performanceFee` (Lead Generation), the fee and
+ *     the client-budget line appear as bold sub-lines under the base price
+ *     so the full cost structure is on the card rather than in the body.
+ *
+ * Products list renders as linked rows for plans whose products have their
+ * own pages. A product without a `page` field (e.g. the short-form GBP
+ * Optimization or On-Site SEO entries) renders as a plain line.
+ */
+type PlanProduct = { slug: string; name: string; page?: unknown };
+
+function PlanCard({
+  plan,
+  products,
+  bonuses,
+  source,
+  highlighted = false,
+  badge,
+}: {
+  plan: Plan;
+  products: readonly PlanProduct[];
+  bonuses?: readonly PlanProduct[];
+  source: string;
+  highlighted?: boolean;
+  badge?: string;
+}) {
+  const borderClass = highlighted ? "border-2 border-accent" : "border border-line";
+  const basePriceLabel = plan.performanceFee ? "Base fee" : null;
+
+  return (
+    <div
+      data-surface="ink"
+      className={`relative flex flex-col ${borderClass} bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12`}
+    >
+      {highlighted && badge ? (
+        <span className="absolute -top-4 right-6 inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-body-sm font-semibold uppercase tracking-wider text-ink sm:right-10">
+          {badge}
+        </span>
+      ) : null}
+
+      <p className="label text-accent">{plan.name}</p>
+      {basePriceLabel ? (
+        <p className="label mt-3 text-muted">{basePriceLabel}</p>
+      ) : null}
+      <Price plan={plan} className={basePriceLabel ? "mt-1" : "mt-6"} />
+
+      {/* "Website + hosting included" callout, pinned right under the price
+          on every card so a skimmer sees it without reading the body. Accent
+          border + check icon + accent label gives it the loudest badge
+          treatment on the dark ink card without using the primary accent
+          button colour, which stays reserved for the "Best offer" pin on
+          Core. Previously called out "Hosting billed separately"; changed
+          2026-11-16 at the owner's instruction — hosting is in the plan
+          price, not a line item billed on top. */}
+      <div className="mt-5 flex items-center gap-3 border border-accent bg-bone/5 px-4 py-3">
+        <svg
+          aria-hidden
+          viewBox="0 0 24 24"
+          className="size-5 shrink-0 fill-accent"
+        >
+          <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+        </svg>
+        <p className="label text-accent">
+          <span className="font-semibold">Website + hosting included.</span>{" "}
+          <span className="text-bone-muted">Both in the plan price.</span>
+        </p>
+      </div>
+
+      {plan.performanceFee ? (
+        <ul className="mt-4 space-y-2 border-t border-line pt-4">
+          {plan.clientBudgetRequired ? (
+            <li className="label text-bone">
+              <span className="text-accent">+</span>{" "}
+              Your own lead budget, paid directly
+            </li>
+          ) : null}
+          <li className="label text-bone">
+            <span className="text-accent">+</span>{" "}
+            {formatPrice({ ...plan, price: plan.performanceFee.amount })} per{" "}
+            {plan.performanceFee.unit}
+          </li>
+        </ul>
+      ) : null}
+
+      {plan.subheading ? (
+        <p className="mt-5 text-body text-muted">{plan.subheading}</p>
+      ) : null}
+
+      <ul className="mt-8 border-t border-line">
+        {products.map((product, i) => {
+          /* Functional Website gets a "Free" pill next to its name on every
+             plan card. The owner's instruction: signal explicitly, inside
+             the products list, that the website row is at zero marginal
+             cost — a reader who scans numerals rather than badges should
+             still catch it. */
+          const isFreeWebsite = product.slug === "functional-website";
+          const row = (
+            <div className="flex items-baseline gap-3 py-4 sm:gap-4">
+              <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
+              <span className="font-display text-item">{product.name}</span>
+              {isFreeWebsite ? (
+                <span className="label inline-flex shrink-0 items-center rounded-full border border-accent px-2 py-0.5 text-accent">
+                  Free
+                </span>
+              ) : null}
+              {product.page ? (
+                <span aria-hidden className="ml-auto shrink-0 text-body-sm">
+                  &rarr;
+                </span>
+              ) : null}
+            </div>
+          );
+          return (
+            <li key={product.slug} className="border-b border-line">
+              {product.page ? (
+                <Link
+                  href={productHref(product.slug)}
+                  data-cursor="grow"
+                  className="group block transition-colors duration-100 hover:text-bone-muted"
+                >
+                  {row}
+                </Link>
+              ) : (
+                row
+              )}
+            </li>
+          );
+        })}
+      </ul>
+
+      {bonuses && bonuses.length > 0 ? (
+        <>
+          <p className="label mt-7 text-accent">
+            {plan.id === "core" ? "Free with Core, plus" : "Free with the plan, plus"}
+          </p>
+          <ul className="mt-3 border-t border-line">
+            {bonuses.map((b, i) => (
+              <li key={b.slug} className="border-b border-line">
+                <div className="flex items-baseline gap-4 py-4">
+                  <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
+                  <span className="font-display text-item">{b.name}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+
+      <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
+        {plan.terms.map((t) => (
+          <li key={t} className="label text-muted">
+            {t}
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-9">
+        <Button
+          href={bookingHref(source)}
+          source={source}
+          external
+          className="w-full justify-center"
+        >
+          Book a 20-minute call
+        </Button>
+      </div>
+
+      <p className="mt-5 text-body-sm text-muted">
+        Pass-through phone and messaging billed on top at cost.
+      </p>
+    </div>
+  );
+}
+
 export default function PricingPage() {
-  const products = getPublicProducts();
-  // The three addon products rolled into the Advanced plan. Resolved from
-  // the registry so a rename of any slug flags here at build time rather
-  // than silently showing nothing.
+  const allPublic = getPublicProducts();
   const allAddons = getAddonServices();
-  const advancedExtras = ADVANCED_PLAN.extraSlugs
+
+  /**
+   * Resolve a plan's `includes` and `bonusSlugs` to product objects, in the
+   * declared order, drawing from both public and addon pools. A slug that is
+   * not in either registry is filtered out silently; the pricing.ts module is
+   * the source of truth for what should appear, and a mismatch there is the
+   * canonical place to fix it.
+   */
+  function productsFor(slugs: readonly string[]) {
+    return slugs
+      .map((slug) => allPublic.find((p) => p.slug === slug) ?? allAddons.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => p !== undefined);
+  }
+
+  const basicProducts = productsFor(BASIC_PLAN.includes);
+  const coreProducts = productsFor(CORE_PLAN.includes);
+  const coreBonuses = productsFor(CORE_PLAN.bonusSlugs ?? []);
+
+  /**
+   * The two add-ons rendered on the pricing page outside the three plans:
+   * AI Lead Nurturing and the Facebook + Instagram AI Booking Bot. Resolved
+   * from PRICING_ADDONS so adding a third add-on is a one-line change in
+   * pricing.ts rather than another edit here.
+   */
+  const addons = PRICING_ADDONS
     .map((slug) => allAddons.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => a !== undefined);
-  // Google Ads Management is covered properly by the Paid Ads block above
-  // (Meta, LSA and Google Search as its own carousel with its own pricing),
-  // so listing it again under Separate products would just be the same
-  // product twice on one page. The three Advanced-plan extras are also
-  // removed from the separate-products list below because they are now
-  // included in a plan on this page. Filtered here, not in the shared
-  // content, so /products still lists everything.
-  const addons = allAddons.filter(
-    (a) => a.slug !== "google-ads-management" && !ADVANCED_PLAN.extraSlugs.includes(a.slug),
-  );
 
   return (
     <main className="flex-1">
@@ -91,12 +287,15 @@ export default function PricingPage() {
           <Reveal as="div" className="lg:col-span-6">
             <SectionLabel rule>Pricing</SectionLabel>
             <h1 id="pricing-h" className="mt-6 text-display-xl">
-              {formatPrice()} a {PLAN.interval}. Everything in the system.
+              Three plans. <span className="text-accent">Website free</span>{" "}
+              on every one.
             </h1>
             <p className="mt-6 max-w-measure text-lead">
-              For solar companies. No contracts, no annual commitments
-              {PLAN.setupFee === null ? ", no setup fee" : ""}. All six core products are in the
-              price. Phone numbers and messaging are billed on top, at what they cost.
+              For US solar companies. From {formatPrice(BASIC_PLAN)} a {BASIC_PLAN.interval}, no
+              contracts
+              {PLAN.setupFee === null ? ", no setup fee" : ""}. The website build and hosting are
+              included at no extra charge on every plan. Pass-through phone and messaging are
+              still billed on top at what the carriers charge.
             </p>
           </Reveal>
           <Reveal
@@ -114,129 +313,49 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* 2. The two plans, side by side. Core at $297 is still the main offer
-          everywhere else on the site; Advanced at $597 is only shown here,
-          as the step-up for operators who want Volt to handle Advanced SEO,
-          Google My Business Optimization and the referral programme in-house
-          rather than buy them as separate addons.
+      {/* 2. The three plans side by side.
 
-          Both cards use the same ink treatment and the same width, with the
-          plan name doing the differentiating. No "most popular" badge or
-          "recommended" tag on either side; the visitor picks what fits. */}
+          Basic ($150): the storefront — website, on-site SEO, GBP optimization.
+          Core ($297): the main offer, highlighted with "Best offer" badge.
+          Lead Generation ($500 base + client budget + $100/appt): the
+          performance-fee plan where Volt also delivers the leads.
+
+          All three cards share the same ink treatment. Core carries the
+          accent border and the "Best offer" badge because that is the plan
+          the rest of the site points at. The website-is-free line on every
+          card is intentional repetition: the user's instruction was to make
+          that explicit on every tier. */}
       <Section id="plan" aria-labelledby="plan-h">
         <SectionLabel rule as="h2" id="plan-h">
           The plans
         </SectionLabel>
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {/* Core: the main offer. Six public products on one flat fee.
-              Highlighted as "Best offer" because this is the plan every
-              other surface of the site sends visitors to, and the price the
-              reference comparison on this page benchmarks against. */}
-          <div
-            data-surface="ink"
-            className="relative flex flex-col border-2 border-accent bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
-          >
-            <span className="absolute -top-4 right-6 inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-body-sm font-semibold uppercase tracking-wider text-ink sm:right-10">
-              Best offer
-            </span>
-            <p className="label text-accent">Core</p>
-            <Price className="mt-6" />
-            <p className="mt-5 text-body text-muted">
-              Every product below, at the same price for every client. The same system whether you
-              install twenty roofs a year or two hundred.
-            </p>
+        <p className="mt-6 max-w-measure text-lead text-fg">
+          <strong className="font-semibold text-accent">
+            Website and hosting included free on all three plans.
+          </strong>{" "}
+          Not an extra line item, not quoted on the call — in the price.
+        </p>
 
-            <ul className="mt-9 border-t border-line">
-              {products.map((product, i) => (
-                <li key={product.slug} className="border-b border-line">
-                  <Link
-                    href={productHref(product.slug)}
-                    data-cursor="grow"
-                    className="group flex items-baseline gap-4 py-4 transition-colors duration-100 hover:text-bone-muted"
-                  >
-                    <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
-                    <span className="font-display text-item">{product.name}</span>
-                    <span aria-hidden className="ml-auto shrink-0 text-body-sm">
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
-              {PLAN.terms.map((t) => (
-                <li key={t} className="label text-muted">
-                  {t}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-9">
-              <Button
-                href={bookingHref("pricing_plan_core")}
-                source="pricing_plan_core"
-                external
-                className="w-full justify-center"
-              >
-                Book a 20-minute call
-              </Button>
-            </div>
-
-            <p className="mt-5 text-body-sm text-muted">
-              Phone numbers and messaging are billed on top, at what they cost.
-            </p>
-          </div>
-
-          {/* Advanced: Core plus the three services we would otherwise sell
-              as separate addons, rolled into the monthly fee. */}
-          <div
-            data-surface="ink"
-            className="flex flex-col border border-line bg-ink px-6 py-10 text-bone sm:px-10 sm:py-12"
-          >
-            <p className="label text-accent">Advanced</p>
-            <Price plan={ADVANCED_PLAN} className="mt-6" />
-            <p className="mt-5 text-body text-muted">
-              Everything in Core, plus three services we usually sell separately. For operators who
-              want Volt handling the top-of-funnel work in-house rather than coordinating it with
-              another vendor.
-            </p>
-
-            <p className="label mt-9 text-accent">Everything in Core, plus</p>
-            <ul className="mt-3 border-t border-line">
-              {advancedExtras.map((a, i) => (
-                <li key={a.slug} className="border-b border-line">
-                  <div className="flex items-baseline gap-4 py-4">
-                    <span className="label shrink-0 text-accent">{pad(i + 1)}</span>
-                    <span className="font-display text-item">{a.name}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2">
-              {ADVANCED_PLAN.terms.map((t) => (
-                <li key={t} className="label text-muted">
-                  {t}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-9">
-              <Button
-                href={bookingHref("pricing_plan_advanced")}
-                source="pricing_plan_advanced"
-                external
-                className="w-full justify-center"
-              >
-                Book a 20-minute call
-              </Button>
-            </div>
-
-            <p className="mt-5 text-body-sm text-muted">
-              Phone numbers and messaging are billed on top, at what they cost.
-            </p>
-          </div>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <PlanCard
+            plan={BASIC_PLAN}
+            products={basicProducts}
+            source="pricing_plan_basic"
+          />
+          <PlanCard
+            plan={CORE_PLAN}
+            products={coreProducts}
+            bonuses={coreBonuses}
+            source="pricing_plan_core"
+            highlighted
+            badge="Best offer"
+          />
+          <PlanCard
+            plan={LEADFLOW_PLAN}
+            products={coreProducts}
+            bonuses={coreBonuses}
+            source="pricing_plan_leadflow"
+          />
         </div>
       </Section>
 

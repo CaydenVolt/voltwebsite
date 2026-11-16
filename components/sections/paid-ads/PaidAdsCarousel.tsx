@@ -224,11 +224,11 @@ function Card({ channel }: { channel: PaidAdChannel }) {
         {channel.name}
       </h3>
 
-      <p className="mt-6 flex items-baseline gap-2 font-display text-fg">
-        <span className="text-h3">$</span>
-        <span className="text-display-md">1,500</span>
-        <span className="label pl-1 text-muted">/month + ad spend</span>
-      </p>
+      {/* Management fee hidden on purpose as of 2026-11-16: paid ads are
+          quoted on the sales call, not displayed on the public pricing
+          page. The CTA at the foot of this card ("Talk to us") is the
+          mechanism — a prospect gets the number in the conversation that
+          sets up the campaign. */}
 
       {channel.headline && (
         <p className="mt-6 max-w-measure text-lead">{channel.headline}</p>
@@ -274,7 +274,7 @@ function Card({ channel }: { channel: PaidAdChannel }) {
           external
           className="w-full justify-center"
         >
-          {channel.cta}
+          Talk to us
         </Button>
       </div>
     </article>

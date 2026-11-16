@@ -1,5 +1,5 @@
 import { SITE } from "@/lib/site";
-import { PLAN, formatPrice } from "@/lib/content/pricing";
+import { BASIC_PLAN, CORE_PLAN, LEADFLOW_PLAN, PLAN, formatPrice } from "@/lib/content/pricing";
 import { getAddonServices, getPublicProducts, productHref } from "@/lib/content/products";
 import { CATEGORIES, getPillar, postHref } from "@/lib/content/blog";
 
@@ -46,9 +46,7 @@ export function GET(): Response {
     "",
     "> Solar-industry marketing and sales system agency serving US installers.",
     "",
-    `${SITE.name} builds and runs the complete sales system for US residential solar companies on one monthly subscription: ${formatPrice()} a month, six products included, ${
-      PLAN.setupFee === null ? "no setup fee" : `a ${PLAN.setupFee} setup fee`
-    }, 30-day money-back on the standard monthly plan. A Quarterly Prepay Plan (three months upfront, bundled with a one-off free Google Business Profile optimization) is offered on sales calls and has a different refund rule, set out in section 7 of the terms. Add-ons such as Google Ads management, advanced SEO, AI lead nurturing and database reactivation are priced separately on top of the plan.`,
+    `${SITE.name} builds and runs the sales system for US residential solar companies on three monthly plans. Basic at ${formatPrice(BASIC_PLAN)} a month covers the website, on-site SEO and Google Business Profile optimization. Core at ${formatPrice(CORE_PLAN)} a month adds the review funnel, missed-call text-back and automated lead follow-up, with free lead reactivation and a referrals programme bundled in. Leadflow at ${formatPrice(LEADFLOW_PLAN)} a month is Core plus leads delivered to the inbox, on top of the client's own lead budget and a $${LEADFLOW_PLAN.performanceFee?.amount ?? 100} fee per booked appointment. The website build is included at no extra charge on every plan; hosting is billed separately at cost. ${PLAN.setupFee === null ? "No setup fee" : `${formatPrice({ ...PLAN, price: PLAN.setupFee! })} setup fee`}, 30-day money-back on the standard monthly plan. A Quarterly Prepay Plan (three months upfront, bundled with a one-off free Google Business Profile optimization) is offered on sales calls and has a different refund rule, set out in section 7 of the terms. Add-ons sold on top of the plans are the Facebook and Instagram AI Booking Bot and AI Lead Nurturing. Paid-ads services (Google LSAs, Meta Ads, Google Search Ads) are quoted on the sales call for clients who want a specific channel run for them.`,
     "",
     "## Products",
     "",

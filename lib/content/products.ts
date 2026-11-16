@@ -636,14 +636,84 @@ export const PRODUCTS: readonly Product[] = [
     },
   },
   {
+    /**
+     * Facebook + Instagram AI Booking Bot. Added 2026-11-16 as part of the
+     * new three-plan structure: this and AI Lead Nurturing are the two
+     * paid add-ons listed on the pricing page. Promoted to a full page
+     * on 2026-11-16 so it appears in the nav mega-menu's "Sold separately"
+     * grid (getFeaturedAddons filters by page !== undefined) and so a
+     * sales conversation has a product URL to land a prospect on.
+     */
+    slug: "ai-booking-bot",
+    name: "Facebook + Instagram AI Booking Bot",
+    tag: "GPT-5 plugin",
+    visibility: "addon",
+    description: "Books demos out of your Facebook and Instagram DMs",
+    intro:
+      "Homeowners message solar companies on Facebook and Instagram and most of them never get an answer. The booking bot sits in your DMs, replies in your voice, qualifies the enquiry, and books the appointment straight into your calendar. Works the inbox at the hours a homeowner actually messages, which is evenings and weekends.",
+    page: {
+      navLabel: "AI booking bot",
+      headline: "It answers your DMs and books the call.",
+      benefits: [
+        "Replies to Facebook and Instagram DMs in your voice",
+        "Qualifies the enquiry before it reaches your calendar",
+        "Books straight into your calendar, nights and weekends included",
+        "Hands over to a human the moment the lead asks for one",
+        "Every message visible in your inbox, same as the rest",
+      ],
+      features: [
+        {
+          title: "It works your social DMs",
+          body:
+            "Most solar companies get more enquiries through Facebook and Instagram messages than they realise and answer almost none of them. The booking bot watches both and replies in seconds from the account the message landed on.",
+        },
+        {
+          title: "It books, not chats",
+          body:
+            "The conversation has a point: a booked appointment on your calendar. Price, panels, timelines and finance come up only as the questions a homeowner actually asks before they agree to a time, not as a script the bot runs for its own sake.",
+        },
+        {
+          title: "It hands over when asked",
+          body:
+            "The moment a lead asks for a person, or the conversation goes somewhere it should not be handling, it stops and flags you. Nobody is left trapped talking to software.",
+        },
+        {
+          title: "You can read every word",
+          body:
+            "Every message it sends sits in the same inbox thread as everything else, under your name. If you do not like the way something was answered, you can see it and we change it.",
+        },
+      ],
+      steps: [
+        { title: "You connect your pages", body: "Facebook and Instagram, authorised on your side in minutes." },
+        { title: "We train it on your business", body: "Your pricing, your panels, your finance options and the answers you already give in DMs." },
+        { title: "It works the DMs", body: "Replies in seconds. Bookings land in your calendar. You read the threads when you want to." },
+      ],
+      stats: [
+        { value: "60 sec", label: "To a written reply in a DM" },
+        { value: "24/7", label: "Nights and weekends covered" },
+        { value: "FB · IG", label: "Both inboxes, one bot" },
+      ],
+      boundary: {
+        text: "AI Lead Nurturing works your lead list in text and email. This add-on works the DMs on Facebook and Instagram.",
+        sibling: "ai-lead-nurturing",
+      },
+      related: ["ai-lead-nurturing", "all-in-one-inbox"],
+      media: { kind: "nurture" },
+    },
+  },
+  {
     slug: "reactivation-campaigns",
-    name: "Automatic Customer Returns",
+    // Renamed 2026-11-16 from "Automatic Customer Returns" so the display
+    // name matches what the owner calls the product on sales calls and on
+    // the pricing-page bonus line. The slug stays as reactivation-campaigns
+    // so external links, sitemap entries and the schema @id do not break.
+    name: "Automatic Customer Reactivation",
     visibility: "addon",
     description: "Jobs out of the leads you already paid for",
     intro:
       "You have a database of old quotes and dead leads sitting in your CRM doing nothing. We write a campaign, send it to that list, and hand you the conversations that come back. It is the fastest way to get jobs out of money you have already spent.",
     page: {
-      navLabel: "Customer returns",
+      navLabel: "Customer reactivation",
       headline: "The jobs are already in your database.",
       benefits: [
         "Works the list you already own, no new ad spend",
