@@ -210,6 +210,85 @@ export function breadcrumbSchema(trail: readonly { name: string; path: string }[
   };
 }
 
+/* ----------------------------------------- geographic service schema */
+
+/**
+ * Service schema for a state page.
+ *
+ * Tells a search engine that Volt Agency provides a named service (solar
+ * marketing and sales system) inside a specific administrative area (the
+ * state). Previously the state pages only emitted breadcrumb + FAQ schema,
+ * which left the geographic signal implicit — Google had to infer that the
+ * page about Texas solar was tied to the organization that runs the
+ * domain. This spells it out: provider is Volt (by @id, so the parser
+ * resolves the full Organization entity), areaServed is the state as an
+ * AdministrativeArea with its country, the whole thing anchors at a stable
+ * `#service` id on the state URL.
+ *
+ * Added 2026-11-19 as part of the next SEO pass, the gap flagged after the
+ * pricing restructure landed: the city and state pages were earning US
+ * impressions on homeowner queries but not communicating back to Google
+ * that Volt is a business serving those same places.
+ */
+export function stateServiceSchema(state: { slug: string; name: string }) {
+  const url = absolute(`/solar/${state.slug}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: `${SITE.name} in ${state.name}`,
+    serviceType: "Solar marketing and sales system",
+    provider: { "@id": ORG_ID },
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: state.name,
+      containedInPlace: US_COUNTRY,
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Solar companies",
+    },
+    url,
+  };
+}
+
+/**
+ * Service schema for a city page. Same pattern as `stateServiceSchema`, with
+ * a `City` areaServed that is nested inside the state as an
+ * AdministrativeArea, which in turn is nested inside the US as a Country.
+ * The three-level containment is what Google's documentation shows for
+ * location-based Service pages; without it a crawler treats the city name
+ * as a loose string rather than a resolved place entity.
+ */
+export function cityServiceSchema(
+  city: { slug: string; name: string; stateSlug: string },
+  state: { slug: string; name: string },
+) {
+  const url = absolute(`/solar/${city.stateSlug}/${city.slug}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: `${SITE.name} in ${city.name}, ${state.name}`,
+    serviceType: "Solar marketing and sales system",
+    provider: { "@id": ORG_ID },
+    areaServed: {
+      "@type": "City",
+      name: city.name,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: state.name,
+        containedInPlace: US_COUNTRY,
+      },
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Solar companies",
+    },
+    url,
+  };
+}
+
 /**
  * Title, description, canonical and both social cards from one call, so a page
  * cannot ship with a canonical and no card, or a card with the wrong title.

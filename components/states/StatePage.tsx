@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { absolute, breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { absolute, breadcrumbSchema, faqSchema, stateServiceSchema } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { bookingHref } from "@/lib/site";
 import { getStates, stateHref, type State } from "@/lib/content/states";
@@ -65,6 +65,7 @@ export function StatePage({ state }: { state: State }) {
             { name: state.name, path },
           ]),
           faqSchema(state.faq, absolute(path)),
+          stateServiceSchema(state),
         ]}
       />
 

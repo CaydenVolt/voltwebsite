@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { absolute, breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { absolute, breadcrumbSchema, cityServiceSchema, faqSchema } from "@/lib/seo";
 import { TrustStrip } from "@/components/site/TrustStrip";
 import { bookingHref } from "@/lib/site";
 import {
@@ -48,6 +48,7 @@ export function CityPage({ city, state }: { city: City; state: State }) {
             { name: city.name, path },
           ]),
           faqSchema(city.faq, absolute(path)),
+          cityServiceSchema(city, state),
         ]}
       />
 
