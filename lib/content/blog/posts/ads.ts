@@ -364,6 +364,7 @@ export const ADS_POSTS: readonly Post[] = [
       credit: "Photo: BoliviaInteligente / Unsplash",
     },
     published: "2026-06-22",
+    updated: "2026-11-19",
     answer:
       "Facebook ads work for solar companies as a demand creation channel rather than a demand capture one. Leads cost less than Google search, commonly $25 to $90, and convert at a lower rate because the person was not searching. They need a longer, more persistent follow-up sequence to produce booked appointments.",
     takeaways: [
@@ -490,6 +491,18 @@ export const ADS_POSTS: readonly Post[] = [
       {
         q: "Should I use Facebook lead forms or send traffic to my site?",
         a: "Lead forms if your response is genuinely instant, a landing page if you would rather have fewer and better leads. Lead forms without instant follow-up are the most common way to waste money on this channel.",
+      },
+      {
+        q: "How much should a solar company spend on Facebook ads to start?",
+        a: "Enough to generate at least 30 leads inside a month, which is the smallest sample that tells you whether the campaign is working at all. In most US markets that is roughly $1,500 to $3,000 for a first month of testing, with cost per lead typically landing between $25 and $90. Spending less than that produces a handful of leads a week with no statistical pattern, which is how most installers mistakenly conclude paid social does not work for them.",
+      },
+      {
+        q: "Facebook or Instagram ads: which works better for solar?",
+        a: "Same ad account, same targeting, usually the same winners. Meta runs both platforms off the same auction and the same audience data, so a campaign set to automatic placements will show on whichever surface is cheapest and most responsive for a given viewer. The useful question is not which platform but which creative, and the creative that works on both is the same: a real local install, a specific bill saving, a named town.",
+      },
+      {
+        q: "Can I run Facebook ads for solar without a marketing agency?",
+        a: "Yes, if you have an hour a week to look at the numbers and the discipline to run only three or four ads at once rather than twenty. Meta's campaign set-up has got significantly easier; what has not changed is the follow-up requirement. The ads succeed or fail based on what happens after the lead lands, not on which agency built the campaign, so if your follow-up sequence is weak, hiring an agency to run the ads will not fix that first.",
       },
     ],
     related: [

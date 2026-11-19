@@ -227,6 +227,7 @@ export const SOFTWARE_POSTS: readonly Post[] = [
       credit: "Photo: Ashish Sangai / Unsplash",
     },
     published: "2026-08-05",
+    updated: "2026-11-19",
     answer:
       "The best CRM for a solar company is the one that captures every lead channel automatically, fires follow-up without anybody remembering, works properly on a phone, and holds the full communication history on the contact record. Industry-specific features matter far less than whether the daily workflow actually happens inside it.",
     takeaways: [
@@ -352,6 +353,18 @@ export const SOFTWARE_POSTS: readonly Post[] = [
       {
         q: "How long does a CRM migration take?",
         a: "Two to six weeks for a small installer, longer with a lot of historical data. The safest approach is to run the new system for new leads first and migrate history afterwards, so nothing arriving today falls into the gap.",
+      },
+      {
+        q: "How much does a solar CRM cost?",
+        a: "Entry-level solar CRMs run $75 to $150 per user per month, mid-market $150 to $350, and the sales-heavy specialists $300 and up. The number that actually matters is not the licence fee: it is the licence fee plus the time your team spends keeping data in, plus the opportunity cost of leads that fall through the cracks. A $100-a-month CRM your team updates beats a $400-a-month CRM that half the office ignores.",
+      },
+      {
+        q: "What is the difference between a solar CRM and solar sales software?",
+        a: "A CRM holds the contacts, pipeline stages and conversations. Solar sales software usually adds proposal generation, financing options, lender integrations and sometimes design. Many operators run both: the CRM is the back end for the whole business, the sales tool is what the rep opens on a visit. If you have to pick one and your team is small, start with the CRM. The sales tool is easier to add later than the CRM is to swap out.",
+      },
+      {
+        q: "Can I use HubSpot or Salesforce for a solar company?",
+        a: "Yes, and plenty do. Both configure for solar pipelines without specialised add-ons. HubSpot is more forgiving to set up and has a free tier that gets a two-person operation surprisingly far. Salesforce scales further but demands an admin's time to configure properly, which a small installer rarely has. What the generic tools do not do is proposal design or finance integration, which is why most solar companies also run a specialist tool alongside them.",
       },
     ],
     related: [

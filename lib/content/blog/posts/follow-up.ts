@@ -1036,6 +1036,7 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
       credit: "Photo: Kelly Sikkema / Unsplash",
     },
     published: "2026-03-18",
+    updated: "2026-11-19",
     answer:
       "SMS works for solar companies in conversational use: replying to enquiries, confirming appointments, recovering missed calls and asking for reviews. It works poorly as a broadcast channel. Response rates are far higher than email, which makes it valuable and also makes misuse expensive in opt-outs and complaints.",
     takeaways: [
@@ -1183,6 +1184,18 @@ export const FOLLOW_UP_POSTS: readonly Post[] = [
       {
         q: "What response rate should I expect from SMS?",
         a: "Far higher than email, particularly for conversational messages and review requests. Response drops sharply the more a message looks like a broadcast, which is the whole argument for keeping text conversational.",
+      },
+      {
+        q: "How much does SMS marketing cost for a solar company?",
+        a: "The platform itself runs $20 to $100 a month depending on volume, and the message cost on top is roughly one cent per text domestically in the US. For a typical small installer sending 500 to 2,000 texts a month across missed-call-back, confirmations and review requests, the whole bill is under $50. The cost that matters is not the send cost but the opportunity cost of handling the replies, because text is a conversation and a thread nobody answers is worse than no text at all.",
+      },
+      {
+        q: "Is SMS marketing TCPA compliant for solar?",
+        a: "It can be, and the burden is on you to make it so. Any marketing text to a US consumer needs prior express written consent for promotional content, prior express consent for informational content, and a working opt-out on every message. An enquiry that gave you a phone number does not automatically constitute consent to broadcast; it usually constitutes consent to reply directly. Penalties under the TCPA are per-message, so a bulk send without clean consent is the kind of mistake that ends a small installer. Take legal advice before any broadcast programme.",
+      },
+      {
+        q: "What SMS platform should a solar company use?",
+        a: "Whatever your CRM or sales system already sends through. Picking a text platform in isolation leads to two inboxes and a lead that got answered on one but not the other. If the platform you use for leads and follow-up has texting built in, that is the right one by default. If you have to add a separate tool, pick one with a two-way inbox and a real API into your CRM rather than a blast tool.",
       },
     ],
     related: [
