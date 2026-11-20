@@ -18,15 +18,10 @@ export function Trades({ tilt }: { tilt?: "left" | "right" }) {
   // deep, not bleed-deep: the carousel is contained, so the section keeps its gutters
   return (
     <Section id="trades" variant="deep" tilt={tilt} aria-labelledby="trades-h">
-      <div className="lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-6">
-        <div className="lg:col-span-7">
-          <SectionLabel rule>Who it is for</SectionLabel>
-          <Reveal as="h2" id="trades-h" className="mt-6 text-display-md">
-            Serving these US solar trades and more.
-          </Reveal>
-        </div>
-        <Reveal as="p" index={1} className="mt-6 max-w-measure text-body text-muted lg:col-span-4 lg:col-start-9 lg:mt-0">
-          Same system, different scripts, built for US solar operators. We have set it up for every one of these.
+      <div>
+        <SectionLabel rule>Who it is for</SectionLabel>
+        <Reveal as="h2" id="trades-h" className="mt-6 text-display-md lg:w-8/12">
+          Serving these US solar trades and more.
         </Reveal>
       </div>
 

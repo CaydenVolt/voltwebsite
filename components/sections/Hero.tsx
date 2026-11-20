@@ -184,7 +184,12 @@ export function Hero() {
               {...rise(T.panelContent + T.panelStagger)}
               className="mt-6 flex flex-wrap items-center gap-5"
             >
-              <Button href={bookingHref("hero_primary")} source="hero_primary" external>
+              <Button
+                href={bookingHref("hero_primary")}
+                source="hero_primary"
+                size="lg"
+                external
+              >
                 Book a 20-minute call
               </Button>
               {/* Two overlapping circular portraits of Cayden and McKeith,

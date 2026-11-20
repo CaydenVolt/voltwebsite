@@ -1,5 +1,5 @@
 type Variant = "primary" | "outline" | "outline-inverse" | "link" | "link-inverse";
-type Size = "sm" | "md";
+type Size = "sm" | "md" | "lg";
 
 interface ButtonProps {
   href: string;
@@ -36,6 +36,10 @@ const variants: Record<Variant, string> = {
 const sizes: Record<Size, string> = {
   sm: "h-11 px-4 text-body-sm lg:h-10",
   md: "h-12 px-6 text-body",
+  // Reserved for the hero on the home page and the pricing page where the
+  // primary CTA needs to be the loudest thing after the headline. Not for
+  // every page CTA — if every one is the loud one, none is.
+  lg: "h-14 px-8 text-lead font-semibold",
 };
 
 const isLink = (v: Variant) => v === "link" || v === "link-inverse";

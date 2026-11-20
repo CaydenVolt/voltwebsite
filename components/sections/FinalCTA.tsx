@@ -43,7 +43,7 @@ export function FinalCTA({
             fit we will say so.
           </p>
           <div className="mt-8">
-            <Button href={bookingHref(source)} source={source} external>
+            <Button href={bookingHref(source)} source={source} size="lg" external>
               Book a 20-minute call
             </Button>
           </div>

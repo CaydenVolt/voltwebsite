@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { IndexedRow } from "@/components/ui/IndexedRow";
 import { Reveal } from "@/components/ui/Reveal";
 import { DitheredImage } from "@/components/ui/DitheredImage";
 import { ProductIcon } from "@/components/ui/ProductIcon";
@@ -22,7 +21,6 @@ import {
   PLANS,
   PRICING_ADDONS,
   PRICING_FAQ,
-  REPLACES,
   currencySymbol,
   formatPrice,
   priceDigits,
@@ -429,70 +427,14 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* 5. What this replaces: ink slab, honest ranges, one figure */}
-      <Section id="replaces" variant="ink" aria-labelledby="replaces-h">
-        <SectionLabel rule>What this replaces</SectionLabel>
-        <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <Reveal as="h2" id="replaces-h" className="text-display-md lg:col-span-7">
-            What you are probably paying for already.
-          </Reveal>
-        </div>
-        <div className="mt-12 grid gap-y-12 lg:grid-cols-12 lg:items-end lg:gap-x-6">
-          <Reveal as="div" className="lg:col-span-6">
-            <p className="label text-muted">Separately, per month</p>
-            <ul className="mt-3 border-t border-line">
-              {REPLACES.map((r, i) => (
-                <IndexedRow key={r.item} index={i + 1} detail={r.figure}>
-                  {r.item}
-                </IndexedRow>
-              ))}
-            </ul>
-            <p className="mt-4 text-body-sm text-muted">
-              Typical ranges from the companies we onboard. Yours will differ.
-            </p>
-          </Reveal>
-          <Reveal as="div" index={1} className="lg:col-span-5 lg:col-start-8">
-            <p className="label text-muted">With {SITE.name}, per month</p>
-            <p className="mt-3 flex items-baseline gap-2 font-display text-fg">
-              <span className="text-h3">{currencySymbol()}</span>
-              <span className="text-display-xl">{priceDigits()}</span>
-              <span className="label pl-1 text-muted">/{PLAN.interval}</span>
-            </p>
-            <p className="mt-6 max-w-measure text-lead">
-              Same jobs done, one bill, and nobody on your payroll babysitting five logins.
-            </p>
-          </Reveal>
-        </div>
-      </Section>
-
-      {/* 6. Pricing FAQ: the homepage accordion, different questions */}
+      {/* Pricing FAQ: the homepage accordion, different questions.
+          "What this replaces" and the Compare bridge used to sit on either
+          side of this section; both came off on 2026-11-20 as part of the
+          minimalist pass. The replaces block was comparison filler the plan
+          cards and FAQ already covered; the compare bridge was a courtesy
+          link the footer handles. */}
       <FAQ id="pricing-faq" label="Pricing questions" heading="Straight answers on the fee." items={PRICING_FAQ} />
 
-      {/* 7. Compare bridge: a visitor on the pricing page is usually also
-          weighing another tool. Rather than let the question drop, point at
-          the honest comparisons we already wrote. Low-key band, not a slab. */}
-      <Section rule="top" aria-labelledby="compare-bridge-h" rhythm="sm">
-        <SectionLabel rule>Compare</SectionLabel>
-        <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-x-6">
-          <Reveal as="h2" id="compare-bridge-h" className="text-h2 lg:col-span-7">
-            Still weighing Volt against another tool?
-          </Reveal>
-          <Reveal as="div" index={1} className="mt-6 max-w-measure lg:col-span-5 lg:col-start-8 lg:mt-0">
-            <p className="text-body text-muted">
-              Honest side-by-side comparisons against HubSpot, Jobber, Housecall Pro,
-              ServiceTitan, Enerflo, Scoop, Aurora, Podium, Birdeye and Scorpion.
-              Who should pick which, feature matrices, real pricing.
-            </p>
-            <p className="mt-6">
-              <Button href="/compare" source="pricing_compare_bridge" variant="link">
-                See every comparison
-              </Button>
-            </p>
-          </Reveal>
-        </div>
-      </Section>
-
-      {/* 8. Final CTA, reused as is */}
       <FinalCTA />
     </main>
   );
