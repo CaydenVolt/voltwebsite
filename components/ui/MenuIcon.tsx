@@ -51,6 +51,21 @@ const GLYPHS: Record<string, ReactNode> = {
       <path d="M6.5 8h7M6.5 11.5h7M6.5 15h4.5" />
     </>
   ),
+  /* Document with lines: the blog */
+  blog: (
+    <>
+      <path d="M5 3.5h12v17H5z" />
+      <path d="M8 8h6M8 12h6M8 16h4" />
+    </>
+  ),
+  /* Question mark in a circle: the FAQ */
+  faq: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.3 9.3a2.7 2.7 0 0 1 5.4 0c0 1.6-2.7 2-2.7 3.7" />
+      <path d="M12 16.8v.4" />
+    </>
+  ),
 };
 
 export function MenuIcon({ name, className = "size-5" }: { name: string; className?: string }) {

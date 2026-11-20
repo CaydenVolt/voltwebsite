@@ -63,6 +63,13 @@ export const ABOUT_MENU: readonly MenuItem[] = [
   { label: "Our Process", description: "Discover how we work", href: "/our-process", icon: "process" },
   { label: "Trades We Serve", description: "Who we work with", href: "/#trades", icon: "trades" },
   { label: "Partners", description: "Meet our partners", href: "/partners", icon: "partners" },
+  // Blog and FAQ moved into this menu 2026-11-20: the top nav was carrying
+  // seven items and losing to the "Book a call" CTA on crowded widths. The
+  // blog is still the strongest internal signal on the site (~80 posts),
+  // but it does not need to live in the bar to be crawlable — the footer
+  // and the many inline links from the programmatic pages cover that.
+  { label: "Blog", description: "Essays and guides on solar marketing", href: "/blog", icon: "blog" },
+  { label: "FAQ", description: "Straight answers on the common questions", href: "/#faq", icon: "faq" },
   { label: "Contact", description: "Chat with us", href: "/contact", icon: "contact" },
 ];
 
@@ -103,16 +110,13 @@ export const SITE = {
     // shows the build, the other shows what the client said about it.
     { label: "Testimonials", href: "/testimonials" },
     { label: "Pricing", href: "/pricing" },
-    // Compare lived here between Pricing and Blog until 2026-11-03, when it
-    // moved off the top bar. It stays reachable through the footer and
-    // through cross-links from blog posts about the specific tools it
-    // compares, which is where that visitor's journey actually starts.
-    // Top level on purpose: the blog is sixty-three pages deep and a link in
-    // the bar on every page is the strongest internal signal we can give it.
-    { label: "Blog", href: "/blog" },
-    // Process moved into the About menu, so the bar does not carry it twice.
+    // Blog and FAQ moved into the About mega-menu on 2026-11-20 to free up
+    // bar space; they are still reachable with one click from every page.
+    // Compare came off the bar on 2026-11-03 for the same reason and lives
+    // in the footer plus the cross-links from the relevant blog posts.
+    // Process moved into the About menu earlier, so the bar does not carry
+    // it twice.
     { label: "About", href: "/about", menu: "about" },
-    { label: "FAQ", href: "#faq" },
   ] as readonly NavLink[],
   /** Footer columns. Legal routes are placeholders until those pages exist. */
   company: [
